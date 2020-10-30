@@ -1,0 +1,79 @@
+ANS	Đại Học An Ninh Nhân Dân
+BVS	Học Viện Công Nghệ Bưu Chính Viễn Thông (phía Nam)
+CSS	Đại Học Cảnh Sát Nhân Dân
+DCT	Đại Học Công Nghiệp Thực Phẩm TPHCM
+DKC	Đại học Công Nghệ TPHCM
+DLS	Đại Học Lao Động – Xã Hội ( Cơ sở phía Nam)
+DMS	Đại Học Tài Chính Marketing
+DNT	Đại Học Ngoại Ngữ – Tin Học TPHCM
+DSD	Đại Học Sân Khấu, Điện Ảnh TPHCM
+DSG	Đại Học Công Nghệ Sài Gòn
+DTM	ĐH Tài Nguyên môi trường TPHCM
+DTT	Đại Học Tôn Đức Thắng
+DVH	Đại Học Văn Hiến
+DVL	Đại Học Văn Lang
+GDU	Đại Học Gia Định
+GSA	Đại Học Giao Thông Vận Tải ( Cơ sở Phía Nam)
+GTS	Đại Học Giao Thông Vận Tải TPHCM
+HCS	Học Viện Hành Chính Quốc Gia (phía Nam)
+HHK	Học Viện Hàng Không Việt Nam
+HIU	Đại Học Quốc Tế Hồng Bàng
+HSU	Đại Học Hoa Sen
+IUH	Đại Học Công Nghiệp TPHCM
+KSA	Đại Học Kinh Tế TPHCM
+KTS	Đại Học Kiến Trúc TPHCM
+LPS	Đại Học Luật TPHCM
+MBS	Đại Học Mở TPHCM
+MTS	Đại Học Mỹ Thuật TPHCM
+NHS	Đại Học Ngân Hàng TPHCM
+NLS	Đại Học Nông Lâm TPHCM
+NTS	Đại Học Ngoại Thương (phía Nam)
+NTT	Đại Học Nguyễn Tất Thành
+NVS	Nhạc Viện TPHCM
+PCS	Đại Học Phòng Cháy Chữa Cháy (phía Nam)
+PCS1	Đại Học Phòng Cháy Chữa Cháy (Hệ Dân sự Phía Nam)
+QSB	Đại Học Bách Khoa – Đại Học Quốc Gia TPHCM
+QSC	Đại Học Công Nghệ Thông Tin – Đại Học Quốc Gia TPHCM
+QSK	Đại học Kinh Tế – Luật – Đại Học Quốc Gia TPHCM
+QSQ	Đại Học Quốc Tế – Đại Học Quốc Gia TPHCM
+QST	Đại Học Khoa Học Tự Nhiên – Đại Học Quốc Gia TPHCM
+QSX	Đại Học Khoa Học Xã Hội và Nhân Văn – Đại Học Quốc Gia TPHCM
+QSY	Khoa Y - Đại học Quốc Gia TPHCM
+RMU	Đại Học Quốc Tế RMIT Việt Nam
+SGD	Đại Học Sài Gòn
+SIU	Đại Học Quốc Tế Sài Gòn
+SPK	Đại Học Sư Phạm Kỹ Thuật TPHCM
+SPS	Đại Học Sư Phạm TPHCM
+STS	Đại Học Sư Phạm Thể DụcThể Thao TPHCM
+TDS	Đại Học Thể Dục Thể Thao TPHCM
+TLS	Đại Học Thủy Lợi ( Cơ sở 2 )
+TYS	Đại Học Y Khoa Phạm Ngọc Thạch
+UEF	Đại Học Kinh Tế -Tài Chính TPHCM
+VGU	Đại Học Việt Đức
+VHS	Đại Học Văn Hóa TPHCM
+VPH	Trường Sĩ Quan Kĩ Thuật Quân Sự - Hệ Quân sự - Đại Học Trần Đại Nghĩa
+YDS	Đại Học Y Dược TPHCM
+ZPH	Trường Sĩ Quan Kĩ Thuật Quân Sự - Hệ Dân sự - Đại Học Trần Đại Nghĩa
+CBC	Cao Đẳng Bán Công Công Nghệ và Quản Trị Doanh Nghiệp
+CBV	Cao Đẳng Bách Việt
+CCO	Cao Đẳng Công Nghệ Thủ Đức
+CCS	Cao Đẳng Kinh Tế Kỹ Thuật Vinatex TPHCM
+CDE	Cao Đẳng Điện Lực TPHCM
+CDV	Cao Đẳng Viễn Đông
+CEP	Cao Đẳng Kinh Tế TPHCM
+CES	Cao Đẳng Công Thương TPHCM
+CET	Cao Đẳng Kinh Tế-Công Nghệ TPHCM
+CGS	Cao Đẳng Giao Thông Vận Tải 3
+CGT	Cao Đẳng Giao Thông Vận Tải TPHCM
+CKC	Cao Đẳng Kỹ Thuật Cao Thắng
+CKD	Cao Đẳng Kinh Tế Đối Ngoại
+CKM	Cao Đẳng Kinh Tế Kỹ Thuật Miền Nam
+CKP	Cao Đẳng Kỹ Thuật Lý Tự Trọng TPHCM
+CM3	Cao Đẳng Sư Phạm Trung Ương TPHCM
+CPL	Cao Đẳng Kinh Tế Kỹ Thuật TP HCM
+CPS	Cao Đẳng Phát Thanh Truyền Hình II
+CTS	Cao Đẳng Tài Chính Hải Quan
+CVN	Cao Đẳng Văn Hóa Nghệ Thuật TPHCM
+CVS	Cao Đẳng Văn Hóa Nghệ Thuật và Du Lịch Sài Gòn
+CVX	Cao Đẳng Kỹ Thuật-Công Nghệ Vạn Xuân
+CXS	Cao Đẳng Xây Dựng Số 2
