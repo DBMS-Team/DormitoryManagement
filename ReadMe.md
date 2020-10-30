@@ -1,0 +1,2 @@
+- Link ERD: https://drive.google.com/file/d/1mgn2XvmzwtcxfSz25G26dD3tV0e0-DsI/view?usp=sharing
+- Link drive nhóm: https://drive.google.com/drive/folders/1XKdSSTNMsMkamG6FQdNqDbhYEB7rcRDK?usp=sharing
