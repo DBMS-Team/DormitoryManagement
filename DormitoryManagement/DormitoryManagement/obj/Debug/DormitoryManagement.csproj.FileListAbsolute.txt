@@ -1,0 +1,10 @@
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\bin\Debug\DormitoryManagement.exe.config
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\bin\Debug\DormitoryManagement.exe
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\bin\Debug\DormitoryManagement.pdb
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.csprojAssemblyReference.cache
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.fMain.resources
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.Properties.Resources.resources
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.csproj.GenerateResource.cache
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.csproj.CoreCompileInputs.cache
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.exe
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.pdb
