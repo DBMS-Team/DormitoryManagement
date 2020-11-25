@@ -63,6 +63,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\DataProvider.cs" />
+    <Compile Include="Model\DTO\AddressDTO.cs" />
+    <Compile Include="Model\DTO\AdminDTO.cs" />
+    <Compile Include="Model\DTO\BillDetailDTO.cs" />
+    <Compile Include="Model\DTO\BillDTO.cs" />
+    <Compile Include="Model\DTO\CollegeDTO.cs" />
+    <Compile Include="Model\DTO\CommuneDTO.cs" />
+    <Compile Include="Model\DTO\DistrictDTO.cs" />
+    <Compile Include="Model\DTO\EmployeeDTO.cs" />
+    <Compile Include="Model\DTO\InsuranceDTO.cs" />
+    <Compile Include="Model\DTO\PaymentDTO.cs" />
+    <Compile Include="Model\DTO\ProvinceDTO.cs" />
+    <Compile Include="Model\DTO\RelativeDTO.cs" />
+    <Compile Include="Model\DTO\RoomDTO.cs" />
+    <Compile Include="Model\DTO\RoomTypeDTO.cs" />
+    <Compile Include="Model\DTO\SectorDTO.cs" />
+    <Compile Include="Model\DTO\ServiceDTO.cs" />
+    <Compile Include="Model\DTO\StudentDTO.cs" />
+    <Compile Include="Model\DTO\UnitDTO.cs" />
+    <Compile Include="Model\DTO\UserDTO.cs" />
     <Compile Include="Utility\ExcelFile.cs" />
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="Utility\FormatData.cs" />
@@ -100,9 +119,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
