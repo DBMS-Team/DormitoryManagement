@@ -8,3 +8,8 @@ F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Deb
 F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.csproj.CoreCompileInputs.cache
 F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.exe
 F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.pdb
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\bin\Debug\EPPlus.dll
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\bin\Debug\System.ComponentModel.Annotations.dll
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\bin\Debug\EPPlus.xml
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.csproj.ResolveComReference.cache
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.csproj.CopyComplete
