@@ -45,47 +45,6 @@ CREATE TABLE [dbo].[COMMUNE] (
 )
 GO
 
-DROP PROCEDURE IF EXISTS [dbo].[USP_INSERT_COMMUNE] 
-GO
-
-CREATE PROCEDURE [USP_INSERT_COMMUNE]
-	@COMMUNE_ID VARCHAR(5),
-	@COMMUNE_NAME NVARCHAR(40),
-	@COMMUNE_TYPE VARCHAR(1), 
-	@DISTRICT_ID VARCHAR(3),
-	@DISTRICT_NAME NVARCHAR(40),
-	@DISTRICT_TYPE VARCHAR(1),
-	@PROVINCE_ID VARCHAR(2),
-	@PROVINCE_NAME NVARCHAR(20),
-	@PROVINCE_TYPE VARCHAR(1)
-AS BEGIN
-	DECLARE @IS_EXITS INT
-
-	-- Kiểm tra tỉnh có tồn tại hay không, nếu không thì insert record mới
-	SELECT @IS_EXITS = COUNT(*) FROM [dbo].[PROVINCE] WHERE [PROVINCE_ID] = @PROVINCE_ID
-	IF @IS_EXITS = 0
-	BEGIN
-		INSERT INTO [dbo].[PROVINCE] ([PROVINCE_ID], [PROVINCE_NAME], [PROVINCE_TYPE])
-		VALUES (@PROVINCE_ID, @PROVINCE_NAME, @PROVINCE_TYPE)
-	END
-
-	-- Kiểm tra huyện có tồn tại hay không, nếu không thì insert record mới
-	SELECT @IS_EXITS = COUNT(*) FROM [dbo].DISTRICT WHERE [DISTRICT_ID] = @DISTRICT_ID
-	IF @IS_EXITS = 0
-	BEGIN
-		INSERT INTO [dbo].[DISTRICT] ( [DISTRICT_ID], [DISTRICT_NAME], [DISTRICT_TYPE], [PROVINCE_ID] )
-		VALUES (@DISTRICT_ID, @DISTRICT_NAME, @DISTRICT_TYPE, @PROVINCE_ID)
-	END
-
-	-- Kiểm tra xã có tồn tại hay không, nếu không thì insert record mới
-	SELECT @IS_EXITS = COUNT(*) FROM [dbo].[COMMUNE] WHERE [COMMUNE_ID] = @COMMUNE_ID
-	IF @IS_EXITS = 0
-	BEGIN
-		INSERT INTO [dbo].[COMMUNE] ( [COMMUNE_ID], [COMMUNE_NAME], [COMMUNE_TYPE], [DISTRICT_ID] )
-		VALUES (@COMMUNE_ID, @COMMUNE_NAME, @COMMUNE_TYPE, @DISTRICT_ID)
-	END
-END
-GO
 
 -- ĐỊA CHỈ
 DROP TABLE IF EXISTS [dbo].[ADDRESS]
@@ -296,6 +255,97 @@ CREATE TABLE [dbo].[PAYMENT] (
 )
 GO
 
+----------------------
+-- VIEW
+----------------------
+
+----------------------
+-- FUNCTION
+----------------------
+
+
+----------------------
+-- PROC
+----------------------
+
+-- Dùng để Insert dữ liệu từ file Excel
+DROP PROCEDURE IF EXISTS [dbo].[USP_INSERT_COMMUNE] 
+GO
+
+CREATE PROCEDURE [USP_INSERT_COMMUNE]
+	@COMMUNE_ID VARCHAR(5),
+	@COMMUNE_NAME NVARCHAR(40),
+	@COMMUNE_TYPE VARCHAR(1), 
+	@DISTRICT_ID VARCHAR(3),
+	@DISTRICT_NAME NVARCHAR(40),
+	@DISTRICT_TYPE VARCHAR(1),
+	@PROVINCE_ID VARCHAR(2),
+	@PROVINCE_NAME NVARCHAR(20),
+	@PROVINCE_TYPE VARCHAR(1)
+AS BEGIN
+	DECLARE @IS_EXITS INT
+
+	-- Kiểm tra tỉnh có tồn tại hay không, nếu không thì insert record mới
+	SELECT @IS_EXITS = COUNT(*) FROM [dbo].[PROVINCE] WHERE [PROVINCE_ID] = @PROVINCE_ID
+	IF @IS_EXITS = 0
+	BEGIN
+		INSERT INTO [dbo].[PROVINCE] ([PROVINCE_ID], [PROVINCE_NAME], [PROVINCE_TYPE])
+		VALUES (@PROVINCE_ID, @PROVINCE_NAME, @PROVINCE_TYPE)
+	END
+
+	-- Kiểm tra huyện có tồn tại hay không, nếu không thì insert record mới
+	SELECT @IS_EXITS = COUNT(*) FROM [dbo].DISTRICT WHERE [DISTRICT_ID] = @DISTRICT_ID
+	IF @IS_EXITS = 0
+	BEGIN
+		INSERT INTO [dbo].[DISTRICT] ( [DISTRICT_ID], [DISTRICT_NAME], [DISTRICT_TYPE], [PROVINCE_ID] )
+		VALUES (@DISTRICT_ID, @DISTRICT_NAME, @DISTRICT_TYPE, @PROVINCE_ID)
+	END
+
+	-- Kiểm tra xã có tồn tại hay không, nếu không thì insert record mới
+	SELECT @IS_EXITS = COUNT(*) FROM [dbo].[COMMUNE] WHERE [COMMUNE_ID] = @COMMUNE_ID
+	IF @IS_EXITS = 0
+	BEGIN
+		INSERT INTO [dbo].[COMMUNE] ( [COMMUNE_ID], [COMMUNE_NAME], [COMMUNE_TYPE], [DISTRICT_ID] )
+		VALUES (@COMMUNE_ID, @COMMUNE_NAME, @COMMUNE_TYPE, @DISTRICT_ID)
+	END
+END
+GO
+
+----------------------
+-- TRIGGER
+----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- Insert thông tin trường cao đẳng đại học
 SET IDENTITY_INSERT [dbo].[COLLEGE] ON 
 
@@ -380,3 +430,65 @@ INSERT [dbo].[COLLEGE] ([COLLEGE_ID], [COLLEGE_CODE], [COLLEGE_NAME]) VALUES
 	(78, N'CVX', N'Cao Đẳng Kỹ Thuật-Công Nghệ Vạn Xuân'),
 	(79, N'CXS', N'Cao Đẳng Xây Dựng Số 2')
 SET IDENTITY_INSERT [dbo].[COLLEGE] OFF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
