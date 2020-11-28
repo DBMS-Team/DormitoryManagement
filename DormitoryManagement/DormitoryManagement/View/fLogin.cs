@@ -25,7 +25,7 @@ namespace DormitoryManagement.View
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             fMain fMain = new fMain();
             fMain.ShowDialog();
         }
