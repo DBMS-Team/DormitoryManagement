@@ -62,7 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AdminDAO.cs" />
     <Compile Include="Controller\DataProvider.cs" />
+    <Compile Include="Controller\EmployeeDAO.cs" />
+    <Compile Include="Controller\StudentDAO.cs" />
     <Compile Include="Controller\UserDAO.cs" />
     <Compile Include="Model\AddressDTO.cs" />
     <Compile Include="Model\AdminDTO.cs" />

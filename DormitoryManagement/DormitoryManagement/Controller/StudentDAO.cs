@@ -8,5 +8,6 @@ namespace DormitoryManagement.Controller
 {
     public class StudentDAO
     {
+
     }
 }
