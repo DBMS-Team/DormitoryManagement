@@ -9,9 +9,9 @@ namespace DormitoryManagement.Controller
 {
     public static class UserDAO
     {
-        public static bool Login(string username, string password)
+        public static bool Login(string userName, string passWord)
         {
-            string query = string.Format("SELECT * FROM dbo.Account WHERE Username = '{0}' AND Password = '{1}'", username, password);
+            string query = string.Format("EXEC dbo.USP_Login @USERNAME = N'{0}',@PASSWORD = N'{1}'", userName, passWord);
             DataTable result = DataProvider.ExcuteQuery(query);
             return result.Rows.Count > 0;
         }

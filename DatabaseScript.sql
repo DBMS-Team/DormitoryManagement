@@ -262,12 +262,18 @@ GO
 ----------------------
 -- FUNCTION
 ----------------------
-
+-- Generate mật khẩu:
+CREATE FUNCTION UFN_GenerateMD5(@OldPass VARCHAR(32))
+RETURNS VARCHAR(32)
+AS
+BEGIN
+	RETURN CONVERT(VARCHAR(32), HashBytes('MD5', @OldPass), 2)
+END
+GO
 
 ----------------------
 -- PROC
 ----------------------
-
 -- Dùng để Insert dữ liệu từ file Excel
 DROP PROCEDURE IF EXISTS [dbo].[USP_INSERT_COMMUNE] 
 GO
@@ -308,6 +314,18 @@ AS BEGIN
 		INSERT INTO [dbo].[COMMUNE] ( [COMMUNE_ID], [COMMUNE_NAME], [COMMUNE_TYPE], [DISTRICT_ID] )
 		VALUES (@COMMUNE_ID, @COMMUNE_NAME, @COMMUNE_TYPE, @DISTRICT_ID)
 	END
+END
+GO
+-- Dùng để đăng nhập:
+CREATE PROC USP_Login
+@USERNAME NVARCHAR(16), @PASSWORD NVARCHAR(32)
+AS
+BEGIN
+	DECLARE @PASSWORD_GENERATE VARCHAR(32)
+	SET @PASSWORD_GENERATE = dbo.UFN_GenerateMD5(@PASSWORD)
+
+	SELECT * FROM dbo.[USER] WHERE USERNAME = @USERNAME COLLATE SQL_Latin1_General_CP1_CS_AS
+	AND PASSWORD = @PASSWORD_GENERATE COLLATE SQL_Latin1_General_CP1_CS_AS -- Phân biệt chữ hoa chữ thường
 END
 GO
 

@@ -13,3 +13,4 @@ F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\bin\Deb
 F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\bin\Debug\EPPlus.xml
 F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.csproj.ResolveComReference.cache
 F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.csproj.CopyComplete
+F:\Nam_3\School\HQTCSDL\Git_DBMS\DormitoryManagement\DormitoryManagement\obj\Debug\DormitoryManagement.View.fLogin.resources

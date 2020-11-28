@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DormitoryManagement.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,28 @@ namespace DormitoryManagement.View
         {
             InitializeComponent();
         }
+        #region Events
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            fMain fMain = new fMain();
+            fMain.ShowDialog();
+        }
+        #endregion
+
+        #region Methods 
+        bool Login(string username, string password)
+        {
+            return UserDAO.Login(username, password);
+        }
+
+        #endregion
+
+       
     }
 }

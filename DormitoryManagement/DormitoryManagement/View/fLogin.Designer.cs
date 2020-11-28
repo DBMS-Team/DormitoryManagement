@@ -34,6 +34,7 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.lbTenDangNhap = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -45,7 +46,7 @@
             this.lbTitle.Location = new System.Drawing.Point(0, 0);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(1064, 163);
+            this.lbTitle.Size = new System.Drawing.Size(1064, 246);
             this.lbTitle.TabIndex = 9;
             this.lbTitle.Text = "QUẢN LÝ KÝ TÚC XÁ";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,13 +60,14 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogin.Location = new System.Drawing.Point(499, 259);
+            this.btnLogin.Location = new System.Drawing.Point(404, 323);
             this.btnLogin.MinimumSize = new System.Drawing.Size(100, 30);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(130, 36);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
@@ -74,11 +76,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(435, 215);
+            this.txtPassword.Location = new System.Drawing.Point(371, 265);
             this.txtPassword.MinimumSize = new System.Drawing.Size(216, 25);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(257, 29);
+            this.txtPassword.Size = new System.Drawing.Size(339, 29);
             this.txtPassword.TabIndex = 9;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -89,10 +91,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUserName.BackColor = System.Drawing.SystemColors.Control;
             this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(435, 175);
+            this.txtUserName.Location = new System.Drawing.Point(371, 225);
             this.txtUserName.MinimumSize = new System.Drawing.Size(216, 25);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(257, 29);
+            this.txtUserName.Size = new System.Drawing.Size(339, 29);
             this.txtUserName.TabIndex = 8;
             // 
             // lbMatKhau
@@ -104,7 +106,7 @@
             this.lbMatKhau.BackColor = System.Drawing.Color.Transparent;
             this.lbMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMatKhau.ForeColor = System.Drawing.Color.Sienna;
-            this.lbMatKhau.Location = new System.Drawing.Point(341, 218);
+            this.lbMatKhau.Location = new System.Drawing.Point(277, 268);
             this.lbMatKhau.Name = "lbMatKhau";
             this.lbMatKhau.Size = new System.Drawing.Size(91, 23);
             this.lbMatKhau.TabIndex = 7;
@@ -119,11 +121,29 @@
             this.lbTenDangNhap.BackColor = System.Drawing.Color.Transparent;
             this.lbTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenDangNhap.ForeColor = System.Drawing.Color.Sienna;
-            this.lbTenDangNhap.Location = new System.Drawing.Point(389, 179);
+            this.lbTenDangNhap.Location = new System.Drawing.Point(325, 229);
             this.lbTenDangNhap.Name = "lbTenDangNhap";
             this.lbTenDangNhap.Size = new System.Drawing.Size(42, 23);
             this.lbTenDangNhap.TabIndex = 6;
             this.lbTenDangNhap.Text = "Tên:";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnClose.Location = new System.Drawing.Point(551, 323);
+            this.btnClose.MinimumSize = new System.Drawing.Size(100, 30);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(130, 36);
+            this.btnClose.TabIndex = 11;
+            this.btnClose.Text = "Thoát";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // fLogin
             // 
@@ -134,6 +154,7 @@
             this.BackgroundImage = global::DormitoryManagement.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lbTenDangNhap);
             this.Controls.Add(this.txtUserName);
@@ -158,5 +179,6 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lbMatKhau;
         private System.Windows.Forms.Label lbTenDangNhap;
+        private System.Windows.Forms.Button btnClose;
     }
 }
