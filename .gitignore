@@ -338,3 +338,17 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+
+
+DormitoryManagement/.vs
+DormitoryManagement/DormitoryManagement/obj
+ToolGenerateModel/.vs
+ToolGenerateModel/ConnectDatabase/obj
+ToolGenerateModel/ConnectDatabase/bin
+ToolGenerateScriptInsertAdministrativeUnits/.vs
+ToolGenerateScriptInsertAdministrativeUnits/ToolGenerateScriptInsertAdministrativeUnits/obj
+
+
+
+
