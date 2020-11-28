@@ -352,8 +352,32 @@ BEGIN
 	SELECT * FROM dbo.[USER] WHERE USER_ID = @USER_ID
 END
 GO
+-- Dùng để lấy sinh viên bằng id.
+CREATE PROC USP_GetStudentById
+@USER_ID BIGINT
+AS
+BEGIN
+	SELECT * FROM dbo.STUDENT WHERE USER_ID = @USER_ID
+END
+GO
 
+-- Dùng để lấy quản trị viên bằng id.
+CREATE PROC USP_GetAdminById
+@USER_ID BIGINT
+AS
+BEGIN
+	SELECT * FROM dbo.ADMIN WHERE USER_ID = @USER_ID
+END
+GO
 
+-- Dùng để lấy nhân viên bằng id.
+CREATE PROC USP_GetEmployeeById
+@USER_ID BIGINT
+AS
+BEGIN
+	SELECT * FROM dbo.EMPLOYEE WHERE USER_ID = @USER_ID
+END
+GO
 ----------------------
 -- TRIGGER
 ----------------------

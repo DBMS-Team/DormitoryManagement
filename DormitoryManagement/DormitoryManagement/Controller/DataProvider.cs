@@ -10,7 +10,9 @@ namespace DormitoryManagement.Controller
 {
     public static class DataProvider
     {
-        private static string connectionString = @"";
+        private static string connectionString = @"Data Source=Hiae\HOHUYHOANG;Initial Catalog=DormitoryManagement;Integrated Security=True";
+        //private string connectionString = @"Data Source=(local);Initial Catalog=DormitoryManagement;Integrated Security=True";
+
         public static DataTable ExcuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

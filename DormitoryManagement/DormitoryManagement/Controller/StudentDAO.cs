@@ -10,7 +10,7 @@ namespace DormitoryManagement.Controller
 {
     public static class StudentDAO
     {
-        public static StudentDTO GetStudentById(string id)
+        public static StudentDTO GetStudentById(long id)
         {
             string query = string.Format("EXEC dbo.USP_GetStudentById @USER_ID = {0}", id);
             DataTable dataTable = DataProvider.ExcuteQuery(query);

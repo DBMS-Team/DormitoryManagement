@@ -1,4 +1,5 @@
 ﻿using DormitoryManagement.Controller;
+using DormitoryManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,14 +21,50 @@ namespace DormitoryManagement.View
         #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            string userName = txtUserName.Text;
+            string passWord = txtPassword.Text;
+            if (Login(userName, passWord))
+            {
+                UserDTO user = UserDAO.GetUserByUsername(userName);
+                string userType = user.UserType;
+                long UserId = user.UserId;
+                if (userType.Equals("ADMIN"))
+                {
+                    AdminDTO admin = AdminDAO.GetAdminById(UserId);
+                    txtPassword.Text = "";
+                }
+                else if (userType.Equals("EMPLOYEE"))
+                {
+                    EmployeeDTO employee = EmployeeDAO.GetEmployeeById(UserId);
+                    txtPassword.Text = "";
+                }
+                else
+                {
+                    StudentDTO student = StudentDAO.GetStudentById(UserId);
+                    txtPassword.Text = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tên tài khoản hoặc mật khẩu sai!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
             fMain fMain = new fMain();
             fMain.ShowDialog();
+        }
+        private void btnHidePassword_Click(object sender, EventArgs e)
+        {
+            if (this.txtPassword.UseSystemPasswordChar == true)
+            {
+                this.txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                this.txtPassword.UseSystemPasswordChar = true;
+            }
         }
         #endregion
 
@@ -36,9 +73,8 @@ namespace DormitoryManagement.View
         {
             return UserDAO.Login(username, password);
         }
-
         #endregion
 
-       
+        
     }
 }

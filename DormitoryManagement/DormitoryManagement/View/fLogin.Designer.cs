@@ -35,6 +35,7 @@
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.lbTenDangNhap = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnHidePassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -79,7 +80,6 @@
             this.txtPassword.Location = new System.Drawing.Point(371, 265);
             this.txtPassword.MinimumSize = new System.Drawing.Size(216, 25);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(339, 29);
             this.txtPassword.TabIndex = 9;
             this.txtPassword.UseSystemPasswordChar = true;
@@ -142,6 +142,17 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnHidePassword
+            // 
+            this.btnHidePassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHidePassword.Location = new System.Drawing.Point(673, 264);
+            this.btnHidePassword.Name = "btnHidePassword";
+            this.btnHidePassword.Size = new System.Drawing.Size(38, 27);
+            this.btnHidePassword.TabIndex = 12;
+            this.btnHidePassword.UseVisualStyleBackColor = false;
+            this.btnHidePassword.Click += new System.EventHandler(this.btnHidePassword_Click);
+            // 
             // fLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -151,6 +162,7 @@
             this.BackgroundImage = global::DormitoryManagement.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.btnHidePassword);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lbTenDangNhap);
@@ -177,5 +189,6 @@
         private System.Windows.Forms.Label lbMatKhau;
         private System.Windows.Forms.Label lbTenDangNhap;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnHidePassword;
     }
 }
