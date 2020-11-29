@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
-    public partial class fLogin : Form
+    public partial class FrmLogin : Form
     {
-        public fLogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace DormitoryManagement.View
 {
-    partial class fLogin
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
