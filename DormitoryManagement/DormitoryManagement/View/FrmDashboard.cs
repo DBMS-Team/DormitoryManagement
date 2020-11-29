@@ -1,20 +1,12 @@
-﻿using DormitoryManagement.View;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace DormitoryManagement
+namespace DormitoryManagement.View
 {
-    public partial class FrmGuest : Form
+    public partial class FrmDashboard : Form
     {
         #region Fields
-        private Item ctrlLogin;
+        private Item ctrlLogout;
         private Item ctrlExit;
         private Item ctrlBuildings;
         private Item ctrlRoomType;
@@ -24,7 +16,7 @@ namespace DormitoryManagement
         #endregion
 
         #region Properties
-        public Item CtrlLogin { get => ctrlLogin; set => ctrlLogin = value; }
+        public Item CtrlLogout { get => ctrlLogout; set => ctrlLogout = value; }
         public Item CtrlExit { get => ctrlExit; set => ctrlExit = value; }
         protected Item CtrlBuildings { get => ctrlBuildings; set => ctrlBuildings = value; }
         protected Item CtrlRoomType { get => ctrlRoomType; set => ctrlRoomType = value; }
@@ -33,23 +25,21 @@ namespace DormitoryManagement
         protected Item CtrlGuide { get => ctrlGuide; set => ctrlGuide = value; }
         #endregion
 
-        public FrmGuest()
+        public FrmDashboard()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             Init();
         }
 
-        #region Init
-
         protected void Init()
         {
-            //Đăng nhập
-            ctrlLogin = new Item(btnLogin_Click);
-            ctrlLogin.picItem.BackgroundImage = Properties.Resources.Logout;
-            ctrlLogin.btnTitle.Text = "LOGIN";
-            ctrlLogin.Anchor = AnchorStyles.Right;
-            ctrlLogin.btnTitle.ForeColor = Color.DarkRed;
-            tlpManage.Controls.Add(ctrlLogin);
+            //Đăng xuất
+            ctrlLogout = new Item(Logout);
+            ctrlLogout.picItem.BackgroundImage = Properties.Resources.Logout;
+            ctrlLogout.btnTitle.Text = "LOGOUT";
+            ctrlLogout.Anchor = AnchorStyles.Right;
+            ctrlLogout.btnTitle.ForeColor = Color.DarkRed;
+            tlpManage.Controls.Add(ctrlLogout);
             //Thoát
             ctrlExit = new Item(Exit);
             ctrlExit.picItem.BackgroundImage = Properties.Resources.Cancel;
@@ -83,7 +73,17 @@ namespace DormitoryManagement
             ctrlGuide.btnTitle.Text = "GUIDE";
             tlpInfo.Controls.Add(ctrlGuide);
         }
-        #endregion
+
+        private void Logout()
+        {
+            DialogResult re = MessageBox.Show("Bạn muốn đăng xuất khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (re == DialogResult.Yes)
+            {
+                //isExit = false;
+                //FrmDangNhap.exit = false;
+                this.Dispose();
+            }
+        }
 
         protected void Exit()
         {
@@ -104,21 +104,6 @@ namespace DormitoryManagement
         {
             FrmGuide huongDan = new FrmGuide();
             huongDan.ShowDialog();
-        }
-
-
-        // để nút để test
-        protected void btnLogin_Click()
-        {
-            FrmLogin frmLogin = new FrmLogin();
-            this.Hide();
-            frmLogin.ShowDialog();
-            this.ShowDialog();
-        }
-
-        protected void fMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Exit();
         }
     }
 }

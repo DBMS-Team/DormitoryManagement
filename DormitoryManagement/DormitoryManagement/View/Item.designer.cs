@@ -45,9 +45,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(100, 135);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(110, 148);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnTitle
@@ -55,10 +55,10 @@
             this.btnTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTitle.Font = new System.Drawing.Font("Segoe UI Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTitle.Location = new System.Drawing.Point(2, 102);
+            this.btnTitle.Location = new System.Drawing.Point(2, 112);
             this.btnTitle.Margin = new System.Windows.Forms.Padding(2);
             this.btnTitle.Name = "btnTitle";
-            this.btnTitle.Size = new System.Drawing.Size(96, 31);
+            this.btnTitle.Size = new System.Drawing.Size(106, 34);
             this.btnTitle.TabIndex = 0;
             this.btnTitle.Text = "Title";
             this.btnTitle.Click += new System.EventHandler(this.btnTitle_Click);
@@ -72,7 +72,7 @@
             this.picItem.Location = new System.Drawing.Point(0, 0);
             this.picItem.Margin = new System.Windows.Forms.Padding(0);
             this.picItem.Name = "picItem";
-            this.picItem.Size = new System.Drawing.Size(100, 100);
+            this.picItem.Size = new System.Drawing.Size(110, 110);
             this.picItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picItem.TabIndex = 1;
             this.picItem.TabStop = false;
@@ -81,7 +81,7 @@
             // 
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Item";
-            this.Size = new System.Drawing.Size(100, 135);
+            this.Size = new System.Drawing.Size(110, 148);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).EndInit();
             this.ResumeLayout(false);

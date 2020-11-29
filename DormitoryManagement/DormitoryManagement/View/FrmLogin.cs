@@ -21,6 +21,10 @@ namespace DormitoryManagement.View
         #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            FrmDashboard dashboard = new FrmDashboard();
+            this.Hide();
+            dashboard.ShowDialog();
+            return;
             string userName = txtUserName.Text;
             string passWord = txtPassword.Text;
             if (Login(userName, passWord))
@@ -52,7 +56,7 @@ namespace DormitoryManagement.View
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-            fMain fMain = new fMain();
+            FrmGuest fMain = new FrmGuest();
             fMain.ShowDialog();
         }
         private void btnHidePassword_Click(object sender, EventArgs e)

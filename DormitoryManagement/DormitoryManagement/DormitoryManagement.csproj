@@ -89,11 +89,17 @@
     <Compile Include="Utility\ExcelFile.cs" />
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="Utility\FormatData.cs" />
-    <Compile Include="View\fLogin.cs">
+    <Compile Include="View\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\fLogin.Designer.cs">
-      <DependentUpon>fLogin.cs</DependentUpon>
+    <Compile Include="View\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDashboard.Designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmGuest.cs">
       <SubType>Form</SubType>
@@ -121,8 +127,11 @@
     <Compile Include="View\Item.designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\fLogin.resx">
-      <DependentUpon>fLogin.cs</DependentUpon>
+    <EmbeddedResource Include="View\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmGuest.resx">
       <DependentUpon>FrmGuest.cs</DependentUpon>
