@@ -10,7 +10,7 @@ namespace DormitoryManagement
     public enum ItemType
     {
         Building,
-        NhanVien,
+        Employee,
         Service,
         HoaDon,
         RoomType,
@@ -28,14 +28,14 @@ namespace DormitoryManagement
         public Item(ClickEvent click)
         {
             InitializeComponent();
-            this.Anchor = AnchorStyles.None;
+            this.Anchor = AnchorStyles.Top;
             this.ClickEvent = click;
         }
 
         public Item(ItemType type)
         {
             InitializeComponent();
-            this.Anchor = AnchorStyles.None;
+            this.Anchor = AnchorStyles.Top;
             this.type = type;
             this.ClickEvent = EventClick;
         }
@@ -43,7 +43,7 @@ namespace DormitoryManagement
         public Item(ItemType type, string key)
         {
             InitializeComponent();
-            this.Anchor = AnchorStyles.None;
+            this.Anchor = AnchorStyles.Top;
             this.type = type;
             this.ClickEvent = ShowInfo;
             strKey = key;

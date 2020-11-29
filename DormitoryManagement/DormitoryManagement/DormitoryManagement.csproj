@@ -89,6 +89,24 @@
     <Compile Include="Utility\ExcelFile.cs" />
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="Utility\FormatData.cs" />
+    <Compile Include="View\FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmRoomRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmRoomRegistration.Designer.cs">
+      <DependentUpon>FrmRoomRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmBill.Designer.cs">
+      <DependentUpon>FrmBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +138,18 @@
     </Compile>
     <Compile Include="View\FrmSearch.Designer.cs">
       <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSinhVien.Designer.cs">
+      <DependentUpon>FrmSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmStudent.Designer.cs">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Item.cs">
       <SubType>UserControl</SubType>

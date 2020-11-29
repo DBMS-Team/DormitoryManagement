@@ -39,10 +39,16 @@
             this.tlpInfo = new System.Windows.Forms.TableLayoutPanel();
             this.lbThongTin = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.pnAdd = new System.Windows.Forms.Panel();
+            this.tlpAdd = new System.Windows.Forms.TableLayoutPanel();
+            this.lbAdd = new System.Windows.Forms.Label();
             this.pnQuanTri.SuspendLayout();
             this.pnBottom.SuspendLayout();
             this.pnThongTin.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tlpMain.SuspendLayout();
+            this.pnAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -67,7 +73,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1476, 39);
+            this.label1.Size = new System.Drawing.Size(732, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản trị";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -82,7 +88,7 @@
             this.pnQuanTri.Location = new System.Drawing.Point(3, 2);
             this.pnQuanTri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnQuanTri.Name = "pnQuanTri";
-            this.pnQuanTri.Size = new System.Drawing.Size(1476, 264);
+            this.pnQuanTri.Size = new System.Drawing.Size(732, 248);
             this.pnQuanTri.TabIndex = 1;
             // 
             // tlpManage
@@ -95,7 +101,7 @@
             this.tlpManage.Name = "tlpManage";
             this.tlpManage.RowCount = 1;
             this.tlpManage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpManage.Size = new System.Drawing.Size(1476, 225);
+            this.tlpManage.Size = new System.Drawing.Size(732, 209);
             this.tlpManage.TabIndex = 1;
             // 
             // pnBottom
@@ -104,10 +110,10 @@
             this.pnBottom.Controls.Add(this.label3);
             this.pnBottom.Controls.Add(this.lbNgay);
             this.pnBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnBottom.Location = new System.Drawing.Point(4, 540);
+            this.pnBottom.Location = new System.Drawing.Point(4, 520);
             this.pnBottom.Margin = new System.Windows.Forms.Padding(4);
             this.pnBottom.Name = "pnBottom";
-            this.pnBottom.Size = new System.Drawing.Size(1474, 41);
+            this.pnBottom.Size = new System.Drawing.Size(1474, 40);
             this.pnBottom.TabIndex = 4;
             // 
             // label3
@@ -117,7 +123,7 @@
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(483, 41);
+            this.label3.Size = new System.Drawing.Size(483, 40);
             this.label3.TabIndex = 1;
             this.label3.Text = "(c) Bản quyền thuộc về FIT";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,7 +135,7 @@
             this.lbNgay.Location = new System.Drawing.Point(1021, 0);
             this.lbNgay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(453, 41);
+            this.lbNgay.Size = new System.Drawing.Size(453, 40);
             this.lbNgay.TabIndex = 0;
             this.lbNgay.Text = "Ngày hiện tại:";
             this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -141,26 +147,29 @@
             this.pnThongTin.Controls.Add(this.tlpInfo);
             this.pnThongTin.Controls.Add(this.lbThongTin);
             this.pnThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnThongTin.Location = new System.Drawing.Point(4, 272);
+            this.pnThongTin.Location = new System.Drawing.Point(4, 262);
             this.pnThongTin.Margin = new System.Windows.Forms.Padding(4);
             this.pnThongTin.Name = "pnThongTin";
-            this.pnThongTin.Size = new System.Drawing.Size(1474, 260);
+            this.pnThongTin.Size = new System.Drawing.Size(1474, 250);
             this.pnThongTin.TabIndex = 3;
             // 
             // tlpInfo
             // 
-            this.tlpInfo.ColumnCount = 5;
-            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpInfo.ColumnCount = 8;
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpInfo.Location = new System.Drawing.Point(0, 42);
             this.tlpInfo.Name = "tlpInfo";
             this.tlpInfo.RowCount = 1;
             this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpInfo.Size = new System.Drawing.Size(1474, 218);
+            this.tlpInfo.Size = new System.Drawing.Size(1474, 208);
             this.tlpInfo.TabIndex = 1;
             // 
             // lbThongTin
@@ -180,18 +189,76 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.pnQuanTri, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.pnThongTin, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.pnBottom, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.tlpMain, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 250);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1482, 585);
             this.tableLayoutPanel2.TabIndex = 8;
+            // 
+            // tlpMain
+            // 
+            this.tlpMain.ColumnCount = 2;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMain.Controls.Add(this.pnAdd, 0, 0);
+            this.tlpMain.Controls.Add(this.pnQuanTri, 0, 0);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(3, 3);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 1;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMain.Size = new System.Drawing.Size(1476, 252);
+            this.tlpMain.TabIndex = 0;
+            // 
+            // pnAdd
+            // 
+            this.pnAdd.AutoSize = true;
+            this.pnAdd.BackColor = System.Drawing.Color.Goldenrod;
+            this.pnAdd.Controls.Add(this.tlpAdd);
+            this.pnAdd.Controls.Add(this.lbAdd);
+            this.pnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnAdd.Location = new System.Drawing.Point(741, 2);
+            this.pnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnAdd.Name = "pnAdd";
+            this.pnAdd.Size = new System.Drawing.Size(732, 248);
+            this.pnAdd.TabIndex = 2;
+            // 
+            // tlpAdd
+            // 
+            this.tlpAdd.BackColor = System.Drawing.Color.Pink;
+            this.tlpAdd.ColumnCount = 3;
+            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAdd.Location = new System.Drawing.Point(0, 39);
+            this.tlpAdd.Name = "tlpAdd";
+            this.tlpAdd.RowCount = 1;
+            this.tlpAdd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAdd.Size = new System.Drawing.Size(732, 209);
+            this.tlpAdd.TabIndex = 1;
+            // 
+            // lbAdd
+            // 
+            this.lbAdd.BackColor = System.Drawing.Color.LightPink;
+            this.lbAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbAdd.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lbAdd.Location = new System.Drawing.Point(0, 0);
+            this.lbAdd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbAdd.Name = "lbAdd";
+            this.lbAdd.Size = new System.Drawing.Size(732, 39);
+            this.lbAdd.TabIndex = 0;
+            this.lbAdd.Text = "Thêm mới";
+            this.lbAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FrmDashboard
             // 
@@ -208,6 +275,9 @@
             this.pnThongTin.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tlpMain.ResumeLayout(false);
+            this.tlpMain.PerformLayout();
+            this.pnAdd.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -225,5 +295,9 @@
         private System.Windows.Forms.TableLayoutPanel tlpInfo;
         private System.Windows.Forms.Label lbThongTin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
+        private System.Windows.Forms.Panel pnAdd;
+        private System.Windows.Forms.TableLayoutPanel tlpAdd;
+        private System.Windows.Forms.Label lbAdd;
     }
 }

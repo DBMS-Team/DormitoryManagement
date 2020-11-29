@@ -193,6 +193,16 @@ namespace DormitoryManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Collaboration {
+            get {
+                object obj = ResourceManager.GetObject("Collaboration", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Course {
             get {
                 object obj = ResourceManager.GetObject("Course", resourceCulture);
@@ -386,16 +396,6 @@ namespace DormitoryManagement.Properties {
         internal static System.Drawing.Bitmap girl_s {
             get {
                 object obj = ResourceManager.GetObject("girl_s", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_collaboration_female_male_100 {
-            get {
-                object obj = ResourceManager.GetObject("icons8_collaboration_female_male_100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
