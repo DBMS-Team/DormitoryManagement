@@ -115,10 +115,5 @@ namespace DormitoryManagement
             frmLogin.ShowDialog();
             this.ShowDialog();
         }
-
-        protected void fMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Exit();
-        }
     }
 }

@@ -21,6 +21,12 @@ namespace DormitoryManagement.View
         #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //Demo
+            FrmDashboard dashboard = new FrmDashboard();
+            this.Hide();
+            dashboard.ShowDialog();
+            return;
+
             string userName = txtUserName.Text;
             string passWord = txtPassword.Text;
             if (Login(userName, passWord))
@@ -43,10 +49,7 @@ namespace DormitoryManagement.View
                     StudentDTO student = StudentDAO.GetStudentById(UserId);
                     txtPassword.Text = "";
                 }
-                FrmDashboard dashboard = new FrmDashboard();
-                this.Hide();
-                dashboard.ShowDialog();
-                return;
+                
             }
             else
             {
