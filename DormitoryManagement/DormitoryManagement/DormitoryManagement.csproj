@@ -89,25 +89,82 @@
     <Compile Include="Utility\ExcelFile.cs" />
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="Utility\FormatData.cs" />
-    <Compile Include="View\fLogin.cs">
+    <Compile Include="View\FrmReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\fLogin.Designer.cs">
-      <DependentUpon>fLogin.cs</DependentUpon>
+    <Compile Include="View\FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\fMain.cs">
+    <Compile Include="View\FrmRoomRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\fMain.Designer.cs">
-      <DependentUpon>fMain.cs</DependentUpon>
+    <Compile Include="View\FrmRoomRegistration.Designer.cs">
+      <DependentUpon>FrmRoomRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmBill.Designer.cs">
+      <DependentUpon>FrmBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDashboard.Designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmGuest.Designer.cs">
+      <DependentUpon>FrmGuest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\fLogin.resx">
-      <DependentUpon>fLogin.cs</DependentUpon>
+    <Compile Include="View\FrmGuide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmGuide.Designer.cs">
+      <DependentUpon>FrmGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSearch.Designer.cs">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSinhVien.Designer.cs">
+      <DependentUpon>FrmSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmStudent.Designer.cs">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Item.designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\fMain.resx">
-      <DependentUpon>fMain.cs</DependentUpon>
+    <EmbeddedResource Include="View\FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmGuest.resx">
+      <DependentUpon>FrmGuest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +176,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,6 +209,249 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy_3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl_9s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-6s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-7s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-8s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-10s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-11s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-12s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-building-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bunk-bed-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-business-report-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-collaboration-female-male-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-course-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-electrical-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-forgot-password-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-form-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-garage-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-id-verified-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-info-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-paid-parking-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pay-date-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-room-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-students-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trash-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-water-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wi-fi-logo-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KTX_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ktxb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_screenshoot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_6s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\punk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-7.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
