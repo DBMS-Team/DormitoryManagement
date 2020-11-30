@@ -1,6 +1,6 @@
 ﻿namespace DormitoryManagement.View
 {
-    partial class FrmDashboard
+    partial class FrmAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnQuanTri = new System.Windows.Forms.Panel();
             this.tlpManage = new System.Windows.Forms.TableLayoutPanel();
-            this.pnBottom = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbNgay = new System.Windows.Forms.Label();
-            this.pnThongTin = new System.Windows.Forms.Panel();
+            this.pnInfo = new System.Windows.Forms.Panel();
             this.tlpInfo = new System.Windows.Forms.TableLayoutPanel();
             this.lbThongTin = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,12 +40,15 @@
             this.pnAdd = new System.Windows.Forms.Panel();
             this.tlpAdd = new System.Windows.Forms.TableLayoutPanel();
             this.lbAdd = new System.Windows.Forms.Label();
+            this.lbNgay = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pnBottom = new System.Windows.Forms.Panel();
             this.pnQuanTri.SuspendLayout();
-            this.pnBottom.SuspendLayout();
-            this.pnThongTin.SuspendLayout();
+            this.pnInfo.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.pnAdd.SuspendLayout();
+            this.pnBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -75,7 +75,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(732, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản trị";
+            this.label1.Text = "MANAGEMENT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnQuanTri
@@ -88,7 +88,7 @@
             this.pnQuanTri.Location = new System.Drawing.Point(3, 2);
             this.pnQuanTri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnQuanTri.Name = "pnQuanTri";
-            this.pnQuanTri.Size = new System.Drawing.Size(732, 248);
+            this.pnQuanTri.Size = new System.Drawing.Size(732, 245);
             this.pnQuanTri.TabIndex = 1;
             // 
             // tlpManage
@@ -101,57 +101,21 @@
             this.tlpManage.Name = "tlpManage";
             this.tlpManage.RowCount = 1;
             this.tlpManage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpManage.Size = new System.Drawing.Size(732, 209);
+            this.tlpManage.Size = new System.Drawing.Size(732, 206);
             this.tlpManage.TabIndex = 1;
             // 
-            // pnBottom
+            // pnInfo
             // 
-            this.pnBottom.BackColor = System.Drawing.Color.Silver;
-            this.pnBottom.Controls.Add(this.label3);
-            this.pnBottom.Controls.Add(this.lbNgay);
-            this.pnBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnBottom.Location = new System.Drawing.Point(4, 520);
-            this.pnBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.pnBottom.Name = "pnBottom";
-            this.pnBottom.Size = new System.Drawing.Size(1474, 40);
-            this.pnBottom.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(483, 40);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "(c) Bản quyền thuộc về FIT";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbNgay
-            // 
-            this.lbNgay.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgay.Location = new System.Drawing.Point(1021, 0);
-            this.lbNgay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(453, 40);
-            this.lbNgay.TabIndex = 0;
-            this.lbNgay.Text = "Ngày hiện tại:";
-            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnThongTin
-            // 
-            this.pnThongTin.AutoSize = true;
-            this.pnThongTin.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnThongTin.Controls.Add(this.tlpInfo);
-            this.pnThongTin.Controls.Add(this.lbThongTin);
-            this.pnThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnThongTin.Location = new System.Drawing.Point(4, 262);
-            this.pnThongTin.Margin = new System.Windows.Forms.Padding(4);
-            this.pnThongTin.Name = "pnThongTin";
-            this.pnThongTin.Size = new System.Drawing.Size(1474, 250);
-            this.pnThongTin.TabIndex = 3;
+            this.pnInfo.AutoSize = true;
+            this.pnInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnInfo.Controls.Add(this.tlpInfo);
+            this.pnInfo.Controls.Add(this.lbThongTin);
+            this.pnInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnInfo.Location = new System.Drawing.Point(4, 259);
+            this.pnInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.pnInfo.Name = "pnInfo";
+            this.pnInfo.Size = new System.Drawing.Size(1474, 247);
+            this.pnInfo.TabIndex = 3;
             // 
             // tlpInfo
             // 
@@ -169,7 +133,7 @@
             this.tlpInfo.Name = "tlpInfo";
             this.tlpInfo.RowCount = 1;
             this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpInfo.Size = new System.Drawing.Size(1474, 208);
+            this.tlpInfo.Size = new System.Drawing.Size(1474, 205);
             this.tlpInfo.TabIndex = 1;
             // 
             // lbThongTin
@@ -182,26 +146,24 @@
             this.lbThongTin.Name = "lbThongTin";
             this.lbThongTin.Size = new System.Drawing.Size(1474, 42);
             this.lbThongTin.TabIndex = 0;
-            this.lbThongTin.Text = "Thông tin";
+            this.lbThongTin.Text = "INFORMATION";
             this.lbThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.pnThongTin, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.pnBottom, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.tlpMain, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pnInfo, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.pnBottom, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 250);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1482, 585);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1482, 557);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // tlpMain
@@ -216,7 +178,7 @@
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMain.Size = new System.Drawing.Size(1476, 252);
+            this.tlpMain.Size = new System.Drawing.Size(1476, 249);
             this.tlpMain.TabIndex = 0;
             // 
             // pnAdd
@@ -229,22 +191,23 @@
             this.pnAdd.Location = new System.Drawing.Point(741, 2);
             this.pnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnAdd.Name = "pnAdd";
-            this.pnAdd.Size = new System.Drawing.Size(732, 248);
+            this.pnAdd.Size = new System.Drawing.Size(732, 245);
             this.pnAdd.TabIndex = 2;
             // 
             // tlpAdd
             // 
             this.tlpAdd.BackColor = System.Drawing.Color.Pink;
-            this.tlpAdd.ColumnCount = 3;
-            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpAdd.ColumnCount = 4;
+            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpAdd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAdd.Location = new System.Drawing.Point(0, 39);
             this.tlpAdd.Name = "tlpAdd";
             this.tlpAdd.RowCount = 1;
             this.tlpAdd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAdd.Size = new System.Drawing.Size(732, 209);
+            this.tlpAdd.Size = new System.Drawing.Size(732, 206);
             this.tlpAdd.TabIndex = 1;
             // 
             // lbAdd
@@ -257,27 +220,63 @@
             this.lbAdd.Name = "lbAdd";
             this.lbAdd.Size = new System.Drawing.Size(732, 39);
             this.lbAdd.TabIndex = 0;
-            this.lbAdd.Text = "Thêm mới";
+            this.lbAdd.Text = "ADD";
             this.lbAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // FrmDashboard
+            // lbNgay
+            // 
+            this.lbNgay.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgay.Location = new System.Drawing.Point(1021, 0);
+            this.lbNgay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNgay.Name = "lbNgay";
+            this.lbNgay.Size = new System.Drawing.Size(453, 40);
+            this.lbNgay.TabIndex = 0;
+            this.lbNgay.Text = "Ngày hiện tại:";
+            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(483, 40);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "(c) Bản quyền thuộc về FIT";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnBottom
+            // 
+            this.pnBottom.BackColor = System.Drawing.Color.Silver;
+            this.pnBottom.Controls.Add(this.label3);
+            this.pnBottom.Controls.Add(this.lbNgay);
+            this.pnBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnBottom.Location = new System.Drawing.Point(4, 514);
+            this.pnBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.pnBottom.Name = "pnBottom";
+            this.pnBottom.Size = new System.Drawing.Size(1474, 40);
+            this.pnBottom.TabIndex = 4;
+            // 
+            // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1482, 835);
+            this.ClientSize = new System.Drawing.Size(1482, 807);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.lbTitle);
-            this.Name = "FrmDashboard";
+            this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDashboard";
             this.pnQuanTri.ResumeLayout(false);
-            this.pnBottom.ResumeLayout(false);
-            this.pnThongTin.ResumeLayout(false);
+            this.pnInfo.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             this.pnAdd.ResumeLayout(false);
+            this.pnBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -288,10 +287,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnQuanTri;
         private System.Windows.Forms.TableLayoutPanel tlpManage;
-        private System.Windows.Forms.Panel pnBottom;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbNgay;
-        private System.Windows.Forms.Panel pnThongTin;
+        private System.Windows.Forms.Panel pnInfo;
         private System.Windows.Forms.TableLayoutPanel tlpInfo;
         private System.Windows.Forms.Label lbThongTin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -299,5 +295,8 @@
         private System.Windows.Forms.Panel pnAdd;
         private System.Windows.Forms.TableLayoutPanel tlpAdd;
         private System.Windows.Forms.Label lbAdd;
+        private System.Windows.Forms.Panel pnBottom;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbNgay;
     }
 }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
-    public partial class FrmDashboard : Form
+    public partial class FrmAdmin : Form
     {
         #region Fields
         private Item ctrlLogout;
@@ -19,6 +19,7 @@ namespace DormitoryManagement.View
         private Item ctrlRoom;
         private Item ctrlBill;
         private Item ctrlAddStudent;
+        private Item ctrlAddEmployee;
         private Item ctrlReport;
 
         #endregion
@@ -37,9 +38,10 @@ namespace DormitoryManagement.View
         public Item CtrlListEmployees { get => ctrlListEmployees; set => ctrlListEmployees = value; }
         public Item CtrlAddStudent { get => ctrlAddStudent; set => ctrlAddStudent = value; }
         public Item CtrlReport { get => ctrlReport; set => ctrlReport = value; }
+        public Item CtrlAddEmployee { get => ctrlAddEmployee; set => ctrlAddEmployee = value; }
         #endregion
 
-        public FrmDashboard()
+        public FrmAdmin()
         {
             this.InitializeComponent();
             Init();
@@ -47,6 +49,7 @@ namespace DormitoryManagement.View
 
         protected void Init()
         {
+            #region Management
             //Đăng xuất
             ctrlLogout = new Item(Logout);
             ctrlLogout.picItem.BackgroundImage = Properties.Resources.Logout;
@@ -59,20 +62,23 @@ namespace DormitoryManagement.View
             ctrlExit.btnTitle.Text = "EXIT";
             ctrlExit.btnTitle.ForeColor = Color.DarkRed;
             tlpManage.Controls.Add(ctrlExit);
+            #endregion
+
+            #region Information
             //DS Nhân viên
             CtrlListEmployees = new Item(ItemType.Employee);
             CtrlListEmployees.picItem.BackgroundImage = Properties.Resources.Collaboration;
-            CtrlListEmployees.btnTitle.Text = "DS Nhân viên";
+            CtrlListEmployees.btnTitle.Text = "EMPLOYEES";
             tlpInfo.Controls.Add(CtrlListEmployees);
             //DS Sinh viên
             CtrlListStudents = new Item(ListStudents);
             CtrlListStudents.picItem.BackgroundImage = Properties.Resources.Student;
-            CtrlListStudents.btnTitle.Text = "SINH VIÊN";
+            CtrlListStudents.btnTitle.Text = "STUDENTS";
             tlpInfo.Controls.Add(CtrlListStudents);
             //Báo cáo
             CtrlReport = new Item(BaoCao);
             CtrlReport.picItem.BackgroundImage = Properties.Resources.Report;
-            CtrlReport.btnTitle.Text = "Báo cáo";
+            CtrlReport.btnTitle.Text = "REPORT";
             CtrlReport.Dock = DockStyle.Top;
             tlpInfo.Controls.Add(CtrlReport);
             //DS Khu phòng
@@ -100,22 +106,30 @@ namespace DormitoryManagement.View
             ctrlGuide.picItem.BackgroundImage = Properties.Resources.Info;
             ctrlGuide.btnTitle.Text = "GUIDE";
             tlpInfo.Controls.Add(ctrlGuide);
+            #endregion
 
+            #region Add
             //Phòng
             CtrlRoom = new Item(RoomRegistration);
             CtrlRoom.picItem.BackgroundImage = Properties.Resources.BunkBed;
-            CtrlRoom.btnTitle.Text = "PHÒNG";
+            CtrlRoom.btnTitle.Text = "ROOM";
             tlpAdd.Controls.Add(CtrlRoom);
             //Hoá đơn
             CtrlBill = new Item(Bill);
             CtrlBill.picItem.BackgroundImage = Properties.Resources.Form;
-            CtrlBill.btnTitle.Text = "HOÁ ĐƠN";
+            CtrlBill.btnTitle.Text = "BILL";
             tlpAdd.Controls.Add(CtrlBill);
             //Sinh viên
-            CtrlAddStudent = new Item(AddNewStudent);
-            CtrlAddStudent.picItem.BackgroundImage = Properties.Resources.Student;
-            CtrlAddStudent.btnTitle.Text = "SINH VIÊN";
+            ctrlAddStudent = new Item(AddNewStudent);
+            ctrlAddStudent.picItem.BackgroundImage = Properties.Resources.Student;
+            ctrlAddStudent.btnTitle.Text = "STUDENT";
             tlpAdd.Controls.Add(CtrlAddStudent);
+            //Nhân viên
+            ctrlAddEmployee = new Item(AddNewEmployee);
+            ctrlAddEmployee.picItem.BackgroundImage = Properties.Resources.Employee;
+            ctrlAddEmployee.btnTitle.Text = "EMPLOYEE";
+            tlpAdd.Controls.Add(CtrlAddEmployee);
+            #endregion
         }
 
         private void Logout()
@@ -174,9 +188,14 @@ namespace DormitoryManagement.View
             frmDangKyPhong.ShowDialog();
         }
 
+        private void AddNewEmployee()
+        {
+            FrmAddEmployee frmAddEmployee = new FrmAddEmployee();
+            frmAddEmployee.ShowDialog();
+        }
         private void AddNewStudent()
         {
-            FrmSinhVien frmSinhVien = new FrmSinhVien();
+            FrmAddNewStudent frmSinhVien = new FrmAddNewStudent();
             frmSinhVien.ShowDialog();
         }
 

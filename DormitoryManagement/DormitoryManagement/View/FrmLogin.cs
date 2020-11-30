@@ -22,7 +22,7 @@ namespace DormitoryManagement.View
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //Demo
-            FrmDashboard dashboard = new FrmDashboard();
+            FrmAdmin dashboard = new FrmAdmin();
             this.Hide();
             dashboard.ShowDialog();
             return;

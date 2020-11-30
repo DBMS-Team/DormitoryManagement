@@ -89,6 +89,12 @@
     <Compile Include="Utility\ExcelFile.cs" />
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="Utility\FormatData.cs" />
+    <Compile Include="View\FrmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmAddEmployee.Designer.cs">
+      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,11 +119,11 @@
     <Compile Include="View\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmDashboard.cs">
+    <Compile Include="View\FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmDashboard.Designer.cs">
-      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    <Compile Include="View\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmGuest.cs">
       <SubType>Form</SubType>
@@ -139,11 +145,11 @@
     <Compile Include="View\FrmSearch.Designer.cs">
       <DependentUpon>FrmSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmSinhVien.cs">
+    <Compile Include="View\FrmAddNewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmSinhVien.Designer.cs">
-      <DependentUpon>FrmSinhVien.cs</DependentUpon>
+    <Compile Include="View\FrmAddNewStudent.Designer.cs">
+      <DependentUpon>FrmAddNewStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmStudent.cs">
       <SubType>Form</SubType>
@@ -160,8 +166,8 @@
     <EmbeddedResource Include="View\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmDashboard.resx">
-      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="View\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmGuest.resx">
       <DependentUpon>FrmGuest.cs</DependentUpon>
@@ -452,6 +458,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\woman-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employee.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
