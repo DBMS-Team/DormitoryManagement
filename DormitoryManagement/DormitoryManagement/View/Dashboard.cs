@@ -138,6 +138,7 @@ namespace DormitoryManagement.View
         {
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
+            this.
         }
 
         public static void Logout()

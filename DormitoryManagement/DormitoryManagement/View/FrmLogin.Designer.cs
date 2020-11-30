@@ -153,7 +153,7 @@
             this.btnHidePassword.UseVisualStyleBackColor = false;
             this.btnHidePassword.Click += new System.EventHandler(this.btnHidePassword_Click);
             // 
-            // fLogin
+            // FrmLogin
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -173,7 +173,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
-            this.Name = "fLogin";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ KÝ TÚC XÁ";
             this.ResumeLayout(false);

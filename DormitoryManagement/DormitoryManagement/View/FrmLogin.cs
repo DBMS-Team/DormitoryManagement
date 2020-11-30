@@ -21,13 +21,6 @@ namespace DormitoryManagement.View
         #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //Demo
-            FrmEmployee frmEmployee = new FrmEmployee();
-            this.Hide();
-            frmEmployee.ShowDialog();
-            this.ShowDialog();
-            return;
-
             string userName = txtUserName.Text;
             string passWord = txtPassword.Text;
             if (Login(userName, passWord))
@@ -38,16 +31,25 @@ namespace DormitoryManagement.View
                 if (userType.Equals("ADMIN"))
                 {
                     AdminDTO admin = AdminDAO.GetAdminById(UserId);
+                    FrmAdmin frmAdmin = new FrmAdmin(admin, user);
+                    this.Hide();
+                    frmAdmin.ShowDialog();
                     txtPassword.Text = "";
                 }
                 else if (userType.Equals("EMPLOYEE"))
                 {
                     EmployeeDTO employee = EmployeeDAO.GetEmployeeById(UserId);
+                    FrmEmployee frmEmployee = new FrmEmployee(employee, user);
+                    this.Hide();
+                    frmEmployee.ShowDialog();
                     txtPassword.Text = "";
                 }
                 else
                 {
                     StudentDTO student = StudentDAO.GetStudentById(UserId);
+                    FrmStudent frmStudent = new FrmStudent(student, user);
+                    this.Hide();
+                    frmStudent.ShowDialog();
                     txtPassword.Text = "";
                 }
                 

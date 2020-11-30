@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using DormitoryManagement.Model;
+using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
@@ -37,10 +38,30 @@ namespace DormitoryManagement.View
         public Item CtrlAddStudent { get => ctrlAddStudent; set => ctrlAddStudent = value; }
         public Item CtrlReport { get => ctrlReport; set => ctrlReport = value; }
         #endregion
-        public FrmEmployee()
+        private EmployeeDTO loginEmployee;
+        private UserDTO loginUser;
+        public EmployeeDTO LoginEmployee
+        {
+            get => loginEmployee;
+            set
+            {
+                this.loginEmployee = value;
+            }
+        }
+        public UserDTO LoginUser
+        {
+            get => loginUser;
+            set
+            {
+                this.loginUser = value;
+            }
+        }
+        public FrmEmployee(EmployeeDTO employee, UserDTO user)
         {
             InitializeComponent();
             Init();
+            this.LoginEmployee = employee;
+            this.LoginUser = user;
         }
 
         private void Init()

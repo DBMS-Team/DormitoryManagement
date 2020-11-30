@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using DormitoryManagement.Model;
+using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
@@ -40,12 +41,35 @@ namespace DormitoryManagement.View
         public Item CtrlAddEmployee { get => ctrlAddEmployee; set => ctrlAddEmployee = value; }
         #endregion
 
-        public FrmAdmin()
+        private AdminDTO loginAdmin;
+        private UserDTO loginUser;
+        public AdminDTO LoginAdmin
+        {
+            get => loginAdmin;
+            set
+            {
+                this.loginAdmin = value;
+            }
+        }
+        public UserDTO LoginUser
+        {
+            get => loginUser;
+            set
+            {
+                this.loginUser = value;
+            }
+        }
+        public FrmAdmin(AdminDTO admin, UserDTO user)
         {
             this.InitializeComponent();
             Init();
+            this.LoginAdmin = admin;
+            this.LoginUser = user;
         }
+        #region Events
 
+        #endregion
+        #region Methods
         protected void Init()
         {
             #region Management
@@ -99,5 +123,7 @@ namespace DormitoryManagement.View
             tlpAdd.Controls.Add(CtrlAddEmployee);
             #endregion
         }
+        #endregion
+
     }
 }
