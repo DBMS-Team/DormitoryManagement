@@ -1,6 +1,6 @@
 ﻿namespace DormitoryManagement.View
 {
-    partial class FrmStudent
+    partial class FrmAddNewStudent
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // FrmStudent
+            // FrmAddNewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmStudent";
+            this.Name = "FrmAddNewStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSinhVien";
             this.ResumeLayout(false);
