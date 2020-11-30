@@ -22,9 +22,10 @@ namespace DormitoryManagement.View
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //Demo
-            FrmAdmin dashboard = new FrmAdmin();
+            FrmEmployee frmEmployee = new FrmEmployee();
             this.Hide();
-            dashboard.ShowDialog();
+            frmEmployee.ShowDialog();
+            this.ShowDialog();
             return;
 
             string userName = txtUserName.Text;
@@ -81,7 +82,5 @@ namespace DormitoryManagement.View
             return UserDAO.Login(username, password);
         }
         #endregion
-
-        
     }
 }

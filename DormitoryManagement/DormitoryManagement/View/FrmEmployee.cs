@@ -2,7 +2,7 @@
 
 namespace DormitoryManagement.View
 {
-    public partial class FrmAdmin : Form
+    public partial class FrmEmployee : Form
     {
         #region Fields
         private Item ctrlLogout;
@@ -18,7 +18,6 @@ namespace DormitoryManagement.View
         private Item ctrlRoom;
         private Item ctrlBill;
         private Item ctrlAddStudent;
-        private Item ctrlAddEmployee;
         private Item ctrlReport;
 
         #endregion
@@ -37,16 +36,14 @@ namespace DormitoryManagement.View
         public Item CtrlListEmployees { get => ctrlListEmployees; set => ctrlListEmployees = value; }
         public Item CtrlAddStudent { get => ctrlAddStudent; set => ctrlAddStudent = value; }
         public Item CtrlReport { get => ctrlReport; set => ctrlReport = value; }
-        public Item CtrlAddEmployee { get => ctrlAddEmployee; set => ctrlAddEmployee = value; }
         #endregion
-
-        public FrmAdmin()
+        public FrmEmployee()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             Init();
         }
 
-        protected void Init()
+        private void Init()
         {
             #region Management
             //Đăng xuất
@@ -94,9 +91,6 @@ namespace DormitoryManagement.View
             //Sinh viên
             CtrlAddStudent = Dashboard.InitAddStudent(CtrlAddStudent);
             tlpAdd.Controls.Add(CtrlAddStudent);
-            //Nhân viên
-            CtrlAddEmployee = Dashboard.InitAddEmployee(CtrlAddEmployee);
-            tlpAdd.Controls.Add(CtrlAddEmployee);
             #endregion
         }
     }
