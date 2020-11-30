@@ -1,12 +1,4 @@
 ﻿using DormitoryManagement.View;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DormitoryManagement
@@ -43,77 +35,33 @@ namespace DormitoryManagement
 
         protected void Init()
         {
+            #region Management
             //Đăng nhập
-            ctrlLogin = new Item(btnLogin_Click);
-            ctrlLogin.picItem.BackgroundImage = Properties.Resources.Logout;
-            ctrlLogin.btnTitle.Text = "LOGIN";
-            ctrlLogin.Anchor = AnchorStyles.Right;
-            ctrlLogin.btnTitle.ForeColor = Color.DarkRed;
+            CtrlLogin = Dashboard.InitLogin(CtrlLogin);
             tlpManage.Controls.Add(ctrlLogin);
             //Thoát
-            ctrlExit = new Item(Exit);
-            ctrlExit.picItem.BackgroundImage = Properties.Resources.Cancel;
-            ctrlExit.btnTitle.Text = "EXIT";
-            ctrlExit.Anchor = AnchorStyles.Left;
-            ctrlExit.btnTitle.ForeColor = Color.DarkRed;
+            CtrlExit = Dashboard.InitExit(CtrlExit);
             tlpManage.Controls.Add(ctrlExit);
+            #endregion
+
+            #region Info
             //DS Khu phòng
-            ctrlBuildings = new Item(ItemType.Building);
-            ctrlBuildings.picItem.BackgroundImage = Properties.Resources.Building;
-            ctrlBuildings.btnTitle.Text = "BUILDINGS";
+            CtrlBuildings = Dashboard.InitBuildings(CtrlBuildings);
             tlpInfo.Controls.Add(ctrlBuildings);
-            //DS Khu phòng
-            ctrlRoomType = new Item(ItemType.RoomType);
-            ctrlRoomType.picItem.BackgroundImage = Properties.Resources.BunkBed;
-            ctrlRoomType.btnTitle.Text = "ROOM TYPES";
+            //Loại phòng
+            CtrlRoomType = Dashboard.InitRoomType(CtrlRoomType);
             tlpInfo.Controls.Add(ctrlRoomType);
             //DS dịch vụ
-            ctrlServices = new Item(ItemType.Service);
-            ctrlServices.picItem.BackgroundImage = Properties.Resources.Water;
-            ctrlServices.btnTitle.Text = "SERVICES";
+            CtrlServices = Dashboard.InitServices(CtrlServices);
             tlpInfo.Controls.Add(ctrlServices);
             //Tìm kiếm
-            ctrlSearch = new Item(Search);
-            ctrlSearch.picItem.BackgroundImage = Properties.Resources.Search;
-            ctrlSearch.btnTitle.Text = "SEARCH";
+            CtrlSearch = Dashboard.InitSearch(CtrlSearch);
             tlpInfo.Controls.Add(ctrlSearch);
             //Hướng dẫn
-            ctrlGuide = new Item(Guide);
-            ctrlGuide.picItem.BackgroundImage = Properties.Resources.Info;
-            ctrlGuide.btnTitle.Text = "GUIDE";
+            CtrlGuide = Dashboard.InitGuide(CtrlGuide);
             tlpInfo.Controls.Add(ctrlGuide);
+            #endregion
         }
         #endregion
-
-        protected void Exit()
-        {
-            DialogResult re = MessageBox.Show("Bạn muốn thoát khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (re == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
-        protected void Search()
-        {
-            FrmSearch frmTimKiem = new FrmSearch();
-            frmTimKiem.ShowDialog();
-        }
-
-        protected void Guide()
-        {
-            FrmGuide huongDan = new FrmGuide();
-            huongDan.ShowDialog();
-        }
-
-
-        // để nút để test
-        protected void btnLogin_Click()
-        {
-            FrmLogin frmLogin = new FrmLogin();
-            this.Hide();
-            frmLogin.ShowDialog();
-            this.ShowDialog();
-        }
     }
 }
