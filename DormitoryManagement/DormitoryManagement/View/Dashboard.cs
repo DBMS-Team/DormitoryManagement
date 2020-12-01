@@ -134,7 +134,6 @@ namespace DormitoryManagement.View
         {
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
-            this.
         }
 
         public static void Logout()
@@ -177,7 +176,7 @@ namespace DormitoryManagement.View
 
         public static void ListStudents()
         {
-            FrmStudent frmStudent = new FrmStudent();
+            FrmStudent frmStudent = new FrmStudent(null, null);
             frmStudent.ShowDialog();
         }
 
