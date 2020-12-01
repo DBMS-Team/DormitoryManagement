@@ -146,12 +146,6 @@
     <Compile Include="View\FrmGuide.Designer.cs">
       <DependentUpon>FrmGuide.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmSearch.Designer.cs">
-      <DependentUpon>FrmSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FrmAddNewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,9 +203,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmRoomRegistration.resx">
       <DependentUpon>FrmRoomRegistration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmSearch.resx">
-      <DependentUpon>FrmSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>

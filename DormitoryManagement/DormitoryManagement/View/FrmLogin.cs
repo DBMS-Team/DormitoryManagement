@@ -25,7 +25,7 @@ namespace DormitoryManagement.View
             FrmEmployee frmEmployee = new FrmEmployee();
             this.Hide();
             frmEmployee.ShowDialog();
-            this.ShowDialog();
+            this.Show();
             return;
 
             string userName = txtUserName.Text;

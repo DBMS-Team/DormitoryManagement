@@ -10,7 +10,6 @@ namespace DormitoryManagement.View
         private Item ctrlBuildings;
         private Item ctrlRoomType;
         private Item ctrlServices;
-        private Item ctrlSearch;
         private Item ctrlGuide;
 
         private Item ctrlListStudents;
@@ -29,7 +28,6 @@ namespace DormitoryManagement.View
         protected Item CtrlBuildings { get => ctrlBuildings; set => ctrlBuildings = value; }
         protected Item CtrlRoomType { get => ctrlRoomType; set => ctrlRoomType = value; }
         protected Item CtrlServices { get => ctrlServices; set => ctrlServices = value; }
-        protected Item CtrlSearch { get => ctrlSearch; set => ctrlSearch = value; }
         protected Item CtrlGuide { get => ctrlGuide; set => ctrlGuide = value; }
         public Item CtrlListStudents { get => ctrlListStudents; set => ctrlListStudents = value; }
         public Item CtrlRoom { get => ctrlRoom; set => ctrlRoom = value; }
@@ -76,9 +74,6 @@ namespace DormitoryManagement.View
             //DS dịch vụ
             CtrlServices = Dashboard.InitServices();
             tlpInfo.Controls.Add(CtrlServices);
-            //Tìm kiếm
-            CtrlSearch = Dashboard.InitSearch();
-            tlpInfo.Controls.Add(CtrlSearch);
             //Hướng dẫn
             CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(CtrlGuide);

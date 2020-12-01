@@ -113,14 +113,6 @@ namespace DormitoryManagement.View
             return ctrlServices;
         }
 
-        public static Item InitSearch()
-        {
-            Item ctrlSearch = new Item(Dashboard.Search);
-            ctrlSearch.picItem.BackgroundImage = Properties.Resources.Search;
-            ctrlSearch.btnTitle.Text = "SEARCH";
-            return ctrlSearch;
-        }
-
         public static Item InitGuide()
         {
             Item ctrlGuide = new Item(Dashboard.Guide);
@@ -154,12 +146,6 @@ namespace DormitoryManagement.View
             {
                 Application.Exit();
             }
-        }
-
-        public static void Search()
-        {
-            FrmSearch frmSearch = new FrmSearch();
-            frmSearch.ShowDialog();
         }
 
         public static void Guide()

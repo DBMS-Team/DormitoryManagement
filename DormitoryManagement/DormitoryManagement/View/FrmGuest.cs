@@ -11,7 +11,6 @@ namespace DormitoryManagement
         private Item ctrlBuildings;
         private Item ctrlRoomType;
         private Item ctrlServices;
-        private Item ctrlSearch;
         private Item ctrlGuide;
         #endregion
 
@@ -21,7 +20,6 @@ namespace DormitoryManagement
         protected Item CtrlBuildings { get => ctrlBuildings; set => ctrlBuildings = value; }
         protected Item CtrlRoomType { get => ctrlRoomType; set => ctrlRoomType = value; }
         protected Item CtrlServices { get => ctrlServices; set => ctrlServices = value; }
-        protected Item CtrlSearch { get => ctrlSearch; set => ctrlSearch = value; }
         protected Item CtrlGuide { get => ctrlGuide; set => ctrlGuide = value; }
         #endregion
 
@@ -54,9 +52,6 @@ namespace DormitoryManagement
             //DS dịch vụ
             CtrlServices = Dashboard.InitServices();
             tlpInfo.Controls.Add(ctrlServices);
-            //Tìm kiếm
-            CtrlSearch = Dashboard.InitSearch();
-            tlpInfo.Controls.Add(ctrlSearch);
             //Hướng dẫn
             CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(ctrlGuide);
