@@ -134,7 +134,6 @@ namespace DormitoryManagement.View
         {
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
-            this.
         }
 
         public static void Logout()
@@ -142,9 +141,7 @@ namespace DormitoryManagement.View
             DialogResult re = MessageBox.Show("Bạn muốn đăng xuất khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (re == DialogResult.Yes)
             {
-                //isExit = false;
-                //FrmDangNhap.exit = false;
-                //this.Dispose();
+                
             }
         }
 
@@ -177,7 +174,7 @@ namespace DormitoryManagement.View
 
         public static void ListStudents()
         {
-            FrmStudent frmStudent = new FrmStudent();
+            FrmStudent frmStudent = new FrmStudent(null, null);
             frmStudent.ShowDialog();
         }
 
