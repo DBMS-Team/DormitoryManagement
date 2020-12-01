@@ -18,6 +18,7 @@ namespace DormitoryManagement.View
         private Item ctrlBill;
         private Item ctrlAddStudent;
         private Item ctrlAddEmployee;
+        private Item ctrlRoomRegistration;
         private Item ctrlReport;
 
         #endregion
@@ -36,6 +37,7 @@ namespace DormitoryManagement.View
         public Item CtrlAddStudent { get => ctrlAddStudent; set => ctrlAddStudent = value; }
         public Item CtrlReport { get => ctrlReport; set => ctrlReport = value; }
         public Item CtrlAddEmployee { get => ctrlAddEmployee; set => ctrlAddEmployee = value; }
+        public Item CtrlRoomRegistration { get => ctrlRoomRegistration; set => ctrlRoomRegistration = value; }
         #endregion
 
         public FrmAdmin()
@@ -81,8 +83,8 @@ namespace DormitoryManagement.View
 
             #region Add
             //Phòng
-            CtrlRoom = Dashboard.InitRoom();
-            tlpAdd.Controls.Add(CtrlRoom);
+            CtrlRoomRegistration = Dashboard.InitRoomRegistration();
+            tlpAdd.Controls.Add(CtrlRoomRegistration);
             //Hoá đơn
             CtrlBill = Dashboard.InitBill();
             tlpAdd.Controls.Add(CtrlBill);

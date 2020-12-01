@@ -35,7 +35,7 @@ namespace DormitoryManagement.View
 
         public static Item InitRoom()
         {
-            Item ctrlRoom = new Item(Dashboard.RoomRegistration);
+            Item ctrlRoom = new Item(Dashboard.Room);
             ctrlRoom.picItem.BackgroundImage = Properties.Resources.BunkBed;
             ctrlRoom.btnTitle.Text = "ROOM";
             return ctrlRoom;
@@ -63,6 +63,14 @@ namespace DormitoryManagement.View
             ctrlAddEmployee.picItem.BackgroundImage = Properties.Resources.Employee;
             ctrlAddEmployee.btnTitle.Text = "EMPLOYEE";
             return ctrlAddEmployee;
+        }
+
+        public static Item InitRoomRegistration()
+        {
+            Item ctrlRoomRegistration = new Item(Dashboard.RoomRegistration);
+            ctrlRoomRegistration.picItem.BackgroundImage = Properties.Resources.Room;
+            ctrlRoomRegistration.btnTitle.Text = "ROOM";
+            return ctrlRoomRegistration;
         }
 
         public static Item InitListEmployees()
@@ -162,7 +170,7 @@ namespace DormitoryManagement.View
 
         public static void Room()
         {
-            FrmRoomRegistration frmRoom = new FrmRoomRegistration();
+            FrmRoom frmRoom = new FrmRoom();
             frmRoom.ShowDialog();
         }
 
@@ -180,7 +188,7 @@ namespace DormitoryManagement.View
 
         public static void AddNewEmployee()
         {
-            FrmAddEmployee frmAddEmployee = new FrmAddEmployee();
+            FrmAddNewEmployee frmAddEmployee = new FrmAddNewEmployee();
             frmAddEmployee.ShowDialog();
         }
 

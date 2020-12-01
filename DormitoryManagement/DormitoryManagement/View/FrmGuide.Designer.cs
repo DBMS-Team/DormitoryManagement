@@ -28,20 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lbTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.BackColor = System.Drawing.Color.Linen;
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbTitle.Location = new System.Drawing.Point(0, 0);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(1482, 250);
+            this.lbTitle.TabIndex = 8;
+            this.lbTitle.Text = "HƯỚNG DẪN \r\nDÙNG PHẦN MỀM \r\nQUẢN LÝ KÝ TÚC XÁ";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmGuide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1482, 803);
+            this.Controls.Add(this.lbTitle);
             this.Name = "FrmGuide";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmGuide";
+            this.Text = "Guide";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lbTitle;
     }
 }
