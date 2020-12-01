@@ -21,12 +21,6 @@ namespace DormitoryManagement.View
         #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //Demo
-            FrmEmployee frmEmployee = new FrmEmployee();
-            this.Hide();
-            frmEmployee.ShowDialog();
-            this.Show();
-            return;
 
             string userName = txtUserName.Text;
             string passWord = txtPassword.Text;
