@@ -90,11 +90,11 @@
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="Utility\FormatData.cs" />
     <Compile Include="View\Dashboard.cs" />
-    <Compile Include="View\FrmAddEmployee.cs">
+    <Compile Include="View\FrmAddNewEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmAddEmployee.Designer.cs">
-      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    <Compile Include="View\FrmAddNewEmployee.Designer.cs">
+      <DependentUpon>FrmAddNewEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmEmployee.cs">
       <SubType>Form</SubType>
@@ -107,6 +107,12 @@
     </Compile>
     <Compile Include="View\FrmReport.Designer.cs">
       <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmRoom.Designer.cs">
+      <DependentUpon>FrmRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmRoomRegistration.cs">
       <SubType>Form</SubType>
@@ -146,12 +152,6 @@
     <Compile Include="View\FrmGuide.Designer.cs">
       <DependentUpon>FrmGuide.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmSearch.Designer.cs">
-      <DependentUpon>FrmSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FrmAddNewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,8 +170,8 @@
     <Compile Include="View\Item.designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FrmAddEmployee.resx">
-      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="View\FrmAddNewEmployee.resx">
+      <DependentUpon>FrmAddNewEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmAddNewStudent.resx">
       <DependentUpon>FrmAddNewStudent.cs</DependentUpon>
@@ -207,11 +207,11 @@
     <EmbeddedResource Include="View\FrmReport.resx">
       <DependentUpon>FrmReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmRoom.resx">
+      <DependentUpon>FrmRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmRoomRegistration.resx">
       <DependentUpon>FrmRoomRegistration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmSearch.resx">
-      <DependentUpon>FrmSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>

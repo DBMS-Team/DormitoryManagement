@@ -11,7 +11,6 @@ namespace DormitoryManagement.View
         private Item ctrlBuildings;
         private Item ctrlRoomType;
         private Item ctrlServices;
-        private Item ctrlSearch;
         private Item ctrlGuide;
 
         private Item ctrlListStudents;
@@ -19,6 +18,7 @@ namespace DormitoryManagement.View
         private Item ctrlRoom;
         private Item ctrlBill;
         private Item ctrlAddStudent;
+        private Item ctrlRoomRegistration;
         private Item ctrlReport;
 
         #endregion
@@ -29,7 +29,6 @@ namespace DormitoryManagement.View
         protected Item CtrlBuildings { get => ctrlBuildings; set => ctrlBuildings = value; }
         protected Item CtrlRoomType { get => ctrlRoomType; set => ctrlRoomType = value; }
         protected Item CtrlServices { get => ctrlServices; set => ctrlServices = value; }
-        protected Item CtrlSearch { get => ctrlSearch; set => ctrlSearch = value; }
         protected Item CtrlGuide { get => ctrlGuide; set => ctrlGuide = value; }
         public Item CtrlListStudents { get => ctrlListStudents; set => ctrlListStudents = value; }
         public Item CtrlRoom { get => ctrlRoom; set => ctrlRoom = value; }
@@ -37,6 +36,8 @@ namespace DormitoryManagement.View
         public Item CtrlListEmployees { get => ctrlListEmployees; set => ctrlListEmployees = value; }
         public Item CtrlAddStudent { get => ctrlAddStudent; set => ctrlAddStudent = value; }
         public Item CtrlReport { get => ctrlReport; set => ctrlReport = value; }
+        public Item CtrlRoomRegistration { get => ctrlRoomRegistration; set => ctrlRoomRegistration = value; }
+
         #endregion
         private EmployeeDTO loginEmployee;
         private UserDTO loginUser;
@@ -68,49 +69,46 @@ namespace DormitoryManagement.View
         {
             #region Management
             //Đăng xuất
-            CtrlLogout = Dashboard.InitLogout(CtrlLogout);
+            CtrlLogout = Dashboard.InitLogout();
             tlpManage.Controls.Add(CtrlLogout);
             //Thoát
-            CtrlExit = Dashboard.InitExit(CtrlExit);
+            CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(CtrlExit);
             #endregion
 
             #region Information
-            //DS Nhân viên
-            CtrlListEmployees = Dashboard.InitListEmployees(CtrlListEmployees);
-            tlpInfo.Controls.Add(CtrlListEmployees);
             //DS Sinh viên
-            CtrlListStudents = Dashboard.InitListStudents(CtrlListStudents);
+            CtrlListStudents = Dashboard.InitListStudents();
             tlpInfo.Controls.Add(CtrlListStudents);
             //Báo cáo
-            CtrlReport = Dashboard.InitReport(CtrlReport);
+            CtrlReport = Dashboard.InitReport();
             tlpInfo.Controls.Add(CtrlReport);
             //DS Khu phòng
-            CtrlBuildings = Dashboard.InitBuildings(CtrlBuildings);
+            CtrlBuildings = Dashboard.InitBuildings();
             tlpInfo.Controls.Add(CtrlBuildings);
+            //Phòng
+            CtrlRoom = Dashboard.InitRoom();
+            tlpInfo.Controls.Add(CtrlRoom);
             //DS Loại Phòng
-            CtrlRoomType = Dashboard.InitRoomType(CtrlRoomType);
+            CtrlRoomType = Dashboard.InitRoomType();
             tlpInfo.Controls.Add(CtrlRoomType);
             //DS dịch vụ
-            CtrlServices = Dashboard.InitServices(CtrlServices);
+            CtrlServices = Dashboard.InitServices();
             tlpInfo.Controls.Add(CtrlServices);
-            //Tìm kiếm
-            CtrlSearch = Dashboard.InitSearch(CtrlSearch);
-            tlpInfo.Controls.Add(CtrlSearch);
             //Hướng dẫn
-            CtrlGuide = Dashboard.InitGuide(CtrlGuide);
+            CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(CtrlGuide);
             #endregion
 
             #region Add
             //Phòng
-            CtrlRoom = Dashboard.InitRoom(CtrlRoom);
-            tlpAdd.Controls.Add(CtrlRoom);
+            ctrlRoomRegistration = Dashboard.InitRoomRegistration();
+            tlpAdd.Controls.Add(CtrlRoomRegistration);
             //Hoá đơn
-            CtrlBill = Dashboard.InitBill(CtrlBill);
+            CtrlBill = Dashboard.InitBill();
             tlpAdd.Controls.Add(CtrlBill);
             //Sinh viên
-            CtrlAddStudent = Dashboard.InitAddStudent(CtrlAddStudent);
+            CtrlAddStudent = Dashboard.InitAddStudent();
             tlpAdd.Controls.Add(CtrlAddStudent);
             #endregion
         }

@@ -11,7 +11,6 @@ namespace DormitoryManagement
         private Item ctrlBuildings;
         private Item ctrlRoomType;
         private Item ctrlServices;
-        private Item ctrlSearch;
         private Item ctrlGuide;
         #endregion
 
@@ -21,7 +20,6 @@ namespace DormitoryManagement
         protected Item CtrlBuildings { get => ctrlBuildings; set => ctrlBuildings = value; }
         protected Item CtrlRoomType { get => ctrlRoomType; set => ctrlRoomType = value; }
         protected Item CtrlServices { get => ctrlServices; set => ctrlServices = value; }
-        protected Item CtrlSearch { get => ctrlSearch; set => ctrlSearch = value; }
         protected Item CtrlGuide { get => ctrlGuide; set => ctrlGuide = value; }
         #endregion
 
@@ -37,28 +35,25 @@ namespace DormitoryManagement
         {
             #region Management
             //Đăng nhập
-            CtrlLogin = Dashboard.InitLogin(CtrlLogin);
+            CtrlLogin = Dashboard.InitLogin();
             tlpManage.Controls.Add(ctrlLogin);
             //Thoát
-            CtrlExit = Dashboard.InitExit(CtrlExit);
+            CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(ctrlExit);
             #endregion
 
             #region Info
             //DS Khu phòng
-            CtrlBuildings = Dashboard.InitBuildings(CtrlBuildings);
+            CtrlBuildings = Dashboard.InitBuildings();
             tlpInfo.Controls.Add(ctrlBuildings);
             //Loại phòng
-            CtrlRoomType = Dashboard.InitRoomType(CtrlRoomType);
+            CtrlRoomType = Dashboard.InitRoomType();
             tlpInfo.Controls.Add(ctrlRoomType);
             //DS dịch vụ
-            CtrlServices = Dashboard.InitServices(CtrlServices);
+            CtrlServices = Dashboard.InitServices();
             tlpInfo.Controls.Add(ctrlServices);
-            //Tìm kiếm
-            CtrlSearch = Dashboard.InitSearch(CtrlSearch);
-            tlpInfo.Controls.Add(ctrlSearch);
             //Hướng dẫn
-            CtrlGuide = Dashboard.InitGuide(CtrlGuide);
+            CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(ctrlGuide);
             #endregion
         }
