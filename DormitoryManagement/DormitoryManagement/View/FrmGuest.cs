@@ -37,28 +37,28 @@ namespace DormitoryManagement
         {
             #region Management
             //Đăng nhập
-            CtrlLogin = Dashboard.InitLogin(CtrlLogin);
+            CtrlLogin = Dashboard.InitLogin();
             tlpManage.Controls.Add(ctrlLogin);
             //Thoát
-            CtrlExit = Dashboard.InitExit(CtrlExit);
+            CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(ctrlExit);
             #endregion
 
             #region Info
             //DS Khu phòng
-            CtrlBuildings = Dashboard.InitBuildings(CtrlBuildings);
+            CtrlBuildings = Dashboard.InitBuildings();
             tlpInfo.Controls.Add(ctrlBuildings);
             //Loại phòng
-            CtrlRoomType = Dashboard.InitRoomType(CtrlRoomType);
+            CtrlRoomType = Dashboard.InitRoomType();
             tlpInfo.Controls.Add(ctrlRoomType);
             //DS dịch vụ
-            CtrlServices = Dashboard.InitServices(CtrlServices);
+            CtrlServices = Dashboard.InitServices();
             tlpInfo.Controls.Add(ctrlServices);
             //Tìm kiếm
-            CtrlSearch = Dashboard.InitSearch(CtrlSearch);
+            CtrlSearch = Dashboard.InitSearch();
             tlpInfo.Controls.Add(ctrlSearch);
             //Hướng dẫn
-            CtrlGuide = Dashboard.InitGuide(CtrlGuide);
+            CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(ctrlGuide);
             #endregion
         }

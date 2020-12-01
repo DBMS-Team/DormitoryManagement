@@ -1,138 +1,134 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace DormitoryManagement.View
 {
     public static class Dashboard
     {
-        public static Item InitLogin(Item ctrlLogin)
+        #region Init
+        public static Item InitLogin()
         {
-            ctrlLogin = new Item(Login);
+            Item ctrlLogin = new Item(Login);
             ctrlLogin.picItem.BackgroundImage = Properties.Resources.Logout;
             ctrlLogin.btnTitle.Text = "LOGIN";
-            ctrlLogin.Anchor = AnchorStyles.Right;
             ctrlLogin.btnTitle.ForeColor = Color.DarkRed;
             return ctrlLogin;
         }
 
-        public static Item InitLogout(Item ctrlLogout)
+        public static Item InitLogout()
         {
-            ctrlLogout = new Item(Dashboard.Logout);
+            Item ctrlLogout = new Item(Dashboard.Logout);
             ctrlLogout.picItem.BackgroundImage = Properties.Resources.Logout;
             ctrlLogout.btnTitle.Text = "LOGOUT";
             ctrlLogout.btnTitle.ForeColor = Color.DarkRed;
             return ctrlLogout;
         }
 
-        public static Item InitExit(Item ctrlExit)
+        public static Item InitExit()
         {
-            ctrlExit = new Item(Dashboard.Exit);
+            Item ctrlExit = new Item(Dashboard.Exit);
             ctrlExit.picItem.BackgroundImage = Properties.Resources.Cancel;
             ctrlExit.btnTitle.Text = "EXIT";
             ctrlExit.btnTitle.ForeColor = Color.DarkRed;
             return ctrlExit;
         }
 
-        public static Item InitRoom(Item ctrlRoom)
+        public static Item InitRoom()
         {
-            ctrlRoom = new Item(Dashboard.RoomRegistration);
+            Item ctrlRoom = new Item(Dashboard.RoomRegistration);
             ctrlRoom.picItem.BackgroundImage = Properties.Resources.BunkBed;
             ctrlRoom.btnTitle.Text = "ROOM";
             return ctrlRoom;
         }
 
-        public static Item InitBill(Item ctrlBill)
+        public static Item InitBill()
         {
-            ctrlBill = new Item(Dashboard.Bill);
+            Item ctrlBill = new Item(Dashboard.Bill);
             ctrlBill.picItem.BackgroundImage = Properties.Resources.Form;
             ctrlBill.btnTitle.Text = "BILL";
             return ctrlBill;
         }
 
-        public static Item InitAddStudent(Item ctrlAddStudent)
+        public static Item InitAddStudent()
         {
-            ctrlAddStudent = new Item(Dashboard.AddNewStudent);
+            Item ctrlAddStudent = new Item(Dashboard.AddNewStudent);
             ctrlAddStudent.picItem.BackgroundImage = Properties.Resources.Student;
             ctrlAddStudent.btnTitle.Text = "STUDENT";
             return ctrlAddStudent;
         }
 
-        public static Item InitAddEmployee(Item ctrlAddEmployee)
+        public static Item InitAddEmployee()
         {
-            ctrlAddEmployee = new Item(Dashboard.AddNewEmployee);
+            Item ctrlAddEmployee = new Item(Dashboard.AddNewEmployee);
             ctrlAddEmployee.picItem.BackgroundImage = Properties.Resources.Employee;
             ctrlAddEmployee.btnTitle.Text = "EMPLOYEE";
             return ctrlAddEmployee;
         }
 
-        public static Item InitListEmployees(Item ctrlListEmployees)
+        public static Item InitListEmployees()
         {
-            ctrlListEmployees = new Item(ItemType.Employee);
+            Item ctrlListEmployees = new Item(ItemType.Employee);
             ctrlListEmployees.picItem.BackgroundImage = Properties.Resources.Collaboration;
             ctrlListEmployees.btnTitle.Text = "EMPLOYEES";
             return ctrlListEmployees;
-        }    
+        }
 
-        public static Item InitListStudents(Item ctrlListStudents)
+        public static Item InitListStudents()
         {
-            ctrlListStudents = new Item(Dashboard.ListStudents);
+            Item ctrlListStudents = new Item(Dashboard.ListStudents);
             ctrlListStudents.picItem.BackgroundImage = Properties.Resources.Student;
             ctrlListStudents.btnTitle.Text = "STUDENTS";
             return ctrlListStudents;
         }
 
-        public static Item InitReport(Item ctrlReport)
+        public static Item InitReport()
         {
-            ctrlReport = new Item(Dashboard.Report);
+            Item ctrlReport = new Item(Dashboard.Report);
             ctrlReport.picItem.BackgroundImage = Properties.Resources.Report;
             ctrlReport.btnTitle.Text = "REPORT";
             return ctrlReport;
         }
 
-        public static Item InitBuildings(Item ctrlBuildings)
+        public static Item InitBuildings()
         {
-            ctrlBuildings = new Item(ItemType.Building);
+            Item ctrlBuildings = new Item(ItemType.Building);
             ctrlBuildings.picItem.BackgroundImage = Properties.Resources.Building;
             ctrlBuildings.btnTitle.Text = "BUILDINGS";
             return ctrlBuildings;
-        }    
+        }
 
-        public static Item InitRoomType(Item ctrlRoomType)
+        public static Item InitRoomType()
         {
-            ctrlRoomType = new Item(ItemType.RoomType);
+            Item ctrlRoomType = new Item(ItemType.RoomType);
             ctrlRoomType.picItem.BackgroundImage = Properties.Resources.BunkBed;
             ctrlRoomType.btnTitle.Text = "ROOM TYPES";
             return ctrlRoomType;
         }
 
-        public static Item InitServices(Item ctrlServices)
+        public static Item InitServices()
         {
-            ctrlServices = new Item(ItemType.Service);
+            Item ctrlServices = new Item(ItemType.Service);
             ctrlServices.picItem.BackgroundImage = Properties.Resources.Water;
             ctrlServices.btnTitle.Text = "SERVICES";
             return ctrlServices;
         }
 
-        public static Item InitSearch(Item ctrlSearch)
+        public static Item InitSearch()
         {
-            ctrlSearch = new Item(Dashboard.Search);
+            Item ctrlSearch = new Item(Dashboard.Search);
             ctrlSearch.picItem.BackgroundImage = Properties.Resources.Search;
             ctrlSearch.btnTitle.Text = "SEARCH";
             return ctrlSearch;
         }
 
-        public static Item InitGuide(Item ctrlGuide)
+        public static Item InitGuide()
         {
-            ctrlGuide = new Item(Dashboard.Guide);
+            Item ctrlGuide = new Item(Dashboard.Guide);
             ctrlGuide.picItem.BackgroundImage = Properties.Resources.Info;
             ctrlGuide.btnTitle.Text = "GUIDE";
             return ctrlGuide;
         }
+        #endregion
 
         public static void Login()
         {
