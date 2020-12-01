@@ -21,7 +21,6 @@ namespace DormitoryManagement.View
         #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             string userName = txtUserName.Text;
             string passWord = txtPassword.Text;
             if (Login(userName, passWord))
