@@ -10,10 +10,10 @@ namespace DormitoryManagement.Controller
 {
     public static class DistrictDAO
     {
-        public static List<DistrictDTO> GetListDistrict(string id)
+        public static List<DistrictDTO> GetListDistrictByProvinceName(string provinceName)
         {
             List<DistrictDTO> districtDTOs = new List<DistrictDTO>();
-            string query = string.Format("EXEC dbo.USP_GetDistrictByIdProvince @PROVINCE_ID = '{0}'",id);
+            string query = string.Format("EXEC dbo.USP_GetListDistrictByProvinceName @PROVINCE_NAME = N'{0}'", provinceName);
             DataTable dataTable = DataProvider.ExcuteQuery(query);
             foreach (DataRow item in dataTable.Rows)
             {

@@ -326,6 +326,7 @@
             this.cbbDistrict.Name = "cbbDistrict";
             this.cbbDistrict.Size = new System.Drawing.Size(212, 28);
             this.cbbDistrict.TabIndex = 5;
+            this.cbbDistrict.SelectedIndexChanged += new System.EventHandler(this.cbbDistrict_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -344,6 +345,7 @@
             this.cbbProvince.Name = "cbbProvince";
             this.cbbProvince.Size = new System.Drawing.Size(212, 28);
             this.cbbProvince.TabIndex = 4;
+            this.cbbProvince.SelectedIndexChanged += new System.EventHandler(this.cbbProvince_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -394,7 +396,7 @@
             this.lbProvice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProvice.Location = new System.Drawing.Point(50, 308);
             this.lbProvice.Name = "lbProvice";
-            this.lbProvice.Size = new System.Drawing.Size(86, 25);
+            this.lbProvice.Size = new System.Drawing.Size(69, 20);
             this.lbProvice.TabIndex = 57;
             this.lbProvice.Text = "Province";
             // 
