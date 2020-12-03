@@ -378,9 +378,19 @@ BEGIN
 	SELECT * FROM dbo.EMPLOYEE WHERE USER_ID = @USER_ID
 END
 GO
+-- Dùng để lấy Province bằng id.
+CREATE PROC USP_GetListProvince
+AS
+BEGIN
+	SELECT * FROM dbo.PROVINCE
+END
+GO
+
 ----------------------
 -- TRIGGER
 ----------------------
+
+
 
 
 
