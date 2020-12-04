@@ -85,11 +85,11 @@ GO
 -- LƯU TÀI KHẢON ĐĂNG NHẬP VÀ THÔNG TIN NGƯỜI DÙNG
 CREATE TABLE [dbo].[USER] (
 	[USER_ID] BIGINT IDENTITY(1, 1),
-	[LAST_NAME] NVARCHAR(40),
-	[FIRST_NAME] NVARCHAR(20),
-	[DOB] DATE,								-- NGÀY SINH
-	[GENDER] NVARCHAR(5),					-- GIỚI TÍNH
-	[SSN] VARCHAR(12), 						-- CHỨNG MINH NHÂN DÂN
+	[LAST_NAME] NVARCHAR(40) NULL,
+	[FIRST_NAME] NVARCHAR(20) NULL,
+	[DOB] DATE NULL,								-- NGÀY SINH
+	[GENDER] NVARCHAR(5) NULL,						-- GIỚI TÍNH
+	[SSN] VARCHAR(12) NULL, 						-- CHỨNG MINH NHÂN DÂN
 
 	[ADDRESS_ID] BIGINT NOT NULL,
 	[PHONE_NUMBER_1] VARCHAR(15),			-- SỐ ĐIỆN THOẠI 1
@@ -548,6 +548,7 @@ INSERT [dbo].[COLLEGE] ([COLLEGE_ID], [COLLEGE_CODE], [COLLEGE_NAME]) VALUES
 	(77, N'CVS', N'Cao Đẳng Văn Hóa Nghệ Thuật và Du Lịch Sài Gòn'),
 	(78, N'CVX', N'Cao Đẳng Kỹ Thuật-Công Nghệ Vạn Xuân'),
 	(79, N'CXS', N'Cao Đẳng Xây Dựng Số 2')
+<<<<<<< Updated upstream
 SET IDENTITY_INSERT [dbo].[COLLEGE] OFF
 
 
@@ -611,3 +612,6 @@ SET IDENTITY_INSERT [dbo].[COLLEGE] OFF
 
 
 
+=======
+SET IDENTITY_INSERT [dbo].[COLLEGE] OFF
+>>>>>>> Stashed changes
