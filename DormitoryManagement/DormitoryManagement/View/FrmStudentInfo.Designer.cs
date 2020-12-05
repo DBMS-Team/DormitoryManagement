@@ -767,6 +767,7 @@
             this.Name = "FrmStudentInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
+            this.Load += new System.EventHandler(this.FrmStudentInfo_Load);
             this.panel2.ResumeLayout(false);
             this.pnSV.ResumeLayout(false);
             this.pnContainer.ResumeLayout(false);

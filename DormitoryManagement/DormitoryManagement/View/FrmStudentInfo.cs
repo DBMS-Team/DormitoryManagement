@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DormitoryManagement.Controller;
+using DormitoryManagement.Model;
 
 namespace DormitoryManagement.View
 {
@@ -24,6 +26,9 @@ namespace DormitoryManagement.View
         {
             InitializeComponent();
         }
+        bool flagAddStudent = false;
+        string provinceName = "";
+        string districtName = "";
 
         #region Events
         private void btnChoose_Click(object sender, EventArgs e)
@@ -63,12 +68,20 @@ namespace DormitoryManagement.View
 
         private void cmbProvice_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox.SelectedItem == null)
+                return;
+            provinceName = comboBox.Text;
+            LoadListDistrictByProvinceName(provinceName);
         }
 
         private void cmbDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox.SelectedItem == null)
+                return;
+            districtName = comboBox.Text;
+            LoadListCommunateByProvinceName(provinceName, districtName);
         }
 
         private void cmbCommune_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,5 +104,35 @@ namespace DormitoryManagement.View
 
         }
         #endregion
+        #region methods
+        void LoadListProvinceInCombobox()
+        {
+            List<ProvinceDTO> provinceDTOs = ProvinceDAO.GetListProvince();
+            cbbProvince.DataSource = provinceDTOs;
+            cbbProvince.DisplayMember = "ProvinceName";
+        }
+        void LoadListDistrictByProvinceName(string provinceName)
+        {
+            List<DistrictDTO> districtDTOs = DistrictDAO.GetListDistrictByProvinceName(provinceName);
+            cbbDistrict.DataSource = districtDTOs;
+            cbbDistrict.DisplayMember = "DistrictName";
+        }
+        void LoadListCommunateByProvinceName(string provinceName, string districtName)
+        {
+            List<CommuneDTO> communeDTOs = CommuneDAO.GetLisCommuneByProvinceAndDistrict(provinceName, districtName);
+            cbbCommune.DataSource = communeDTOs;
+            cbbCommune.DisplayMember = "CommuneName";
+        }
+        void LoadListUniversityInCombobox()
+        {
+
+        }
+        #endregion
+
+        private void FrmStudentInfo_Load(object sender, EventArgs e)
+        {
+            btnSave.Enabled = false;
+            LoadListProvinceInCombobox();
+        }
     }
 }
