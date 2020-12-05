@@ -186,13 +186,13 @@ namespace DormitoryManagement.View
 
         public static void AddNewEmployee()
         {
-            FrmAddNewEmployee frmAddEmployee = new FrmAddNewEmployee();
+            FrmEmployeeInfo frmAddEmployee = new FrmEmployeeInfo();
             frmAddEmployee.ShowDialog();
         }
 
         public static void AddNewStudent()
         {
-            FrmAddNewStudent frmSinhVien = new FrmAddNewStudent();
+            FrmStudentInfo frmSinhVien = new FrmStudentInfo();
             frmSinhVien.ShowDialog();
         }
 

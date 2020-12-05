@@ -62,7 +62,7 @@
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(1482, 250);
             this.lbTitle.TabIndex = 7;
-            this.lbTitle.Text = "QUẢN LÝ KÝ TÚC XÁ";
+            this.lbTitle.Text = "DORMITORY MANAGEMENT";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -267,7 +267,7 @@
             this.Controls.Add(this.lbTitle);
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmDashboard";
+            this.Text = "Dormitory Management";
             this.pnQuanTri.ResumeLayout(false);
             this.pnInfo.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

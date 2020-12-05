@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "FrmRoomRegistration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmDangKyPhong";
+            this.Text = "Room Registration";
             this.ResumeLayout(false);
 
         }

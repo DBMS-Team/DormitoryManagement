@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
-    public partial class FrmAddNewStudent : Form
+    public partial class FrmEmployeeInfo : Form
     {
-        public FrmAddNewStudent()
+        public FrmEmployeeInfo()
         {
             InitializeComponent();
         }

@@ -90,11 +90,11 @@
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="Utility\FormatData.cs" />
     <Compile Include="View\Dashboard.cs" />
-    <Compile Include="View\FrmAddNewEmployee.cs">
+    <Compile Include="View\FrmEmployeeInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmAddNewEmployee.Designer.cs">
-      <DependentUpon>FrmAddNewEmployee.cs</DependentUpon>
+    <Compile Include="View\FrmEmployeeInfo.Designer.cs">
+      <DependentUpon>FrmEmployeeInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmEmployee.cs">
       <SubType>Form</SubType>
@@ -152,11 +152,11 @@
     <Compile Include="View\FrmGuide.Designer.cs">
       <DependentUpon>FrmGuide.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmAddNewStudent.cs">
+    <Compile Include="View\FrmStudentInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmAddNewStudent.Designer.cs">
-      <DependentUpon>FrmAddNewStudent.cs</DependentUpon>
+    <Compile Include="View\FrmStudentInfo.Designer.cs">
+      <DependentUpon>FrmStudentInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmStudent.cs">
       <SubType>Form</SubType>
@@ -170,11 +170,11 @@
     <Compile Include="View\Item.designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FrmAddNewEmployee.resx">
-      <DependentUpon>FrmAddNewEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="View\FrmEmployeeInfo.resx">
+      <DependentUpon>FrmEmployeeInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmAddNewStudent.resx">
-      <DependentUpon>FrmAddNewStudent.cs</DependentUpon>
+    <EmbeddedResource Include="View\FrmStudentInfo.resx">
+      <DependentUpon>FrmStudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmBill.resx">
       <DependentUpon>FrmBill.cs</DependentUpon>
