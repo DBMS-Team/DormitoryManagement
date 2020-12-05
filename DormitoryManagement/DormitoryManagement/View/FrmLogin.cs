@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
-    public partial class fLogin : Form
+    public partial class FrmLogin : Form
     {
-        public fLogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -31,18 +31,28 @@ namespace DormitoryManagement.View
                 if (userType.Equals("ADMIN"))
                 {
                     AdminDTO admin = AdminDAO.GetAdminById(UserId);
+                    FrmAdmin frmAdmin = new FrmAdmin(admin, user);
+                    this.Hide();
+                    frmAdmin.ShowDialog();
                     txtPassword.Text = "";
                 }
                 else if (userType.Equals("EMPLOYEE"))
                 {
                     EmployeeDTO employee = EmployeeDAO.GetEmployeeById(UserId);
+                    FrmEmployee frmEmployee = new FrmEmployee(employee, user);
+                    this.Hide();
+                    frmEmployee.ShowDialog();
                     txtPassword.Text = "";
                 }
                 else
                 {
                     StudentDTO student = StudentDAO.GetStudentById(UserId);
+                    FrmStudent frmStudent = new FrmStudent(student, user);
+                    this.Hide();
+                    frmStudent.ShowDialog();
                     txtPassword.Text = "";
                 }
+                
             }
             else
             {
@@ -52,8 +62,8 @@ namespace DormitoryManagement.View
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-            fMain fMain = new fMain();
-            fMain.ShowDialog();
+            FrmGuest frmGuest = new FrmGuest();
+            frmGuest.ShowDialog();
         }
         private void btnHidePassword_Click(object sender, EventArgs e)
         {
@@ -74,7 +84,5 @@ namespace DormitoryManagement.View
             return UserDAO.Login(username, password);
         }
         #endregion
-
-        
     }
 }
