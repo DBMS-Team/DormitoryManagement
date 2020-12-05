@@ -289,51 +289,6 @@
     <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\girl.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl_9s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl_s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-1s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-2s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-3s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-4s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-5s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-6s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-7s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-8s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-10s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-11s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl-12s.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-building-100.png" />
   </ItemGroup>
   <ItemGroup>
@@ -430,39 +385,6 @@
     <None Include="Resources\man_s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\man-1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-1s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-2s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-3s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-4s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-5s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-6.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\man-7.png" />
   </ItemGroup>
   <ItemGroup>
@@ -503,6 +425,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ForgotPassword.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,12 +7,13 @@ namespace DormitoryManagement.View
     {
         #region Fields
         private Item ctrlLogout;
+        private Item ctrlChangePassword;
         private Item ctrlExit;
         private Item ctrlBuildings;
         private Item ctrlRoomType;
         private Item ctrlServices;
+        private Item ctrlSearch;
         private Item ctrlGuide;
-
         private Item ctrlListStudents;
         private Item ctrlListEmployees;
         private Item ctrlRoom;
@@ -21,6 +22,8 @@ namespace DormitoryManagement.View
         private Item ctrlAddEmployee;
         private Item ctrlRoomRegistration;
         private Item ctrlReport;
+        private AdminDTO loginAdmin;
+        private UserDTO loginUser;
 
         #endregion
 
@@ -39,10 +42,7 @@ namespace DormitoryManagement.View
         public Item CtrlReport { get => ctrlReport; set => ctrlReport = value; }
         public Item CtrlAddEmployee { get => ctrlAddEmployee; set => ctrlAddEmployee = value; }
         public Item CtrlRoomRegistration { get => ctrlRoomRegistration; set => ctrlRoomRegistration = value; }
-        #endregion
-
-        private AdminDTO loginAdmin;
-        private UserDTO loginUser;
+        public Item CtrlChangePassword { get => ctrlChangePassword; set => ctrlChangePassword = value; }
         public AdminDTO LoginAdmin
         {
             get => loginAdmin;
@@ -59,6 +59,10 @@ namespace DormitoryManagement.View
                 this.loginUser = value;
             }
         }
+
+        public Item CtrlSearch { get => ctrlSearch; set => ctrlSearch = value; }
+        #endregion
+
         public FrmAdmin(AdminDTO admin, UserDTO user)
         {
             this.InitializeComponent();
@@ -66,21 +70,26 @@ namespace DormitoryManagement.View
             this.LoginAdmin = admin;
             this.LoginUser = user;
         }
+        
         #region Events
 
         #endregion
+
         #region Methods
         protected void Init()
         {
             #region Management
-            //Đăng xuất
+            //Logout
             CtrlLogout = Dashboard.InitLogout();
             tlpManage.Controls.Add(CtrlLogout);
-            //Thoát
+            //Change password
+            CtrlChangePassword = Dashboard.InitChangePassword();
+            tlpManage.Controls.Add(CtrlChangePassword);
+            //Exit
             CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(CtrlExit);
             #endregion
-
+            
             #region Information
             //DS Nhân viên
             CtrlListEmployees = Dashboard.InitListEmployees();
@@ -100,6 +109,9 @@ namespace DormitoryManagement.View
             //DS dịch vụ
             CtrlServices = Dashboard.InitServices();
             tlpInfo.Controls.Add(CtrlServices);
+            //Search
+            CtrlSearch = Dashboard.InitSearch();
+            tlpInfo.Controls.Add(CtrlSearch);
             //Hướng dẫn
             CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(CtrlGuide);

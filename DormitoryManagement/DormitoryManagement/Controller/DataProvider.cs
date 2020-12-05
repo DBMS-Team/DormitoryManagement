@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,9 +12,9 @@ namespace DormitoryManagement.Controller
     public static class DataProvider
     {
         //private static string connectionString = @"Data Source=DESKTOP-VJSMPL6;Initial Catalog=DormitoryManagement;Integrated Security=True";
-        private static string connectionString = @"Data Source=Hiae\HOHUYHOANG;Initial Catalog=DormitoryManagement;Integrated Security=True";
+        //private static string connectionString = @"Data Source=Hiae\HOHUYHOANG;Initial Catalog=DormitoryManagement;Integrated Security=True";
         //private string connectionString = @"Data Source=(local);Initial Catalog=DormitoryManagement;Integrated Security=True";
-        //private static string connectionString = @"Data Source=.;Initial Catalog=DormitoryManagement;Integrated Security=True";
+        private static string connectionString = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
         public static DataTable ExcuteQuery(string query, object[] parameter = null)
         {

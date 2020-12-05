@@ -464,7 +464,6 @@ namespace DormitoryManagement.View
             // 
             // cbbUserType
             // 
-            this.cbbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbUserType.FormattingEnabled = true;
             this.cbbUserType.Location = new System.Drawing.Point(133, 125);
             this.cbbUserType.Name = "cbbUserType";
