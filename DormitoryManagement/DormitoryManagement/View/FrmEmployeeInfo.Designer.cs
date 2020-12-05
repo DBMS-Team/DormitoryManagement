@@ -41,15 +41,8 @@
             this.lbProfilePhoto = new System.Windows.Forms.Label();
             this.btnChoose = new System.Windows.Forms.Button();
             this.picAvt = new System.Windows.Forms.PictureBox();
-            this.groupAccount = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lbPassword = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbUserName = new System.Windows.Forms.Label();
-            this.cbbUserType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupAddress = new System.Windows.Forms.GroupBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtStreet = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbCommune = new System.Windows.Forms.ComboBox();
             this.lbCommune = new System.Windows.Forms.Label();
@@ -74,24 +67,27 @@
             this.lbFirstName = new System.Windows.Forms.Label();
             this.lbDoB = new System.Windows.Forms.Label();
             this.ckbFemale = new System.Windows.Forms.CheckBox();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtSSN = new System.Windows.Forms.TextBox();
             this.lbSSN = new System.Windows.Forms.Label();
             this.pnSV = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.cbbPriority = new System.Windows.Forms.ComboBox();
+            this.lbPriority = new System.Windows.Forms.Label();
+            this.cbbUserType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tlpBottom = new System.Windows.Forms.TableLayoutPanel();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.pnTop.SuspendLayout();
             this.pnContainer.SuspendLayout();
             this.groupAvatar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).BeginInit();
-            this.groupAccount.SuspendLayout();
             this.groupAddress.SuspendLayout();
             this.groupContact.SuspendLayout();
             this.groupManagement.SuspendLayout();
             this.groupInfo.SuspendLayout();
             this.pnSV.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.tlpBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnTop
@@ -102,7 +98,7 @@
             this.pnTop.Margin = new System.Windows.Forms.Padding(4);
             this.pnTop.MinimumSize = new System.Drawing.Size(959, 62);
             this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1515, 62);
+            this.pnTop.Size = new System.Drawing.Size(1167, 62);
             this.pnTop.TabIndex = 36;
             // 
             // lbTitle
@@ -115,7 +111,7 @@
             this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.MinimumSize = new System.Drawing.Size(965, 62);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(1515, 62);
+            this.lbTitle.Size = new System.Drawing.Size(1167, 62);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "EMPLOYEE INFORMATION";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,7 +120,7 @@
             // 
             this.lbGender.AutoSize = true;
             this.lbGender.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGender.Location = new System.Drawing.Point(20, 181);
+            this.lbGender.Location = new System.Drawing.Point(26, 181);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(60, 20);
             this.lbGender.TabIndex = 42;
@@ -142,7 +138,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.Control;
-            this.txtEmail.Location = new System.Drawing.Point(94, 154);
+            this.txtEmail.Location = new System.Drawing.Point(133, 131);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(212, 27);
@@ -151,7 +147,7 @@
             // txtPhone1
             // 
             this.txtPhone1.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPhone1.Location = new System.Drawing.Point(94, 38);
+            this.txtPhone1.Location = new System.Drawing.Point(133, 37);
             this.txtPhone1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone1.Name = "txtPhone1";
             this.txtPhone1.Size = new System.Drawing.Size(212, 27);
@@ -161,7 +157,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(14, 157);
+            this.lbEmail.Location = new System.Drawing.Point(14, 135);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(47, 20);
             this.lbEmail.TabIndex = 17;
@@ -179,8 +175,8 @@
             // 
             // pnContainer
             // 
+            this.pnContainer.Controls.Add(this.tlpBottom);
             this.pnContainer.Controls.Add(this.groupAvatar);
-            this.pnContainer.Controls.Add(this.groupAccount);
             this.pnContainer.Controls.Add(this.groupAddress);
             this.pnContainer.Controls.Add(this.groupContact);
             this.pnContainer.Controls.Add(this.groupManagement);
@@ -189,7 +185,7 @@
             this.pnContainer.Location = new System.Drawing.Point(0, 0);
             this.pnContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Size = new System.Drawing.Size(1515, 494);
+            this.pnContainer.Size = new System.Drawing.Size(1167, 624);
             this.pnContainer.TabIndex = 30;
             // 
             // groupAvatar
@@ -197,9 +193,9 @@
             this.groupAvatar.Controls.Add(this.lbProfilePhoto);
             this.groupAvatar.Controls.Add(this.btnChoose);
             this.groupAvatar.Controls.Add(this.picAvt);
-            this.groupAvatar.Location = new System.Drawing.Point(1224, 26);
+            this.groupAvatar.Location = new System.Drawing.Point(864, 28);
             this.groupAvatar.Name = "groupAvatar";
-            this.groupAvatar.Size = new System.Drawing.Size(265, 443);
+            this.groupAvatar.Size = new System.Drawing.Size(265, 527);
             this.groupAvatar.TabIndex = 72;
             this.groupAvatar.TabStop = false;
             this.groupAvatar.Text = "Avatar";
@@ -208,7 +204,7 @@
             // 
             this.lbProfilePhoto.AutoSize = true;
             this.lbProfilePhoto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProfilePhoto.Location = new System.Drawing.Point(81, 67);
+            this.lbProfilePhoto.Location = new System.Drawing.Point(82, 83);
             this.lbProfilePhoto.Name = "lbProfilePhoto";
             this.lbProfilePhoto.Size = new System.Drawing.Size(101, 20);
             this.lbProfilePhoto.TabIndex = 55;
@@ -218,7 +214,7 @@
             // 
             this.btnChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChoose.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnChoose.Location = new System.Drawing.Point(85, 385);
+            this.btnChoose.Location = new System.Drawing.Point(86, 401);
             this.btnChoose.Margin = new System.Windows.Forms.Padding(4);
             this.btnChoose.Name = "btnChoose";
             this.btnChoose.Size = new System.Drawing.Size(100, 37);
@@ -230,7 +226,7 @@
             // picAvt
             // 
             this.picAvt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAvt.Location = new System.Drawing.Point(42, 123);
+            this.picAvt.Location = new System.Drawing.Point(43, 139);
             this.picAvt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picAvt.Name = "picAvt";
             this.picAvt.Size = new System.Drawing.Size(180, 240);
@@ -238,82 +234,11 @@
             this.picAvt.TabIndex = 54;
             this.picAvt.TabStop = false;
             // 
-            // groupAccount
-            // 
-            this.groupAccount.Controls.Add(this.textBox2);
-            this.groupAccount.Controls.Add(this.lbPassword);
-            this.groupAccount.Controls.Add(this.textBox1);
-            this.groupAccount.Controls.Add(this.lbUserName);
-            this.groupAccount.Controls.Add(this.cbbUserType);
-            this.groupAccount.Controls.Add(this.label1);
-            this.groupAccount.Location = new System.Drawing.Point(25, 292);
-            this.groupAccount.Name = "groupAccount";
-            this.groupAccount.Size = new System.Drawing.Size(375, 177);
-            this.groupAccount.TabIndex = 71;
-            this.groupAccount.TabStop = false;
-            this.groupAccount.Text = "Account";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.Location = new System.Drawing.Point(133, 91);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(212, 27);
-            this.textBox2.TabIndex = 76;
-            // 
-            // lbPassword
-            // 
-            this.lbPassword.AutoSize = true;
-            this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.Location = new System.Drawing.Point(26, 94);
-            this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(76, 20);
-            this.lbPassword.TabIndex = 75;
-            this.lbPassword.Text = "Password";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(133, 44);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 27);
-            this.textBox1.TabIndex = 74;
-            // 
-            // lbUserName
-            // 
-            this.lbUserName.AutoSize = true;
-            this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.Location = new System.Drawing.Point(26, 47);
-            this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(84, 20);
-            this.lbUserName.TabIndex = 73;
-            this.lbUserName.Text = "User name";
-            // 
-            // cbbUserType
-            // 
-            this.cbbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbUserType.FormattingEnabled = true;
-            this.cbbUserType.Location = new System.Drawing.Point(133, 136);
-            this.cbbUserType.Name = "cbbUserType";
-            this.cbbUserType.Size = new System.Drawing.Size(212, 28);
-            this.cbbUserType.TabIndex = 72;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 139);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 20);
-            this.label1.TabIndex = 71;
-            this.label1.Text = "User type";
-            // 
             // groupAddress
             // 
-            this.groupAddress.Controls.Add(this.txtAddress);
+            this.groupAddress.Controls.Add(this.cbbPriority);
+            this.groupAddress.Controls.Add(this.lbPriority);
+            this.groupAddress.Controls.Add(this.txtStreet);
             this.groupAddress.Controls.Add(this.label4);
             this.groupAddress.Controls.Add(this.cbbCommune);
             this.groupAddress.Controls.Add(this.lbCommune);
@@ -321,31 +246,31 @@
             this.groupAddress.Controls.Add(this.lbDistrict);
             this.groupAddress.Controls.Add(this.cbbProvince);
             this.groupAddress.Controls.Add(this.lbProvince);
-            this.groupAddress.Location = new System.Drawing.Point(822, 26);
+            this.groupAddress.Location = new System.Drawing.Point(449, 282);
             this.groupAddress.Name = "groupAddress";
-            this.groupAddress.Size = new System.Drawing.Size(375, 235);
+            this.groupAddress.Size = new System.Drawing.Size(375, 273);
             this.groupAddress.TabIndex = 70;
             this.groupAddress.TabStop = false;
             this.groupAddress.Text = "Address";
             // 
-            // txtAddress
+            // txtStreet
             // 
-            this.txtAddress.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAddress.Location = new System.Drawing.Point(110, 182);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(212, 27);
-            this.txtAddress.TabIndex = 79;
+            this.txtStreet.BackColor = System.Drawing.SystemColors.Control;
+            this.txtStreet.Location = new System.Drawing.Point(110, 182);
+            this.txtStreet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Size = new System.Drawing.Size(212, 27);
+            this.txtStreet.TabIndex = 79;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 184);
+            this.label4.Location = new System.Drawing.Point(22, 184);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 20);
+            this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 78;
-            this.label4.Text = "Address";
+            this.label4.Text = "Street";
             // 
             // cbbCommune
             // 
@@ -360,7 +285,7 @@
             // 
             this.lbCommune.AutoSize = true;
             this.lbCommune.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCommune.Location = new System.Drawing.Point(17, 134);
+            this.lbCommune.Location = new System.Drawing.Point(22, 134);
             this.lbCommune.Name = "lbCommune";
             this.lbCommune.Size = new System.Drawing.Size(81, 20);
             this.lbCommune.TabIndex = 76;
@@ -379,7 +304,7 @@
             // 
             this.lbDistrict.AutoSize = true;
             this.lbDistrict.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDistrict.Location = new System.Drawing.Point(17, 87);
+            this.lbDistrict.Location = new System.Drawing.Point(22, 87);
             this.lbDistrict.Name = "lbDistrict";
             this.lbDistrict.Size = new System.Drawing.Size(60, 20);
             this.lbDistrict.TabIndex = 74;
@@ -398,7 +323,7 @@
             // 
             this.lbProvince.AutoSize = true;
             this.lbProvince.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProvince.Location = new System.Drawing.Point(17, 40);
+            this.lbProvince.Location = new System.Drawing.Point(22, 40);
             this.lbProvince.Name = "lbProvince";
             this.lbProvince.Size = new System.Drawing.Size(69, 20);
             this.lbProvince.TabIndex = 72;
@@ -412,9 +337,9 @@
             this.groupContact.Controls.Add(this.txtPhone2);
             this.groupContact.Controls.Add(this.txtPhone1);
             this.groupContact.Controls.Add(this.lbPhone2);
-            this.groupContact.Location = new System.Drawing.Point(822, 271);
+            this.groupContact.Location = new System.Drawing.Point(449, 28);
             this.groupContact.Name = "groupContact";
-            this.groupContact.Size = new System.Drawing.Size(375, 198);
+            this.groupContact.Size = new System.Drawing.Size(375, 231);
             this.groupContact.TabIndex = 69;
             this.groupContact.TabStop = false;
             this.groupContact.Text = "Contact";
@@ -422,7 +347,7 @@
             // txtPhone2
             // 
             this.txtPhone2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPhone2.Location = new System.Drawing.Point(94, 96);
+            this.txtPhone2.Location = new System.Drawing.Point(133, 81);
             this.txtPhone2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone2.Name = "txtPhone2";
             this.txtPhone2.Size = new System.Drawing.Size(212, 27);
@@ -432,7 +357,7 @@
             // 
             this.lbPhone2.AutoSize = true;
             this.lbPhone2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhone2.Location = new System.Drawing.Point(14, 98);
+            this.lbPhone2.Location = new System.Drawing.Point(14, 84);
             this.lbPhone2.Name = "lbPhone2";
             this.lbPhone2.Size = new System.Drawing.Size(66, 20);
             this.lbPhone2.TabIndex = 63;
@@ -440,15 +365,17 @@
             // 
             // groupManagement
             // 
+            this.groupManagement.Controls.Add(this.cbbUserType);
+            this.groupManagement.Controls.Add(this.label1);
             this.groupManagement.Controls.Add(this.dtpStartDate);
             this.groupManagement.Controls.Add(this.lbStartDate);
             this.groupManagement.Controls.Add(this.txtSalary);
             this.groupManagement.Controls.Add(this.lbSalary);
             this.groupManagement.Controls.Add(this.txtManagerID);
             this.groupManagement.Controls.Add(this.lbManager);
-            this.groupManagement.Location = new System.Drawing.Point(25, 26);
+            this.groupManagement.Location = new System.Drawing.Point(33, 28);
             this.groupManagement.Name = "groupManagement";
-            this.groupManagement.Size = new System.Drawing.Size(375, 180);
+            this.groupManagement.Size = new System.Drawing.Size(375, 231);
             this.groupManagement.TabIndex = 68;
             this.groupManagement.TabStop = false;
             this.groupManagement.Text = "Management";
@@ -465,7 +392,7 @@
             // 
             this.lbStartDate.AutoSize = true;
             this.lbStartDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStartDate.Location = new System.Drawing.Point(24, 139);
+            this.lbStartDate.Location = new System.Drawing.Point(26, 139);
             this.lbStartDate.Name = "lbStartDate";
             this.lbStartDate.Size = new System.Drawing.Size(78, 20);
             this.lbStartDate.TabIndex = 67;
@@ -518,10 +445,10 @@
             this.groupInfo.Controls.Add(this.lbFirstName);
             this.groupInfo.Controls.Add(this.lbDoB);
             this.groupInfo.Controls.Add(this.ckbFemale);
-            this.groupInfo.Controls.Add(this.txtID);
+            this.groupInfo.Controls.Add(this.txtSSN);
             this.groupInfo.Controls.Add(this.lbSSN);
             this.groupInfo.Controls.Add(this.lbGender);
-            this.groupInfo.Location = new System.Drawing.Point(424, 26);
+            this.groupInfo.Location = new System.Drawing.Point(32, 282);
             this.groupInfo.Name = "groupInfo";
             this.groupInfo.Size = new System.Drawing.Size(375, 273);
             this.groupInfo.TabIndex = 67;
@@ -549,7 +476,7 @@
             // 
             this.lbLastName.AutoSize = true;
             this.lbLastName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLastName.Location = new System.Drawing.Point(20, 88);
+            this.lbLastName.Location = new System.Drawing.Point(26, 88);
             this.lbLastName.Name = "lbLastName";
             this.lbLastName.Size = new System.Drawing.Size(81, 20);
             this.lbLastName.TabIndex = 61;
@@ -559,7 +486,7 @@
             // 
             this.lbFirstName.AutoSize = true;
             this.lbFirstName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFirstName.Location = new System.Drawing.Point(20, 39);
+            this.lbFirstName.Location = new System.Drawing.Point(26, 39);
             this.lbFirstName.Name = "lbFirstName";
             this.lbFirstName.Size = new System.Drawing.Size(83, 20);
             this.lbFirstName.TabIndex = 37;
@@ -569,7 +496,7 @@
             // 
             this.lbDoB.AutoSize = true;
             this.lbDoB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDoB.Location = new System.Drawing.Point(20, 137);
+            this.lbDoB.Location = new System.Drawing.Point(26, 137);
             this.lbDoB.Name = "lbDoB";
             this.lbDoB.Size = new System.Drawing.Size(39, 20);
             this.lbDoB.TabIndex = 40;
@@ -587,20 +514,20 @@
             this.ckbFemale.Text = "Female";
             this.ckbFemale.UseVisualStyleBackColor = true;
             // 
-            // txtID
+            // txtSSN
             // 
-            this.txtID.BackColor = System.Drawing.SystemColors.Control;
-            this.txtID.Location = new System.Drawing.Point(113, 222);
-            this.txtID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(212, 27);
-            this.txtID.TabIndex = 14;
+            this.txtSSN.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSSN.Location = new System.Drawing.Point(113, 222);
+            this.txtSSN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSSN.Name = "txtSSN";
+            this.txtSSN.Size = new System.Drawing.Size(212, 27);
+            this.txtSSN.TabIndex = 14;
             // 
             // lbSSN
             // 
             this.lbSSN.AutoSize = true;
             this.lbSSN.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSSN.Location = new System.Drawing.Point(20, 224);
+            this.lbSSN.Location = new System.Drawing.Point(26, 224);
             this.lbSSN.Name = "lbSSN";
             this.lbSSN.Size = new System.Drawing.Size(37, 20);
             this.lbSSN.TabIndex = 13;
@@ -610,75 +537,125 @@
             // 
             this.pnSV.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnSV.Controls.Add(this.pnContainer);
-            this.pnSV.Controls.Add(this.panel2);
             this.pnSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnSV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnSV.Location = new System.Drawing.Point(0, 62);
             this.pnSV.Margin = new System.Windows.Forms.Padding(4);
             this.pnSV.Name = "pnSV";
-            this.pnSV.Size = new System.Drawing.Size(1515, 547);
+            this.pnSV.Size = new System.Drawing.Size(1167, 624);
             this.pnSV.TabIndex = 35;
             // 
-            // panel2
+            // cbbPriority
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnEdit);
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 494);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1515, 53);
-            this.panel2.TabIndex = 29;
+            this.cbbPriority.BackColor = System.Drawing.SystemColors.Window;
+            this.cbbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPriority.FormattingEnabled = true;
+            this.cbbPriority.ItemHeight = 20;
+            this.cbbPriority.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "2NT",
+            "3"});
+            this.cbbPriority.Location = new System.Drawing.Point(110, 224);
+            this.cbbPriority.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbPriority.Name = "cbbPriority";
+            this.cbbPriority.Size = new System.Drawing.Size(212, 28);
+            this.cbbPriority.TabIndex = 90;
             // 
-            // btnDelete
+            // lbPriority
             // 
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Crimson;
-            this.btnDelete.Location = new System.Drawing.Point(856, 9);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(96, 34);
-            this.btnDelete.TabIndex = 30;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.lbPriority.AutoSize = true;
+            this.lbPriority.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPriority.Location = new System.Drawing.Point(22, 227);
+            this.lbPriority.Name = "lbPriority";
+            this.lbPriority.Size = new System.Drawing.Size(61, 20);
+            this.lbPriority.TabIndex = 91;
+            this.lbPriority.Text = "Priority";
+            // 
+            // cbbUserType
+            // 
+            this.cbbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbUserType.FormattingEnabled = true;
+            this.cbbUserType.Location = new System.Drawing.Point(133, 178);
+            this.cbbUserType.Name = "cbbUserType";
+            this.cbbUserType.Size = new System.Drawing.Size(212, 28);
+            this.cbbUserType.TabIndex = 74;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(26, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 20);
+            this.label1.TabIndex = 73;
+            this.label1.Text = "User type";
+            // 
+            // tlpBottom
+            // 
+            this.tlpBottom.ColumnCount = 3;
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.Controls.Add(this.btnDelete, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnSave, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnEdit, 0, 0);
+            this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlpBottom.Location = new System.Drawing.Point(0, 580);
+            this.tlpBottom.Name = "tlpBottom";
+            this.tlpBottom.RowCount = 1;
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpBottom.Size = new System.Drawing.Size(1167, 44);
+            this.tlpBottom.TabIndex = 73;
             // 
             // btnEdit
             // 
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Blue;
-            this.btnEdit.Location = new System.Drawing.Point(563, 9);
+            this.btnEdit.Location = new System.Drawing.Point(3, 2);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(96, 34);
-            this.btnEdit.TabIndex = 28;
+            this.btnEdit.Size = new System.Drawing.Size(382, 40);
+            this.btnEdit.TabIndex = 29;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Visible = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnSave.Location = new System.Drawing.Point(711, 9);
+            this.btnSave.Location = new System.Drawing.Point(391, 2);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(96, 34);
-            this.btnSave.TabIndex = 29;
+            this.btnSave.Size = new System.Drawing.Size(382, 40);
+            this.btnSave.TabIndex = 30;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Crimson;
+            this.btnDelete.Location = new System.Drawing.Point(779, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(385, 40);
+            this.btnDelete.TabIndex = 31;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // FrmEmployeeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1515, 609);
+            this.ClientSize = new System.Drawing.Size(1167, 686);
             this.Controls.Add(this.pnSV);
             this.Controls.Add(this.pnTop);
             this.Name = "FrmEmployeeInfo";
@@ -689,8 +666,6 @@
             this.groupAvatar.ResumeLayout(false);
             this.groupAvatar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).EndInit();
-            this.groupAccount.ResumeLayout(false);
-            this.groupAccount.PerformLayout();
             this.groupAddress.ResumeLayout(false);
             this.groupAddress.PerformLayout();
             this.groupContact.ResumeLayout(false);
@@ -700,7 +675,7 @@
             this.groupInfo.ResumeLayout(false);
             this.groupInfo.PerformLayout();
             this.pnSV.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.tlpBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -717,12 +692,11 @@
         private System.Windows.Forms.Label lbPhone1;
         private System.Windows.Forms.Panel pnContainer;
         private System.Windows.Forms.CheckBox ckbFemale;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtSSN;
         private System.Windows.Forms.Label lbSSN;
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.Label lbDoB;
         private System.Windows.Forms.Panel pnSV;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtManagerID;
         private System.Windows.Forms.Label lbManager;
         private System.Windows.Forms.TextBox txtSalary;
@@ -738,15 +712,8 @@
         private System.Windows.Forms.Label lbProfilePhoto;
         private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.PictureBox picAvt;
-        private System.Windows.Forms.GroupBox groupAccount;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lbPassword;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbUserName;
-        private System.Windows.Forms.ComboBox cbbUserType;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupAddress;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtStreet;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbbCommune;
         private System.Windows.Forms.Label lbCommune;
@@ -757,8 +724,13 @@
         private System.Windows.Forms.GroupBox groupContact;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.DateTimePicker dtpDoB;
+        private System.Windows.Forms.ComboBox cbbPriority;
+        private System.Windows.Forms.Label lbPriority;
+        private System.Windows.Forms.TableLayoutPanel tlpBottom;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.ComboBox cbbUserType;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -40,7 +40,7 @@ namespace DormitoryManagement.Controller
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-                adapter.Fill(data);
+                 adapter.Fill(data);
 
                 connection.Close();
             }
