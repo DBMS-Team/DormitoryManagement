@@ -37,9 +37,7 @@
             this.pnSV = new System.Windows.Forms.Panel();
             this.pnContainer = new System.Windows.Forms.Panel();
             this.groupUniversity = new System.Windows.Forms.GroupBox();
-            this.cbbMajor = new System.Windows.Forms.ComboBox();
             this.lbMajor = new System.Windows.Forms.Label();
-            this.cbbFaculty = new System.Windows.Forms.ComboBox();
             this.lbFaculty = new System.Windows.Forms.Label();
             this.cbbUniversity = new System.Windows.Forms.ComboBox();
             this.lbUniversity = new System.Windows.Forms.Label();
@@ -51,6 +49,8 @@
             this.cbbUserType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupAddress = new System.Windows.Forms.GroupBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.lbAddress = new System.Windows.Forms.Label();
             this.cbbCommune = new System.Windows.Forms.ComboBox();
             this.cbbDistrict = new System.Windows.Forms.ComboBox();
             this.cbbProvince = new System.Windows.Forms.ComboBox();
@@ -85,8 +85,8 @@
             this.lbFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pnTop = new System.Windows.Forms.Panel();
-            this.lbAddress = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtFaculty = new System.Windows.Forms.TextBox();
+            this.txtMajor = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.pnSV.SuspendLayout();
             this.pnContainer.SuspendLayout();
@@ -214,9 +214,9 @@
             // 
             // groupUniversity
             // 
-            this.groupUniversity.Controls.Add(this.cbbMajor);
+            this.groupUniversity.Controls.Add(this.txtMajor);
+            this.groupUniversity.Controls.Add(this.txtFaculty);
             this.groupUniversity.Controls.Add(this.lbMajor);
-            this.groupUniversity.Controls.Add(this.cbbFaculty);
             this.groupUniversity.Controls.Add(this.lbFaculty);
             this.groupUniversity.Controls.Add(this.cbbUniversity);
             this.groupUniversity.Controls.Add(this.lbUniversity);
@@ -227,17 +227,6 @@
             this.groupUniversity.TabStop = false;
             this.groupUniversity.Text = "University";
             // 
-            // cbbMajor
-            // 
-            this.cbbMajor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbMajor.FormattingEnabled = true;
-            this.cbbMajor.Location = new System.Drawing.Point(132, 131);
-            this.cbbMajor.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbMajor.Name = "cbbMajor";
-            this.cbbMajor.Size = new System.Drawing.Size(212, 28);
-            this.cbbMajor.TabIndex = 17;
-            this.cbbMajor.SelectedIndexChanged += new System.EventHandler(this.cmbMajor_SelectedIndexChanged);
-            // 
             // lbMajor
             // 
             this.lbMajor.AutoSize = true;
@@ -247,17 +236,6 @@
             this.lbMajor.Size = new System.Drawing.Size(50, 20);
             this.lbMajor.TabIndex = 85;
             this.lbMajor.Text = "Major";
-            // 
-            // cbbFaculty
-            // 
-            this.cbbFaculty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbFaculty.FormattingEnabled = true;
-            this.cbbFaculty.Location = new System.Drawing.Point(132, 83);
-            this.cbbFaculty.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbFaculty.Name = "cbbFaculty";
-            this.cbbFaculty.Size = new System.Drawing.Size(212, 28);
-            this.cbbFaculty.TabIndex = 16;
-            this.cbbFaculty.SelectedIndexChanged += new System.EventHandler(this.cmbFaculty_SelectedIndexChanged);
             // 
             // lbFaculty
             // 
@@ -378,6 +356,25 @@
             this.groupAddress.TabIndex = 66;
             this.groupAddress.TabStop = false;
             this.groupAddress.Text = "Address";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAddress.Location = new System.Drawing.Point(106, 189);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(212, 27);
+            this.txtAddress.TabIndex = 70;
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAddress.Location = new System.Drawing.Point(18, 192);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(66, 20);
+            this.lbAddress.TabIndex = 69;
+            this.lbAddress.Text = "Address";
             // 
             // cbbCommune
             // 
@@ -746,24 +743,19 @@
             this.pnTop.Size = new System.Drawing.Size(1523, 62);
             this.pnTop.TabIndex = 34;
             // 
-            // lbAddress
+            // txtFaculty
             // 
-            this.lbAddress.AutoSize = true;
-            this.lbAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddress.Location = new System.Drawing.Point(18, 192);
-            this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(66, 20);
-            this.lbAddress.TabIndex = 69;
-            this.lbAddress.Text = "Address";
+            this.txtFaculty.Location = new System.Drawing.Point(133, 86);
+            this.txtFaculty.Name = "txtFaculty";
+            this.txtFaculty.Size = new System.Drawing.Size(212, 27);
+            this.txtFaculty.TabIndex = 74;
             // 
-            // txtAddress
+            // txtMajor
             // 
-            this.txtAddress.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAddress.Location = new System.Drawing.Point(106, 189);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(212, 27);
-            this.txtAddress.TabIndex = 70;
+            this.txtMajor.Location = new System.Drawing.Point(133, 134);
+            this.txtMajor.Name = "txtMajor";
+            this.txtMajor.Size = new System.Drawing.Size(212, 27);
+            this.txtMajor.TabIndex = 86;
             // 
             // FrmStudentInfo
             // 
@@ -845,9 +837,7 @@
         private System.Windows.Forms.ComboBox cbbUserType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupUniversity;
-        private System.Windows.Forms.ComboBox cbbMajor;
         private System.Windows.Forms.Label lbMajor;
-        private System.Windows.Forms.ComboBox cbbFaculty;
         private System.Windows.Forms.Label lbFaculty;
         private System.Windows.Forms.ComboBox cbbUniversity;
         private System.Windows.Forms.Label lbUniversity;
@@ -857,5 +847,7 @@
         private System.Windows.Forms.ComboBox cbbProvince;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lbAddress;
+        private System.Windows.Forms.TextBox txtMajor;
+        private System.Windows.Forms.TextBox txtFaculty;
     }
 }
