@@ -10,19 +10,6 @@ namespace DormitoryManagement.Controller
 {
     public static class AdminDAO
     {
-        public static List<UserDTO> GetListAdmin()
-        {
-            List<UserDTO> adminDTOs = new List<UserDTO>();
-            string query = string.Format("EXEC dbo.USP_GetListAdmin");
-            DataTable dataTable = DataProvider.ExcuteQuery(query);
-            foreach (DataRow item in dataTable.Rows)
-            {
-                UserDTO adminDTO = new UserDTO(item);
-                adminDTOs.Add(adminDTO);
-
-            }
-            return adminDTOs;
-        }
         public static AdminDTO GetAdminById(long id)
         {
             string query = string.Format("EXEC dbo.USP_GetAdminById @USER_ID = {0}", id);

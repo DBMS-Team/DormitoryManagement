@@ -1,7 +1,6 @@
 <<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
 ﻿using DormitoryManagement.Controller;
 using DormitoryManagement.Model;
-using DormitoryManagement.Utility;
 using System;
 =======
 ﻿using System;
@@ -42,8 +41,8 @@ namespace DormitoryManagement.View
         #region Events
         private void FrmAddNewEmployee_Load(object sender, EventArgs e)
         {
+            btnSave.Enabled = false;
             LoadListProvinceInCombobox();
-            LoadListAdminInCombobox();
         }
         private void cbbProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -51,7 +50,7 @@ namespace DormitoryManagement.View
             if (comboBox.SelectedItem == null)
                 return;
             provinceName = comboBox.Text;
-            LoadListDistrictByProvinceNameInCombobox(provinceName);
+            LoadListDistrictByProvinceName(provinceName);
         }
         private void cbbDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -59,6 +58,7 @@ namespace DormitoryManagement.View
             if (comboBox.SelectedItem == null)
                 return;
             districtName = comboBox.Text;
+<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
 <<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
             LoadListCommunateByProvinceNameInCombobox(provinceName,districtName);
         }
@@ -93,6 +93,9 @@ namespace DormitoryManagement.View
 =======
             LoadListCommunateByProvinceName(provinceName, districtName);
 >>>>>>> f23f06229bbce7834c4536a592179e2eedee5920:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
+=======
+            LoadListCommunateByProvinceName(provinceName,districtName);
+>>>>>>> parent of ece0217 (update employee):DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
         }
         #endregion
 
@@ -103,27 +106,25 @@ namespace DormitoryManagement.View
             cbbProvince.DataSource = provinceDTOs;
             cbbProvince.DisplayMember = "ProvinceName";
         }
-        void LoadListDistrictByProvinceNameInCombobox(string provinceName)
+        void LoadListDistrictByProvinceName(string provinceName)
         {
             List<DistrictDTO> districtDTOs = DistrictDAO.GetListDistrictByProvinceName(provinceName);
             cbbDistrict.DataSource = districtDTOs;
             cbbDistrict.DisplayMember = "DistrictName";
         }
+<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
 <<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
         void LoadListCommunateByProvinceNameInCombobox(string provinceName,string districtName)
 =======
         void LoadListCommunateByProvinceName(string provinceName, string districtName)
 >>>>>>> f23f06229bbce7834c4536a592179e2eedee5920:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
+=======
+        void LoadListCommunateByProvinceName(string provinceName,string districtName)
+>>>>>>> parent of ece0217 (update employee):DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
         {
             List<CommuneDTO> communeDTOs = CommuneDAO.GetLisCommuneByProvinceAndDistrict(provinceName, districtName);
             cbbCommune.DataSource = communeDTOs;
             cbbCommune.DisplayMember = "CommuneName";
-        }
-        void LoadListAdminInCombobox()
-        {
-            List<UserDTO> adminDTOs = AdminDAO.GetListAdmin();
-            cbbManager.DataSource = adminDTOs;
-            cbbManager.DisplayMember = "LastName";
         }
 
         #endregion

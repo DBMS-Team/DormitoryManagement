@@ -427,13 +427,7 @@ BEGIN
 	SELECT * FROM dbo.COMMUNE WHERE DISTRICT_ID = @DISTRICT_ID
 END
 GO
--- Dùng để lấy danh sách quản trị viên.
-CREATE PROC USP_GetListAdmin
-AS
-BEGIN
-	SELECT * FROM dbo.[USER] WHERE USER_TYPE = 'ADMIN'
-END
-GO
+
 ----------------------
 -- TRIGGER
 ----------------------
