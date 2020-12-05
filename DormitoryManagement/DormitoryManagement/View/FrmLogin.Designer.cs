@@ -66,7 +66,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(130, 36);
             this.btnLogin.TabIndex = 10;
-            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -108,9 +108,9 @@
             this.lbMatKhau.ForeColor = System.Drawing.Color.Sienna;
             this.lbMatKhau.Location = new System.Drawing.Point(277, 268);
             this.lbMatKhau.Name = "lbMatKhau";
-            this.lbMatKhau.Size = new System.Drawing.Size(91, 23);
+            this.lbMatKhau.Size = new System.Drawing.Size(85, 23);
             this.lbMatKhau.TabIndex = 7;
-            this.lbMatKhau.Text = "Mật khẩu:";
+            this.lbMatKhau.Text = "Password";
             // 
             // lbTenDangNhap
             // 
@@ -118,11 +118,11 @@
             this.lbTenDangNhap.BackColor = System.Drawing.Color.Transparent;
             this.lbTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenDangNhap.ForeColor = System.Drawing.Color.Sienna;
-            this.lbTenDangNhap.Location = new System.Drawing.Point(325, 229);
+            this.lbTenDangNhap.Location = new System.Drawing.Point(277, 228);
             this.lbTenDangNhap.Name = "lbTenDangNhap";
-            this.lbTenDangNhap.Size = new System.Drawing.Size(42, 23);
+            this.lbTenDangNhap.Size = new System.Drawing.Size(89, 23);
             this.lbTenDangNhap.TabIndex = 6;
-            this.lbTenDangNhap.Text = "Tên:";
+            this.lbTenDangNhap.Text = "Username";
             // 
             // btnClose
             // 
@@ -138,7 +138,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(130, 36);
             this.btnClose.TabIndex = 11;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "EXIT";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -175,7 +175,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dormitory Management";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

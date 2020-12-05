@@ -69,7 +69,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1476, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản trị";
+            this.label1.Text = "MANAGEMENT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnQuanTri
@@ -172,7 +172,7 @@
             this.lbThongTin.Name = "lbThongTin";
             this.lbThongTin.Size = new System.Drawing.Size(1474, 42);
             this.lbThongTin.TabIndex = 0;
-            this.lbThongTin.Text = "Thông tin";
+            this.lbThongTin.Text = "INFORMATION";
             this.lbThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel2
