@@ -7,17 +7,9 @@ using System.Threading.Tasks;
 
 namespace DormitoryManagement.Utility
 {
-    public class FormatData
+    public static class FormatData
     {
-        private static FormatData instance;
-
-        public static FormatData Instance
-        {
-            get { if (instance == null) instance = new FormatData(); return instance; }
-            private set { instance = value; }
-        }
-        private FormatData() { }
-        public string CapitalizeEachWord(string str)
+        public static string CapitalizeEachWord(string str)
         {
             if (str == "") { return null; }
 
@@ -63,7 +55,7 @@ namespace DormitoryManagement.Utility
             return str;
         }
 
-        public int StringToInt(string str)
+        public static int StringToInt(string str)
         {
             int intNumber;
             if (!int.TryParse(str, out intNumber))
@@ -82,7 +74,7 @@ namespace DormitoryManagement.Utility
             return intNumber;
         }
 
-        public double StringToDouble(string str)
+        public static double StringToDouble(string str)
         {
             double doubleNumber;
             if (!double.TryParse(str, out doubleNumber))
@@ -110,7 +102,7 @@ namespace DormitoryManagement.Utility
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public bool IsEmail(string str)
+        public static bool IsEmail(string str)
         {
             if (str.Length < 5) { return false; }
             //Có nhiều ký tự @
@@ -129,7 +121,7 @@ namespace DormitoryManagement.Utility
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public bool IsPhone(string str)
+        public static bool IsPhone(string str)
         {
             if (str.Length < 10) { return false; }
 
@@ -146,7 +138,7 @@ namespace DormitoryManagement.Utility
 
             return true;
         }
-        public bool IsSSN(string str)
+        public static bool IsSSN(string str)
         {
             if (str.Length < 5) { return false; }
 
@@ -161,7 +153,7 @@ namespace DormitoryManagement.Utility
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public string StringConvertToUnSign(string str)
+        public static string StringConvertToUnSign(string str)
         {
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string temp = str.Normalize(NormalizationForm.FormD);

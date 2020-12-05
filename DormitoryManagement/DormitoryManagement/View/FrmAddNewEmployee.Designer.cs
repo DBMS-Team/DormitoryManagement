@@ -31,7 +31,7 @@
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbGender = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.picAvt = new System.Windows.Forms.PictureBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone2 = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbbProvince = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.ckbFemale = new System.Windows.Forms.CheckBox();
             this.btnChoose = new System.Windows.Forms.Button();
             this.lbProvice = new System.Windows.Forms.Label();
@@ -111,14 +111,14 @@
             this.lbGender.TabIndex = 42;
             this.lbGender.Text = "Gender";
             // 
-            // txtFullName
+            // txtLastName
             // 
-            this.txtFullName.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFullName.Location = new System.Drawing.Point(151, 78);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(212, 27);
-            this.txtFullName.TabIndex = 1;
+            this.txtLastName.BackColor = System.Drawing.SystemColors.Control;
+            this.txtLastName.Location = new System.Drawing.Point(151, 78);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(212, 27);
+            this.txtLastName.TabIndex = 1;
             // 
             // picAvt
             // 
@@ -196,7 +196,7 @@
             this.pnContainer.Controls.Add(this.label2);
             this.pnContainer.Controls.Add(this.cbbProvince);
             this.pnContainer.Controls.Add(this.label1);
-            this.pnContainer.Controls.Add(this.textBox1);
+            this.pnContainer.Controls.Add(this.txtFirstName);
             this.pnContainer.Controls.Add(this.ckbFemale);
             this.pnContainer.Controls.Add(this.btnChoose);
             this.pnContainer.Controls.Add(this.lbProvice);
@@ -206,7 +206,7 @@
             this.pnContainer.Controls.Add(this.lbFullName);
             this.pnContainer.Controls.Add(this.lbDoB);
             this.pnContainer.Controls.Add(this.lbGender);
-            this.pnContainer.Controls.Add(this.txtFullName);
+            this.pnContainer.Controls.Add(this.txtLastName);
             this.pnContainer.Controls.Add(this.picAvt);
             this.pnContainer.Controls.Add(this.txtEmail);
             this.pnContainer.Controls.Add(this.txtPhone2);
@@ -242,10 +242,13 @@
             // 
             // dtpStartDate
             // 
+            this.dtpStartDate.CustomFormat = "yyyy - MM - dd";
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStartDate.Location = new System.Drawing.Point(527, 308);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(212, 27);
             this.dtpStartDate.TabIndex = 76;
+            this.dtpStartDate.Value = new System.DateTime(2020, 12, 3, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -259,10 +262,13 @@
             // 
             // dtpDoB
             // 
+            this.dtpDoB.CustomFormat = "yyyy - MM - dd";
+            this.dtpDoB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDoB.Location = new System.Drawing.Point(151, 193);
             this.dtpDoB.Name = "dtpDoB";
             this.dtpDoB.Size = new System.Drawing.Size(212, 27);
             this.dtpDoB.TabIndex = 3;
+            this.dtpDoB.Value = new System.DateTime(2020, 12, 3, 0, 0, 0, 0);
             // 
             // cbbManager
             // 
@@ -357,14 +363,14 @@
             this.label1.TabIndex = 63;
             this.label1.Text = "First name";
             // 
-            // textBox1
+            // txtFirstName
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(151, 131);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 27);
-            this.textBox1.TabIndex = 2;
+            this.txtFirstName.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFirstName.Location = new System.Drawing.Point(151, 131);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(212, 27);
+            this.txtFirstName.TabIndex = 2;
             // 
             // ckbFemale
             // 
@@ -510,6 +516,7 @@
             this.btnSave.TabIndex = 26;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmAddNewEmployee
             // 
@@ -537,7 +544,7 @@
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lbGender;
-        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.PictureBox picAvt;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone2;
@@ -559,7 +566,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpStartDate;

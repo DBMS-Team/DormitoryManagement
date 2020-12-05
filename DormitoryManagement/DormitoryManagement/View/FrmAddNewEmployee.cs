@@ -1,5 +1,6 @@
 ﻿using DormitoryManagement.Controller;
 using DormitoryManagement.Model;
+using DormitoryManagement.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +28,8 @@ namespace DormitoryManagement.View
         #region Events
         private void FrmAddNewEmployee_Load(object sender, EventArgs e)
         {
-            btnSave.Enabled = false;
             LoadListProvinceInCombobox();
+            LoadListAdminInCombobox();
         }
         private void cbbProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -36,7 +37,7 @@ namespace DormitoryManagement.View
             if (comboBox.SelectedItem == null)
                 return;
             provinceName = comboBox.Text;
-            LoadListDistrictByProvinceName(provinceName);
+            LoadListDistrictByProvinceNameInCombobox(provinceName);
         }
         private void cbbDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -44,7 +45,36 @@ namespace DormitoryManagement.View
             if (comboBox.SelectedItem == null)
                 return;
             districtName = comboBox.Text;
-            LoadListCommunateByProvinceName(provinceName,districtName);
+            LoadListCommunateByProvinceNameInCombobox(provinceName,districtName);
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int flag = 0;
+            if(txtLastName.Text == "")
+            {
+                MessageBox.Show("LastName Not Null", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                flag = 1;
+            }
+            else if (txtFirstName.Text == "" && flag == 0 )
+            {
+                MessageBox.Show("FirstName Not Null", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                flag = 1;
+            }
+            else if (txtStreet.Text == "" && flag == 0)
+            {
+                MessageBox.Show("Street Not Null", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                flag = 1;
+            }
+            else if ((txtPhone1.Text == "" && flag == 0) || FormatData.IsEmail(txtPhone1.Text) == false)
+            {
+                MessageBox.Show("Not Is Phone Number", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                flag = 1;
+            }
+            else if (txtEmail.Text == "" && flag == 0 && FormatData.IsEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Not Is Mail", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                flag = 1;
+            }
         }
         #endregion
 
@@ -55,17 +85,23 @@ namespace DormitoryManagement.View
             cbbProvince.DataSource = provinceDTOs;
             cbbProvince.DisplayMember = "ProvinceName";
         }
-        void LoadListDistrictByProvinceName(string provinceName)
+        void LoadListDistrictByProvinceNameInCombobox(string provinceName)
         {
             List<DistrictDTO> districtDTOs = DistrictDAO.GetListDistrictByProvinceName(provinceName);
             cbbDistrict.DataSource = districtDTOs;
             cbbDistrict.DisplayMember = "DistrictName";
         }
-        void LoadListCommunateByProvinceName(string provinceName,string districtName)
+        void LoadListCommunateByProvinceNameInCombobox(string provinceName,string districtName)
         {
             List<CommuneDTO> communeDTOs = CommuneDAO.GetLisCommuneByProvinceAndDistrict(provinceName,districtName);
             cbbCommnune.DataSource = communeDTOs;
             cbbCommnune.DisplayMember = "CommuneName";
+        }
+        void LoadListAdminInCombobox()
+        {
+            List<UserDTO> adminDTOs = AdminDAO.GetListAdmin();
+            cbbManager.DataSource = adminDTOs;
+            cbbManager.DisplayMember = "LastName";
         }
 
         #endregion
