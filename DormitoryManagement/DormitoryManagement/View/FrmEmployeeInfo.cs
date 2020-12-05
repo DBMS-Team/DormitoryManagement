@@ -1,7 +1,5 @@
-
-﻿using DormitoryManagement.Controller;
+using DormitoryManagement.Controller;
 using DormitoryManagement.Model;
-using DormitoryManagement.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,8 +37,9 @@ namespace DormitoryManagement.View
         #region Events
         private void FrmAddNewEmployee_Load(object sender, EventArgs e)
         {
+            btnSave.Enabled = false;
             LoadListProvinceInCombobox();
-            
+
         }
         private void cbbProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -48,7 +47,7 @@ namespace DormitoryManagement.View
             if (comboBox.SelectedItem == null)
                 return;
             provinceName = comboBox.Text;
-            LoadListDistrictByProvinceNameInCombobox(provinceName);
+            LoadListDistrictByProvinceName(provinceName);
         }
         private void cbbDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -58,6 +57,7 @@ namespace DormitoryManagement.View
             districtName = comboBox.Text;
             LoadListCommunateByProvinceNameInCombobox(provinceName,districtName);
         }
+
         #endregion
 
         #region Methods
@@ -67,20 +67,19 @@ namespace DormitoryManagement.View
             cbbProvince.DataSource = provinceDTOs;
             cbbProvince.DisplayMember = "ProvinceName";
         }
-        void LoadListDistrictByProvinceNameInCombobox(string provinceName)
+        void LoadListDistrictByProvinceName(string provinceName)
         {
             List<DistrictDTO> districtDTOs = DistrictDAO.GetListDistrictByProvinceName(provinceName);
             cbbDistrict.DataSource = districtDTOs;
             cbbDistrict.DisplayMember = "DistrictName";
         }
-
+        
         void LoadListCommunateByProvinceNameInCombobox(string provinceName,string districtName)
         {
             List<CommuneDTO> communeDTOs = CommuneDAO.GetLisCommuneByProvinceAndDistrict(provinceName, districtName);
             cbbCommune.DataSource = communeDTOs;
             cbbCommune.DisplayMember = "CommuneName";
         }
-
 
         #endregion
 
