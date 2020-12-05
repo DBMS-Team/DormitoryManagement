@@ -32,12 +32,10 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbGender = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtHealthInsurance = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtSDT = new System.Windows.Forms.TextBox();
-            this.lbHealthInsurance = new System.Windows.Forms.Label();
+            this.txtPhone1 = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
-            this.lbPhone = new System.Windows.Forms.Label();
+            this.lbPhone1 = new System.Windows.Forms.Label();
             this.pnContainer = new System.Windows.Forms.Panel();
             this.groupAvatar = new System.Windows.Forms.GroupBox();
             this.lbProfilePhoto = new System.Windows.Forms.Label();
@@ -65,8 +63,6 @@
             this.groupManagement = new System.Windows.Forms.GroupBox();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.lbStartDate = new System.Windows.Forms.Label();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
-            this.lbEmployeeID = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.lbSalary = new System.Windows.Forms.Label();
             this.txtManagerID = new System.Windows.Forms.TextBox();
@@ -143,15 +139,6 @@
             this.txtFirstName.Size = new System.Drawing.Size(212, 27);
             this.txtFirstName.TabIndex = 39;
             // 
-            // txtHealthInsurance
-            // 
-            this.txtHealthInsurance.BackColor = System.Drawing.SystemColors.Control;
-            this.txtHealthInsurance.Location = new System.Drawing.Point(113, 273);
-            this.txtHealthInsurance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtHealthInsurance.Name = "txtHealthInsurance";
-            this.txtHealthInsurance.Size = new System.Drawing.Size(212, 27);
-            this.txtHealthInsurance.TabIndex = 20;
-            // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.Control;
@@ -161,25 +148,14 @@
             this.txtEmail.Size = new System.Drawing.Size(212, 27);
             this.txtEmail.TabIndex = 18;
             // 
-            // txtSDT
+            // txtPhone1
             // 
-            this.txtSDT.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSDT.Location = new System.Drawing.Point(94, 38);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(212, 27);
-            this.txtSDT.TabIndex = 16;
-            // 
-            // lbHealthInsurance
-            // 
-            this.lbHealthInsurance.AutoSize = true;
-            this.lbHealthInsurance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHealthInsurance.Location = new System.Drawing.Point(20, 266);
-            this.lbHealthInsurance.Name = "lbHealthInsurance";
-            this.lbHealthInsurance.Size = new System.Drawing.Size(77, 40);
-            this.lbHealthInsurance.TabIndex = 19;
-            this.lbHealthInsurance.Text = "Health\r\nInsurance";
-            this.lbHealthInsurance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtPhone1.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPhone1.Location = new System.Drawing.Point(94, 38);
+            this.txtPhone1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhone1.Name = "txtPhone1";
+            this.txtPhone1.Size = new System.Drawing.Size(212, 27);
+            this.txtPhone1.TabIndex = 16;
             // 
             // lbEmail
             // 
@@ -191,15 +167,15 @@
             this.lbEmail.TabIndex = 17;
             this.lbEmail.Text = "Email";
             // 
-            // lbPhone
+            // lbPhone1
             // 
-            this.lbPhone.AutoSize = true;
-            this.lbPhone.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhone.Location = new System.Drawing.Point(14, 40);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(53, 20);
-            this.lbPhone.TabIndex = 15;
-            this.lbPhone.Text = "Phone";
+            this.lbPhone1.AutoSize = true;
+            this.lbPhone1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhone1.Location = new System.Drawing.Point(14, 40);
+            this.lbPhone1.Name = "lbPhone1";
+            this.lbPhone1.Size = new System.Drawing.Size(66, 20);
+            this.lbPhone1.TabIndex = 15;
+            this.lbPhone1.Text = "Phone 1";
             // 
             // pnContainer
             // 
@@ -431,10 +407,10 @@
             // groupContact
             // 
             this.groupContact.Controls.Add(this.txtEmail);
-            this.groupContact.Controls.Add(this.lbPhone);
+            this.groupContact.Controls.Add(this.lbPhone1);
             this.groupContact.Controls.Add(this.lbEmail);
             this.groupContact.Controls.Add(this.txtPhone2);
-            this.groupContact.Controls.Add(this.txtSDT);
+            this.groupContact.Controls.Add(this.txtPhone1);
             this.groupContact.Controls.Add(this.lbPhone2);
             this.groupContact.Location = new System.Drawing.Point(822, 271);
             this.groupContact.Name = "groupContact";
@@ -466,15 +442,13 @@
             // 
             this.groupManagement.Controls.Add(this.dtpStartDate);
             this.groupManagement.Controls.Add(this.lbStartDate);
-            this.groupManagement.Controls.Add(this.txtStudentID);
-            this.groupManagement.Controls.Add(this.lbEmployeeID);
             this.groupManagement.Controls.Add(this.txtSalary);
             this.groupManagement.Controls.Add(this.lbSalary);
             this.groupManagement.Controls.Add(this.txtManagerID);
             this.groupManagement.Controls.Add(this.lbManager);
             this.groupManagement.Location = new System.Drawing.Point(25, 26);
             this.groupManagement.Name = "groupManagement";
-            this.groupManagement.Size = new System.Drawing.Size(375, 240);
+            this.groupManagement.Size = new System.Drawing.Size(375, 180);
             this.groupManagement.TabIndex = 68;
             this.groupManagement.TabStop = false;
             this.groupManagement.Text = "Management";
@@ -482,7 +456,7 @@
             // dtpStartDate
             // 
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(133, 187);
+            this.dtpStartDate.Location = new System.Drawing.Point(133, 134);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(212, 27);
             this.dtpStartDate.TabIndex = 71;
@@ -491,36 +465,16 @@
             // 
             this.lbStartDate.AutoSize = true;
             this.lbStartDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStartDate.Location = new System.Drawing.Point(24, 192);
+            this.lbStartDate.Location = new System.Drawing.Point(24, 139);
             this.lbStartDate.Name = "lbStartDate";
             this.lbStartDate.Size = new System.Drawing.Size(78, 20);
             this.lbStartDate.TabIndex = 67;
             this.lbStartDate.Text = "Start date";
             // 
-            // txtStudentID
-            // 
-            this.txtStudentID.BackColor = System.Drawing.SystemColors.Control;
-            this.txtStudentID.Location = new System.Drawing.Point(133, 39);
-            this.txtStudentID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(212, 27);
-            this.txtStudentID.TabIndex = 38;
-            // 
-            // lbEmployeeID
-            // 
-            this.lbEmployeeID.AutoSize = true;
-            this.lbEmployeeID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmployeeID.Location = new System.Drawing.Point(26, 42);
-            this.lbEmployeeID.Name = "lbEmployeeID";
-            this.lbEmployeeID.Size = new System.Drawing.Size(97, 20);
-            this.lbEmployeeID.TabIndex = 36;
-            this.lbEmployeeID.Text = "Employee ID";
-            this.lbEmployeeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtSalary
             // 
             this.txtSalary.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSalary.Location = new System.Drawing.Point(133, 139);
+            this.txtSalary.Location = new System.Drawing.Point(133, 86);
             this.txtSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(212, 27);
@@ -530,7 +484,7 @@
             // 
             this.lbSalary.AutoSize = true;
             this.lbSalary.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalary.Location = new System.Drawing.Point(26, 142);
+            this.lbSalary.Location = new System.Drawing.Point(26, 89);
             this.lbSalary.Name = "lbSalary";
             this.lbSalary.Size = new System.Drawing.Size(52, 20);
             this.lbSalary.TabIndex = 65;
@@ -539,7 +493,7 @@
             // txtManagerID
             // 
             this.txtManagerID.BackColor = System.Drawing.SystemColors.Control;
-            this.txtManagerID.Location = new System.Drawing.Point(133, 89);
+            this.txtManagerID.Location = new System.Drawing.Point(133, 36);
             this.txtManagerID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtManagerID.Name = "txtManagerID";
             this.txtManagerID.Size = new System.Drawing.Size(212, 27);
@@ -549,7 +503,7 @@
             // 
             this.lbManager.AutoSize = true;
             this.lbManager.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManager.Location = new System.Drawing.Point(26, 92);
+            this.lbManager.Location = new System.Drawing.Point(26, 39);
             this.lbManager.Name = "lbManager";
             this.lbManager.Size = new System.Drawing.Size(91, 20);
             this.lbManager.TabIndex = 61;
@@ -565,13 +519,11 @@
             this.groupInfo.Controls.Add(this.lbDoB);
             this.groupInfo.Controls.Add(this.ckbFemale);
             this.groupInfo.Controls.Add(this.txtID);
-            this.groupInfo.Controls.Add(this.txtHealthInsurance);
             this.groupInfo.Controls.Add(this.lbSSN);
             this.groupInfo.Controls.Add(this.lbGender);
-            this.groupInfo.Controls.Add(this.lbHealthInsurance);
             this.groupInfo.Location = new System.Drawing.Point(424, 26);
             this.groupInfo.Name = "groupInfo";
-            this.groupInfo.Size = new System.Drawing.Size(375, 443);
+            this.groupInfo.Size = new System.Drawing.Size(375, 273);
             this.groupInfo.TabIndex = 67;
             this.groupInfo.TabStop = false;
             this.groupInfo.Text = "Persional Info";
@@ -721,7 +673,6 @@
             this.btnSave.TabIndex = 29;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
-            //this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmEmployeeInfo
             // 
@@ -760,20 +711,16 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lbGender;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TextBox txtHealthInsurance;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtSDT;
-        private System.Windows.Forms.Label lbHealthInsurance;
+        private System.Windows.Forms.TextBox txtPhone1;
         private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.Label lbPhone;
+        private System.Windows.Forms.Label lbPhone1;
         private System.Windows.Forms.Panel pnContainer;
         private System.Windows.Forms.CheckBox ckbFemale;
-        private System.Windows.Forms.TextBox txtStudentID;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lbSSN;
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.Label lbDoB;
-        private System.Windows.Forms.Label lbEmployeeID;
         private System.Windows.Forms.Panel pnSV;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtManagerID;

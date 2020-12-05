@@ -32,7 +32,6 @@
             this.lbNgay = new System.Windows.Forms.Label();
             this.lbEmployeeID = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.txtDuration = new System.Windows.Forms.TextBox();
             this.lbDuration = new System.Windows.Forms.Label();
             this.blStartDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,6 +49,7 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.lbPhieuDangKy = new System.Windows.Forms.Label();
             this.lbMaNV = new System.Windows.Forms.Label();
+            this.cbbDuration = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,18 +97,6 @@
             this.dtpStartDate.Size = new System.Drawing.Size(217, 24);
             this.dtpStartDate.TabIndex = 35;
             // 
-            // txtDuration
-            // 
-            this.txtDuration.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtDuration.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.txtDuration.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuration.Location = new System.Drawing.Point(327, 183);
-            this.txtDuration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(217, 27);
-            this.txtDuration.TabIndex = 34;
-            this.txtDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // lbDuration
             // 
             this.lbDuration.AutoSize = true;
@@ -132,8 +120,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.cbbDuration);
             this.panel1.Controls.Add(this.dtpStartDate);
-            this.panel1.Controls.Add(this.txtDuration);
             this.panel1.Controls.Add(this.lbDuration);
             this.panel1.Controls.Add(this.blStartDate);
             this.panel1.Controls.Add(this.cmbBuilding);
@@ -317,6 +305,14 @@
             this.lbMaNV.TabIndex = 42;
             this.lbMaNV.Text = "      ";
             // 
+            // cbbDuration
+            // 
+            this.cbbDuration.FormattingEnabled = true;
+            this.cbbDuration.Location = new System.Drawing.Point(327, 186);
+            this.cbbDuration.Name = "cbbDuration";
+            this.cbbDuration.Size = new System.Drawing.Size(217, 24);
+            this.cbbDuration.TabIndex = 36;
+            // 
             // FrmRoomRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -348,7 +344,6 @@
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Label lbEmployeeID;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
-        private System.Windows.Forms.TextBox txtDuration;
         private System.Windows.Forms.Label lbDuration;
         private System.Windows.Forms.Label blStartDate;
         private System.Windows.Forms.Panel panel1;
@@ -366,5 +361,6 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label lbPhieuDangKy;
         private System.Windows.Forms.Label lbMaNV;
+        private System.Windows.Forms.ComboBox cbbDuration;
     }
 }
