@@ -68,6 +68,9 @@
     <Compile Include="Controller\DistrictDAO.cs" />
     <Compile Include="Controller\EmployeeDAO.cs" />
     <Compile Include="Controller\ProvinceDAO.cs" />
+    <Compile Include="Controller\RoomDAO.cs" />
+    <Compile Include="Controller\SectorDAO.cs" />
+    <Compile Include="Controller\ServiceDAO.cs" />
     <Compile Include="Controller\StudentDAO.cs" />
     <Compile Include="Controller\UnitDAO.cs" />
     <Compile Include="Controller\UserDAO.cs" />

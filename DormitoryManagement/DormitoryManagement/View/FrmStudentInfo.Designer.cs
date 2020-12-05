@@ -51,6 +51,8 @@
             this.cbbUserType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupAddress = new System.Windows.Forms.GroupBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.lbAddress = new System.Windows.Forms.Label();
             this.cbbCommune = new System.Windows.Forms.ComboBox();
             this.cbbDistrict = new System.Windows.Forms.ComboBox();
             this.cbbProvince = new System.Windows.Forms.ComboBox();
@@ -85,8 +87,6 @@
             this.lbFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pnTop = new System.Windows.Forms.Panel();
-            this.lbAddress = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.pnSV.SuspendLayout();
             this.pnContainer.SuspendLayout();
@@ -378,6 +378,25 @@
             this.groupAddress.TabIndex = 66;
             this.groupAddress.TabStop = false;
             this.groupAddress.Text = "Address";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAddress.Location = new System.Drawing.Point(106, 189);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(212, 27);
+            this.txtAddress.TabIndex = 70;
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAddress.Location = new System.Drawing.Point(18, 192);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(66, 20);
+            this.lbAddress.TabIndex = 69;
+            this.lbAddress.Text = "Address";
             // 
             // cbbCommune
             // 
@@ -746,25 +765,6 @@
             this.pnTop.Size = new System.Drawing.Size(1523, 62);
             this.pnTop.TabIndex = 34;
             // 
-            // lbAddress
-            // 
-            this.lbAddress.AutoSize = true;
-            this.lbAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddress.Location = new System.Drawing.Point(18, 192);
-            this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(66, 20);
-            this.lbAddress.TabIndex = 69;
-            this.lbAddress.Text = "Address";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAddress.Location = new System.Drawing.Point(106, 189);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(212, 27);
-            this.txtAddress.TabIndex = 70;
-            // 
             // FrmStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -776,6 +776,7 @@
             this.Name = "FrmStudentInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
+            this.Load += new System.EventHandler(this.FrmStudentInfo_Load);
             this.panel2.ResumeLayout(false);
             this.pnSV.ResumeLayout(false);
             this.pnContainer.ResumeLayout(false);
