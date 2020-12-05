@@ -37,11 +37,17 @@ namespace DormitoryManagement.View
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbPhone1 = new System.Windows.Forms.Label();
             this.pnContainer = new System.Windows.Forms.Panel();
+            this.tlpBottom = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.groupAvatar = new System.Windows.Forms.GroupBox();
             this.lbProfilePhoto = new System.Windows.Forms.Label();
             this.btnChoose = new System.Windows.Forms.Button();
             this.picAvt = new System.Windows.Forms.PictureBox();
             this.groupAddress = new System.Windows.Forms.GroupBox();
+            this.cbbPriority = new System.Windows.Forms.ComboBox();
+            this.lbPriority = new System.Windows.Forms.Label();
             this.txtStreet = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbCommune = new System.Windows.Forms.ComboBox();
@@ -54,6 +60,8 @@ namespace DormitoryManagement.View
             this.txtPhone2 = new System.Windows.Forms.TextBox();
             this.lbPhone2 = new System.Windows.Forms.Label();
             this.groupManagement = new System.Windows.Forms.GroupBox();
+            this.cbbUserType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.lbStartDate = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
@@ -70,16 +78,9 @@ namespace DormitoryManagement.View
             this.txtSSN = new System.Windows.Forms.TextBox();
             this.lbSSN = new System.Windows.Forms.Label();
             this.pnSV = new System.Windows.Forms.Panel();
-            this.cbbPriority = new System.Windows.Forms.ComboBox();
-            this.lbPriority = new System.Windows.Forms.Label();
-            this.cbbUserType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tlpBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.pnTop.SuspendLayout();
             this.pnContainer.SuspendLayout();
+            this.tlpBottom.SuspendLayout();
             this.groupAvatar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).BeginInit();
             this.groupAddress.SuspendLayout();
@@ -87,7 +88,6 @@ namespace DormitoryManagement.View
             this.groupManagement.SuspendLayout();
             this.groupInfo.SuspendLayout();
             this.pnSV.SuspendLayout();
-            this.tlpBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnTop
@@ -188,6 +188,65 @@ namespace DormitoryManagement.View
             this.pnContainer.Size = new System.Drawing.Size(1167, 624);
             this.pnContainer.TabIndex = 30;
             // 
+            // tlpBottom
+            // 
+            this.tlpBottom.ColumnCount = 3;
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.Controls.Add(this.btnDelete, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnSave, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnEdit, 0, 0);
+            this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlpBottom.Location = new System.Drawing.Point(0, 580);
+            this.tlpBottom.Name = "tlpBottom";
+            this.tlpBottom.RowCount = 1;
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpBottom.Size = new System.Drawing.Size(1167, 44);
+            this.tlpBottom.TabIndex = 73;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Crimson;
+            this.btnDelete.Location = new System.Drawing.Point(781, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(383, 40);
+            this.btnDelete.TabIndex = 31;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnSave.Location = new System.Drawing.Point(392, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(383, 40);
+            this.btnSave.TabIndex = 30;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.Blue;
+            this.btnEdit.Location = new System.Drawing.Point(3, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(383, 40);
+            this.btnEdit.TabIndex = 29;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
             // groupAvatar
             // 
             this.groupAvatar.Controls.Add(this.lbProfilePhoto);
@@ -252,6 +311,33 @@ namespace DormitoryManagement.View
             this.groupAddress.TabIndex = 70;
             this.groupAddress.TabStop = false;
             this.groupAddress.Text = "Address";
+            // 
+            // cbbPriority
+            // 
+            this.cbbPriority.BackColor = System.Drawing.SystemColors.Window;
+            this.cbbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPriority.FormattingEnabled = true;
+            this.cbbPriority.ItemHeight = 20;
+            this.cbbPriority.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "2NT",
+            "3"});
+            this.cbbPriority.Location = new System.Drawing.Point(110, 224);
+            this.cbbPriority.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbPriority.Name = "cbbPriority";
+            this.cbbPriority.Size = new System.Drawing.Size(212, 28);
+            this.cbbPriority.TabIndex = 90;
+            // 
+            // lbPriority
+            // 
+            this.lbPriority.AutoSize = true;
+            this.lbPriority.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPriority.Location = new System.Drawing.Point(22, 227);
+            this.lbPriority.Name = "lbPriority";
+            this.lbPriority.Size = new System.Drawing.Size(61, 20);
+            this.lbPriority.TabIndex = 91;
+            this.lbPriority.Text = "Priority";
             // 
             // txtStreet
             // 
@@ -379,6 +465,25 @@ namespace DormitoryManagement.View
             this.groupManagement.TabIndex = 68;
             this.groupManagement.TabStop = false;
             this.groupManagement.Text = "Management";
+            // 
+            // cbbUserType
+            // 
+            this.cbbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbUserType.FormattingEnabled = true;
+            this.cbbUserType.Location = new System.Drawing.Point(133, 178);
+            this.cbbUserType.Name = "cbbUserType";
+            this.cbbUserType.Size = new System.Drawing.Size(212, 28);
+            this.cbbUserType.TabIndex = 74;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(26, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 20);
+            this.label1.TabIndex = 73;
+            this.label1.Text = "User type";
             // 
             // dtpStartDate
             // 
@@ -545,112 +650,6 @@ namespace DormitoryManagement.View
             this.pnSV.Size = new System.Drawing.Size(1167, 624);
             this.pnSV.TabIndex = 35;
             // 
-            // cbbPriority
-            // 
-            this.cbbPriority.BackColor = System.Drawing.SystemColors.Window;
-            this.cbbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbPriority.FormattingEnabled = true;
-            this.cbbPriority.ItemHeight = 20;
-            this.cbbPriority.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "2NT",
-            "3"});
-            this.cbbPriority.Location = new System.Drawing.Point(110, 224);
-            this.cbbPriority.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbPriority.Name = "cbbPriority";
-            this.cbbPriority.Size = new System.Drawing.Size(212, 28);
-            this.cbbPriority.TabIndex = 90;
-            // 
-            // lbPriority
-            // 
-            this.lbPriority.AutoSize = true;
-            this.lbPriority.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPriority.Location = new System.Drawing.Point(22, 227);
-            this.lbPriority.Name = "lbPriority";
-            this.lbPriority.Size = new System.Drawing.Size(61, 20);
-            this.lbPriority.TabIndex = 91;
-            this.lbPriority.Text = "Priority";
-            // 
-            // cbbUserType
-            // 
-            this.cbbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbUserType.FormattingEnabled = true;
-            this.cbbUserType.Location = new System.Drawing.Point(133, 178);
-            this.cbbUserType.Name = "cbbUserType";
-            this.cbbUserType.Size = new System.Drawing.Size(212, 28);
-            this.cbbUserType.TabIndex = 74;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 181);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 20);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "User type";
-            // 
-            // tlpBottom
-            // 
-            this.tlpBottom.ColumnCount = 3;
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpBottom.Controls.Add(this.btnDelete, 0, 0);
-            this.tlpBottom.Controls.Add(this.btnSave, 0, 0);
-            this.tlpBottom.Controls.Add(this.btnEdit, 0, 0);
-            this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpBottom.Location = new System.Drawing.Point(0, 580);
-            this.tlpBottom.Name = "tlpBottom";
-            this.tlpBottom.RowCount = 1;
-            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottom.Size = new System.Drawing.Size(1167, 44);
-            this.tlpBottom.TabIndex = 73;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.Blue;
-            this.btnEdit.Location = new System.Drawing.Point(3, 2);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(382, 40);
-            this.btnEdit.TabIndex = 29;
-            this.btnEdit.Text = "EDIT";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Visible = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnSave.Location = new System.Drawing.Point(391, 2);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(382, 40);
-            this.btnSave.TabIndex = 30;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Crimson;
-            this.btnDelete.Location = new System.Drawing.Point(779, 2);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(385, 40);
-            this.btnDelete.TabIndex = 31;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
             // FrmEmployeeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -663,6 +662,7 @@ namespace DormitoryManagement.View
             this.Text = "Employee";
             this.pnTop.ResumeLayout(false);
             this.pnContainer.ResumeLayout(false);
+            this.tlpBottom.ResumeLayout(false);
             this.groupAvatar.ResumeLayout(false);
             this.groupAvatar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).EndInit();
@@ -675,7 +675,6 @@ namespace DormitoryManagement.View
             this.groupInfo.ResumeLayout(false);
             this.groupInfo.PerformLayout();
             this.pnSV.ResumeLayout(false);
-            this.tlpBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
