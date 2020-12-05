@@ -37,9 +37,7 @@
             this.pnSV = new System.Windows.Forms.Panel();
             this.pnContainer = new System.Windows.Forms.Panel();
             this.groupUniversity = new System.Windows.Forms.GroupBox();
-            this.cbbMajor = new System.Windows.Forms.ComboBox();
             this.lbMajor = new System.Windows.Forms.Label();
-            this.cbbFaculty = new System.Windows.Forms.ComboBox();
             this.lbFaculty = new System.Windows.Forms.Label();
             this.cbbUniversity = new System.Windows.Forms.ComboBox();
             this.lbUniversity = new System.Windows.Forms.Label();
@@ -70,8 +68,6 @@
             this.picAvt = new System.Windows.Forms.PictureBox();
             this.lbProfilePhoto = new System.Windows.Forms.Label();
             this.groupPersionalInfo = new System.Windows.Forms.GroupBox();
-            this.cbbPriority = new System.Windows.Forms.ComboBox();
-            this.lbPriority = new System.Windows.Forms.Label();
             this.txtHealthInsurance = new System.Windows.Forms.TextBox();
             this.lbInsuranceID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -87,6 +83,10 @@
             this.lbFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pnTop = new System.Windows.Forms.Panel();
+            this.txtFaculty = new System.Windows.Forms.TextBox();
+            this.txtMajor = new System.Windows.Forms.TextBox();
+            this.cbbPriority = new System.Windows.Forms.ComboBox();
+            this.lbPriority = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.pnSV.SuspendLayout();
             this.pnContainer.SuspendLayout();
@@ -120,7 +120,7 @@
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 491);
+            this.panel2.Location = new System.Drawing.Point(0, 648);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1523, 53);
@@ -194,7 +194,7 @@
             this.pnSV.Location = new System.Drawing.Point(0, 62);
             this.pnSV.Margin = new System.Windows.Forms.Padding(4);
             this.pnSV.Name = "pnSV";
-            this.pnSV.Size = new System.Drawing.Size(1523, 544);
+            this.pnSV.Size = new System.Drawing.Size(1523, 701);
             this.pnSV.TabIndex = 32;
             // 
             // pnContainer
@@ -209,61 +209,39 @@
             this.pnContainer.Location = new System.Drawing.Point(0, 0);
             this.pnContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Size = new System.Drawing.Size(1523, 491);
+            this.pnContainer.Size = new System.Drawing.Size(1523, 648);
             this.pnContainer.TabIndex = 30;
             // 
             // groupUniversity
             // 
-            this.groupUniversity.Controls.Add(this.cbbMajor);
+            this.groupUniversity.Controls.Add(this.txtMajor);
+            this.groupUniversity.Controls.Add(this.txtFaculty);
             this.groupUniversity.Controls.Add(this.lbMajor);
-            this.groupUniversity.Controls.Add(this.cbbFaculty);
             this.groupUniversity.Controls.Add(this.lbFaculty);
             this.groupUniversity.Controls.Add(this.cbbUniversity);
             this.groupUniversity.Controls.Add(this.lbUniversity);
-            this.groupUniversity.Location = new System.Drawing.Point(815, 28);
+            this.groupUniversity.Location = new System.Drawing.Point(32, 423);
             this.groupUniversity.Name = "groupUniversity";
-            this.groupUniversity.Size = new System.Drawing.Size(375, 203);
+            this.groupUniversity.Size = new System.Drawing.Size(360, 170);
             this.groupUniversity.TabIndex = 73;
             this.groupUniversity.TabStop = false;
             this.groupUniversity.Text = "University";
-            // 
-            // cbbMajor
-            // 
-            this.cbbMajor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbMajor.FormattingEnabled = true;
-            this.cbbMajor.Location = new System.Drawing.Point(132, 131);
-            this.cbbMajor.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbMajor.Name = "cbbMajor";
-            this.cbbMajor.Size = new System.Drawing.Size(212, 28);
-            this.cbbMajor.TabIndex = 17;
-            this.cbbMajor.SelectedIndexChanged += new System.EventHandler(this.cmbMajor_SelectedIndexChanged);
             // 
             // lbMajor
             // 
             this.lbMajor.AutoSize = true;
             this.lbMajor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMajor.Location = new System.Drawing.Point(25, 134);
+            this.lbMajor.Location = new System.Drawing.Point(15, 127);
             this.lbMajor.Name = "lbMajor";
             this.lbMajor.Size = new System.Drawing.Size(50, 20);
             this.lbMajor.TabIndex = 85;
             this.lbMajor.Text = "Major";
             // 
-            // cbbFaculty
-            // 
-            this.cbbFaculty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbFaculty.FormattingEnabled = true;
-            this.cbbFaculty.Location = new System.Drawing.Point(132, 83);
-            this.cbbFaculty.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbFaculty.Name = "cbbFaculty";
-            this.cbbFaculty.Size = new System.Drawing.Size(212, 28);
-            this.cbbFaculty.TabIndex = 16;
-            this.cbbFaculty.SelectedIndexChanged += new System.EventHandler(this.cmbFaculty_SelectedIndexChanged);
-            // 
             // lbFaculty
             // 
             this.lbFaculty.AutoSize = true;
             this.lbFaculty.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFaculty.Location = new System.Drawing.Point(25, 86);
+            this.lbFaculty.Location = new System.Drawing.Point(15, 79);
             this.lbFaculty.Name = "lbFaculty";
             this.lbFaculty.Size = new System.Drawing.Size(59, 20);
             this.lbFaculty.TabIndex = 83;
@@ -273,7 +251,7 @@
             // 
             this.cbbUniversity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbUniversity.FormattingEnabled = true;
-            this.cbbUniversity.Location = new System.Drawing.Point(132, 38);
+            this.cbbUniversity.Location = new System.Drawing.Point(105, 28);
             this.cbbUniversity.Name = "cbbUniversity";
             this.cbbUniversity.Size = new System.Drawing.Size(212, 28);
             this.cbbUniversity.TabIndex = 15;
@@ -283,7 +261,7 @@
             // 
             this.lbUniversity.AutoSize = true;
             this.lbUniversity.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUniversity.Location = new System.Drawing.Point(26, 41);
+            this.lbUniversity.Location = new System.Drawing.Point(16, 34);
             this.lbUniversity.Name = "lbUniversity";
             this.lbUniversity.Size = new System.Drawing.Size(80, 20);
             this.lbUniversity.TabIndex = 73;
@@ -364,6 +342,8 @@
             // 
             // groupAddress
             // 
+            this.groupAddress.Controls.Add(this.cbbPriority);
+            this.groupAddress.Controls.Add(this.lbPriority);
             this.groupAddress.Controls.Add(this.txtAddress);
             this.groupAddress.Controls.Add(this.lbAddress);
             this.groupAddress.Controls.Add(this.cbbCommune);
@@ -372,9 +352,9 @@
             this.groupAddress.Controls.Add(this.lbProvince);
             this.groupAddress.Controls.Add(this.lbCommune);
             this.groupAddress.Controls.Add(this.lbDistrict);
-            this.groupAddress.Location = new System.Drawing.Point(430, 217);
+            this.groupAddress.Location = new System.Drawing.Point(430, 28);
             this.groupAddress.Name = "groupAddress";
-            this.groupAddress.Size = new System.Drawing.Size(345, 240);
+            this.groupAddress.Size = new System.Drawing.Size(345, 278);
             this.groupAddress.TabIndex = 66;
             this.groupAddress.TabStop = false;
             this.groupAddress.Text = "Address";
@@ -434,7 +414,7 @@
             // 
             this.lbProvince.AutoSize = true;
             this.lbProvince.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProvince.Location = new System.Drawing.Point(20, 40);
+            this.lbProvince.Location = new System.Drawing.Point(18, 40);
             this.lbProvince.Name = "lbProvince";
             this.lbProvince.Size = new System.Drawing.Size(69, 20);
             this.lbProvince.TabIndex = 68;
@@ -454,7 +434,7 @@
             // 
             this.lbDistrict.AutoSize = true;
             this.lbDistrict.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDistrict.Location = new System.Drawing.Point(20, 95);
+            this.lbDistrict.Location = new System.Drawing.Point(18, 95);
             this.lbDistrict.Name = "lbDistrict";
             this.lbDistrict.Size = new System.Drawing.Size(60, 20);
             this.lbDistrict.TabIndex = 64;
@@ -468,7 +448,7 @@
             this.groupContact.Controls.Add(this.txtSDT);
             this.groupContact.Controls.Add(this.lbEmail);
             this.groupContact.Controls.Add(this.lbPhone);
-            this.groupContact.Location = new System.Drawing.Point(430, 28);
+            this.groupContact.Location = new System.Drawing.Point(815, 28);
             this.groupContact.Name = "groupContact";
             this.groupContact.Size = new System.Drawing.Size(345, 183);
             this.groupContact.TabIndex = 65;
@@ -567,8 +547,6 @@
             // 
             // groupPersionalInfo
             // 
-            this.groupPersionalInfo.Controls.Add(this.cbbPriority);
-            this.groupPersionalInfo.Controls.Add(this.lbPriority);
             this.groupPersionalInfo.Controls.Add(this.txtHealthInsurance);
             this.groupPersionalInfo.Controls.Add(this.lbInsuranceID);
             this.groupPersionalInfo.Controls.Add(this.txtID);
@@ -585,38 +563,10 @@
             this.groupPersionalInfo.Controls.Add(this.txtFirstName);
             this.groupPersionalInfo.Location = new System.Drawing.Point(32, 28);
             this.groupPersionalInfo.Name = "groupPersionalInfo";
-            this.groupPersionalInfo.Size = new System.Drawing.Size(360, 429);
+            this.groupPersionalInfo.Size = new System.Drawing.Size(360, 375);
             this.groupPersionalInfo.TabIndex = 61;
             this.groupPersionalInfo.TabStop = false;
             this.groupPersionalInfo.Text = "Persional Info";
-            // 
-            // cbbPriority
-            // 
-            this.cbbPriority.BackColor = System.Drawing.SystemColors.Window;
-            this.cbbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbPriority.FormattingEnabled = true;
-            this.cbbPriority.ItemHeight = 20;
-            this.cbbPriority.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "2NT",
-            "3"});
-            this.cbbPriority.Location = new System.Drawing.Point(123, 378);
-            this.cbbPriority.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbPriority.Name = "cbbPriority";
-            this.cbbPriority.Size = new System.Drawing.Size(212, 28);
-            this.cbbPriority.TabIndex = 8;
-            this.cbbPriority.SelectedIndexChanged += new System.EventHandler(this.cmbPriority_SelectedIndexChanged);
-            // 
-            // lbPriority
-            // 
-            this.lbPriority.AutoSize = true;
-            this.lbPriority.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPriority.Location = new System.Drawing.Point(20, 381);
-            this.lbPriority.Name = "lbPriority";
-            this.lbPriority.Size = new System.Drawing.Size(61, 20);
-            this.lbPriority.TabIndex = 87;
-            this.lbPriority.Text = "Priority";
             // 
             // txtHealthInsurance
             // 
@@ -765,11 +715,52 @@
             this.pnTop.Size = new System.Drawing.Size(1523, 62);
             this.pnTop.TabIndex = 34;
             // 
+            // txtFaculty
+            // 
+            this.txtFaculty.Location = new System.Drawing.Point(106, 76);
+            this.txtFaculty.Name = "txtFaculty";
+            this.txtFaculty.Size = new System.Drawing.Size(212, 27);
+            this.txtFaculty.TabIndex = 74;
+            // 
+            // txtMajor
+            // 
+            this.txtMajor.Location = new System.Drawing.Point(106, 124);
+            this.txtMajor.Name = "txtMajor";
+            this.txtMajor.Size = new System.Drawing.Size(212, 27);
+            this.txtMajor.TabIndex = 86;
+            // 
+            // cbbPriority
+            // 
+            this.cbbPriority.BackColor = System.Drawing.SystemColors.Window;
+            this.cbbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPriority.FormattingEnabled = true;
+            this.cbbPriority.ItemHeight = 20;
+            this.cbbPriority.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "2NT",
+            "3"});
+            this.cbbPriority.Location = new System.Drawing.Point(106, 231);
+            this.cbbPriority.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbPriority.Name = "cbbPriority";
+            this.cbbPriority.Size = new System.Drawing.Size(212, 28);
+            this.cbbPriority.TabIndex = 88;
+            // 
+            // lbPriority
+            // 
+            this.lbPriority.AutoSize = true;
+            this.lbPriority.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPriority.Location = new System.Drawing.Point(18, 234);
+            this.lbPriority.Name = "lbPriority";
+            this.lbPriority.Size = new System.Drawing.Size(61, 20);
+            this.lbPriority.TabIndex = 89;
+            this.lbPriority.Text = "Priority";
+            // 
             // FrmStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1523, 606);
+            this.ClientSize = new System.Drawing.Size(1523, 763);
             this.Controls.Add(this.pnSV);
             this.Controls.Add(this.pnTop);
             this.MaximizeBox = false;
@@ -822,8 +813,6 @@
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbPhone;
-        private System.Windows.Forms.ComboBox cbbPriority;
-        private System.Windows.Forms.Label lbPriority;
         private System.Windows.Forms.TextBox txtHealthInsurance;
         private System.Windows.Forms.Label lbInsuranceID;
         private System.Windows.Forms.TextBox txtID;
@@ -846,9 +835,7 @@
         private System.Windows.Forms.ComboBox cbbUserType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupUniversity;
-        private System.Windows.Forms.ComboBox cbbMajor;
         private System.Windows.Forms.Label lbMajor;
-        private System.Windows.Forms.ComboBox cbbFaculty;
         private System.Windows.Forms.Label lbFaculty;
         private System.Windows.Forms.ComboBox cbbUniversity;
         private System.Windows.Forms.Label lbUniversity;
@@ -858,5 +845,9 @@
         private System.Windows.Forms.ComboBox cbbProvince;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lbAddress;
+        private System.Windows.Forms.TextBox txtMajor;
+        private System.Windows.Forms.TextBox txtFaculty;
+        private System.Windows.Forms.ComboBox cbbPriority;
+        private System.Windows.Forms.Label lbPriority;
     }
 }
