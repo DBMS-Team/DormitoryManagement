@@ -1,4 +1,4 @@
-﻿using DormitoryManagement.Controller;
+using DormitoryManagement.Controller;
 using DormitoryManagement.Model;
 using System;
 using System.Collections.Generic;
@@ -39,6 +39,7 @@ namespace DormitoryManagement.View
         {
             btnSave.Enabled = false;
             LoadListProvinceInCombobox();
+
         }
         private void cbbProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -56,7 +57,7 @@ namespace DormitoryManagement.View
             districtName = comboBox.Text;
             LoadListCommunateByProvinceNameInCombobox(provinceName,districtName);
         }
-        
+
         #endregion
 
         #region Methods
@@ -72,6 +73,7 @@ namespace DormitoryManagement.View
             cbbDistrict.DataSource = districtDTOs;
             cbbDistrict.DisplayMember = "DistrictName";
         }
+        
         void LoadListCommunateByProvinceNameInCombobox(string provinceName,string districtName)
         {
             List<CommuneDTO> communeDTOs = CommuneDAO.GetLisCommuneByProvinceAndDistrict(provinceName, districtName);
@@ -103,12 +105,12 @@ namespace DormitoryManagement.View
 
         }
 
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
         }
 
         #endregion
+
     }
 }
