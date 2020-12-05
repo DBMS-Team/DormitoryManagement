@@ -1,10 +1,6 @@
-<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
 ﻿using DormitoryManagement.Controller;
 using DormitoryManagement.Model;
 using System;
-=======
-﻿using System;
->>>>>>> f23f06229bbce7834c4536a592179e2eedee5920:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,45 +54,9 @@ namespace DormitoryManagement.View
             if (comboBox.SelectedItem == null)
                 return;
             districtName = comboBox.Text;
-<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
-<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
             LoadListCommunateByProvinceNameInCombobox(provinceName,districtName);
         }
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            int flag = 0;
-            if(txtLastName.Text == "")
-            {
-                MessageBox.Show("LastName Not Null", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if (txtFirstName.Text == "" && flag == 0 )
-            {
-                MessageBox.Show("FirstName Not Null", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if (txtStreet.Text == "" && flag == 0)
-            {
-                MessageBox.Show("Street Not Null", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if ((txtPhone1.Text == "" && flag == 0) || FormatData.IsEmail(txtPhone1.Text) == false)
-            {
-                MessageBox.Show("Not Is Phone Number", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if (txtEmail.Text == "" && flag == 0 && FormatData.IsEmail(txtEmail.Text))
-            {
-                MessageBox.Show("Not Is Mail", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-=======
-            LoadListCommunateByProvinceName(provinceName, districtName);
->>>>>>> f23f06229bbce7834c4536a592179e2eedee5920:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
-=======
-            LoadListCommunateByProvinceName(provinceName,districtName);
->>>>>>> parent of ece0217 (update employee):DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
-        }
+        
         #endregion
 
         #region Methods
@@ -112,15 +72,7 @@ namespace DormitoryManagement.View
             cbbDistrict.DataSource = districtDTOs;
             cbbDistrict.DisplayMember = "DistrictName";
         }
-<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
-<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
         void LoadListCommunateByProvinceNameInCombobox(string provinceName,string districtName)
-=======
-        void LoadListCommunateByProvinceName(string provinceName, string districtName)
->>>>>>> f23f06229bbce7834c4536a592179e2eedee5920:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
-=======
-        void LoadListCommunateByProvinceName(string provinceName,string districtName)
->>>>>>> parent of ece0217 (update employee):DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
         {
             List<CommuneDTO> communeDTOs = CommuneDAO.GetLisCommuneByProvinceAndDistrict(provinceName, districtName);
             cbbCommune.DataSource = communeDTOs;
@@ -151,10 +103,6 @@ namespace DormitoryManagement.View
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
