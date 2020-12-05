@@ -59,15 +59,13 @@ namespace DormitoryManagement.View
             this.groupContact = new System.Windows.Forms.GroupBox();
             this.txtPhone2 = new System.Windows.Forms.TextBox();
             this.lbPhone2 = new System.Windows.Forms.Label();
-            this.groupManagement = new System.Windows.Forms.GroupBox();
+            this.groupGeneral = new System.Windows.Forms.GroupBox();
             this.cbbUserType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.lbStartDate = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.lbSalary = new System.Windows.Forms.Label();
-            this.txtManagerID = new System.Windows.Forms.TextBox();
-            this.lbManager = new System.Windows.Forms.Label();
             this.groupInfo = new System.Windows.Forms.GroupBox();
             this.dtpDoB = new System.Windows.Forms.DateTimePicker();
             this.txtLastName = new System.Windows.Forms.TextBox();
@@ -85,7 +83,7 @@ namespace DormitoryManagement.View
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).BeginInit();
             this.groupAddress.SuspendLayout();
             this.groupContact.SuspendLayout();
-            this.groupManagement.SuspendLayout();
+            this.groupGeneral.SuspendLayout();
             this.groupInfo.SuspendLayout();
             this.pnSV.SuspendLayout();
             this.SuspendLayout();
@@ -179,13 +177,13 @@ namespace DormitoryManagement.View
             this.pnContainer.Controls.Add(this.groupAvatar);
             this.pnContainer.Controls.Add(this.groupAddress);
             this.pnContainer.Controls.Add(this.groupContact);
-            this.pnContainer.Controls.Add(this.groupManagement);
+            this.pnContainer.Controls.Add(this.groupGeneral);
             this.pnContainer.Controls.Add(this.groupInfo);
             this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContainer.Location = new System.Drawing.Point(0, 0);
             this.pnContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Size = new System.Drawing.Size(1167, 624);
+            this.pnContainer.Size = new System.Drawing.Size(1167, 560);
             this.pnContainer.TabIndex = 30;
             // 
             // tlpBottom
@@ -198,7 +196,7 @@ namespace DormitoryManagement.View
             this.tlpBottom.Controls.Add(this.btnSave, 0, 0);
             this.tlpBottom.Controls.Add(this.btnEdit, 0, 0);
             this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpBottom.Location = new System.Drawing.Point(0, 580);
+            this.tlpBottom.Location = new System.Drawing.Point(0, 516);
             this.tlpBottom.Name = "tlpBottom";
             this.tlpBottom.RowCount = 1;
             this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -254,7 +252,7 @@ namespace DormitoryManagement.View
             this.groupAvatar.Controls.Add(this.picAvt);
             this.groupAvatar.Location = new System.Drawing.Point(864, 28);
             this.groupAvatar.Name = "groupAvatar";
-            this.groupAvatar.Size = new System.Drawing.Size(265, 527);
+            this.groupAvatar.Size = new System.Drawing.Size(265, 467);
             this.groupAvatar.TabIndex = 72;
             this.groupAvatar.TabStop = false;
             this.groupAvatar.Text = "Avatar";
@@ -305,7 +303,7 @@ namespace DormitoryManagement.View
             this.groupAddress.Controls.Add(this.lbDistrict);
             this.groupAddress.Controls.Add(this.cbbProvince);
             this.groupAddress.Controls.Add(this.lbProvince);
-            this.groupAddress.Location = new System.Drawing.Point(449, 282);
+            this.groupAddress.Location = new System.Drawing.Point(449, 222);
             this.groupAddress.Name = "groupAddress";
             this.groupAddress.Size = new System.Drawing.Size(375, 273);
             this.groupAddress.TabIndex = 70;
@@ -425,7 +423,7 @@ namespace DormitoryManagement.View
             this.groupContact.Controls.Add(this.lbPhone2);
             this.groupContact.Location = new System.Drawing.Point(449, 28);
             this.groupContact.Name = "groupContact";
-            this.groupContact.Size = new System.Drawing.Size(375, 231);
+            this.groupContact.Size = new System.Drawing.Size(375, 178);
             this.groupContact.TabIndex = 69;
             this.groupContact.TabStop = false;
             this.groupContact.Text = "Contact";
@@ -449,28 +447,26 @@ namespace DormitoryManagement.View
             this.lbPhone2.TabIndex = 63;
             this.lbPhone2.Text = "Phone 2";
             // 
-            // groupManagement
+            // groupGeneral
             // 
-            this.groupManagement.Controls.Add(this.cbbUserType);
-            this.groupManagement.Controls.Add(this.label1);
-            this.groupManagement.Controls.Add(this.dtpStartDate);
-            this.groupManagement.Controls.Add(this.lbStartDate);
-            this.groupManagement.Controls.Add(this.txtSalary);
-            this.groupManagement.Controls.Add(this.lbSalary);
-            this.groupManagement.Controls.Add(this.txtManagerID);
-            this.groupManagement.Controls.Add(this.lbManager);
-            this.groupManagement.Location = new System.Drawing.Point(33, 28);
-            this.groupManagement.Name = "groupManagement";
-            this.groupManagement.Size = new System.Drawing.Size(375, 231);
-            this.groupManagement.TabIndex = 68;
-            this.groupManagement.TabStop = false;
-            this.groupManagement.Text = "Management";
+            this.groupGeneral.Controls.Add(this.cbbUserType);
+            this.groupGeneral.Controls.Add(this.label1);
+            this.groupGeneral.Controls.Add(this.dtpStartDate);
+            this.groupGeneral.Controls.Add(this.lbStartDate);
+            this.groupGeneral.Controls.Add(this.txtSalary);
+            this.groupGeneral.Controls.Add(this.lbSalary);
+            this.groupGeneral.Location = new System.Drawing.Point(33, 28);
+            this.groupGeneral.Name = "groupGeneral";
+            this.groupGeneral.Size = new System.Drawing.Size(375, 178);
+            this.groupGeneral.TabIndex = 68;
+            this.groupGeneral.TabStop = false;
+            this.groupGeneral.Text = "General";
             // 
             // cbbUserType
             // 
             this.cbbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbUserType.FormattingEnabled = true;
-            this.cbbUserType.Location = new System.Drawing.Point(133, 178);
+            this.cbbUserType.Location = new System.Drawing.Point(133, 125);
             this.cbbUserType.Name = "cbbUserType";
             this.cbbUserType.Size = new System.Drawing.Size(212, 28);
             this.cbbUserType.TabIndex = 74;
@@ -479,7 +475,7 @@ namespace DormitoryManagement.View
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 181);
+            this.label1.Location = new System.Drawing.Point(26, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 20);
             this.label1.TabIndex = 73;
@@ -488,7 +484,7 @@ namespace DormitoryManagement.View
             // dtpStartDate
             // 
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(133, 134);
+            this.dtpStartDate.Location = new System.Drawing.Point(133, 81);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(212, 27);
             this.dtpStartDate.TabIndex = 71;
@@ -497,7 +493,7 @@ namespace DormitoryManagement.View
             // 
             this.lbStartDate.AutoSize = true;
             this.lbStartDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStartDate.Location = new System.Drawing.Point(26, 139);
+            this.lbStartDate.Location = new System.Drawing.Point(26, 86);
             this.lbStartDate.Name = "lbStartDate";
             this.lbStartDate.Size = new System.Drawing.Size(78, 20);
             this.lbStartDate.TabIndex = 67;
@@ -506,7 +502,7 @@ namespace DormitoryManagement.View
             // txtSalary
             // 
             this.txtSalary.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSalary.Location = new System.Drawing.Point(133, 86);
+            this.txtSalary.Location = new System.Drawing.Point(133, 33);
             this.txtSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(212, 27);
@@ -516,30 +512,11 @@ namespace DormitoryManagement.View
             // 
             this.lbSalary.AutoSize = true;
             this.lbSalary.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalary.Location = new System.Drawing.Point(26, 89);
+            this.lbSalary.Location = new System.Drawing.Point(26, 36);
             this.lbSalary.Name = "lbSalary";
             this.lbSalary.Size = new System.Drawing.Size(52, 20);
             this.lbSalary.TabIndex = 65;
             this.lbSalary.Text = "Salary";
-            // 
-            // txtManagerID
-            // 
-            this.txtManagerID.BackColor = System.Drawing.SystemColors.Control;
-            this.txtManagerID.Location = new System.Drawing.Point(133, 36);
-            this.txtManagerID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtManagerID.Name = "txtManagerID";
-            this.txtManagerID.Size = new System.Drawing.Size(212, 27);
-            this.txtManagerID.TabIndex = 62;
-            // 
-            // lbManager
-            // 
-            this.lbManager.AutoSize = true;
-            this.lbManager.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManager.Location = new System.Drawing.Point(26, 39);
-            this.lbManager.Name = "lbManager";
-            this.lbManager.Size = new System.Drawing.Size(91, 20);
-            this.lbManager.TabIndex = 61;
-            this.lbManager.Text = "Manager ID";
             // 
             // groupInfo
             // 
@@ -553,7 +530,7 @@ namespace DormitoryManagement.View
             this.groupInfo.Controls.Add(this.txtSSN);
             this.groupInfo.Controls.Add(this.lbSSN);
             this.groupInfo.Controls.Add(this.lbGender);
-            this.groupInfo.Location = new System.Drawing.Point(32, 282);
+            this.groupInfo.Location = new System.Drawing.Point(32, 222);
             this.groupInfo.Name = "groupInfo";
             this.groupInfo.Size = new System.Drawing.Size(375, 273);
             this.groupInfo.TabIndex = 67;
@@ -647,14 +624,14 @@ namespace DormitoryManagement.View
             this.pnSV.Location = new System.Drawing.Point(0, 62);
             this.pnSV.Margin = new System.Windows.Forms.Padding(4);
             this.pnSV.Name = "pnSV";
-            this.pnSV.Size = new System.Drawing.Size(1167, 624);
+            this.pnSV.Size = new System.Drawing.Size(1167, 560);
             this.pnSV.TabIndex = 35;
             // 
             // FrmEmployeeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 686);
+            this.ClientSize = new System.Drawing.Size(1167, 622);
             this.Controls.Add(this.pnSV);
             this.Controls.Add(this.pnTop);
             this.Name = "FrmEmployeeInfo";
@@ -670,8 +647,8 @@ namespace DormitoryManagement.View
             this.groupAddress.PerformLayout();
             this.groupContact.ResumeLayout(false);
             this.groupContact.PerformLayout();
-            this.groupManagement.ResumeLayout(false);
-            this.groupManagement.PerformLayout();
+            this.groupGeneral.ResumeLayout(false);
+            this.groupGeneral.PerformLayout();
             this.groupInfo.ResumeLayout(false);
             this.groupInfo.PerformLayout();
             this.pnSV.ResumeLayout(false);
@@ -696,13 +673,11 @@ namespace DormitoryManagement.View
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.Label lbDoB;
         private System.Windows.Forms.Panel pnSV;
-        private System.Windows.Forms.TextBox txtManagerID;
-        private System.Windows.Forms.Label lbManager;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label lbSalary;
         private System.Windows.Forms.TextBox txtPhone2;
         private System.Windows.Forms.Label lbPhone2;
-        private System.Windows.Forms.GroupBox groupManagement;
+        private System.Windows.Forms.GroupBox groupGeneral;
         private System.Windows.Forms.Label lbStartDate;
         private System.Windows.Forms.GroupBox groupInfo;
         private System.Windows.Forms.TextBox txtLastName;
