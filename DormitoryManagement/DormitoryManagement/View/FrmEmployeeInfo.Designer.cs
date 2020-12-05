@@ -249,6 +249,7 @@
             this.btnChoose.TabIndex = 53;
             this.btnChoose.Text = "CHOOSE";
             this.btnChoose.UseVisualStyleBackColor = true;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
             // picAvt
             // 
@@ -317,6 +318,7 @@
             // 
             // cmbUserType
             // 
+            this.cmbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUserType.FormattingEnabled = true;
             this.cmbUserType.Location = new System.Drawing.Point(133, 136);
             this.cmbUserType.Name = "cmbUserType";
@@ -371,6 +373,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(110, 134);
             this.comboBox2.Name = "comboBox2";
@@ -389,6 +392,7 @@
             // 
             // cmbDistrict
             // 
+            this.cmbDistrict.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDistrict.FormattingEnabled = true;
             this.cmbDistrict.Location = new System.Drawing.Point(110, 87);
             this.cmbDistrict.Name = "cmbDistrict";
@@ -407,6 +411,7 @@
             // 
             // cmbProvice
             // 
+            this.cmbProvice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvice.FormattingEnabled = true;
             this.cmbProvice.Location = new System.Drawing.Point(110, 40);
             this.cmbProvice.Name = "cmbProvice";
@@ -687,6 +692,7 @@
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -701,6 +707,7 @@
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
@@ -714,6 +721,7 @@
             this.btnSave.TabIndex = 29;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmEmployeeInfo
             // 
