@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.btnChoose = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.pnSV = new System.Windows.Forms.Panel();
             this.pnContainer = new System.Windows.Forms.Panel();
@@ -79,7 +75,10 @@
             this.lbFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pnTop = new System.Windows.Forms.Panel();
-            this.panel2.SuspendLayout();
+            this.tlpBottom = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.pnSV.SuspendLayout();
             this.pnContainer.SuspendLayout();
             this.groupUniversity.SuspendLayout();
@@ -89,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).BeginInit();
             this.groupPersionalInfo.SuspendLayout();
             this.pnTop.SuspendLayout();
+            this.tlpBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnChoose
@@ -103,62 +103,6 @@
             this.btnChoose.Text = "CHOOSE";
             this.btnChoose.UseVisualStyleBackColor = true;
             this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnEdit);
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 431);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1498, 53);
-            this.panel2.TabIndex = 29;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Crimson;
-            this.btnDelete.Location = new System.Drawing.Point(874, 10);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(96, 34);
-            this.btnDelete.TabIndex = 24;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.Blue;
-            this.btnEdit.Location = new System.Drawing.Point(581, 10);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(96, 34);
-            this.btnEdit.TabIndex = 22;
-            this.btnEdit.Text = "EDIT";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Visible = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnSave.Location = new System.Drawing.Point(729, 10);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(96, 34);
-            this.btnSave.TabIndex = 23;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lbTitle
             // 
@@ -179,17 +123,17 @@
             // 
             this.pnSV.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnSV.Controls.Add(this.pnContainer);
-            this.pnSV.Controls.Add(this.panel2);
             this.pnSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnSV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnSV.Location = new System.Drawing.Point(0, 62);
             this.pnSV.Margin = new System.Windows.Forms.Padding(4);
             this.pnSV.Name = "pnSV";
-            this.pnSV.Size = new System.Drawing.Size(1498, 484);
+            this.pnSV.Size = new System.Drawing.Size(1498, 471);
             this.pnSV.TabIndex = 32;
             // 
             // pnContainer
             // 
+            this.pnContainer.Controls.Add(this.tlpBottom);
             this.pnContainer.Controls.Add(this.groupUniversity);
             this.pnContainer.Controls.Add(this.groupAddress);
             this.pnContainer.Controls.Add(this.groupContact);
@@ -199,7 +143,7 @@
             this.pnContainer.Location = new System.Drawing.Point(0, 0);
             this.pnContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Size = new System.Drawing.Size(1498, 431);
+            this.pnContainer.Size = new System.Drawing.Size(1498, 471);
             this.pnContainer.TabIndex = 30;
             // 
             // groupUniversity
@@ -662,11 +606,70 @@
             this.pnTop.Size = new System.Drawing.Size(1498, 62);
             this.pnTop.TabIndex = 34;
             // 
+            // tlpBottom
+            // 
+            this.tlpBottom.ColumnCount = 3;
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.Controls.Add(this.btnDelete, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnSave, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnEdit, 0, 0);
+            this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlpBottom.Location = new System.Drawing.Point(0, 427);
+            this.tlpBottom.Name = "tlpBottom";
+            this.tlpBottom.RowCount = 1;
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpBottom.Size = new System.Drawing.Size(1498, 44);
+            this.tlpBottom.TabIndex = 74;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Crimson;
+            this.btnDelete.Location = new System.Drawing.Point(1001, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(494, 40);
+            this.btnDelete.TabIndex = 31;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnSave.Location = new System.Drawing.Point(502, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(493, 40);
+            this.btnSave.TabIndex = 30;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.Blue;
+            this.btnEdit.Location = new System.Drawing.Point(3, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(493, 40);
+            this.btnEdit.TabIndex = 29;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
             // FrmStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1498, 546);
+            this.ClientSize = new System.Drawing.Size(1498, 533);
             this.Controls.Add(this.pnSV);
             this.Controls.Add(this.pnTop);
             this.MaximizeBox = false;
@@ -674,7 +677,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
             this.Load += new System.EventHandler(this.FrmStudentInfo_Load);
-            this.panel2.ResumeLayout(false);
             this.pnSV.ResumeLayout(false);
             this.pnContainer.ResumeLayout(false);
             this.groupUniversity.ResumeLayout(false);
@@ -688,15 +690,13 @@
             this.groupPersionalInfo.ResumeLayout(false);
             this.groupPersionalInfo.PerformLayout();
             this.pnTop.ResumeLayout(false);
+            this.tlpBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnChoose;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Panel pnSV;
         private System.Windows.Forms.Panel pnContainer;
@@ -734,7 +734,6 @@
         private System.Windows.Forms.Label lbFaculty;
         private System.Windows.Forms.ComboBox cbbUniversity;
         private System.Windows.Forms.Label lbUniversity;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox cbbCommune;
         private System.Windows.Forms.ComboBox cbbDistrict;
         private System.Windows.Forms.ComboBox cbbProvince;
@@ -744,5 +743,9 @@
         private System.Windows.Forms.TextBox txtFaculty;
         private System.Windows.Forms.ComboBox cbbPriority;
         private System.Windows.Forms.Label lbPriority;
+        private System.Windows.Forms.TableLayoutPanel tlpBottom;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
