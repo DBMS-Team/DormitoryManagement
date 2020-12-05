@@ -56,7 +56,7 @@
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(1482, 250);
             this.lbTitle.TabIndex = 4;
-            this.lbTitle.Text = "QUẢN LÝ KÝ TÚC XÁ";
+            this.lbTitle.Text = "DORMITORY MANAGEMENT";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -69,7 +69,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1476, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản trị";
+            this.label1.Text = "MANAGEMENT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnQuanTri
@@ -172,7 +172,7 @@
             this.lbThongTin.Name = "lbThongTin";
             this.lbThongTin.Size = new System.Drawing.Size(1474, 42);
             this.lbThongTin.TabIndex = 0;
-            this.lbThongTin.Text = "Thông tin";
+            this.lbThongTin.Text = "INFORMATION";
             this.lbThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel2
@@ -202,7 +202,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmGuest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Dormitory Management";
             this.pnQuanTri.ResumeLayout(false);
             this.pnBottom.ResumeLayout(false);
             this.pnThongTin.ResumeLayout(false);

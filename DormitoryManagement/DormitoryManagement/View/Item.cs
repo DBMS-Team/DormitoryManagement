@@ -25,6 +25,11 @@ namespace DormitoryManagement
         private string strKey = "";
 
         #region Constructors
+        public Item()
+        {
+
+        }
+
         public Item(ClickEvent click)
         {
             InitializeComponent();

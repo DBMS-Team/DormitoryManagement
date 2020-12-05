@@ -1,7 +1,11 @@
+<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
 ﻿using DormitoryManagement.Controller;
 using DormitoryManagement.Model;
 using DormitoryManagement.Utility;
 using System;
+=======
+﻿using System;
+>>>>>>> f23f06229bbce7834c4536a592179e2eedee5920:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,12 +14,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DormitoryManagement.Controller;
+using DormitoryManagement.Model;
 
 namespace DormitoryManagement.View
 {
-    public partial class FrmAddNewEmployee : Form
+    public partial class FrmEmployeeInfo : Form
     {
-        public FrmAddNewEmployee()
+        #region Fields
+        private string img_path;
+        #endregion
+
+        #region Properties
+        public string Img_path { get => img_path; set => img_path = value; }
+        #endregion
+
+        public FrmEmployeeInfo()
         {
             InitializeComponent();
         }
@@ -45,6 +59,7 @@ namespace DormitoryManagement.View
             if (comboBox.SelectedItem == null)
                 return;
             districtName = comboBox.Text;
+<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
             LoadListCommunateByProvinceNameInCombobox(provinceName,districtName);
         }
         private void btnSave_Click(object sender, EventArgs e)
@@ -75,6 +90,9 @@ namespace DormitoryManagement.View
                 MessageBox.Show("Not Is Mail", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 flag = 1;
             }
+=======
+            LoadListCommunateByProvinceName(provinceName, districtName);
+>>>>>>> f23f06229bbce7834c4536a592179e2eedee5920:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
         }
         #endregion
 
@@ -91,11 +109,15 @@ namespace DormitoryManagement.View
             cbbDistrict.DataSource = districtDTOs;
             cbbDistrict.DisplayMember = "DistrictName";
         }
+<<<<<<< HEAD:DormitoryManagement/DormitoryManagement/View/FrmAddNewEmployee.cs
         void LoadListCommunateByProvinceNameInCombobox(string provinceName,string districtName)
+=======
+        void LoadListCommunateByProvinceName(string provinceName, string districtName)
+>>>>>>> f23f06229bbce7834c4536a592179e2eedee5920:DormitoryManagement/DormitoryManagement/View/FrmEmployeeInfo.cs
         {
-            List<CommuneDTO> communeDTOs = CommuneDAO.GetLisCommuneByProvinceAndDistrict(provinceName,districtName);
-            cbbCommnune.DataSource = communeDTOs;
-            cbbCommnune.DisplayMember = "CommuneName";
+            List<CommuneDTO> communeDTOs = CommuneDAO.GetLisCommuneByProvinceAndDistrict(provinceName, districtName);
+            cbbCommune.DataSource = communeDTOs;
+            cbbCommune.DisplayMember = "CommuneName";
         }
         void LoadListAdminInCombobox()
         {
@@ -106,6 +128,38 @@ namespace DormitoryManagement.View
 
         #endregion
 
-        
+        #region Events
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog()
+            {
+                Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png",
+                Multiselect = false,
+            };
+            DialogResult re = dialog.ShowDialog();
+            if (re == DialogResult.OK)
+            {
+                Img_path = dialog.FileName;
+                picAvt.BackgroundImage = Image.FromFile(Img_path);
+            }    
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
     }
 }
