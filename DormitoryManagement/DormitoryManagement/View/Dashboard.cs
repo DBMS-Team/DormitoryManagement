@@ -24,6 +24,15 @@ namespace DormitoryManagement.View
             return ctrlLogout;
         }
 
+        public static Item InitChangePassword()
+        {
+            Item ctrlChangePassword = new Item(Dashboard.ChangePassword);
+            ctrlChangePassword.picItem.BackgroundImage = Properties.Resources.ForgotPassword;
+            ctrlChangePassword.btnTitle.Text = "CHANGE";
+            ctrlChangePassword.btnTitle.ForeColor = Color.DarkRed;
+            return ctrlChangePassword;
+        }
+
         public static Item InitExit()
         {
             Item ctrlExit = new Item(Dashboard.Exit);
@@ -89,6 +98,14 @@ namespace DormitoryManagement.View
             return ctrlListStudents;
         }
 
+        public static Item InitSearch()
+        {
+            Item ctrlSearch = new Item(Dashboard.Search);
+            ctrlSearch.picItem.BackgroundImage = Properties.Resources.Search;
+            ctrlSearch.btnTitle.Text = "SEARCH";
+            return ctrlSearch;
+        }
+
         public static Item InitReport()
         {
             Item ctrlReport = new Item(Dashboard.Report);
@@ -145,6 +162,11 @@ namespace DormitoryManagement.View
             }
         }
 
+        public static void ChangePassword()
+        {
+
+        }
+
         public static void Exit()
         {
             DialogResult re = MessageBox.Show("Bạn muốn thoát khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -196,10 +218,16 @@ namespace DormitoryManagement.View
             frmSinhVien.ShowDialog();
         }
 
+        public static void Search()
+        {
+            FrmSearch search = new FrmSearch();
+            search.ShowDialog();
+        }
+
         public static void Report()
         {
-            FrmReport baoCao = new FrmReport();
-            baoCao.ShowDialog();
+            FrmReportMonthly report = new FrmReportMonthly();
+            report.ShowDialog();
         }
     }
 }

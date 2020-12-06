@@ -7,12 +7,13 @@ namespace DormitoryManagement.View
     {
         #region Fields
         private Item ctrlLogout;
+        private Item ctrlChangePassword;
         private Item ctrlExit;
         private Item ctrlBuildings;
         private Item ctrlRoomType;
         private Item ctrlServices;
         private Item ctrlGuide;
-
+        private Item ctrlSearch;
         private Item ctrlListStudents;
         private Item ctrlListEmployees;
         private Item ctrlRoom;
@@ -57,6 +58,10 @@ namespace DormitoryManagement.View
                 this.loginUser = value;
             }
         }
+
+        public Item CtrlChangePassword { get => ctrlChangePassword; set => ctrlChangePassword = value; }
+        public Item CtrlSearch { get => ctrlSearch; set => ctrlSearch = value; }
+
         public FrmEmployee(EmployeeDTO employee, UserDTO user)
         {
             InitializeComponent();
@@ -71,6 +76,9 @@ namespace DormitoryManagement.View
             //Đăng xuất
             CtrlLogout = Dashboard.InitLogout();
             tlpManage.Controls.Add(CtrlLogout);
+            //Change password
+            CtrlChangePassword = Dashboard.InitChangePassword();
+            tlpManage.Controls.Add(CtrlChangePassword);
             //Thoát
             CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(CtrlExit);
@@ -95,6 +103,9 @@ namespace DormitoryManagement.View
             //DS dịch vụ
             CtrlServices = Dashboard.InitServices();
             tlpInfo.Controls.Add(CtrlServices);
+            //Search
+            CtrlSearch = Dashboard.InitSearch();
+            tlpInfo.Controls.Add(CtrlSearch);
             //Hướng dẫn
             CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(CtrlGuide);

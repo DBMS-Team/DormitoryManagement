@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
-    public partial class FrmReport : Form
+    public partial class FrmSearch : Form
     {
-        public FrmReport()
+        public FrmSearch()
         {
             InitializeComponent();
         }
 
-        private void item1_Click(object sender, EventArgs e)
+        private void tabSearch_Selected(object sender, TabControlEventArgs e)
         {
-            FrmLogin login = new FrmLogin();
-            login.ShowDialog();
+
         }
     }
 }

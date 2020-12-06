@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
-    public partial class FrmReport : Form
+    public partial class FrmReportAnnual : Form
     {
-        public FrmReport()
+        public FrmReportAnnual()
         {
             InitializeComponent();
-        }
-
-        private void item1_Click(object sender, EventArgs e)
-        {
-            FrmLogin login = new FrmLogin();
-            login.ShowDialog();
         }
     }
 }

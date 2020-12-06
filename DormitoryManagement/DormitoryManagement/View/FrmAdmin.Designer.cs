@@ -93,14 +93,15 @@
             // 
             // tlpManage
             // 
-            this.tlpManage.ColumnCount = 2;
-            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpManage.ColumnCount = 3;
+            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpManage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpManage.Location = new System.Drawing.Point(0, 39);
             this.tlpManage.Name = "tlpManage";
             this.tlpManage.RowCount = 1;
-            this.tlpManage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpManage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpManage.Size = new System.Drawing.Size(732, 203);
             this.tlpManage.TabIndex = 1;
             // 
@@ -119,7 +120,8 @@
             // 
             // tlpInfo
             // 
-            this.tlpInfo.ColumnCount = 7;
+            this.tlpInfo.ColumnCount = 8;
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));

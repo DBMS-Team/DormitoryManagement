@@ -50,7 +50,7 @@
             this.lbAddress = new System.Windows.Forms.Label();
             this.cbbCommune = new System.Windows.Forms.ComboBox();
             this.cbbDistrict = new System.Windows.Forms.ComboBox();
-            this.cbbProvince = new System.Windows.Forms.ComboBox();
+            this.cbbCommune = new System.Windows.Forms.ComboBox();
             this.lbProvince = new System.Windows.Forms.Label();
             this.lbCommune = new System.Windows.Forms.Label();
             this.lbDistrict = new System.Windows.Forms.Label();
