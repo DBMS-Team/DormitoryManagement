@@ -58,7 +58,7 @@ namespace DormitoryManagement.View
                         }
                         else
                         {
-                            MessageBox.Show("Eror!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else

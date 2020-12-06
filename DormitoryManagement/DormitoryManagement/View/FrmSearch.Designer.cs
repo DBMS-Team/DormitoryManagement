@@ -71,6 +71,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtInputBill = new System.Windows.Forms.TextBox();
+            this.tabEmployee = new System.Windows.Forms.TabPage();
             this.tabSearch.SuspendLayout();
             this.tabStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -103,6 +104,7 @@
             this.tabSearch.Controls.Add(this.tabStudent);
             this.tabSearch.Controls.Add(this.tabPage2);
             this.tabSearch.Controls.Add(this.tabBill);
+            this.tabSearch.Controls.Add(this.tabEmployee);
             this.tabSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabSearch.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabSearch.Location = new System.Drawing.Point(0, 76);
@@ -579,6 +581,16 @@
             this.txtInputBill.Size = new System.Drawing.Size(1021, 35);
             this.txtInputBill.TabIndex = 14;
             // 
+            // tabEmployee
+            // 
+            this.tabEmployee.Location = new System.Drawing.Point(4, 35);
+            this.tabEmployee.Name = "tabEmployee";
+            this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmployee.Size = new System.Drawing.Size(1474, 688);
+            this.tabEmployee.TabIndex = 3;
+            this.tabEmployee.Text = "EMPLOYEE";
+            this.tabEmployee.UseVisualStyleBackColor = true;
+            // 
             // FrmSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -635,5 +647,6 @@
         private System.Windows.Forms.DataGridView dgvStudent;
         private System.Windows.Forms.DataGridView dgvRoomReg;
         private System.Windows.Forms.DataGridView dgvBill;
+        private System.Windows.Forms.TabPage tabEmployee;
     }
 }

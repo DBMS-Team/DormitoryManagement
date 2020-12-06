@@ -68,10 +68,6 @@ namespace DormitoryManagement.View
             this.LoginAdmin = admin;
             this.LoginUser = user;
             Init();
-            if(flagLogin == 1)
-            {
-                this.Close();
-            }
         }
         
         #region Events
