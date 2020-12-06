@@ -12,7 +12,7 @@ namespace DormitoryManagement
         Building,
         Employee,
         Service,
-        HoaDon,
+        Bill,
         RoomType,
         Unknown
     }
@@ -30,10 +30,10 @@ namespace DormitoryManagement
         #endregion
 
         #region Properties
-        [Category("Button"), Description("")]
+        [Category("Customize"), Description("Change title for item.")]
         public string Title { get => this.btnTitle.Text; set => this.btnTitle.Text = value; }
 
-        [Category("PictureBox"), Description("")]
+        [Category("Customize"), Description("Change background image for item.")]
         public Image ImageItem { get => this.picItem.BackgroundImage; set => this.picItem.BackgroundImage = value; }
 
         public string StrKey { get => strKey; set => strKey = value; }

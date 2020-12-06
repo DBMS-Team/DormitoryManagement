@@ -6,6 +6,8 @@ namespace DormitoryManagement.View
     public static class Dashboard
     {
         #region Init
+
+        #region General
         public static Item InitLogin()
         {
             Item ctrlLogin = new Item(Login);
@@ -41,6 +43,9 @@ namespace DormitoryManagement.View
             ctrlExit.btnTitle.ForeColor = Color.DarkRed;
             return ctrlExit;
         }
+        #endregion
+
+        #region Add
 
         public static Item InitRoom()
         {
@@ -81,7 +86,9 @@ namespace DormitoryManagement.View
             ctrlRoomRegistration.btnTitle.Text = "ROOM";
             return ctrlRoomRegistration;
         }
+        #endregion
 
+        #region Information
         public static Item InitListEmployees()
         {
             Item ctrlListEmployees = new Item(ItemType.Employee);
@@ -116,7 +123,7 @@ namespace DormitoryManagement.View
 
         public static Item InitListBuildings()
         {
-            Item ctrlBuildings = new Item(ItemType.Building);
+            Item ctrlBuildings = new Item(Dashboard.ListBuildings);
             ctrlBuildings.picItem.BackgroundImage = Properties.Resources.Building;
             ctrlBuildings.btnTitle.Text = "BUILDINGS";
             return ctrlBuildings;
@@ -124,7 +131,7 @@ namespace DormitoryManagement.View
 
         public static Item InitListRoomType()
         {
-            Item ctrlRoomType = new Item(ItemType.RoomType);
+            Item ctrlRoomType = new Item(Dashboard.ListRoomTypes);
             ctrlRoomType.picItem.BackgroundImage = Properties.Resources.BunkBed;
             ctrlRoomType.btnTitle.Text = "ROOM TYPES";
             return ctrlRoomType;
@@ -132,7 +139,7 @@ namespace DormitoryManagement.View
 
         public static Item InitListServices()
         {
-            Item ctrlServices = new Item(ItemType.Service);
+            Item ctrlServices = new Item(Dashboard.ListServices);
             ctrlServices.picItem.BackgroundImage = Properties.Resources.Water;
             ctrlServices.btnTitle.Text = "SERVICES";
             return ctrlServices;
@@ -147,6 +154,11 @@ namespace DormitoryManagement.View
         }
         #endregion
 
+        #endregion
+
+        #region Delegate method
+
+        #region General
         public static void Login()
         {
             FrmLogin frmLogin = new FrmLogin();
@@ -176,29 +188,13 @@ namespace DormitoryManagement.View
                 Application.Exit();
             }
         }
+        #endregion
 
-        public static void Guide()
-        {
-            FrmGuide frmGuide = new FrmGuide();
-            frmGuide.ShowDialog();
-        }
-
+        #region Add
         public static void Bill()
         {
             FrmBill frmBill = new FrmBill();
             frmBill.ShowDialog();
-        }
-
-        public static void Room()
-        {
-            FrmRoom frmRoom = new FrmRoom();
-            frmRoom.ShowDialog();
-        }
-
-        public static void ListStudents()
-        {
-            FrmStudent frmStudent = new FrmStudent(null, null);
-            frmStudent.ShowDialog();
         }
 
         public static void RoomRegistration()
@@ -218,6 +214,45 @@ namespace DormitoryManagement.View
             FrmStudentInfo frmStudentInfo = new FrmStudentInfo();
             frmStudentInfo.ShowDialog();
         }
+        #endregion
+
+        #region Information
+
+        public static void Room()
+        {
+            FrmRoom frmRoom = new FrmRoom();
+            frmRoom.ShowDialog();
+        }
+
+        public static void ListStudents()
+        {
+            FrmStudent frmStudent = new FrmStudent(null, null);
+            frmStudent.ShowDialog();
+        }
+
+        public static void ListServices()
+        {
+            FrmServices frmServices = new FrmServices();
+            frmServices.ShowDialog();
+        }
+
+        public static void ListBuildings()
+        {
+            FrmBuildings frmBuildings = new FrmBuildings();
+            frmBuildings.ShowDialog();
+        }
+
+        public static void ListRoomTypes()
+        {
+            FrmRoomTypes frmRoomTypes = new FrmRoomTypes();
+            frmRoomTypes.ShowDialog();
+        }
+
+        public static void Guide()
+        {
+            FrmGuide frmGuide = new FrmGuide();
+            frmGuide.ShowDialog();
+        }
 
         public static void Search()
         {
@@ -230,5 +265,8 @@ namespace DormitoryManagement.View
             FrmReport report = new FrmReport();
             report.ShowDialog();
         }
+        #endregion
+
+        #endregion
     }
 }
