@@ -103,7 +103,7 @@ namespace DormitoryManagement
         [Browsable(true)][Category("Action")][Description("Invoked when user clicks button")]
         private void item1_Click(object sender, EventArgs e)
         {
-            this.ClickEvent();
+            this.ButtonClick(btnTitle, e);
         }
 
         [Category("Button"), Description("")]
