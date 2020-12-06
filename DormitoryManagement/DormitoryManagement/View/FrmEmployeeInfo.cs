@@ -173,24 +173,27 @@ namespace DormitoryManagement.View
             street = FormatData.CapitalizeEachWord(street);
             DateTime startDate = dtpStartDate.Value;
             string salary = txtSalary.Text;
-            
-            if(AddEmployee(lastName, firstName, dob, gender, ssn, phoneNumber1, phoneNumber2, email, imagePath, userType, provinceName, districtName, communeName,
+            if (flag == 0)
+            {
+                if (AddEmployee(lastName, firstName, dob, gender, ssn, phoneNumber1, phoneNumber2, email, imagePath, userType, provinceName, districtName, communeName,
             street, startDate, salary))
-            {
-                MessageBox.Show("Added successfully!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtLastName.Text = "";
-                txtFirstName.Text = "";
-                txtSSN.Text = "";
-                txtPhone1.Text = "";
-                txtPhone2.Text = "";
-                txtEmail.Text = "";
-                txtStreet.Text = "";
-                txtSalary.Text = "";
+                {
+                    MessageBox.Show("Added successfully!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtLastName.Text = "";
+                    txtFirstName.Text = "";
+                    txtSSN.Text = "";
+                    txtPhone1.Text = "";
+                    txtPhone2.Text = "";
+                    txtEmail.Text = "";
+                    txtStreet.Text = "";
+                    txtSalary.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Một trong các vấn đề bị lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Một trong các vấn đề bị lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
