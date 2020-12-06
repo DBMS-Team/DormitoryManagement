@@ -12,7 +12,7 @@ namespace DormitoryManagement.Controller
     {
         public static List<ServiceDTO> GetListService()
         {
-            string query = string.Format("SELECT * FROM dbo.SERVICE");
+            string query = string.Format("EXEC dbo.USP_GetListService");
             DataTable dataTable = DataProvider.ExcuteQuery(query);
             List<ServiceDTO> listService = new List<ServiceDTO>();
             foreach (DataRow item in dataTable.Rows)

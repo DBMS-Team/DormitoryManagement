@@ -62,41 +62,48 @@ namespace DormitoryManagement.View
         }
         #endregion
 
-        private void cmbBuilding_SelectedValueChanged(object sender, EventArgs e)
-        {
-            string SectorName = cmbBuilding.Text.ToString();
-            List<SectorDTO> ListSector = SectorDAO.GetListSector();
-            for (int i = 0; i < ListSector.Count; i++)
-            {
-                SectorDTO Sector = ListSector[i];
-                if (SectorName == Sector.SectorName)
-                {
-                    FillDataRoomBySector(Sector.SectorId);
-                }
-            }
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (cmbTenDV.Text.Trim() == "" || numSoLuong.Value <= 0)//Kiểm tra dữ liệu có phù hợp không
+            //check du lieu dau vao co du chua
+            if (cmbBuilding.Text == "")
+            {
+                MessageBox.Show("Sector not null");
+            }
+            else if (cmbRoom.Text == "")
+            {
+                MessageBox.Show("Room not null");
+            }
+            else if (cmbMonth.Text == "")
+            {
+                MessageBox.Show("Month not null");
+            }
+            else if (txtYear.Text == "")
+            {
+                MessageBox.Show("Year not null");
+            }
+            else if (cmbTenDV.Text.Trim() == "" || numSoLuong.Value <= 0)//Kiểm tra dữ liệu có phù hợp không
             {
                 MessageBox.Show("Số liệu không hợp lệ", "Lỗi nhập dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string Unit = GetUnitNameByServiceName(cmbTenDV.Text.ToString());
-            string Service_ID = GetServiceIDByServiceName(cmbTenDV.Text.ToString());
-            string[] rowValue = new string[] { Service_ID, cmbTenDV.Text, numSoLuong.Value.ToString(), Unit };
-            for (int i = 0; i < dgvBillRegistration.Rows.Count; i++)// Kiểm tra nếu dịch vụ đó đã có sử dụng thì cộng thêm với số lượng cũ
+            else 
             {
-                if (dgvBillRegistration.Rows[i].Cells[1].Value == cmbTenDV.Text)
+                string Unit = GetUnitNameByServiceName(cmbTenDV.Text.ToString());
+                string Service_ID = GetServiceIDByServiceName(cmbTenDV.Text.ToString());
+                string[] rowValue = new string[] { Service_ID, cmbTenDV.Text, numSoLuong.Value.ToString(), Unit };
+                for (int i = 0; i < dgvBillRegistration.Rows.Count; i++)// Kiểm tra nếu dịch vụ đó đã có sử dụng thì cộng thêm với số lượng cũ
                 {
-                    decimal a = Decimal.Parse(dgvBillRegistration.Rows[i].Cells[2].Value.ToString());
-                    a += numSoLuong.Value;
-                    dgvBillRegistration.Rows[i].Cells[2].Value = a.ToString();
-                    return;
+                    if (dgvBillRegistration.Rows[i].Cells[1].Value == cmbTenDV.Text)
+                    {
+                        decimal a = Decimal.Parse(dgvBillRegistration.Rows[i].Cells[2].Value.ToString());
+                        a += numSoLuong.Value;
+                        dgvBillRegistration.Rows[i].Cells[2].Value = a.ToString();
+                        return;
+                    }
                 }
+                dgvBillRegistration.Rows.Add(rowValue);
             }
-            dgvBillRegistration.Rows.Add(rowValue);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -132,6 +139,20 @@ namespace DormitoryManagement.View
             FillDataSector();
             FillDataRoom();
             cmbBuilding.Text = "";
+        }
+
+        private void cmbBuilding_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string SectorName = cmbBuilding.Text.ToString();
+            List<SectorDTO> ListSector = SectorDAO.GetListSector();
+            for (int i = 0; i < ListSector.Count; i++)
+            {
+                SectorDTO Sector = ListSector[i];
+                if (SectorName == Sector.SectorName)
+                {
+                    FillDataRoomBySector(Sector.SectorId);
+                }
+            }
         }
     }
 }
