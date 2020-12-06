@@ -160,6 +160,12 @@
     <Compile Include="View\FrmGuide.Designer.cs">
       <DependentUpon>FrmGuide.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSearch.Designer.cs">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmStudentInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </Compile>
     <EmbeddedResource Include="View\FrmEmployeeInfo.resx">
       <DependentUpon>FrmEmployeeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmSearch.resx">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmStudentInfo.resx">
       <DependentUpon>FrmStudentInfo.cs</DependentUpon>
