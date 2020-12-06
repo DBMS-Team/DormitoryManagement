@@ -146,7 +146,7 @@
             // 
             this.btnHidePassword.BackColor = System.Drawing.Color.Transparent;
             this.btnHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHidePassword.Location = new System.Drawing.Point(673, 266);
+            this.btnHidePassword.Location = new System.Drawing.Point(673, 264);
             this.btnHidePassword.Name = "btnHidePassword";
             this.btnHidePassword.Size = new System.Drawing.Size(38, 27);
             this.btnHidePassword.TabIndex = 12;

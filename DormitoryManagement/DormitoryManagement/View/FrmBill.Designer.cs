@@ -801,6 +801,7 @@
             this.cmbBuilding.Name = "cmbBuilding";
             this.cmbBuilding.Size = new System.Drawing.Size(284, 29);
             this.cmbBuilding.TabIndex = 9;
+            this.cmbBuilding.SelectedValueChanged += new System.EventHandler(this.cmbBuilding_SelectedValueChanged);
             // 
             // lbKhu
             // 

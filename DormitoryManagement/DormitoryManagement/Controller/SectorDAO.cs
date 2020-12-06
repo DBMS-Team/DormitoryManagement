@@ -12,7 +12,7 @@ namespace DormitoryManagement.Controller
     {
         public static List<SectorDTO> GetListSector()
         {
-            string query = string.Format("SELECT * FROM dbo.SECTOR");
+            string query = string.Format("EXEC dbo.USP_GetListSector");
             DataTable dataTable = DataProvider.ExcuteQuery(query);
             List<SectorDTO> ListSector = new List<SectorDTO>();
             foreach (DataRow item in dataTable.Rows)

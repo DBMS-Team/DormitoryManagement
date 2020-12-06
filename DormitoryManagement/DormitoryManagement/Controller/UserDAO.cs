@@ -37,5 +37,25 @@ namespace DormitoryManagement.Controller
             }
             return null;
         }
+        public static bool AddUser(string lastName, string firstName, DateTime dob, string gender, string ssn, string phoneNumber1,
+            string phoneNumber2, string email, string imagePath, string userType, string provinceName, string districtName, string communeName, 
+            string street, DateTime startDate, string salary)
+        {
+            string dobTemp = Convert.ToDateTime(dob).ToString("yyyyMMdd");
+            string startDateTemp = Convert.ToDateTime(startDate).ToString("yyyyMMdd");
+            string query = string.Format("EXEC dbo.USP_AddEmployee @LAST_NAME = N'{0}',@FIRST_NAME = N'{1}',@DOB = '{2}',@GENDER = N'{3}',@SSN = '{4}'," +
+                "@PHONE_NUMBER_1 = '{5}',@PHONE_NUMBER_2 = '{6}', @EMAIL = '{7}', @IMAGE_PATH = '{8}', @USER_TYPE = '{9}', @PROVINCE_NAME = N'{10}', " +
+                "@DISTRICT_NAME = N'{11}', @COMMUNE_NAME = N'{12}',@STREET = N'{13}', @STATR_DATE = '{14}', @SALARY = {15}",
+                lastName,firstName,dobTemp,gender,ssn,phoneNumber1,phoneNumber2,email,imagePath,userType,provinceName,districtName,communeName,street,
+                startDateTemp,salary);
+            int result = DataProvider.ExcuteNonQuery(query);
+            return result > 0;
+        }
+        public static bool ChangePassword(int userId, string newpass)
+        {
+            string query = string.Format("EXEC dbo.USP_ChangePassword @USER_ID = {0}, @NEWPASS = '{1}'", userId, newpass);
+            int result = DataProvider.ExcuteNonQuery(query);
+            return result > 0;
+        }
     }
 }

@@ -32,6 +32,10 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.pnSV = new System.Windows.Forms.Panel();
             this.pnContainer = new System.Windows.Forms.Panel();
+            this.tlpBottom = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.groupUniversity = new System.Windows.Forms.GroupBox();
             this.txtMajor = new System.Windows.Forms.TextBox();
             this.txtFaculty = new System.Windows.Forms.TextBox();
@@ -46,7 +50,7 @@
             this.lbAddress = new System.Windows.Forms.Label();
             this.cbbCommune = new System.Windows.Forms.ComboBox();
             this.cbbDistrict = new System.Windows.Forms.ComboBox();
-            this.cbbProvince = new System.Windows.Forms.ComboBox();
+            this.cbbCommune = new System.Windows.Forms.ComboBox();
             this.lbProvince = new System.Windows.Forms.Label();
             this.lbCommune = new System.Windows.Forms.Label();
             this.lbDistrict = new System.Windows.Forms.Label();
@@ -75,12 +79,9 @@
             this.lbFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pnTop = new System.Windows.Forms.Panel();
-            this.tlpBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.pnSV.SuspendLayout();
             this.pnContainer.SuspendLayout();
+            this.tlpBottom.SuspendLayout();
             this.groupUniversity.SuspendLayout();
             this.groupAddress.SuspendLayout();
             this.groupContact.SuspendLayout();
@@ -88,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).BeginInit();
             this.groupPersionalInfo.SuspendLayout();
             this.pnTop.SuspendLayout();
-            this.tlpBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnChoose
@@ -145,6 +145,66 @@
             this.pnContainer.Name = "pnContainer";
             this.pnContainer.Size = new System.Drawing.Size(1498, 471);
             this.pnContainer.TabIndex = 30;
+            // 
+            // tlpBottom
+            // 
+            this.tlpBottom.ColumnCount = 3;
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.Controls.Add(this.btnDelete, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnSave, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnEdit, 0, 0);
+            this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlpBottom.Location = new System.Drawing.Point(0, 427);
+            this.tlpBottom.Name = "tlpBottom";
+            this.tlpBottom.RowCount = 1;
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpBottom.Size = new System.Drawing.Size(1498, 44);
+            this.tlpBottom.TabIndex = 74;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Crimson;
+            this.btnDelete.Location = new System.Drawing.Point(1001, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(494, 40);
+            this.btnDelete.TabIndex = 31;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnSave.Location = new System.Drawing.Point(502, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(493, 40);
+            this.btnSave.TabIndex = 30;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.Blue;
+            this.btnEdit.Location = new System.Drawing.Point(3, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(493, 40);
+            this.btnEdit.TabIndex = 29;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // groupUniversity
             // 
@@ -606,65 +666,6 @@
             this.pnTop.Size = new System.Drawing.Size(1498, 62);
             this.pnTop.TabIndex = 34;
             // 
-            // tlpBottom
-            // 
-            this.tlpBottom.ColumnCount = 3;
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpBottom.Controls.Add(this.btnDelete, 0, 0);
-            this.tlpBottom.Controls.Add(this.btnSave, 0, 0);
-            this.tlpBottom.Controls.Add(this.btnEdit, 0, 0);
-            this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpBottom.Location = new System.Drawing.Point(0, 427);
-            this.tlpBottom.Name = "tlpBottom";
-            this.tlpBottom.RowCount = 1;
-            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottom.Size = new System.Drawing.Size(1498, 44);
-            this.tlpBottom.TabIndex = 74;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Crimson;
-            this.btnDelete.Location = new System.Drawing.Point(1001, 2);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(494, 40);
-            this.btnDelete.TabIndex = 31;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnSave.Location = new System.Drawing.Point(502, 2);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(493, 40);
-            this.btnSave.TabIndex = 30;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.Blue;
-            this.btnEdit.Location = new System.Drawing.Point(3, 2);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(493, 40);
-            this.btnEdit.TabIndex = 29;
-            this.btnEdit.Text = "EDIT";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
             // FrmStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -679,6 +680,7 @@
             this.Load += new System.EventHandler(this.FrmStudentInfo_Load);
             this.pnSV.ResumeLayout(false);
             this.pnContainer.ResumeLayout(false);
+            this.tlpBottom.ResumeLayout(false);
             this.groupUniversity.ResumeLayout(false);
             this.groupUniversity.PerformLayout();
             this.groupAddress.ResumeLayout(false);
@@ -690,7 +692,6 @@
             this.groupPersionalInfo.ResumeLayout(false);
             this.groupPersionalInfo.PerformLayout();
             this.pnTop.ResumeLayout(false);
-            this.tlpBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
