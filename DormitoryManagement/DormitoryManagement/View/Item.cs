@@ -27,7 +27,8 @@ namespace DormitoryManagement
         #region Constructors
         public Item()
         {
-
+            InitializeComponent();
+            this.Anchor = AnchorStyles.Top;
         }
 
         public Item(ClickEvent click)
@@ -41,7 +42,7 @@ namespace DormitoryManagement
         {
             InitializeComponent();
             this.Anchor = AnchorStyles.Top;
-            this.type = type;
+            this.Type = type;
             this.ClickEvent = EventClick;
         }
 
@@ -49,15 +50,15 @@ namespace DormitoryManagement
         {
             InitializeComponent();
             this.Anchor = AnchorStyles.Top;
-            this.type = type;
+            this.Type = type;
             this.ClickEvent = ShowInfo;
-            strKey = key;
+            StrKey = key;
         }
         #endregion
 
         private void ShowInfo()
         {
-            switch (this.type)
+            switch (this.Type)
             {
                 //case ItemType.KhuPhong:
                 //    break;
@@ -98,10 +99,21 @@ namespace DormitoryManagement
             btnTitle.BackColor = Color.Transparent;
         }
 
+        [Browsable(true)]
+        [Category("Action")]
+        private void item1_Click(object sender, EventArgs e)
+        {
+            this.ClickEvent();
+        }
+
         [Category("Button"), Description("")]
         public string Title { get => this.btnTitle.Text; set => this.btnTitle.Text = value; }
 
         [Category("PictureBox"), Description("")]
         public Image ImageItem { get => this.picItem.BackgroundImage; set => this.picItem.BackgroundImage = value; }
+        [Category("PictureBox"), Description("")]
+        
+        public string StrKey { get => strKey; set => strKey = value; }
+        public ItemType Type { get => type; set => type = value; }
     }
 }

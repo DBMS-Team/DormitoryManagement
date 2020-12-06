@@ -225,7 +225,7 @@ namespace DormitoryManagement.View
 
         public static void Report()
         {
-            FrmReport baoCao = new FrmReport();
+            FrmReportMonthly baoCao = new FrmReportMonthly();
             baoCao.ShowDialog();
         }
     }

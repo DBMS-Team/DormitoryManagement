@@ -129,11 +129,17 @@
     <Compile Include="View\FrmEmployee.Designer.cs">
       <DependentUpon>FrmEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmReport.cs">
+    <Compile Include="View\FrmReportMonthly.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmReport.Designer.cs">
-      <DependentUpon>FrmReport.cs</DependentUpon>
+    <Compile Include="View\FrmReportMonthly.Designer.cs">
+      <DependentUpon>FrmReportMonthly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmReportAnnual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmReportAnnual.Designer.cs">
+      <DependentUpon>FrmReportAnnual.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmRoom.cs">
       <SubType>Form</SubType>
@@ -197,6 +203,12 @@
     <Compile Include="View\FrmStudent.Designer.cs">
       <DependentUpon>FrmStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +217,9 @@
     </Compile>
     <EmbeddedResource Include="View\FrmEmployeeInfo.resx">
       <DependentUpon>FrmEmployeeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmReportAnnual.resx">
+      <DependentUpon>FrmReportAnnual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmSearch.resx">
       <DependentUpon>FrmSearch.cs</DependentUpon>
@@ -240,8 +255,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\FrmReport.resx">
-      <DependentUpon>FrmReport.cs</DependentUpon>
+    <EmbeddedResource Include="View\FrmReportMonthly.resx">
+      <DependentUpon>FrmReportMonthly.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmRoom.resx">
       <DependentUpon>FrmRoom.cs</DependentUpon>
@@ -251,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Item.resx">
       <DependentUpon>Item.cs</DependentUpon>

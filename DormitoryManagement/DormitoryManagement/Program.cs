@@ -17,7 +17,7 @@ namespace DormitoryManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmReport());
+            Application.Run(new FrmGuest());
         }
     }
 }
