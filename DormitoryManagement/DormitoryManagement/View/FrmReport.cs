@@ -12,15 +12,28 @@ namespace DormitoryManagement.View
 {
     public partial class FrmReport : Form
     {
+        
         public FrmReport()
         {
             InitializeComponent();
+            ctrlReportMonthly.ClickEvent += new ClickEvent(InitReportMonthly);
+            ctrlReportAnnual.ClickEvent += new ClickEvent(InitReportAnnual);
         }
 
-        private void item1_Click(object sender, EventArgs e)
+        public void InitReportMonthly()
         {
-            FrmLogin login = new FrmLogin();
-            login.ShowDialog();
+            FrmReportMonthly reportMonthly = new FrmReportMonthly();
+            this.Hide();
+            reportMonthly.ShowDialog();
+            this.Dispose();
+        }
+
+        public void InitReportAnnual()
+        {
+            FrmReportAnnual reportAnnual = new FrmReportAnnual();
+            this.Hide();
+            reportAnnual.ShowDialog();
+            this.Dispose();
         }
     }
 }

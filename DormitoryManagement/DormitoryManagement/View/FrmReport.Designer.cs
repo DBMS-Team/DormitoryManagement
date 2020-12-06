@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lbTitle = new System.Windows.Forms.Label();
-            this.item1 = new DormitoryManagement.Item();
-            this.item2 = new DormitoryManagement.Item();
+            this.ctrlReportMonthly = new DormitoryManagement.Item();
+            this.ctrlReportAnnual = new DormitoryManagement.Item();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -47,42 +47,41 @@
             this.lbTitle.Text = "REPORT";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // item1
+            // ctrlReportMonthly
             // 
-            this.item1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.item1.BackgroundImage = global::DormitoryManagement.Properties.Resources.Report;
-            this.item1.ImageItem = global::DormitoryManagement.Properties.Resources.Report;
-            this.item1.Location = new System.Drawing.Point(91, 151);
-            this.item1.Name = "item1";
-            this.item1.Size = new System.Drawing.Size(110, 148);
-            this.item1.StrKey = "";
-            this.item1.TabIndex = 14;
-            this.item1.Title = "MONTHLY";
-            this.item1.Type = DormitoryManagement.ItemType.Unknown;
-            this.item1.Click += new System.EventHandler(this.item1_Click);
+            this.ctrlReportMonthly.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ctrlReportMonthly.ImageItem = global::DormitoryManagement.Properties.Resources.Report;
+            this.ctrlReportMonthly.Location = new System.Drawing.Point(91, 151);
+            this.ctrlReportMonthly.Name = "ctrlReportMonthly";
+            this.ctrlReportMonthly.Size = new System.Drawing.Size(110, 148);
+            this.ctrlReportMonthly.StrKey = "";
+            this.ctrlReportMonthly.TabIndex = 14;
+            this.ctrlReportMonthly.Title = "MONTHLY";
+            this.ctrlReportMonthly.Type = DormitoryManagement.ItemType.Unknown;
             // 
-            // item2
+            // ctrlReportAnnual
             // 
-            this.item2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.item2.BackgroundImage = global::DormitoryManagement.Properties.Resources.Report;
-            this.item2.ImageItem = global::DormitoryManagement.Properties.Resources.Report;
-            this.item2.Location = new System.Drawing.Point(314, 151);
-            this.item2.Name = "item2";
-            this.item2.Size = new System.Drawing.Size(110, 148);
-            this.item2.StrKey = "";
-            this.item2.TabIndex = 15;
-            this.item2.Title = "ANNUAL";
-            this.item2.Type = DormitoryManagement.ItemType.Unknown;
+            this.ctrlReportAnnual.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ctrlReportAnnual.ImageItem = global::DormitoryManagement.Properties.Resources.Report;
+            this.ctrlReportAnnual.Location = new System.Drawing.Point(314, 151);
+            this.ctrlReportAnnual.Name = "ctrlReportAnnual";
+            this.ctrlReportAnnual.Size = new System.Drawing.Size(110, 148);
+            this.ctrlReportAnnual.StrKey = "";
+            this.ctrlReportAnnual.TabIndex = 15;
+            this.ctrlReportAnnual.Title = "ANNUAL";
+            this.ctrlReportAnnual.Type = DormitoryManagement.ItemType.Unknown;
             // 
             // FrmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 362);
-            this.Controls.Add(this.item1);
-            this.Controls.Add(this.item2);
+            this.Controls.Add(this.ctrlReportMonthly);
+            this.Controls.Add(this.ctrlReportAnnual);
             this.Controls.Add(this.lbTitle);
+            this.MaximizeBox = false;
             this.Name = "FrmReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
             this.ResumeLayout(false);
 
@@ -90,7 +89,7 @@
 
         #endregion
         private System.Windows.Forms.Label lbTitle;
-        private Item item1;
-        private Item item2;
+        private Item ctrlReportMonthly;
+        private Item ctrlReportAnnual;
     }
 }
