@@ -92,36 +92,36 @@ namespace DormitoryManagement.View
                 string Unit = GetUnitNameByServiceName(cmbTenDV.Text.ToString());
                 string Service_ID = GetServiceIDByServiceName(cmbTenDV.Text.ToString());
                 string[] rowValue = new string[] { Service_ID, cmbTenDV.Text, numSoLuong.Value.ToString(), Unit };
-                for (int i = 0; i < dgvBillRegistration.Rows.Count; i++)// Kiểm tra nếu dịch vụ đó đã có sử dụng thì cộng thêm với số lượng cũ
+                for (int i = 0; i < dgvBillReg.Rows.Count; i++)// Kiểm tra nếu dịch vụ đó đã có sử dụng thì cộng thêm với số lượng cũ
                 {
-                    if (dgvBillRegistration.Rows[i].Cells[1].Value == cmbTenDV.Text)
+                    if (dgvBillReg.Rows[i].Cells[1].Value == cmbTenDV.Text)
                     {
-                        decimal a = Decimal.Parse(dgvBillRegistration.Rows[i].Cells[2].Value.ToString());
+                        decimal a = Decimal.Parse(dgvBillReg.Rows[i].Cells[2].Value.ToString());
                         a += numSoLuong.Value;
-                        dgvBillRegistration.Rows[i].Cells[2].Value = a.ToString();
+                        dgvBillReg.Rows[i].Cells[2].Value = a.ToString();
                         return;
                     }
                 }
-                dgvBillRegistration.Rows.Add(rowValue);
+                dgvBillReg.Rows.Add(rowValue);
             }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            int index = dgvBillRegistration.CurrentCell.RowIndex;
-            var row = dgvBillRegistration.Rows[index];
+            int index = dgvBillReg.CurrentCell.RowIndex;
+            var row = dgvBillReg.Rows[index];
             if (row.IsNewRow == false)
             {
                 string maDV = row.Cells[0].Value.ToString().Trim();
-                dgvBillRegistration.Rows.Remove(row);
+                dgvBillReg.Rows.Remove(row);
             }
-            dgvBillRegistration.Refresh();
+            dgvBillReg.Refresh();
             MessageBox.Show("Đã xóa xong!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (dgvBillRegistration.Rows.Count <= 1)
+            if (dgvBillReg.Rows.Count <= 1)
             {
                 MessageBox.Show("Vui lòng chọn ít nhất 1 dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
