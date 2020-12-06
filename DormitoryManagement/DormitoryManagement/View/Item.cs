@@ -112,9 +112,9 @@ namespace DormitoryManagement
 
         private void btnTitle_Click(object sender, EventArgs e)
         {
-            if (ClickEvent != null && ClickEvent == null)
+            if (ClickEvent != null)
                 this.ClickEvent();
-            else if (ClickEvent == null && ClickEvent != null)
+            if (clickItem != null)
                 this.ClickItem(metadata);
         }
 

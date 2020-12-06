@@ -26,9 +26,18 @@ namespace DormitoryManagement.View
             return ctrlLogout;
         }
 
+        public static Item InitChangePassword()
+        {
+            Item ctrlChangePassword = new Item(Dashboard.ChangePassword);
+            ctrlChangePassword.picItem.BackgroundImage = Properties.Resources.ForgotPassword;
+            ctrlChangePassword.btnTitle.Text = "CHANGE";
+            ctrlChangePassword.btnTitle.ForeColor = Color.DarkRed;
+            return ctrlChangePassword;
+        }
+
         public static Item InitChangePassword(object account)
         {
-            Item ctrlChangePassword = new Item(Dashboard.ChangePassword, account);
+            Item ctrlChangePassword = new Item(Dashboard.ChangePassword);
             ctrlChangePassword.picItem.BackgroundImage = Properties.Resources.ForgotPassword;
             ctrlChangePassword.btnTitle.Text = "CHANGE";
             ctrlChangePassword.btnTitle.ForeColor = Color.DarkRed;
@@ -172,6 +181,12 @@ namespace DormitoryManagement.View
             {
                 
             }
+        }
+
+        public static void ChangePassword()
+        {
+            FrmChangePassword changePassword = new FrmChangePassword();
+            changePassword.ShowDialog();
         }
 
         public static void ChangePassword(object account)
