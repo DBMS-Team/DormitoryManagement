@@ -12,7 +12,7 @@ namespace DormitoryManagement.Controller
     {
         public static List<RoomDTO> GetListRoom()
         {
-            string query = string.Format("SELECT * FROM dbo.ROOM");
+            string query = string.Format("EXEC dbo.USP_GetListRoom");
             DataTable dataTable = DataProvider.ExcuteQuery(query);
             List<RoomDTO> ListRoom = new List<RoomDTO>();
             foreach (DataRow item in dataTable.Rows)
@@ -24,7 +24,7 @@ namespace DormitoryManagement.Controller
         }
         public static List<RoomDTO> GetListRoomBySector(string Sector_Name)
         {
-            string query = string.Format("SELECT * FROM dbo.ROOM WHERE dbo.ROOM.SECTOR_ID = {0}", Sector_Name);
+            string query = string.Format("EXEC dbo.USP_GetListRoomBySectorID @Sector_ID = {0}", Sector_Name);
             DataTable dataTable = DataProvider.ExcuteQuery(query);
             List<RoomDTO> ListRoom = new List<RoomDTO>();
             foreach (DataRow item in dataTable.Rows)

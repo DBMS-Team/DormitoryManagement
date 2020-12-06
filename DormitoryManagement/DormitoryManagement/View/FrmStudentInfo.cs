@@ -51,11 +51,6 @@ namespace DormitoryManagement.View
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
@@ -131,8 +126,77 @@ namespace DormitoryManagement.View
 
         private void FrmStudentInfo_Load(object sender, EventArgs e)
         {
-            btnSave.Enabled = false;
+            btnSave.Enabled = true;
             LoadListProvinceInCombobox();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //Check dien day du du lieu khong
+            #region Check input
+            if (txtStudentID.Text == "")
+            {
+                MessageBox.Show("Ban Chua Nhap MSSV");
+            }
+            else if (txtFirstName.Text == "")
+            {
+                MessageBox.Show("Ban Chua Nhap Ho cua Minh");
+            }
+            else if (txtLastName.Text == "")
+            {
+                MessageBox.Show("Ban Chua Nhap Ten Lot Va Ten Cua Minh");
+            }
+            else if (txtID.Text == "")
+            {
+                MessageBox.Show("Ban Chua Nhap CMND");
+            }
+            else if (txtHealthInsurance.Text == "")
+            {
+                MessageBox.Show("Ban Chua Nhap So Bao Hiem Y Te");
+            }
+            else if (cbbProvince.Text == "")
+            {
+                MessageBox.Show("Ban Chua Chon Thanh Pho");
+            }
+            else if (cbbDistrict.Text == "")
+            {
+                MessageBox.Show("Ban Chua Chon Huyen");
+            }
+            else if (cbbCommune.Text == "")
+            {
+                MessageBox.Show("Ban Chua Chon Xa");
+            }
+            else if (txtAddress.Text == "")
+            {
+                MessageBox.Show("Ban Chua Nhap Dia Chi");
+            }
+            else if (txtPhone1.Text == "")
+            {
+                MessageBox.Show("Ban chua nhap sdt 1");
+            }
+            else if (txtPhone2.Text == "")
+            {
+                MessageBox.Show("Ban chua nhap sdt 2");
+            }
+            else if (txtEmail.Text == "")
+            {
+                MessageBox.Show("Ban chua nhap email");
+            }
+            else if (cbbUniversity.Text == "")
+            {
+                MessageBox.Show("Ban chua chon ten truong");
+            }
+            else if (txtFaculty.Text == "")
+            {
+                MessageBox.Show("Ban chua chon Khoa");
+            }
+            else if (txtMajor.Text == "")
+            {
+                MessageBox.Show("ban chua chon Nganh Hoc");
+            }
+            #endregion
+            //Luu Du Lieu Vao data
+
         }
     }
 }
