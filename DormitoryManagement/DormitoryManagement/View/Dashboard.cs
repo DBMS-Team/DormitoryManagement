@@ -24,9 +24,9 @@ namespace DormitoryManagement.View
             return ctrlLogout;
         }
 
-        public static Item InitChangePassword()
+        public static Item InitChangePassword(object account)
         {
-            Item ctrlChangePassword = new Item(Dashboard.ChangePassword);
+            Item ctrlChangePassword = new Item(Dashboard.ChangePassword, account);
             ctrlChangePassword.picItem.BackgroundImage = Properties.Resources.ForgotPassword;
             ctrlChangePassword.btnTitle.Text = "CHANGE";
             ctrlChangePassword.btnTitle.ForeColor = Color.DarkRed;
@@ -60,7 +60,7 @@ namespace DormitoryManagement.View
 
         public static Item InitAddStudent()
         {
-            Item ctrlAddStudent = new Item(Dashboard.AddNewStudent);
+            Item ctrlAddStudent = new Item(Dashboard.StudentInfo);
             ctrlAddStudent.picItem.BackgroundImage = Properties.Resources.Student;
             ctrlAddStudent.btnTitle.Text = "STUDENT";
             return ctrlAddStudent;
@@ -68,7 +68,7 @@ namespace DormitoryManagement.View
 
         public static Item InitAddEmployee()
         {
-            Item ctrlAddEmployee = new Item(Dashboard.AddNewEmployee);
+            Item ctrlAddEmployee = new Item(Dashboard.EmployeeInfo);
             ctrlAddEmployee.picItem.BackgroundImage = Properties.Resources.Employee;
             ctrlAddEmployee.btnTitle.Text = "EMPLOYEE";
             return ctrlAddEmployee;
@@ -114,7 +114,7 @@ namespace DormitoryManagement.View
             return ctrlReport;
         }
 
-        public static Item InitBuildings()
+        public static Item InitListBuildings()
         {
             Item ctrlBuildings = new Item(ItemType.Building);
             ctrlBuildings.picItem.BackgroundImage = Properties.Resources.Building;
@@ -122,7 +122,7 @@ namespace DormitoryManagement.View
             return ctrlBuildings;
         }
 
-        public static Item InitRoomType()
+        public static Item InitListRoomType()
         {
             Item ctrlRoomType = new Item(ItemType.RoomType);
             ctrlRoomType.picItem.BackgroundImage = Properties.Resources.BunkBed;
@@ -130,7 +130,7 @@ namespace DormitoryManagement.View
             return ctrlRoomType;
         }
 
-        public static Item InitServices()
+        public static Item InitListServices()
         {
             Item ctrlServices = new Item(ItemType.Service);
             ctrlServices.picItem.BackgroundImage = Properties.Resources.Water;
@@ -162,7 +162,7 @@ namespace DormitoryManagement.View
             }
         }
 
-        public static void ChangePassword()
+        public static void ChangePassword(object account)
         {
             FrmChangePassword changePassword = new FrmChangePassword();
             changePassword.ShowDialog();
@@ -207,16 +207,16 @@ namespace DormitoryManagement.View
             frmDangKyPhong.ShowDialog();
         }
 
-        public static void AddNewEmployee()
+        public static void EmployeeInfo()
         {
-            FrmEmployeeInfo frmAddEmployee = new FrmEmployeeInfo();
-            frmAddEmployee.ShowDialog();
+            FrmEmployeeInfo frmEmployeeInfo = new FrmEmployeeInfo();
+            frmEmployeeInfo.ShowDialog();
         }
 
-        public static void AddNewStudent()
+        public static void StudentInfo()
         {
-            FrmStudentInfo frmSinhVien = new FrmStudentInfo();
-            frmSinhVien.ShowDialog();
+            FrmStudentInfo frmStudentInfo = new FrmStudentInfo();
+            frmStudentInfo.ShowDialog();
         }
 
         public static void Search()

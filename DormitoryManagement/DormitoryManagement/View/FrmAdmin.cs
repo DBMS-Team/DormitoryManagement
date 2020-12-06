@@ -89,45 +89,45 @@ namespace DormitoryManagement.View
             CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(CtrlExit);
             #endregion
-            
+
             #region Information
-            //DS Nhân viên
+            //List Employees
             CtrlListEmployees = Dashboard.InitListEmployees();
             tlpInfo.Controls.Add(CtrlListEmployees);
-            //DS Sinh viên
+            //List Students
             CtrlListStudents = Dashboard.InitListStudents();
             tlpInfo.Controls.Add(CtrlListStudents);
-            //Báo cáo
+            //Report
             CtrlReport = Dashboard.InitReport();
             tlpInfo.Controls.Add(CtrlReport);
-            //DS Khu phòng
-            CtrlBuildings = Dashboard.InitBuildings();
+            //List Buildings
+            CtrlBuildings = Dashboard.InitListBuildings();
             tlpInfo.Controls.Add(CtrlBuildings);
-            //DS Loại Phòng
-            CtrlRoomType = Dashboard.InitRoomType();
+            //List RoomType
+            CtrlRoomType = Dashboard.InitListRoomType();
             tlpInfo.Controls.Add(CtrlRoomType);
-            //DS dịch vụ
-            CtrlServices = Dashboard.InitServices();
+            //List Services
+            CtrlServices = Dashboard.InitListServices();
             tlpInfo.Controls.Add(CtrlServices);
             //Search
             CtrlSearch = Dashboard.InitSearch();
             tlpInfo.Controls.Add(CtrlSearch);
-            //Hướng dẫn
+            //Guide
             CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(CtrlGuide);
             #endregion
 
             #region Add
-            //Phòng
+            //Room Registration
             CtrlRoomRegistration = Dashboard.InitRoomRegistration();
             tlpAdd.Controls.Add(CtrlRoomRegistration);
-            //Hoá đơn
+            //Bill
             CtrlBill = Dashboard.InitBill();
             tlpAdd.Controls.Add(CtrlBill);
-            //Sinh viên
+            //Add Student
             CtrlAddStudent = Dashboard.InitAddStudent();
             tlpAdd.Controls.Add(CtrlAddStudent);
-            //Nhân viên
+            //Add Employee
             CtrlAddEmployee = Dashboard.InitAddEmployee();
             tlpAdd.Controls.Add(CtrlAddEmployee);
             #endregion

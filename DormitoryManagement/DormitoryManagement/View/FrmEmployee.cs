@@ -92,16 +92,16 @@ namespace DormitoryManagement.View
             CtrlReport = Dashboard.InitReport();
             tlpInfo.Controls.Add(CtrlReport);
             //DS Khu phòng
-            CtrlBuildings = Dashboard.InitBuildings();
+            CtrlBuildings = Dashboard.InitListBuildings();
             tlpInfo.Controls.Add(CtrlBuildings);
             //Phòng
             CtrlRoom = Dashboard.InitRoom();
             tlpInfo.Controls.Add(CtrlRoom);
             //DS Loại Phòng
-            CtrlRoomType = Dashboard.InitRoomType();
+            CtrlRoomType = Dashboard.InitListRoomType();
             tlpInfo.Controls.Add(CtrlRoomType);
             //DS dịch vụ
-            CtrlServices = Dashboard.InitServices();
+            CtrlServices = Dashboard.InitListServices();
             tlpInfo.Controls.Add(CtrlServices);
             //Search
             CtrlSearch = Dashboard.InitSearch();
