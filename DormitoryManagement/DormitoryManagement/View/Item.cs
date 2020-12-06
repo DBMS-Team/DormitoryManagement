@@ -21,6 +21,7 @@ namespace DormitoryManagement
     public partial class Item : UserControl
     {
         public ClickEvent ClickEvent = null; //delegate
+        public event EventHandler ButtonClick;
         private ItemType type = ItemType.Unknown;
         private string strKey = "";
 
