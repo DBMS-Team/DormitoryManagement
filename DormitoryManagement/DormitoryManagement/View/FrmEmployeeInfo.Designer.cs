@@ -230,6 +230,7 @@ namespace DormitoryManagement.View
             this.btnSave.TabIndex = 30;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -314,13 +315,9 @@ namespace DormitoryManagement.View
             // 
             this.cbbPriority.BackColor = System.Drawing.SystemColors.Window;
             this.cbbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPriority.Enabled = false;
             this.cbbPriority.FormattingEnabled = true;
             this.cbbPriority.ItemHeight = 20;
-            this.cbbPriority.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "2NT",
-            "3"});
             this.cbbPriority.Location = new System.Drawing.Point(110, 224);
             this.cbbPriority.Margin = new System.Windows.Forms.Padding(4);
             this.cbbPriority.Name = "cbbPriority";
@@ -383,6 +380,7 @@ namespace DormitoryManagement.View
             this.cbbDistrict.Name = "cbbDistrict";
             this.cbbDistrict.Size = new System.Drawing.Size(212, 28);
             this.cbbDistrict.TabIndex = 75;
+            this.cbbDistrict.SelectedIndexChanged += new System.EventHandler(this.cbbDistrict_SelectedIndexChanged);
             // 
             // lbDistrict
             // 
@@ -402,6 +400,7 @@ namespace DormitoryManagement.View
             this.cbbProvince.Name = "cbbProvince";
             this.cbbProvince.Size = new System.Drawing.Size(212, 28);
             this.cbbProvince.TabIndex = 73;
+            this.cbbProvince.SelectedIndexChanged += new System.EventHandler(this.cbbProvince_SelectedIndexChanged);
             // 
             // lbProvince
             // 
@@ -464,12 +463,15 @@ namespace DormitoryManagement.View
             // 
             // cbbUserType
             // 
-            this.cbbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbUserType.FormattingEnabled = true;
+            this.cbbUserType.Items.AddRange(new object[] {
+            "EMPLOYEE",
+            "ADMIN"});
             this.cbbUserType.Location = new System.Drawing.Point(133, 125);
             this.cbbUserType.Name = "cbbUserType";
             this.cbbUserType.Size = new System.Drawing.Size(212, 28);
             this.cbbUserType.TabIndex = 74;
+            this.cbbUserType.Text = "EMPLOYEE";
             // 
             // label1
             // 
@@ -637,6 +639,7 @@ namespace DormitoryManagement.View
             this.Name = "FrmEmployeeInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
+            this.Load += new System.EventHandler(this.FrmEmployeeInfo_Load);
             this.pnTop.ResumeLayout(false);
             this.pnContainer.ResumeLayout(false);
             this.tlpBottom.ResumeLayout(false);
