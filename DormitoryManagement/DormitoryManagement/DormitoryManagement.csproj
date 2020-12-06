@@ -117,6 +117,18 @@
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="Utility\FormatData.cs" />
     <Compile Include="View\Dashboard.cs" />
+    <Compile Include="View\FrmBuildings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmBuildings.Designer.cs">
+      <DependentUpon>FrmBuildings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmChangePassword.Designer.cs">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmEmployeeInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,17 +141,11 @@
     <Compile Include="View\FrmEmployee.Designer.cs">
       <DependentUpon>FrmEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmReportMonthly.cs">
+    <Compile Include="View\FrmReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmReportMonthly.Designer.cs">
-      <DependentUpon>FrmReportMonthly.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FrmReportAnnual.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmReportAnnual.Designer.cs">
-      <DependentUpon>FrmReportAnnual.cs</DependentUpon>
+    <Compile Include="View\FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmRoom.cs">
       <SubType>Form</SubType>
@@ -185,11 +191,23 @@
     <Compile Include="View\FrmGuide.Designer.cs">
       <DependentUpon>FrmGuide.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmRoomTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmRoomTypes.Designer.cs">
+      <DependentUpon>FrmRoomTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FrmSearch.Designer.cs">
       <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmServices.Designer.cs">
+      <DependentUpon>FrmServices.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmStudentInfo.cs">
       <SubType>Form</SubType>
@@ -203,26 +221,32 @@
     <Compile Include="View\FrmStudent.Designer.cs">
       <DependentUpon>FrmStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmReport.Designer.cs">
-      <DependentUpon>FrmReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\Item.designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FrmBuildings.resx">
+      <DependentUpon>FrmBuildings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmChangePassword.resx">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmEmployeeInfo.resx">
       <DependentUpon>FrmEmployeeInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmReportAnnual.resx">
-      <DependentUpon>FrmReportAnnual.cs</DependentUpon>
+    <EmbeddedResource Include="View\FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmRoomTypes.resx">
+      <DependentUpon>FrmRoomTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmSearch.resx">
       <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmServices.resx">
+      <DependentUpon>FrmServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmStudentInfo.resx">
       <DependentUpon>FrmStudentInfo.cs</DependentUpon>
@@ -255,9 +279,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\FrmReportMonthly.resx">
-      <DependentUpon>FrmReportMonthly.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmRoom.resx">
       <DependentUpon>FrmRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,9 +287,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmReport.resx">
-      <DependentUpon>FrmReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Item.resx">
       <DependentUpon>Item.cs</DependentUpon>

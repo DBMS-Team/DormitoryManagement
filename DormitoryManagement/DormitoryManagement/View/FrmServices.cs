@@ -8,21 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace DormitoryManagement.View
 {
-    public partial class FrmReportMonthly : Form
+    public partial class FrmServices : Form
     {
-        public FrmReportMonthly()
+        public FrmServices()
         {
             InitializeComponent();
-        }
-
-        private void FrmReport_Load(object sender, EventArgs e)
-        {
-
-            this.rpvReport.RefreshReport();
-            
         }
     }
 }

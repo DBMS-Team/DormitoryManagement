@@ -12,24 +12,50 @@ namespace DormitoryManagement
         Building,
         Employee,
         Service,
-        HoaDon,
+        Bill,
         RoomType,
         Unknown
     }
     public delegate void ClickEvent();
+    public delegate void ClickItem(object o);
 
     public partial class Item : UserControl
     {
-        public ClickEvent ClickEvent = null; //delegate
-        public event EventHandler ButtonClick;
+        #region Fields
+        private ClickEvent clickEvent = null; //delegate
+        private ClickItem clickItem = null; //delegate
+        private object metadata;
         private ItemType type = ItemType.Unknown;
         private string strKey = "";
+        #endregion
+
+        #region Properties
+        [Category("Customize"), Description("Change title for item.")]
+        public string Title { get => this.btnTitle.Text; set => this.btnTitle.Text = value; }
+
+        [Category("Customize"), Description("Change background image for item.")]
+        public Image ImageItem { get => this.picItem.BackgroundImage; set => this.picItem.BackgroundImage = value; }
+
+        public string StrKey { get => strKey; set => strKey = value; }
+        public ItemType Type { get => type; set => type = value; }
+        public object Metadata { get => metadata; set => metadata = value; }
+        public ClickEvent ClickEvent { get => clickEvent; set => clickEvent = value; }
+        public ClickItem ClickItem { get => clickItem; set => clickItem = value; }
+        #endregion
 
         #region Constructors
         public Item()
         {
             InitializeComponent();
             this.Anchor = AnchorStyles.Top;
+        }
+
+        public Item(ClickItem click, object o)
+        {
+            InitializeComponent();
+            this.Anchor = AnchorStyles.Top;
+            this.ClickItem = click;
+            this.metadata = o;
         }
 
         public Item(ClickEvent click)
@@ -88,6 +114,8 @@ namespace DormitoryManagement
         {
             if (ClickEvent != null)
                 this.ClickEvent();
+            if (clickItem != null)
+                this.ClickItem(metadata);
         }
 
         private void btnTitle_Enter(object sender, EventArgs e)
@@ -99,21 +127,5 @@ namespace DormitoryManagement
         {
             btnTitle.BackColor = Color.Transparent;
         }
-
-        [Browsable(true)][Category("Action")][Description("Invoked when user clicks button")]
-        private void item1_Click(object sender, EventArgs e)
-        {
-            this.ButtonClick(btnTitle, e);
-        }
-
-        [Category("Button"), Description("")]
-        public string Title { get => this.btnTitle.Text; set => this.btnTitle.Text = value; }
-
-        [Category("PictureBox"), Description("")]
-        public Image ImageItem { get => this.picItem.BackgroundImage; set => this.picItem.BackgroundImage = value; }
-        [Category("PictureBox"), Description("")]
-        
-        public string StrKey { get => strKey; set => strKey = value; }
-        public ItemType Type { get => type; set => type = value; }
     }
 }

@@ -1,11 +1,19 @@
-﻿using System.Drawing;
+﻿using DormitoryManagement.Model;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
     public static class Dashboard
     {
+        #region Var
+        private static UserDTO user;
+
+        public static UserDTO User { get => user; set => user = value; }
+        #endregion
         #region Init
+
+        #region General
         public static Item InitLogin()
         {
             Item ctrlLogin = new Item(Login);
@@ -24,7 +32,17 @@ namespace DormitoryManagement.View
             return ctrlLogout;
         }
 
-        public static Item InitChangePassword()
+        public static Item InitChangePassword(UserDTO user)
+        {
+            User = user;
+            Item ctrlChangePassword = new Item(Dashboard.ChangePassword);
+            ctrlChangePassword.picItem.BackgroundImage = Properties.Resources.ForgotPassword;
+            ctrlChangePassword.btnTitle.Text = "CHANGE";
+            ctrlChangePassword.btnTitle.ForeColor = Color.DarkRed;
+            return ctrlChangePassword;
+        }
+
+        public static Item InitChangePassword(object account)
         {
             Item ctrlChangePassword = new Item(Dashboard.ChangePassword);
             ctrlChangePassword.picItem.BackgroundImage = Properties.Resources.ForgotPassword;
@@ -41,6 +59,9 @@ namespace DormitoryManagement.View
             ctrlExit.btnTitle.ForeColor = Color.DarkRed;
             return ctrlExit;
         }
+        #endregion
+
+        #region Add
 
         public static Item InitRoom()
         {
@@ -60,7 +81,7 @@ namespace DormitoryManagement.View
 
         public static Item InitAddStudent()
         {
-            Item ctrlAddStudent = new Item(Dashboard.AddNewStudent);
+            Item ctrlAddStudent = new Item(Dashboard.StudentInfo);
             ctrlAddStudent.picItem.BackgroundImage = Properties.Resources.Student;
             ctrlAddStudent.btnTitle.Text = "STUDENT";
             return ctrlAddStudent;
@@ -68,7 +89,7 @@ namespace DormitoryManagement.View
 
         public static Item InitAddEmployee()
         {
-            Item ctrlAddEmployee = new Item(Dashboard.AddNewEmployee);
+            Item ctrlAddEmployee = new Item(Dashboard.EmployeeInfo);
             ctrlAddEmployee.picItem.BackgroundImage = Properties.Resources.Employee;
             ctrlAddEmployee.btnTitle.Text = "EMPLOYEE";
             return ctrlAddEmployee;
@@ -81,7 +102,9 @@ namespace DormitoryManagement.View
             ctrlRoomRegistration.btnTitle.Text = "ROOM";
             return ctrlRoomRegistration;
         }
+        #endregion
 
+        #region Information
         public static Item InitListEmployees()
         {
             Item ctrlListEmployees = new Item(ItemType.Employee);
@@ -114,25 +137,25 @@ namespace DormitoryManagement.View
             return ctrlReport;
         }
 
-        public static Item InitBuildings()
+        public static Item InitListBuildings()
         {
-            Item ctrlBuildings = new Item(ItemType.Building);
+            Item ctrlBuildings = new Item(Dashboard.ListBuildings);
             ctrlBuildings.picItem.BackgroundImage = Properties.Resources.Building;
             ctrlBuildings.btnTitle.Text = "BUILDINGS";
             return ctrlBuildings;
         }
 
-        public static Item InitRoomType()
+        public static Item InitListRoomType()
         {
-            Item ctrlRoomType = new Item(ItemType.RoomType);
+            Item ctrlRoomType = new Item(Dashboard.ListRoomTypes);
             ctrlRoomType.picItem.BackgroundImage = Properties.Resources.BunkBed;
             ctrlRoomType.btnTitle.Text = "ROOM TYPES";
             return ctrlRoomType;
         }
 
-        public static Item InitServices()
+        public static Item InitListServices()
         {
-            Item ctrlServices = new Item(ItemType.Service);
+            Item ctrlServices = new Item(Dashboard.ListServices);
             ctrlServices.picItem.BackgroundImage = Properties.Resources.Water;
             ctrlServices.btnTitle.Text = "SERVICES";
             return ctrlServices;
@@ -147,6 +170,11 @@ namespace DormitoryManagement.View
         }
         #endregion
 
+        #endregion
+
+        #region Delegate method
+
+        #region General
         public static void Login()
         {
             FrmLogin frmLogin = new FrmLogin();
@@ -164,7 +192,14 @@ namespace DormitoryManagement.View
 
         public static void ChangePassword()
         {
+            FrmChangePassword changePassword = new FrmChangePassword(User);
+            changePassword.ShowDialog();
+        }
 
+        public static void ChangePassword(object account)
+        {
+            FrmChangePassword changePassword = new FrmChangePassword(User);
+            changePassword.ShowDialog();
         }
 
         public static void Exit()
@@ -175,18 +210,35 @@ namespace DormitoryManagement.View
                 Application.Exit();
             }
         }
+        #endregion
 
-        public static void Guide()
-        {
-            FrmGuide frmGuide = new FrmGuide();
-            frmGuide.ShowDialog();
-        }
-
+        #region Add
         public static void Bill()
         {
             FrmBill frmBill = new FrmBill();
             frmBill.ShowDialog();
         }
+
+        public static void RoomRegistration()
+        {
+            FrmRoomRegistration frmDangKyPhong = new FrmRoomRegistration();
+            frmDangKyPhong.ShowDialog();
+        }
+
+        public static void EmployeeInfo()
+        {
+            FrmEmployeeInfo frmEmployeeInfo = new FrmEmployeeInfo();
+            frmEmployeeInfo.ShowDialog();
+        }
+
+        public static void StudentInfo()
+        {
+            FrmStudentInfo frmStudentInfo = new FrmStudentInfo();
+            frmStudentInfo.ShowDialog();
+        }
+        #endregion
+
+        #region Information
 
         public static void Room()
         {
@@ -200,22 +252,28 @@ namespace DormitoryManagement.View
             frmStudent.ShowDialog();
         }
 
-        public static void RoomRegistration()
+        public static void ListServices()
         {
-            FrmRoomRegistration frmDangKyPhong = new FrmRoomRegistration();
-            frmDangKyPhong.ShowDialog();
+            FrmServices frmServices = new FrmServices();
+            frmServices.ShowDialog();
         }
 
-        public static void AddNewEmployee()
+        public static void ListBuildings()
         {
-            FrmEmployeeInfo frmAddEmployee = new FrmEmployeeInfo();
-            frmAddEmployee.ShowDialog();
+            FrmBuildings frmBuildings = new FrmBuildings();
+            frmBuildings.ShowDialog();
         }
 
-        public static void AddNewStudent()
+        public static void ListRoomTypes()
         {
-            FrmStudentInfo frmSinhVien = new FrmStudentInfo();
-            frmSinhVien.ShowDialog();
+            FrmRoomTypes frmRoomTypes = new FrmRoomTypes();
+            frmRoomTypes.ShowDialog();
+        }
+
+        public static void Guide()
+        {
+            FrmGuide frmGuide = new FrmGuide();
+            frmGuide.ShowDialog();
         }
 
         public static void Search()
@@ -226,8 +284,11 @@ namespace DormitoryManagement.View
 
         public static void Report()
         {
-            FrmReportMonthly report = new FrmReportMonthly();
+            FrmReport report = new FrmReport();
             report.ShowDialog();
         }
+        #endregion
+
+        #endregion
     }
 }

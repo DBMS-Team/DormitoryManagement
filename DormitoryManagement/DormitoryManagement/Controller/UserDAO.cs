@@ -51,5 +51,11 @@ namespace DormitoryManagement.Controller
             int result = DataProvider.ExcuteNonQuery(query);
             return result > 0;
         }
+        public static bool ChangePassword(int userId, string newpass)
+        {
+            string query = string.Format("EXEC dbo.USP_ChangePassword @USER_ID = {0}, @NEWPASS = '{1}'", userId, newpass);
+            int result = DataProvider.ExcuteNonQuery(query);
+            return result > 0;
+        }
     }
 }
