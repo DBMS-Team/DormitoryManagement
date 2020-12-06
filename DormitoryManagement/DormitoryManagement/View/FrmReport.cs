@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DormitoryManagement.View
 {
     public partial class FrmReport : Form
@@ -15,6 +16,13 @@ namespace DormitoryManagement.View
         public FrmReport()
         {
             InitializeComponent();
+        }
+
+        private void FrmReport_Load(object sender, EventArgs e)
+        {
+
+            this.rpvReport.RefreshReport();
+            
         }
     }
 }
