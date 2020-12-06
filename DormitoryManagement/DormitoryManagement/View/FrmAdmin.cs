@@ -24,7 +24,6 @@ namespace DormitoryManagement.View
         private Item ctrlReport;
         private AdminDTO loginAdmin;
         private UserDTO loginUser;
-
         #endregion
 
         #region Properties
@@ -66,9 +65,13 @@ namespace DormitoryManagement.View
         public FrmAdmin(AdminDTO admin, UserDTO user)
         {
             this.InitializeComponent();
-            Init();
             this.LoginAdmin = admin;
             this.LoginUser = user;
+            Init();
+            if(flagLogin == 1)
+            {
+                this.Close();
+            }
         }
         
         #region Events
@@ -83,7 +86,7 @@ namespace DormitoryManagement.View
             CtrlLogout = Dashboard.InitLogout();
             tlpManage.Controls.Add(CtrlLogout);
             //Change password
-            CtrlChangePassword = Dashboard.InitChangePassword();
+            CtrlChangePassword = Dashboard.InitChangePassword(LoginUser);
             tlpManage.Controls.Add(CtrlChangePassword);
             //Exit
             CtrlExit = Dashboard.InitExit();

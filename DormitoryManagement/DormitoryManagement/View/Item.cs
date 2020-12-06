@@ -23,7 +23,6 @@ namespace DormitoryManagement
         public ClickEvent ClickEvent = null; //delegate
         private ItemType type = ItemType.Unknown;
         private string strKey = "";
-
         #region Constructors
         public Item()
         {

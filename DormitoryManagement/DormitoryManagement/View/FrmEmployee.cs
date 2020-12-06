@@ -77,7 +77,7 @@ namespace DormitoryManagement.View
             CtrlLogout = Dashboard.InitLogout();
             tlpManage.Controls.Add(CtrlLogout);
             //Change password
-            CtrlChangePassword = Dashboard.InitChangePassword();
+            CtrlChangePassword = Dashboard.InitChangePassword(LoginUser);
             tlpManage.Controls.Add(CtrlChangePassword);
             //Thoát
             CtrlExit = Dashboard.InitExit();

@@ -1,10 +1,16 @@
-﻿using System.Drawing;
+﻿using DormitoryManagement.Model;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
     public static class Dashboard
     {
+        #region Var
+        private static UserDTO user;
+
+        public static UserDTO User { get => user; set => user = value; }
+        #endregion
         #region Init
         public static Item InitLogin()
         {
@@ -24,8 +30,9 @@ namespace DormitoryManagement.View
             return ctrlLogout;
         }
 
-        public static Item InitChangePassword()
+        public static Item InitChangePassword(UserDTO user)
         {
+            User = user;
             Item ctrlChangePassword = new Item(Dashboard.ChangePassword);
             ctrlChangePassword.picItem.BackgroundImage = Properties.Resources.ForgotPassword;
             ctrlChangePassword.btnTitle.Text = "CHANGE";
@@ -164,7 +171,7 @@ namespace DormitoryManagement.View
 
         public static void ChangePassword()
         {
-            FrmChangePassword changePassword = new FrmChangePassword();
+            FrmChangePassword changePassword = new FrmChangePassword(User);
             changePassword.ShowDialog();
         }
 
