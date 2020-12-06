@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DormitoryManagement.View
 {
-    public partial class FrmReportAnnual : Form
+    public partial class FrmChangePassword : Form
     {
-        public FrmReportAnnual()
+        public FrmChangePassword()
         {
             InitializeComponent();
         }

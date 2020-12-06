@@ -164,7 +164,8 @@ namespace DormitoryManagement.View
 
         public static void ChangePassword()
         {
-
+            FrmChangePassword changePassword = new FrmChangePassword();
+            changePassword.ShowDialog();
         }
 
         public static void Exit()
@@ -226,7 +227,7 @@ namespace DormitoryManagement.View
 
         public static void Report()
         {
-            FrmReportMonthly report = new FrmReportMonthly();
+            FrmReport report = new FrmReport();
             report.ShowDialog();
         }
     }
