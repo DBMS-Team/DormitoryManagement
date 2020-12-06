@@ -117,6 +117,12 @@
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="Utility\FormatData.cs" />
     <Compile Include="View\Dashboard.cs" />
+    <Compile Include="View\FrmBuildings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmBuildings.Designer.cs">
+      <DependentUpon>FrmBuildings.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,11 +191,23 @@
     <Compile Include="View\FrmGuide.Designer.cs">
       <DependentUpon>FrmGuide.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmRoomTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmRoomTypes.Designer.cs">
+      <DependentUpon>FrmRoomTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FrmSearch.Designer.cs">
       <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmServices.Designer.cs">
+      <DependentUpon>FrmServices.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmStudentInfo.cs">
       <SubType>Form</SubType>
@@ -209,6 +227,9 @@
     <Compile Include="View\Item.designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FrmBuildings.resx">
+      <DependentUpon>FrmBuildings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmChangePassword.resx">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,8 +239,14 @@
     <EmbeddedResource Include="View\FrmReport.resx">
       <DependentUpon>FrmReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmRoomTypes.resx">
+      <DependentUpon>FrmRoomTypes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmSearch.resx">
       <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmServices.resx">
+      <DependentUpon>FrmServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmStudentInfo.resx">
       <DependentUpon>FrmStudentInfo.cs</DependentUpon>

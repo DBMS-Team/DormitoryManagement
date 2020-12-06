@@ -208,6 +208,78 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // groupUsername
+            // 
+            this.groupUsername.Controls.Add(this.txtUserName);
+            this.groupUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupUsername.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupUsername.Location = new System.Drawing.Point(203, 3);
+            this.groupUsername.Name = "groupUsername";
+            this.groupUsername.Size = new System.Drawing.Size(394, 68);
+            this.groupUsername.TabIndex = 0;
+            this.groupUsername.TabStop = false;
+            this.groupUsername.Text = "Username";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUserName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtUserName.Location = new System.Drawing.Point(3, 26);
+            this.txtUserName.MinimumSize = new System.Drawing.Size(216, 25);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(388, 34);
+            this.txtUserName.TabIndex = 16;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.btnChange, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnCancel, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(203, 299);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(394, 51);
+            this.tableLayoutPanel4.TabIndex = 24;
+            // 
+            // btnChange
+            // 
+            this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChange.BackColor = System.Drawing.Color.Transparent;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChange.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnChange.Location = new System.Drawing.Point(3, 3);
+            this.btnChange.MinimumSize = new System.Drawing.Size(100, 30);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(191, 45);
+            this.btnChange.TabIndex = 18;
+            this.btnChange.Text = "CHANGE";
+            this.btnChange.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnCancel.Location = new System.Drawing.Point(200, 3);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(100, 30);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(191, 45);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
             // groupNewPassword
             // 
             this.groupNewPassword.Controls.Add(this.tableLayoutPanel2);
@@ -309,6 +381,28 @@
             this.btnConfirmPassword.TabIndex = 20;
             this.btnConfirmPassword.UseVisualStyleBackColor = false;
             this.btnConfirmPassword.Click += new System.EventHandler(this.btnConfirmPassword_Click);
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.BackColor = System.Drawing.Color.Goldenrod;
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI Black", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbTitle.Location = new System.Drawing.Point(0, 0);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(800, 55);
+            this.lbTitle.TabIndex = 22;
+            this.lbTitle.Text = "CHANGE PASSWORD";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 55);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 63);
+            this.panel1.TabIndex = 23;
             // 
             // lbTitle
             // 

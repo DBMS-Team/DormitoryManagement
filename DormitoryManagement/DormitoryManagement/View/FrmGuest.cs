@@ -46,13 +46,13 @@ namespace DormitoryManagement
 
             #region Info
             //DS Khu phòng
-            CtrlBuildings = Dashboard.InitBuildings();
+            CtrlBuildings = Dashboard.InitListBuildings();
             tlpInfo.Controls.Add(ctrlBuildings);
             //Loại phòng
-            CtrlRoomType = Dashboard.InitRoomType();
+            CtrlRoomType = Dashboard.InitListRoomType();
             tlpInfo.Controls.Add(ctrlRoomType);
             //DS dịch vụ
-            CtrlServices = Dashboard.InitServices();
+            CtrlServices = Dashboard.InitListServices();
             tlpInfo.Controls.Add(ctrlServices);
             //Search
             CtrlSearch = Dashboard.InitSearch();

@@ -71,7 +71,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtInputBill = new System.Windows.Forms.TextBox();
-            this.tabEmployee = new System.Windows.Forms.TabPage();
             this.tabSearch.SuspendLayout();
             this.tabStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -580,16 +579,6 @@
             this.txtInputBill.Name = "txtInputBill";
             this.txtInputBill.Size = new System.Drawing.Size(1021, 35);
             this.txtInputBill.TabIndex = 14;
-            // 
-            // tabEmployee
-            // 
-            this.tabEmployee.Location = new System.Drawing.Point(4, 35);
-            this.tabEmployee.Name = "tabEmployee";
-            this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployee.Size = new System.Drawing.Size(1474, 688);
-            this.tabEmployee.TabIndex = 3;
-            this.tabEmployee.Text = "EMPLOYEE";
-            this.tabEmployee.UseVisualStyleBackColor = true;
             // 
             // FrmSearch
             // 
