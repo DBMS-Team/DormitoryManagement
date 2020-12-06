@@ -99,8 +99,7 @@ namespace DormitoryManagement
             btnTitle.BackColor = Color.Transparent;
         }
 
-        [Browsable(true)]
-        [Category("Action")]
+        [Browsable(true)][Category("Action")][Description("Invoked when user clicks button")]
         private void item1_Click(object sender, EventArgs e)
         {
             this.ClickEvent();

@@ -220,13 +220,14 @@ namespace DormitoryManagement.View
 
         public static void Search()
         {
-
+            FrmSearch search = new FrmSearch();
+            search.ShowDialog();
         }
 
         public static void Report()
         {
-            FrmReportMonthly baoCao = new FrmReportMonthly();
-            baoCao.ShowDialog();
+            FrmReportMonthly report = new FrmReportMonthly();
+            report.ShowDialog();
         }
     }
 }
