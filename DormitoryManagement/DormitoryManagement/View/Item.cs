@@ -21,6 +21,7 @@ namespace DormitoryManagement
     public partial class Item : UserControl
     {
         public ClickEvent ClickEvent = null; //delegate
+        public event EventHandler ButtonClick;
         private ItemType type = ItemType.Unknown;
         private string strKey = "";
 
@@ -99,8 +100,7 @@ namespace DormitoryManagement
             btnTitle.BackColor = Color.Transparent;
         }
 
-        [Browsable(true)]
-        [Category("Action")]
+        [Browsable(true)][Category("Action")][Description("Invoked when user clicks button")]
         private void item1_Click(object sender, EventArgs e)
         {
             this.ClickEvent();
