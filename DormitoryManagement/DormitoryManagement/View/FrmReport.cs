@@ -16,11 +16,5 @@ namespace DormitoryManagement.View
         {
             InitializeComponent();
         }
-
-        private void item1_Click(object sender, EventArgs e)
-        {
-            FrmLogin login = new FrmLogin();
-            login.ShowDialog();
-        }
     }
 }
