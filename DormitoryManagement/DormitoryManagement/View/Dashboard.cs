@@ -198,7 +198,7 @@ namespace DormitoryManagement.View
 
         public static void ChangePassword(object account)
         {
-            FrmChangePassword changePassword = new FrmChangePassword();
+            FrmChangePassword changePassword = new FrmChangePassword(User);
             changePassword.ShowDialog();
         }
 
