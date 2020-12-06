@@ -227,6 +227,9 @@
     <Compile Include="View\Item.designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FrmBuildings.resx">
+      <DependentUpon>FrmBuildings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmChangePassword.resx">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,8 +239,14 @@
     <EmbeddedResource Include="View\FrmReport.resx">
       <DependentUpon>FrmReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmRoomTypes.resx">
+      <DependentUpon>FrmRoomTypes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmSearch.resx">
       <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmServices.resx">
+      <DependentUpon>FrmServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmStudentInfo.resx">
       <DependentUpon>FrmStudentInfo.cs</DependentUpon>
