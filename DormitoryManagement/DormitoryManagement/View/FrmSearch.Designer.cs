@@ -105,7 +105,7 @@
             this.tabSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabSearch.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabSearch.Location = new System.Drawing.Point(0, 62);
-            this.tabSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabSearch.Margin = new System.Windows.Forms.Padding(2);
             this.tabSearch.Name = "tabSearch";
             this.tabSearch.SelectedIndex = 0;
             this.tabSearch.ShowToolTips = true;
@@ -117,9 +117,9 @@
             this.tabStudent.Controls.Add(this.dgvStudent);
             this.tabStudent.Controls.Add(this.tableLayoutPanel1);
             this.tabStudent.Location = new System.Drawing.Point(4, 31);
-            this.tabStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabStudent.Margin = new System.Windows.Forms.Padding(2);
             this.tabStudent.Name = "tabStudent";
-            this.tabStudent.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabStudent.Padding = new System.Windows.Forms.Padding(2);
             this.tabStudent.Size = new System.Drawing.Size(1104, 555);
             this.tabStudent.TabIndex = 0;
             this.tabStudent.Text = "STUDENT";
@@ -157,7 +157,7 @@
             this.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStudent.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvStudent.Location = new System.Drawing.Point(2, 67);
-            this.dgvStudent.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.dgvStudent.Margin = new System.Windows.Forms.Padding(10);
             this.dgvStudent.Name = "dgvStudent";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -192,7 +192,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtInputStudent, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -207,7 +207,7 @@
             this.btnSearchStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchStudent.ForeColor = System.Drawing.Color.DarkRed;
             this.btnSearchStudent.Location = new System.Drawing.Point(937, 34);
-            this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchStudent.Name = "btnSearchStudent";
             this.btnSearchStudent.Size = new System.Drawing.Size(161, 29);
             this.btnSearchStudent.TabIndex = 13;
@@ -252,7 +252,7 @@
             this.txtInputStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInputStudent.Font = new System.Drawing.Font("Segoe UI Black", 12F);
             this.txtInputStudent.Location = new System.Drawing.Point(167, 34);
-            this.txtInputStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInputStudent.Margin = new System.Windows.Forms.Padding(2);
             this.txtInputStudent.Name = "txtInputStudent";
             this.txtInputStudent.Size = new System.Drawing.Size(766, 29);
             this.txtInputStudent.TabIndex = 14;
@@ -262,10 +262,10 @@
             this.tabPage2.Controls.Add(this.dgvRoomReg);
             this.tabPage2.Controls.Add(this.tableLayoutPanel3);
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1104, 556);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(1104, 555);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ROOM REGISTRATION";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -302,7 +302,7 @@
             this.dgvRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRoomReg.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvRoomReg.Location = new System.Drawing.Point(2, 67);
-            this.dgvRoomReg.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.dgvRoomReg.Margin = new System.Windows.Forms.Padding(10);
             this.dgvRoomReg.Name = "dgvRoomReg";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -321,7 +321,7 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRoomReg.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvRoomReg.Size = new System.Drawing.Size(1100, 487);
+            this.dgvRoomReg.Size = new System.Drawing.Size(1100, 486);
             this.dgvRoomReg.TabIndex = 15;
             // 
             // tableLayoutPanel3
@@ -340,7 +340,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label6, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -379,7 +379,7 @@
             this.btnSearchRoomReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchRoomReg.ForeColor = System.Drawing.Color.DarkRed;
             this.btnSearchRoomReg.Location = new System.Drawing.Point(937, 34);
-            this.btnSearchRoomReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchRoomReg.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchRoomReg.Name = "btnSearchRoomReg";
             this.btnSearchRoomReg.Size = new System.Drawing.Size(161, 29);
             this.btnSearchRoomReg.TabIndex = 13;
@@ -437,10 +437,10 @@
             this.tabBill.Controls.Add(this.dgvBill);
             this.tabBill.Controls.Add(this.tableLayoutPanel2);
             this.tabBill.Location = new System.Drawing.Point(4, 31);
-            this.tabBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabBill.Margin = new System.Windows.Forms.Padding(2);
             this.tabBill.Name = "tabBill";
-            this.tabBill.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabBill.Size = new System.Drawing.Size(1104, 556);
+            this.tabBill.Padding = new System.Windows.Forms.Padding(2);
+            this.tabBill.Size = new System.Drawing.Size(1104, 555);
             this.tabBill.TabIndex = 2;
             this.tabBill.Text = "BILL";
             this.tabBill.UseVisualStyleBackColor = true;
@@ -477,7 +477,7 @@
             this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBill.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvBill.Location = new System.Drawing.Point(2, 67);
-            this.dgvBill.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.dgvBill.Margin = new System.Windows.Forms.Padding(10);
             this.dgvBill.Name = "dgvBill";
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -496,7 +496,7 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvBill.Size = new System.Drawing.Size(1100, 487);
+            this.dgvBill.Size = new System.Drawing.Size(1100, 486);
             this.dgvBill.TabIndex = 15;
             // 
             // tableLayoutPanel2
@@ -512,7 +512,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtInputBill, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -527,7 +527,7 @@
             this.btnSearchBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchBill.ForeColor = System.Drawing.Color.DarkRed;
             this.btnSearchBill.Location = new System.Drawing.Point(937, 34);
-            this.btnSearchBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchBill.Name = "btnSearchBill";
             this.btnSearchBill.Size = new System.Drawing.Size(161, 29);
             this.btnSearchBill.TabIndex = 13;
@@ -572,7 +572,7 @@
             this.txtInputBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInputBill.Font = new System.Drawing.Font("Segoe UI Black", 12F);
             this.txtInputBill.Location = new System.Drawing.Point(167, 34);
-            this.txtInputBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInputBill.Margin = new System.Windows.Forms.Padding(2);
             this.txtInputBill.Name = "txtInputBill";
             this.txtInputBill.Size = new System.Drawing.Size(766, 29);
             this.txtInputBill.TabIndex = 14;
@@ -584,7 +584,7 @@
             this.ClientSize = new System.Drawing.Size(1112, 652);
             this.Controls.Add(this.tabSearch);
             this.Controls.Add(this.lbTitle);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";

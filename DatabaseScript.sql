@@ -471,6 +471,22 @@ PRINT(REPLACE('','dbms',32)+1)
 PRINT(REPLICATE('',28))
 PRINT('dbms' + REPLICATE(0, 32- LEN(4)))
 PRINT(dbo.UFN_NewPassword('','dbms',32))
+GO
+
+-- Lấy Commune_ID từ Commune_Name----------
+CREATE FUNCTION UFN_GetCommuneidByCommuneName
+(
+	@Commune_Name NVARCHAR(40),
+	@Distric_ID VARCHAR(3)
+)
+RETURNS VARCHAR(3)
+AS
+BEGIN
+	DECLARE @COMMUNE_ID VARCHAR(5)
+	SELECT @COMMUNE_ID = COMMUNE_ID FROM dbo.COMMUNE WHERE COMMUNE_NAME = @Commune_Name AND DISTRICT_ID = @Distric_ID
+	RETURN @COMMUNE_ID
+END
+GO
 ----------------------
 -- PROC
 ----------------------

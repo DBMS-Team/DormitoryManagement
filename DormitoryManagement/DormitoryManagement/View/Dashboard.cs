@@ -186,7 +186,7 @@ namespace DormitoryManagement.View
             DialogResult re = MessageBox.Show("Bạn muốn đăng xuất khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (re == DialogResult.Yes)
             {
-                
+
             }
         }
 
