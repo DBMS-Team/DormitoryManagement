@@ -90,6 +90,7 @@
     <Compile Include="Controller\SectorDAO.cs" />
     <Compile Include="Controller\ServiceDAO.cs" />
     <Compile Include="Controller\StudentDAO.cs" />
+    <Compile Include="Controller\StudentViewDAO.cs" />
     <Compile Include="Controller\UnitDAO.cs" />
     <Compile Include="Controller\UniversityDAO.cs" />
     <Compile Include="Controller\UserDAO.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Model\SectorDTO.cs" />
     <Compile Include="Model\ServiceDTO.cs" />
     <Compile Include="Model\StudentDTO.cs" />
+    <Compile Include="Model\StudentViewDTO.cs" />
     <Compile Include="Model\UnitDTO.cs" />
     <Compile Include="Model\UserDTO.cs" />
     <Compile Include="Utility\ExcelFile.cs" />

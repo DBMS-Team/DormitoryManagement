@@ -19,6 +19,7 @@ namespace DormitoryManagement.Model
 		public string Username { get; set; }
 		public string Password { get; set; }
 		public string UserType { get; set; }
+		public bool Status { get; set; }
 		public UserDTO(DataRow dr)
 		{
 			this.UserId = Convert.ToInt64(dr["USER_ID"]);
@@ -35,6 +36,7 @@ namespace DormitoryManagement.Model
 			this.Username = Convert.ToString(dr["USERNAME"]).Trim();
 			this.Password = Convert.ToString(dr["PASSWORD"]).Trim();
 			this.UserType = Convert.ToString(dr["USER_TYPE"]).Trim();
+			this.Status = Convert.ToBoolean(dr["STATUS"]);
 		}
 	}
 }

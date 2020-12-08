@@ -28,7 +28,7 @@ namespace DormitoryManagement.View
                 UserDTO user = UserDAO.GetUserByUsername(userName);
                 string userType = user.UserType;
                 long UserId = user.UserId;
-                if (userType.Equals("ADMIN"))
+                if (userType.Equals("ADMIN") && user.Status == true)
                 {
                     AdminDTO admin = AdminDAO.GetAdminById(UserId);
                     FrmAdmin frmAdmin = new FrmAdmin(admin, user);
@@ -36,7 +36,7 @@ namespace DormitoryManagement.View
                     frmAdmin.ShowDialog();
                     txtPassword.Text = "";
                 }
-                else if (userType.Equals("EMPLOYEE"))
+                else if (userType.Equals("EMPLOYEE") && user.Status == true)
                 {
                     EmployeeDTO employee = EmployeeDAO.GetEmployeeById(UserId);
                     FrmEmployee frmEmployee = new FrmEmployee(employee, user);
@@ -44,7 +44,7 @@ namespace DormitoryManagement.View
                     frmEmployee.ShowDialog();
                     txtPassword.Text = "";
                 }
-                else
+                else if (user.Status == true)
                 {
                     StudentDTO student = StudentDAO.GetStudentById(UserId);
                     FrmStudent frmStudent = new FrmStudent(student, user);
@@ -56,7 +56,7 @@ namespace DormitoryManagement.View
             }
             else
             {
-                MessageBox.Show("Tên tài khoản hoặc mật khẩu sai!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong username or password!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnClose_Click(object sender, EventArgs e)
