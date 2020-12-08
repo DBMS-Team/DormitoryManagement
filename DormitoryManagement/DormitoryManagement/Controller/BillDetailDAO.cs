@@ -34,7 +34,6 @@ namespace DormitoryManagement.Controller
                 ListService.Add(temp);
             }
             return ListService;
-            //return dataTable;
         }
     }
 }

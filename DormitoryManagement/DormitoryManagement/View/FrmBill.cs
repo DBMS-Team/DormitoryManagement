@@ -29,7 +29,7 @@ namespace DormitoryManagement.View
             InitializeComponent();
             this.User = user;
         }
-        #region Function
+        #region FillDaTa
         public void FillDataServiceUnit() //Load tất cả các Service
         {
             List<ServiceUnitDTO> ListServiceUnit = ServiceUnitDAO.GetListServiceUnit();
@@ -45,18 +45,14 @@ namespace DormitoryManagement.View
             cmbBuilding.DataSource = ListSector;
             cmbBuilding.DisplayMember = "SectorName";
         }
-        /*public void FillDataRoom() // Load tất cả các phòng
-        {
-            List<RoomDTO> ListRoom = RoomDAO.GetListRoom();
-            cmbRoom.DataSource = ListRoom;
-            cmbRoom.DisplayMember = "RoomId";
-        }*/
         public void FillDataRoomBySector(string Sector_Name) // Load danh sách phòng theo Khu
         {
             List<RoomDTO> ListRoom = RoomDAO.GetListRoomBySector(Sector_Name);
             cmbRoom.DataSource = ListRoom;
             cmbRoom.DisplayMember = "RoomId";
         }
+        #endregion
+        #region Get___By____
         public string GetServiceIDByServiceName(string ServiceName)
         {
             List<ServiceDTO> ListService = ServiceDAO.GetListService();
@@ -76,7 +72,7 @@ namespace DormitoryManagement.View
         }
         #endregion
 
-
+        #region Click
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //check du lieu dau vao co du chua
@@ -151,21 +147,80 @@ namespace DormitoryManagement.View
                 MessageBox.Show("Lỗi");
             }
         }
-
-        private void btnOK_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (dgvBillReg.Rows.Count <= 1)
             {
                 MessageBox.Show("Vui lòng chọn ít nhất 1 dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            long Employee_ID = User.UserId;
+            string Room_Name = cmbRoom.Text;
+            string Sector_Name = cmbBuilding.Text;
+            string Month = cmbMonth.Text;
+            string Year = txtYear.Text;
+            string Status = "0";
+            string Total = txtTotal.Text;
+            DateTime CreatDay = dtCreatedDate.Value;
+            if (AddBill(Employee_ID, Room_Name, Sector_Name, CreatDay, Month, Year, Status, Total))
+            {
+                for (int i = 0; i < dgvBillReg.Rows.Count - 1; i++)
+                {
+                    string Service_Name = dgvBillReg.Rows[i].Cells[1].Value.ToString();
+                    string Quantity = dgvBillReg.Rows[i].Cells[4].Value.ToString();
+                    string Unit_Name = dgvBillReg.Rows[i].Cells[2].Value.ToString();
+                    string Total_Cost_Per_Service = dgvBillReg.Rows[i].Cells[5].Value.ToString();
+                    BillDetailDAO.AddDetailBill(Service_Name, Quantity, Sector_Name, Room_Name, Month, Year, Unit_Name, Total_Cost_Per_Service);
+                }
+                MessageBox.Show("Add Bill Success");
+                dgvBillReg.Rows.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
         }
-
-        private void btnDelete_Click(object sender, EventArgs e)
+        bool AddBill(long Employee_ID, string Room_Name, string Sector_Name, DateTime CreatDay, string Month, string Year, string Status, string Total)
         {
-
+            return BillDAO.AddBill(Employee_ID, Room_Name, Sector_Name, CreatDay, Month, Year, Status, Total);
         }
 
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            string SectorName = cmbBuilding.Text;
+            string RoomId = cmbRoom.Text;
+            string Month = cmbMonth.Text.ToString();
+            string Year = txtYear.Text;
+            List<BillDetailDTO> ListService = BillDetailDAO.GetViewBillDetail(SectorName, RoomId, Month, Year);
+            for (int i = 0; i < ListService.Count; i++)
+            {
+                BillDetailDTO OneService = ListService[i];
+                int Quantity = OneService.NewQuantity - OneService.OldQuantity;
+                decimal Total_Cost_Per_Service = OneService.ToTal_Cost_Per_Service;
+                decimal Cost_Per_Unit = Total_Cost_Per_Service / Quantity;
+                string[] rowvalue = new string[] { OneService.ServiceId.ToString(),
+                                                   OneService.ServiceName.ToString(),
+                                                   OneService.UnitName.ToString(),
+                                                   Cost_Per_Unit.ToString(),
+                                                   Quantity.ToString(),
+                                                   Total_Cost_Per_Service.ToString()};
+                dgvPayment.Rows.Add(rowvalue);
+            }
+        }
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            decimal Total_Cost_Bill = 0;
+            for (int i = 0; i < dgvPayment.Rows.Count - 1; i++)
+            {
+                decimal temp = Decimal.Parse(dgvPayment.Rows[i].Cells[5].Value.ToString());
+                Total_Cost_Bill = Total_Cost_Bill + temp;
+            }
+            DateTime CreatDay = dtCreatedDate.Value;
+            PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString());
+            MessageBox.Show(Total_Cost_Bill.ToString());
+
+        }
+        #endregion
         private void FrmBill_Load(object sender, EventArgs e)
         {
             FillDataServiceUnit();
@@ -177,7 +232,7 @@ namespace DormitoryManagement.View
             dgvBillReg.Rows[0].Cells[5].Value = 0;
             txtTotal.Text = "0";
         }
-
+        #region EventChange
         private void cmbBuilding_SelectedValueChanged(object sender, EventArgs e)
         {
             string SectorName = cmbBuilding.Text.ToString();
@@ -206,75 +261,6 @@ namespace DormitoryManagement.View
                 }
             }
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (dgvBillReg.Rows.Count <=1)
-            {
-                MessageBox.Show("Vui lòng chọn ít nhất 1 dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            long Employee_ID = User.UserId;
-            string Room_Name = cmbRoom.Text;
-            string Sector_Name = cmbBuilding.Text;
-            string Month = cmbMonth.Text;
-            string Year = txtYear.Text;
-            string Status = "0";
-            string Total = txtTotal.Text;
-            DateTime CreatDay = dtCreatedDate.Value;
-            if(AddBill(Employee_ID,Room_Name,Sector_Name,CreatDay,Month,Year,Status,Total))
-            {
-                for (int i = 0; i < dgvBillReg.Rows.Count-1; i++)
-                {
-                    string Service_Name = dgvBillReg.Rows[i].Cells[1].Value.ToString();
-                    string Quantity = dgvBillReg.Rows[i].Cells[4].Value.ToString();
-                    string Unit_Name = dgvBillReg.Rows[i].Cells[2].Value.ToString();
-                    string Total_Cost_Per_Service = dgvBillReg.Rows[i].Cells[5].Value.ToString();
-                    BillDetailDAO.AddDetailBill(Service_Name, Quantity, Sector_Name, Room_Name, Month, Year, Unit_Name,Total_Cost_Per_Service);
-                }
-                MessageBox.Show("Add Bill Success");
-                dgvBillReg.Rows.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
-        }
-        bool AddBill(long Employee_ID, string Room_Name, string Sector_Name, DateTime CreatDay, string Month, string Year, string Status, string Total)
-        {
-            return BillDAO.AddBill(Employee_ID, Room_Name, Sector_Name, CreatDay, Month, Year, Status, Total);
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            string SectorName = cmbBuilding.Text;
-            string RoomId = cmbRoom.Text;
-            string Month = cmbMonth.Text.ToString();
-            string Year = txtYear.Text;
-            //dataGridView1.DataSource = BillDetailDAO.GetViewBillDetail(SectorName, RoomId, Month, Year);
-            List<BillDetailDTO> ListService = BillDetailDAO.GetViewBillDetail(SectorName, RoomId, Month, Year);
-            for (int i = 0; i < ListService.Count; i++)
-            {
-                BillDetailDTO OneService = ListService[i];
-                int Quantity = OneService.NewQuantity - OneService.OldQuantity;
-                decimal Total_Cost_Per_Service = OneService.ToTal_Cost_Per_Service;
-                decimal Cost_Per_Unit = Total_Cost_Per_Service / Quantity;
-                string[] rowvalue = new string[] { OneService.ServiceId.ToString(), OneService.ServiceName.ToString(), OneService.UnitName.ToString(), Cost_Per_Unit.ToString(), Quantity.ToString(), Total_Cost_Per_Service.ToString()};
-                dgvPayment.Rows.Add(rowvalue);
-            }
-        }
-
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-            decimal Total_Cost_Bill = 0;
-            for(int i = 0;i<dgvPayment.Rows.Count-1;i++)
-            {
-                decimal temp = Decimal.Parse(dgvPayment.Rows[i].Cells[5].Value.ToString());
-                Total_Cost_Bill = Total_Cost_Bill + temp;
-            }
-            DateTime CreatDay = dtCreatedDate.Value;
-            PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString());
-            MessageBox.Show(Total_Cost_Bill.ToString());
-        }
+        #endregion
     }
 }
