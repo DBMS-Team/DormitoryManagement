@@ -1073,9 +1073,9 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@COLLEGE_NAME) + '%'
 END
 GO
--- TRIGGER
+------------TRIGGER
 ----------------------
-
+----------------------
 -- Thay đổi mật khẩu mặt định
 CREATE TRIGGER TRG_DefaultPassword ON [dbo].[USER]
 FOR INSERT

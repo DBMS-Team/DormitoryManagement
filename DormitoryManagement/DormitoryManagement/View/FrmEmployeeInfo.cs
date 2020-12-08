@@ -162,10 +162,10 @@ namespace DormitoryManagement.View
                 {
                     gender = "Male";
                 }
-                string ssn = txtSSN.Text;
-                string phoneNumber1 = txtPhone1.Text;
-                string phoneNumber2 = txtPhone2.Text;
-                string email = txtEmail.Text;
+                string ssn = txtSSN.Text.Trim().ToString();
+                string phoneNumber1 = txtPhone1.Text.Trim().ToString();
+                string phoneNumber2 = txtPhone2.Text.Trim().ToString();
+                string email = txtEmail.Text.Trim().ToString();
                 string imagePath = "tobe";
                 string userType = cbbUserType.Text;
                 string provinceName = cbbProvince.Text;
@@ -175,6 +175,46 @@ namespace DormitoryManagement.View
                 street = FormatData.CapitalizeEachWord(street);
                 DateTime startDate = dtpStartDate.Value;
                 string salary = txtSalary.Text;
+                List<UserDTO> userDTOs = UserDAO.GetListUser();
+                foreach (var item in userDTOs)
+                {
+                    if (item.Ssn.Equals(ssn))
+                    {
+                        MessageBox.Show("SSN already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.PhoneNumber1.Equals(phoneNumber1))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.PhoneNumber2.Equals(phoneNumber1))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.PhoneNumber1.Equals(phoneNumber2))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.PhoneNumber2.Equals(phoneNumber2))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.Email.Equals(email))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                }
                 if (flag == 0)
                 {
                     if (AddEmployee(lastName, firstName, dob, gender, ssn, phoneNumber1, phoneNumber2, email, imagePath, userType, provinceName, districtName, communeName,

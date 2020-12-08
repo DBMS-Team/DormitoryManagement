@@ -57,5 +57,18 @@ namespace DormitoryManagement.Controller
             int result = DataProvider.ExcuteNonQuery(query);
             return result > 0;
         }
+        public static List<UserDTO> GetListUser()
+        {
+            List<UserDTO> userDTOs = new List<UserDTO>();
+            string query = string.Format("EXEC dbo.USP_GetListUser");
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            foreach (DataRow item in dataTable.Rows)
+            {
+                UserDTO userDTO = new UserDTO(item);
+                userDTOs.Add(userDTO);
+            }
+            return userDTOs;
+
+        }
     }
 }
