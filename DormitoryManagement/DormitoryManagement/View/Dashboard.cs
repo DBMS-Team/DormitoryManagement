@@ -215,7 +215,7 @@ namespace DormitoryManagement.View
         #region Add
         public static void Bill()
         {
-            FrmBill frmBill = new FrmBill();
+            FrmBill frmBill = new FrmBill(User);
             frmBill.ShowDialog();
         }
 
