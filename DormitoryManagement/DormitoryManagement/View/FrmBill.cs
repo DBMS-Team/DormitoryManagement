@@ -24,26 +24,26 @@ namespace DormitoryManagement.View
         public void FillDataService() //Load tất cả các Service
         {
             List<ServiceDTO> ListService = ServiceDAO.GetListService();
-            cmbTenDV.DataSource = ListService;
-            cmbTenDV.DisplayMember = "ServiceName";
+            cbbServiceName.DataSource = ListService;
+            cbbServiceName.DisplayMember = "ServiceName";
         }
         public void FillDataSector() //Load tất cả các khu phòng
         {
             List<SectorDTO> ListSector = SectorDAO.GetListSector();
-            cmbBuilding.DataSource = ListSector;
-            cmbBuilding.DisplayMember = "SectorName";
+            cbbBuilding.DataSource = ListSector;
+            cbbBuilding.DisplayMember = "SectorName";
         }
         public void FillDataRoom() // Load tất cả các phòng
         {
             List<RoomDTO> ListRoom = RoomDAO.GetListRoom();
-            cmbRoom.DataSource = ListRoom;
-            cmbRoom.DisplayMember = "RoomId";
+            cbbRoom.DataSource = ListRoom;
+            cbbRoom.DisplayMember = "RoomId";
         }
         public void FillDataRoomBySector(string Sector_Name) // Load danh sách phòng theo Khu
         {
             List<RoomDTO> ListRoom = RoomDAO.GetListRoomBySector(Sector_Name);
-            cmbRoom.DataSource = ListRoom;
-            cmbRoom.DisplayMember = "RoomId";
+            cbbRoom.DataSource = ListRoom;
+            cbbRoom.DisplayMember = "RoomId";
         }
         public string GetServiceIDByServiceName(string ServiceName)
         {
@@ -64,19 +64,27 @@ namespace DormitoryManagement.View
         }
         #endregion
 
+        private bool CanLoadPayment()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(cbbBuilding.Text).Append(cbbRoom.Text).Append(cbbMonth.Text).Append(txtYear.Text);
+            if (string.IsNullOrEmpty(sb.ToString()))
+                return false;
+            return true;
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //check du lieu dau vao co du chua
-            if (cmbBuilding.Text == "")
+            if (cbbBuilding.Text == "")
             {
                 MessageBox.Show("Sector not null");
             }
-            else if (cmbRoom.Text == "")
+            else if (cbbRoom.Text == "")
             {
                 MessageBox.Show("Room not null");
             }
-            else if (cmbMonth.Text == "")
+            else if (cbbMonth.Text == "")
             {
                 MessageBox.Show("Month not null");
             }
@@ -84,22 +92,22 @@ namespace DormitoryManagement.View
             {
                 MessageBox.Show("Year not null");
             }
-            else if (cmbTenDV.Text.Trim() == "" || numSoLuong.Value <= 0)//Kiểm tra dữ liệu có phù hợp không
+            else if (cbbServiceName.Text.Trim() == "" || numQuantity.Value <= 0)//Kiểm tra dữ liệu có phù hợp không
             {
                 MessageBox.Show("Số liệu không hợp lệ", "Lỗi nhập dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else 
             {
-                string Unit = GetUnitNameByServiceName(cmbTenDV.Text.ToString());
-                string Service_ID = GetServiceIDByServiceName(cmbTenDV.Text.ToString());
-                string[] rowValue = new string[] { Service_ID, cmbTenDV.Text, numSoLuong.Value.ToString(), Unit };
+                string Unit = GetUnitNameByServiceName(cbbServiceName.Text.ToString());
+                string Service_ID = GetServiceIDByServiceName(cbbServiceName.Text.ToString());
+                string[] rowValue = new string[] { Service_ID, cbbServiceName.Text, numQuantity.Value.ToString(), Unit };
                 for (int i = 0; i < dgvBillReg.Rows.Count; i++)// Kiểm tra nếu dịch vụ đó đã có sử dụng thì cộng thêm với số lượng cũ
                 {
-                    if (dgvBillReg.Rows[i].Cells[1].Value.ToString() == cmbTenDV.Text)
+                    if (dgvBillReg.Rows[i].Cells[1].Value.ToString() == cbbServiceName.Text)
                     {
                         decimal a = Decimal.Parse(dgvBillReg.Rows[i].Cells[2].Value.ToString());
-                        a += numSoLuong.Value;
+                        a += numQuantity.Value;
                         dgvBillReg.Rows[i].Cells[2].Value = a.ToString();
                         return;
                     }
@@ -140,12 +148,12 @@ namespace DormitoryManagement.View
             FillDataService();
             FillDataSector();
             FillDataRoom();
-            cmbBuilding.Text = "";
+            cbbBuilding.Text = "";
         }
 
         private void cmbBuilding_SelectedValueChanged(object sender, EventArgs e)
         {
-            string SectorName = cmbBuilding.Text.ToString();
+            string SectorName = cbbBuilding.Text.ToString();
             List<SectorDTO> ListSector = SectorDAO.GetListSector();
             for (int i = 0; i < ListSector.Count; i++)
             {
@@ -159,8 +167,10 @@ namespace DormitoryManagement.View
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            //Code
-
+            if (CanLoadPayment())
+            {
+                //TODO
+            }    
             if (true == payment_status)
             {
                 btnPay.Enabled = true;
