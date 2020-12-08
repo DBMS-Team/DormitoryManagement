@@ -436,7 +436,6 @@
             // 
             this.btnLoad.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLoad.Enabled = false;
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoad.ForeColor = System.Drawing.Color.MediumVioletRed;
@@ -447,6 +446,7 @@
             this.btnLoad.TabIndex = 21;
             this.btnLoad.Text = "LOAD";
             this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // button1
             // 
@@ -467,7 +467,6 @@
             // 
             this.btnPay.BackColor = System.Drawing.Color.Orange;
             this.btnPay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPay.Enabled = false;
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.Location = new System.Drawing.Point(289, 4);
@@ -477,6 +476,7 @@
             this.btnPay.TabIndex = 6;
             this.btnPay.Text = "PAY";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // tabRegistration
             // 
@@ -590,6 +590,7 @@
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -745,6 +746,7 @@
             this.cmbTenDV.Name = "cmbTenDV";
             this.cmbTenDV.Size = new System.Drawing.Size(505, 31);
             this.cmbTenDV.TabIndex = 15;
+            this.cmbTenDV.SelectedValueChanged += new System.EventHandler(this.cmbTenDV_SelectedValueChanged);
             // 
             // txtPricePerUnit
             // 

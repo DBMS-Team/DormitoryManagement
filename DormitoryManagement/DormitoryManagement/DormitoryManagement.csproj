@@ -81,14 +81,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AdminDAO.cs" />
+    <Compile Include="Controller\BillDAO.cs" />
+    <Compile Include="Controller\BillDetailDAO.cs" />
     <Compile Include="Controller\CommuneDAO.cs" />
     <Compile Include="Controller\DataProvider.cs" />
     <Compile Include="Controller\DistrictDAO.cs" />
     <Compile Include="Controller\EmployeeDAO.cs" />
+    <Compile Include="Controller\PayMentDAO.cs" />
     <Compile Include="Controller\ProvinceDAO.cs" />
     <Compile Include="Controller\RoomDAO.cs" />
     <Compile Include="Controller\SectorDAO.cs" />
     <Compile Include="Controller\ServiceDAO.cs" />
+    <Compile Include="Controller\ServiceUnitDAO.cs" />
     <Compile Include="Controller\StudentDAO.cs" />
     <Compile Include="Controller\StudentViewDAO.cs" />
     <Compile Include="Controller\UnitDAO.cs" />
@@ -110,6 +114,7 @@
     <Compile Include="Model\RoomTypeDTO.cs" />
     <Compile Include="Model\SectorDTO.cs" />
     <Compile Include="Model\ServiceDTO.cs" />
+    <Compile Include="Model\ServiceUnitDTO.cs" />
     <Compile Include="Model\StudentDTO.cs" />
     <Compile Include="Model\StudentViewDTO.cs" />
     <Compile Include="Model\UnitDTO.cs" />
