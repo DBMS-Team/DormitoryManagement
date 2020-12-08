@@ -103,7 +103,6 @@
             this.tabSearch.Controls.Add(this.tabStudent);
             this.tabSearch.Controls.Add(this.tabPage2);
             this.tabSearch.Controls.Add(this.tabBill);
-            this.tabSearch.Controls.Add(this.tabEmployee);
             this.tabSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabSearch.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabSearch.Location = new System.Drawing.Point(0, 76);

@@ -14,6 +14,8 @@ namespace DormitoryManagement.View
 {
     public partial class FrmBill : Form
     {
+        private bool payment_status; 
+
         public FrmBill()
         {
             InitializeComponent();
@@ -94,7 +96,7 @@ namespace DormitoryManagement.View
                 string[] rowValue = new string[] { Service_ID, cmbTenDV.Text, numSoLuong.Value.ToString(), Unit };
                 for (int i = 0; i < dgvBillReg.Rows.Count; i++)// Kiểm tra nếu dịch vụ đó đã có sử dụng thì cộng thêm với số lượng cũ
                 {
-                    if (dgvBillReg.Rows[i].Cells[1].Value == cmbTenDV.Text)
+                    if (dgvBillReg.Rows[i].Cells[1].Value.ToString() == cmbTenDV.Text)
                     {
                         decimal a = Decimal.Parse(dgvBillReg.Rows[i].Cells[2].Value.ToString());
                         a += numSoLuong.Value;
@@ -153,6 +155,16 @@ namespace DormitoryManagement.View
                     FillDataRoomBySector(Sector.SectorId);
                 }
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            //Code
+
+            if (true == payment_status)
+            {
+                btnPay.Enabled = true;
+            }    
         }
     }
 }
