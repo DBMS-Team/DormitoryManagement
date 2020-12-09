@@ -71,6 +71,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtInputBill = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtInput = new System.Windows.Forms.TextBox();
             this.tabSearch.SuspendLayout();
             this.tabStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -325,25 +327,27 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel3.ColumnCount = 5;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel3.Controls.Add(this.label7, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.cbbCategoryRoomReg, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.cbbBuilding, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSearchRoomReg, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.cbbRoom, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSearchRoomReg, 4, 1);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label5, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.cbbRoom, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.cbbBuilding, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtInput, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1468, 80);
             this.tableLayoutPanel3.TabIndex = 13;
             // 
@@ -356,7 +360,7 @@
             this.cbbCategoryRoomReg.Location = new System.Drawing.Point(4, 44);
             this.cbbCategoryRoomReg.Margin = new System.Windows.Forms.Padding(4);
             this.cbbCategoryRoomReg.Name = "cbbCategoryRoomReg";
-            this.cbbCategoryRoomReg.Size = new System.Drawing.Size(212, 31);
+            this.cbbCategoryRoomReg.Size = new System.Drawing.Size(359, 31);
             this.cbbCategoryRoomReg.TabIndex = 15;
             // 
             // cbbBuilding
@@ -365,10 +369,10 @@
             this.cbbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbBuilding.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbBuilding.FormattingEnabled = true;
-            this.cbbBuilding.Location = new System.Drawing.Point(224, 44);
+            this.cbbBuilding.Location = new System.Drawing.Point(738, 44);
             this.cbbBuilding.Margin = new System.Windows.Forms.Padding(4);
             this.cbbBuilding.Name = "cbbBuilding";
-            this.cbbBuilding.Size = new System.Drawing.Size(505, 31);
+            this.cbbBuilding.Size = new System.Drawing.Size(285, 31);
             this.cbbBuilding.TabIndex = 14;
             // 
             // btnSearchRoomReg
@@ -378,10 +382,10 @@
             this.btnSearchRoomReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchRoomReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchRoomReg.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSearchRoomReg.Location = new System.Drawing.Point(1249, 42);
+            this.btnSearchRoomReg.Location = new System.Drawing.Point(1323, 42);
             this.btnSearchRoomReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchRoomReg.Name = "btnSearchRoomReg";
-            this.btnSearchRoomReg.Size = new System.Drawing.Size(216, 36);
+            this.btnSearchRoomReg.Size = new System.Drawing.Size(142, 36);
             this.btnSearchRoomReg.TabIndex = 13;
             this.btnSearchRoomReg.Text = "SEARCH";
             this.btnSearchRoomReg.UseVisualStyleBackColor = true;
@@ -392,10 +396,10 @@
             this.cbbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbRoom.FormattingEnabled = true;
-            this.cbbRoom.Location = new System.Drawing.Point(737, 44);
+            this.cbbRoom.Location = new System.Drawing.Point(1031, 44);
             this.cbbRoom.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRoom.Name = "cbbRoom";
-            this.cbbRoom.Size = new System.Drawing.Size(505, 31);
+            this.cbbRoom.Size = new System.Drawing.Size(285, 31);
             this.cbbRoom.TabIndex = 11;
             // 
             // label4
@@ -405,7 +409,7 @@
             this.label4.Location = new System.Drawing.Point(4, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 40);
+            this.label4.Size = new System.Drawing.Size(359, 40);
             this.label4.TabIndex = 10;
             this.label4.Text = "Category:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -414,10 +418,10 @@
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label5.Location = new System.Drawing.Point(224, 0);
+            this.label5.Location = new System.Drawing.Point(738, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(505, 40);
+            this.label5.Size = new System.Drawing.Size(285, 40);
             this.label5.TabIndex = 8;
             this.label5.Text = "Building:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -427,9 +431,9 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(736, 0);
+            this.label6.Location = new System.Drawing.Point(1030, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(507, 40);
+            this.label6.Size = new System.Drawing.Size(287, 40);
             this.label6.TabIndex = 16;
             this.label6.Text = "Room:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -579,6 +583,26 @@
             this.txtInputBill.Size = new System.Drawing.Size(1021, 35);
             this.txtInputBill.TabIndex = 14;
             // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label7.Location = new System.Drawing.Point(371, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(359, 40);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "What to search:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtInput
+            // 
+            this.txtInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInput.Location = new System.Drawing.Point(370, 43);
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(361, 30);
+            this.txtInput.TabIndex = 19;
+            // 
             // FrmSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -636,5 +660,7 @@
         private System.Windows.Forms.DataGridView dgvRoomReg;
         private System.Windows.Forms.DataGridView dgvBill;
         private System.Windows.Forms.TabPage tabEmployee;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtInput;
     }
 }
