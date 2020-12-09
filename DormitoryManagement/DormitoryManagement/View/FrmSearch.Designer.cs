@@ -65,14 +65,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabBill = new System.Windows.Forms.TabPage();
             this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSearchBill = new System.Windows.Forms.Button();
-            this.cbbCategoryBill = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtInputBill = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtInput = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch_Bill = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbbRoom_Bill = new System.Windows.Forms.ComboBox();
+            this.cbbBuiding_Bill = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ckbPaid = new System.Windows.Forms.CheckBox();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.tabSearch.SuspendLayout();
             this.tabStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -504,85 +510,6 @@
             this.dgvBill.Size = new System.Drawing.Size(1468, 602);
             this.dgvBill.TabIndex = 15;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel2.Controls.Add(this.btnSearchBill, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.cbbCategoryBill, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtInputBill, 1, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1468, 80);
-            this.tableLayoutPanel2.TabIndex = 13;
-            // 
-            // btnSearchBill
-            // 
-            this.btnSearchBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSearchBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchBill.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSearchBill.Location = new System.Drawing.Point(1250, 42);
-            this.btnSearchBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearchBill.Name = "btnSearchBill";
-            this.btnSearchBill.Size = new System.Drawing.Size(215, 36);
-            this.btnSearchBill.TabIndex = 13;
-            this.btnSearchBill.Text = "SEARCH";
-            this.btnSearchBill.UseVisualStyleBackColor = true;
-            // 
-            // cbbCategoryBill
-            // 
-            this.cbbCategoryBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbCategoryBill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCategoryBill.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbCategoryBill.FormattingEnabled = true;
-            this.cbbCategoryBill.Location = new System.Drawing.Point(4, 44);
-            this.cbbCategoryBill.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbCategoryBill.Name = "cbbCategoryBill";
-            this.cbbCategoryBill.Size = new System.Drawing.Size(212, 31);
-            this.cbbCategoryBill.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label2.Location = new System.Drawing.Point(4, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(212, 40);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Category:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label3.Location = new System.Drawing.Point(224, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1019, 40);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "What to search:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtInputBill
-            // 
-            this.txtInputBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInputBill.Font = new System.Drawing.Font("Segoe UI Black", 12F);
-            this.txtInputBill.Location = new System.Drawing.Point(223, 43);
-            this.txtInputBill.Name = "txtInputBill";
-            this.txtInputBill.Size = new System.Drawing.Size(1021, 35);
-            this.txtInputBill.TabIndex = 14;
-            // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -602,6 +529,167 @@
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(361, 30);
             this.txtInput.TabIndex = 19;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.Controls.Add(this.label10, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSearch_Bill, 5, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label8, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label9, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cbbRoom_Bill, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.cbbBuiding_Bill, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ckbPaid, 4, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dtpFromDate, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dtpToDate, 1, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1468, 80);
+            this.tableLayoutPanel2.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label2.Location = new System.Drawing.Point(297, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(285, 40);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "To:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnSearch_Bill
+            // 
+            this.btnSearch_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearch_Bill.Enabled = false;
+            this.btnSearch_Bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch_Bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch_Bill.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnSearch_Bill.Location = new System.Drawing.Point(1321, 42);
+            this.btnSearch_Bill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch_Bill.Name = "btnSearch_Bill";
+            this.btnSearch_Bill.Size = new System.Drawing.Size(144, 36);
+            this.btnSearch_Bill.TabIndex = 13;
+            this.btnSearch_Bill.Text = "SEARCH";
+            this.btnSearch_Bill.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label3.Location = new System.Drawing.Point(4, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(285, 40);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "From:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label8.Location = new System.Drawing.Point(590, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(285, 40);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Building:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(882, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(287, 40);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Room:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbbRoom_Bill
+            // 
+            this.cbbRoom_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbRoom_Bill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbRoom_Bill.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbRoom_Bill.FormattingEnabled = true;
+            this.cbbRoom_Bill.Location = new System.Drawing.Point(883, 44);
+            this.cbbRoom_Bill.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbRoom_Bill.Name = "cbbRoom_Bill";
+            this.cbbRoom_Bill.Size = new System.Drawing.Size(285, 31);
+            this.cbbRoom_Bill.TabIndex = 11;
+            // 
+            // cbbBuiding_Bill
+            // 
+            this.cbbBuiding_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbBuiding_Bill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbBuiding_Bill.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbBuiding_Bill.FormattingEnabled = true;
+            this.cbbBuiding_Bill.Location = new System.Drawing.Point(590, 44);
+            this.cbbBuiding_Bill.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbBuiding_Bill.Name = "cbbBuiding_Bill";
+            this.cbbBuiding_Bill.Size = new System.Drawing.Size(285, 31);
+            this.cbbBuiding_Bill.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1175, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(140, 40);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Status:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ckbPaid
+            // 
+            this.ckbPaid.AutoSize = true;
+            this.ckbPaid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.ckbPaid.Location = new System.Drawing.Point(1175, 43);
+            this.ckbPaid.Name = "ckbPaid";
+            this.ckbPaid.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ckbPaid.Size = new System.Drawing.Size(140, 34);
+            this.ckbPaid.TabIndex = 20;
+            this.ckbPaid.Text = "Paid";
+            this.ckbPaid.UseVisualStyleBackColor = true;
+            // 
+            // dtpFromDate
+            // 
+            this.dtpFromDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFromDate.Location = new System.Drawing.Point(3, 43);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(287, 30);
+            this.dtpFromDate.TabIndex = 21;
+            // 
+            // dtpToDate
+            // 
+            this.dtpToDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpToDate.Location = new System.Drawing.Point(296, 43);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(287, 30);
+            this.dtpToDate.TabIndex = 22;
             // 
             // FrmSearch
             // 
@@ -646,12 +734,6 @@
         private System.Windows.Forms.ComboBox cbbRoom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button btnSearchBill;
-        private System.Windows.Forms.ComboBox cbbCategoryBill;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtInputBill;
         private System.Windows.Forms.Button btnSearchRoomReg;
         private System.Windows.Forms.ComboBox cbbCategoryRoomReg;
         private System.Windows.Forms.ComboBox cbbBuilding;
@@ -662,5 +744,17 @@
         private System.Windows.Forms.TabPage tabEmployee;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtInput;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSearch_Bill;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbbRoom_Bill;
+        private System.Windows.Forms.ComboBox cbbBuiding_Bill;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox ckbPaid;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
     }
 }
