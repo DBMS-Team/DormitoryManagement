@@ -186,7 +186,7 @@ namespace DormitoryManagement.View
             DialogResult re = MessageBox.Show("Bạn muốn đăng xuất khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (re == DialogResult.Yes)
             {
-                
+
             }
         }
 
@@ -215,7 +215,7 @@ namespace DormitoryManagement.View
         #region Add
         public static void Bill()
         {
-            FrmBill frmBill = new FrmBill();
+            FrmBill frmBill = new FrmBill(User);
             frmBill.ShowDialog();
         }
 

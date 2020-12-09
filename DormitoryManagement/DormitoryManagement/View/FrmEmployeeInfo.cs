@@ -100,99 +100,147 @@ namespace DormitoryManagement.View
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int flag = 0;
-            if (txtFirstName.Text == "")
+            try
             {
-                MessageBox.Show("FirstName Not Null", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if (txtLastName.Text == "" && flag == 0)
-            {
-                MessageBox.Show("LastName Not Null", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if ((txtSSN.Text == "" && flag == 0) || FormatData.IsSSN(txtSSN.Text) == false)
-            {
-                MessageBox.Show("Not Is SSN", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if (txtStreet.Text == "" && flag == 0)
-            {
-                MessageBox.Show("Street Not Null", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if ((txtPhone1.Text == "" && flag == 0) || FormatData.IsPhone(txtPhone1.Text) == false)
-            {
-                MessageBox.Show("Not Is Phone Number 1", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if ((txtPhone2.Text == "" && flag == 0) || FormatData.IsPhone(txtPhone2.Text) == false)
-            {
-                MessageBox.Show("Not Is Phone Number 2", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
-            {
-                MessageBox.Show("Not Is Mail", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if ((txtSalary.Text == "" && flag == 0) || FormatData.IsNumber(txtSalary.Text) == false)
-            {
-                MessageBox.Show("Not Is Salary", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            else if (txtStreet.Text.Length > 50 && flag == 0)
-            {
-                MessageBox.Show("Stree < 50", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                flag = 1;
-            }
-            string lastName = txtLastName.Text;
-            lastName = FormatData.CapitalizeEachWord(lastName);
-            string firstName = txtFirstName.Text;
-            firstName = FormatData.CapitalizeEachWord(firstName);
-            DateTime dob = dtpDoB.Value;
-            string gender;
-            if (ckbFemale.Checked == true)
-            {
-                gender = "Nữ";
-            }
-            else
-            {
-                gender = "Nam";
-            }
-            string ssn = txtSSN.Text;
-            string phoneNumber1 = txtPhone1.Text;
-            string phoneNumber2 = txtPhone2.Text;
-            string email = txtEmail.Text;
-            string imagePath = "tobe";
-            string userType = cbbUserType.Text;
-            string provinceName = cbbProvince.Text;
-            string districtName = cbbDistrict.Text;
-            string communeName = cbbCommune.Text;
-            string street = txtStreet.Text;
-            street = FormatData.CapitalizeEachWord(street);
-            DateTime startDate = dtpStartDate.Value;
-            string salary = txtSalary.Text;
-            if (flag == 0)
-            {
-                if (AddEmployee(lastName, firstName, dob, gender, ssn, phoneNumber1, phoneNumber2, email, imagePath, userType, provinceName, districtName, communeName,
-            street, startDate, salary))
+                int flag = 0;
+                if (txtFirstName.Text == "")
                 {
-                    MessageBox.Show("Added successfully!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtLastName.Text = "";
-                    txtFirstName.Text = "";
-                    txtSSN.Text = "";
-                    txtPhone1.Text = "";
-                    txtPhone2.Text = "";
-                    txtEmail.Text = "";
-                    txtStreet.Text = "";
-                    txtSalary.Text = "";
+                    MessageBox.Show("FirstName Not Null", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = 1;
+                }
+                else if (txtLastName.Text == "" && flag == 0)
+                {
+                    MessageBox.Show("LastName Not Null", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = 1;
+                }
+                else if ((txtSSN.Text == "" && flag == 0) || FormatData.IsSSN(txtSSN.Text) == false)
+                {
+                    MessageBox.Show("Not Is SSN", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = 1;
+                }
+                else if (txtStreet.Text == "" && flag == 0)
+                {
+                    MessageBox.Show("Street Not Null", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = 1;
+                }
+                else if ((txtPhone1.Text == "" && flag == 0) || FormatData.IsPhone(txtPhone1.Text) == false)
+                {
+                    MessageBox.Show("Not Is Phone Number 1", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = 1;
+                }
+                else if ((txtPhone2.Text == "" && flag == 0) || FormatData.IsPhone(txtPhone2.Text) == false)
+                {
+                    MessageBox.Show("Not Is Phone Number 2", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = 1;
+                }
+                else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
+                {
+                    MessageBox.Show("Not Is Mail", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = 1;
+                }
+                else if ((txtSalary.Text == "" && flag == 0) || FormatData.IsNumber(txtSalary.Text) == false)
+                {
+                    MessageBox.Show("Not Is Salary", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = 1;
+                }
+                else if (txtStreet.Text.Length > 50 && flag == 0)
+                {
+                    MessageBox.Show("Stree < 50", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag = 1;
+                }
+                string lastName = txtLastName.Text;
+                lastName = FormatData.CapitalizeEachWord(lastName);
+                string firstName = txtFirstName.Text;
+                firstName = FormatData.CapitalizeEachWord(firstName);
+                DateTime dob = dtpDoB.Value;
+                string gender;
+                if (ckbFemale.Checked == true)
+                {
+                    gender = "Female";
                 }
                 else
                 {
-                    MessageBox.Show("Một trong các vấn đề bị lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    gender = "Male";
+                }
+                string ssn = txtSSN.Text.Trim().ToString();
+                string phoneNumber1 = txtPhone1.Text.Trim().ToString();
+                string phoneNumber2 = txtPhone2.Text.Trim().ToString();
+                string email = txtEmail.Text.Trim().ToString();
+                string imagePath = "tobe";
+                string userType = cbbUserType.Text;
+                string provinceName = cbbProvince.Text;
+                string districtName = cbbDistrict.Text;
+                string communeName = cbbCommune.Text;
+                string street = txtStreet.Text;
+                street = FormatData.CapitalizeEachWord(street);
+                DateTime startDate = dtpStartDate.Value;
+                string salary = txtSalary.Text;
+                List<UserDTO> userDTOs = UserDAO.GetListUser();
+                foreach (var item in userDTOs)
+                {
+                    if (item.Ssn.Equals(ssn))
+                    {
+                        MessageBox.Show("SSN already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.PhoneNumber1.Equals(phoneNumber1))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.PhoneNumber2.Equals(phoneNumber1))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.PhoneNumber1.Equals(phoneNumber2))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.PhoneNumber2.Equals(phoneNumber2))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                    if (item.Email.Equals(email))
+                    {
+                        MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        flag = 1;
+                        return;
+                    }
+                }
+                if (flag == 0)
+                {
+                    if (AddEmployee(lastName, firstName, dob, gender, ssn, phoneNumber1, phoneNumber2, email, imagePath, userType, provinceName, districtName, communeName,
+                street, startDate, salary))
+                    {
+                        MessageBox.Show("Added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtLastName.Text = "";
+                        txtFirstName.Text = "";
+                        txtSSN.Text = "";
+                        txtPhone1.Text = "";
+                        txtPhone2.Text = "";
+                        txtEmail.Text = "";
+                        txtStreet.Text = "";
+                        txtSalary.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("One of the problems is faulty!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
+            catch
+            {
+
+            }
+            
             
         }
         private void btnEdit_Click(object sender, EventArgs e)
