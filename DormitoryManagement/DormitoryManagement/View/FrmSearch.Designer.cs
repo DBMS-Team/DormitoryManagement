@@ -44,40 +44,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.tabBill = new System.Windows.Forms.TabPage();
-            this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtInput = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSearch_Bill = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbbRoom_Bill = new System.Windows.Forms.ComboBox();
-            this.cbbBuiding_Bill = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.ckbPaid = new System.Windows.Forms.CheckBox();
-            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.BillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomRegID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomReg_StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabSearch = new System.Windows.Forms.TabControl();
+            this.tabStudent = new System.Windows.Forms.TabPage();
+            this.dgvStudent = new System.Windows.Forms.DataGridView();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +57,56 @@
             this.Phone1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Student_Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Student_Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSearchStudent = new System.Windows.Forms.Button();
+            this.cbbCategoryStudent = new System.Windows.Forms.ComboBox();
+            this.lbCategory = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtInputStudent = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvRoomReg = new System.Windows.Forms.DataGridView();
+            this.RoomRegID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomReg_StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbbCategoryRoomReg = new System.Windows.Forms.ComboBox();
+            this.btnSearchRoomReg = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbbRoom = new System.Windows.Forms.ComboBox();
+            this.cbbBuilding = new System.Windows.Forms.ComboBox();
+            this.txtInput = new System.Windows.Forms.TextBox();
+            this.tabBill = new System.Windows.Forms.TabPage();
+            this.dgvBill = new System.Windows.Forms.DataGridView();
+            this.BillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch_Bill = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbbRoom_Bill = new System.Windows.Forms.ComboBox();
+            this.cbbBuiding_Bill = new System.Windows.Forms.ComboBox();
+            this.ckbPaid = new System.Windows.Forms.CheckBox();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.tabSearch.SuspendLayout();
             this.tabStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -96,15 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomReg)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabBill.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomReg)).BeginInit();
-            this.tabStudent.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
-            this.tabSearch.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -116,12 +128,12 @@
             this.lbTitle.Location = new System.Drawing.Point(0, 0);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(1857, 129);
+            this.lbTitle.Size = new System.Drawing.Size(1482, 76);
             this.lbTitle.TabIndex = 12;
             this.lbTitle.Text = "SEARCH";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tabBill
+            // tabSearch
             // 
             this.tabSearch.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabSearch.Controls.Add(this.tabStudent);
@@ -136,99 +148,30 @@
             this.tabSearch.Size = new System.Drawing.Size(1482, 727);
             this.tabSearch.TabIndex = 14;
             // 
-            // tableLayoutPanel2
+            // tabStudent
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel2.Controls.Add(this.btnSearchBill, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.cbbCategoryBill, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtInputBill, 1, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1843, 80);
-            this.tableLayoutPanel2.TabIndex = 13;
+            this.tabStudent.Controls.Add(this.dgvStudent);
+            this.tabStudent.Controls.Add(this.tableLayoutPanel1);
+            this.tabStudent.Location = new System.Drawing.Point(4, 35);
+            this.tabStudent.Name = "tabStudent";
+            this.tabStudent.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStudent.Size = new System.Drawing.Size(1474, 688);
+            this.tabStudent.TabIndex = 0;
+            this.tabStudent.Text = "STUDENT";
+            this.tabStudent.UseVisualStyleBackColor = true;
             // 
-            // txtInputBill
-            // 
-            this.txtInputBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInputBill.Font = new System.Drawing.Font("Segoe UI Black", 12F);
-            this.txtInputBill.Location = new System.Drawing.Point(279, 42);
-            this.txtInputBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtInputBill.Name = "txtInputBill";
-            this.txtInputBill.Size = new System.Drawing.Size(1284, 35);
-            this.txtInputBill.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label3.Location = new System.Drawing.Point(280, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1282, 40);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "What to search:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label2.Location = new System.Drawing.Point(4, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(268, 40);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Category:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cbbCategoryBill
-            // 
-            this.cbbCategoryBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbCategoryBill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCategoryBill.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbCategoryBill.FormattingEnabled = true;
-            this.cbbCategoryBill.Location = new System.Drawing.Point(4, 44);
-            this.cbbCategoryBill.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbCategoryBill.Name = "cbbCategoryBill";
-            this.cbbCategoryBill.Size = new System.Drawing.Size(268, 31);
-            this.cbbCategoryBill.TabIndex = 11;
-            // 
-            // btnSearchBill
-            // 
-            this.btnSearchBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSearchBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchBill.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSearchBill.Location = new System.Drawing.Point(1569, 42);
-            this.btnSearchBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearchBill.Name = "btnSearchBill";
-            this.btnSearchBill.Size = new System.Drawing.Size(271, 36);
-            this.btnSearchBill.TabIndex = 13;
-            this.btnSearchBill.Text = "SEARCH";
-            this.btnSearchBill.UseVisualStyleBackColor = true;
-            // 
-            // dgvBill
+            // dgvStudent
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBill.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvBill.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStudent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvStudent.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -256,12 +199,12 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Goldenrod;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBill.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvBill.Location = new System.Drawing.Point(3, 82);
-            this.dgvBill.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.dgvBill.Name = "dgvBill";
+            this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStudent.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvStudent.Location = new System.Drawing.Point(3, 83);
+            this.dgvStudent.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.dgvStudent.Name = "dgvStudent";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -269,143 +212,169 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvBill.RowHeadersVisible = false;
-            this.dgvBill.RowHeadersWidth = 51;
+            this.dgvStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvStudent.RowHeadersVisible = false;
+            this.dgvStudent.RowHeadersWidth = 51;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvBill.Size = new System.Drawing.Size(1843, 732);
-            this.dgvBill.TabIndex = 15;
+            this.dgvStudent.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvStudent.Size = new System.Drawing.Size(1468, 602);
+            this.dgvStudent.TabIndex = 14;
+            // 
+            // UserID
+            // 
+            this.UserID.HeaderText = "User ID";
+            this.UserID.MinimumWidth = 6;
+            this.UserID.Name = "UserID";
+            // 
+            // SSN
+            // 
+            this.SSN.HeaderText = "SSN";
+            this.SSN.MinimumWidth = 6;
+            this.SSN.Name = "SSN";
+            // 
+            // StudentID
+            // 
+            this.StudentID.HeaderText = "Student ID";
+            this.StudentID.MinimumWidth = 6;
+            this.StudentID.Name = "StudentID";
+            // 
+            // FullName
+            // 
+            this.FullName.HeaderText = "Full Name";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            // 
+            // DoB
+            // 
+            this.DoB.HeaderText = "DoB";
+            this.DoB.MinimumWidth = 6;
+            this.DoB.Name = "DoB";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            // 
+            // Phone1
+            // 
+            this.Phone1.HeaderText = "Phone 1";
+            this.Phone1.MinimumWidth = 6;
+            this.Phone1.Name = "Phone1";
+            // 
+            // Student_Building
+            // 
+            this.Student_Building.HeaderText = "Building";
+            this.Student_Building.MinimumWidth = 6;
+            this.Student_Building.Name = "Student_Building";
+            // 
+            // Student_Room
+            // 
+            this.Student_Room.HeaderText = "Room";
+            this.Student_Room.MinimumWidth = 6;
+            this.Student_Room.Name = "Student_Room";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.Controls.Add(this.btnSearchStudent, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cbbCategoryStudent, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lbCategory, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtInputStudent, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1468, 80);
+            this.tableLayoutPanel1.TabIndex = 12;
+            // 
+            // btnSearchStudent
+            // 
+            this.btnSearchStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearchStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchStudent.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnSearchStudent.Location = new System.Drawing.Point(1250, 42);
+            this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchStudent.Name = "btnSearchStudent";
+            this.btnSearchStudent.Size = new System.Drawing.Size(215, 36);
+            this.btnSearchStudent.TabIndex = 13;
+            this.btnSearchStudent.Text = "SEARCH";
+            this.btnSearchStudent.UseVisualStyleBackColor = true;
+            // 
+            // cbbCategoryStudent
+            // 
+            this.cbbCategoryStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbCategoryStudent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCategoryStudent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbCategoryStudent.FormattingEnabled = true;
+            this.cbbCategoryStudent.Location = new System.Drawing.Point(4, 44);
+            this.cbbCategoryStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbCategoryStudent.Name = "cbbCategoryStudent";
+            this.cbbCategoryStudent.Size = new System.Drawing.Size(212, 31);
+            this.cbbCategoryStudent.TabIndex = 11;
+            // 
+            // lbCategory
+            // 
+            this.lbCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lbCategory.Location = new System.Drawing.Point(4, 0);
+            this.lbCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCategory.Name = "lbCategory";
+            this.lbCategory.Size = new System.Drawing.Size(212, 40);
+            this.lbCategory.TabIndex = 10;
+            this.lbCategory.Text = "Category:";
+            this.lbCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.Location = new System.Drawing.Point(224, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1019, 40);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "What to search:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtInputStudent
+            // 
+            this.txtInputStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInputStudent.Font = new System.Drawing.Font("Segoe UI Black", 12F);
+            this.txtInputStudent.Location = new System.Drawing.Point(223, 43);
+            this.txtInputStudent.Name = "txtInputStudent";
+            this.txtInputStudent.Size = new System.Drawing.Size(1021, 35);
+            this.txtInputStudent.TabIndex = 14;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgvRoomReg);
             this.tabPage2.Controls.Add(this.tableLayoutPanel3);
             this.tabPage2.Location = new System.Drawing.Point(4, 35);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1849, 816);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1474, 688);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ROOM REGISTRATION";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel3.Controls.Add(this.cbbCategoryRoomReg, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.cbbBuilding, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSearchRoomReg, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.cbbRoom, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 2, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 2);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1843, 80);
-            this.tableLayoutPanel3.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(924, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(639, 40);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Room:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label5.Location = new System.Drawing.Point(280, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(637, 40);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Building:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label4.Location = new System.Drawing.Point(4, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(268, 40);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Category:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cbbRoom
-            // 
-            this.cbbRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbRoom.FormattingEnabled = true;
-            this.cbbRoom.Location = new System.Drawing.Point(925, 44);
-            this.cbbRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbRoom.Name = "cbbRoom";
-            this.cbbRoom.Size = new System.Drawing.Size(637, 31);
-            this.cbbRoom.TabIndex = 11;
-            // 
-            // btnSearchRoomReg
-            // 
-            this.btnSearchRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSearchRoomReg.Enabled = false;
-            this.btnSearchRoomReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchRoomReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchRoomReg.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSearchRoomReg.Location = new System.Drawing.Point(1569, 42);
-            this.btnSearchRoomReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearchRoomReg.Name = "btnSearchRoomReg";
-            this.btnSearchRoomReg.Size = new System.Drawing.Size(271, 36);
-            this.btnSearchRoomReg.TabIndex = 13;
-            this.btnSearchRoomReg.Text = "SEARCH";
-            this.btnSearchRoomReg.UseVisualStyleBackColor = true;
-            // 
-            // cbbBuilding
-            // 
-            this.cbbBuilding.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbBuilding.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbBuilding.FormattingEnabled = true;
-            this.cbbBuilding.Location = new System.Drawing.Point(280, 44);
-            this.cbbBuilding.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbBuilding.Name = "cbbBuilding";
-            this.cbbBuilding.Size = new System.Drawing.Size(637, 31);
-            this.cbbBuilding.TabIndex = 14;
-            // 
-            // cbbCategoryRoomReg
-            // 
-            this.cbbCategoryRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbCategoryRoomReg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCategoryRoomReg.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbCategoryRoomReg.FormattingEnabled = true;
-            this.cbbCategoryRoomReg.Location = new System.Drawing.Point(4, 44);
-            this.cbbCategoryRoomReg.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbCategoryRoomReg.Name = "cbbCategoryRoomReg";
-            this.cbbCategoryRoomReg.Size = new System.Drawing.Size(268, 31);
-            this.cbbCategoryRoomReg.TabIndex = 15;
             // 
             // dgvRoomReg
             // 
@@ -440,7 +409,7 @@
             this.Total});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Goldenrod;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.DarkRed;
@@ -448,7 +417,7 @@
             this.dgvRoomReg.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRoomReg.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvRoomReg.Location = new System.Drawing.Point(3, 82);
+            this.dgvRoomReg.Location = new System.Drawing.Point(3, 83);
             this.dgvRoomReg.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.dgvRoomReg.Name = "dgvRoomReg";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -468,8 +437,62 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRoomReg.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvRoomReg.Size = new System.Drawing.Size(1843, 732);
+            this.dgvRoomReg.Size = new System.Drawing.Size(1468, 602);
             this.dgvRoomReg.TabIndex = 15;
+            // 
+            // RoomRegID
+            // 
+            this.RoomRegID.HeaderText = "RoomReg ID";
+            this.RoomRegID.MinimumWidth = 6;
+            this.RoomRegID.Name = "RoomRegID";
+            // 
+            // CreatedTime
+            // 
+            this.CreatedTime.HeaderText = "Created Time";
+            this.CreatedTime.MinimumWidth = 6;
+            this.CreatedTime.Name = "CreatedTime";
+            // 
+            // Building
+            // 
+            this.Building.HeaderText = "Building";
+            this.Building.MinimumWidth = 6;
+            this.Building.Name = "Building";
+            // 
+            // Room
+            // 
+            this.Room.HeaderText = "Room";
+            this.Room.MinimumWidth = 6;
+            this.Room.Name = "Room";
+            // 
+            // RoomReg_StudentID
+            // 
+            this.RoomReg_StudentID.HeaderText = "Student ID";
+            this.RoomReg_StudentID.MinimumWidth = 6;
+            this.RoomReg_StudentID.Name = "RoomReg_StudentID";
+            // 
+            // EmployeeID
+            // 
+            this.EmployeeID.HeaderText = "Employee ID";
+            this.EmployeeID.MinimumWidth = 6;
+            this.EmployeeID.Name = "EmployeeID";
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Start Date";
+            this.StartDate.MinimumWidth = 6;
+            this.StartDate.Name = "StartDate";
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.MinimumWidth = 6;
+            this.Duration.Name = "Duration";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
             // 
             // tableLayoutPanel3
             // 
@@ -497,6 +520,18 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1468, 80);
             this.tableLayoutPanel3.TabIndex = 13;
             // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label7.Location = new System.Drawing.Point(371, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(359, 40);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "What to search:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // cbbCategoryRoomReg
             // 
             this.cbbCategoryRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -508,18 +543,6 @@
             this.cbbCategoryRoomReg.Name = "cbbCategoryRoomReg";
             this.cbbCategoryRoomReg.Size = new System.Drawing.Size(359, 31);
             this.cbbCategoryRoomReg.TabIndex = 15;
-            // 
-            // cbbBuilding
-            // 
-            this.cbbBuilding.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbBuilding.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbBuilding.FormattingEnabled = true;
-            this.cbbBuilding.Location = new System.Drawing.Point(738, 44);
-            this.cbbBuilding.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbBuilding.Name = "cbbBuilding";
-            this.cbbBuilding.Size = new System.Drawing.Size(285, 31);
-            this.cbbBuilding.TabIndex = 14;
             // 
             // btnSearchRoomReg
             // 
@@ -536,19 +559,7 @@
             this.btnSearchRoomReg.Text = "SEARCH";
             this.btnSearchRoomReg.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel1
-            // 
-            this.cbbRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbRoom.FormattingEnabled = true;
-            this.cbbRoom.Location = new System.Drawing.Point(1031, 44);
-            this.cbbRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbRoom.Name = "cbbRoom";
-            this.cbbRoom.Size = new System.Drawing.Size(285, 31);
-            this.cbbRoom.TabIndex = 11;
-            // 
-            // txtInputStudent
+            // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
@@ -560,7 +571,7 @@
             this.label4.Text = "Category:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
@@ -572,7 +583,7 @@
             this.label5.Text = "Building:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbCategory
+            // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -584,43 +595,62 @@
             this.label6.Text = "Room:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cbbCategoryStudent
+            // cbbRoom
             // 
-            this.cbbCategoryStudent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbCategoryStudent.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cbbCategoryStudent.FormattingEnabled = true;
-            this.cbbCategoryStudent.Items.AddRange(new object[] {
-            "FULL",
-            "ALIVE",
-            "GOING OUT",
-            "USER_ID",
-            "STUDENT_ID",
-            "FULLNAME",
-            "GENDER",
-            "SSN",
-            "SCHOOL"});
-            this.cbbCategoryStudent.Location = new System.Drawing.Point(4, 44);
-            this.cbbCategoryStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbCategoryStudent.Name = "cbbCategoryStudent";
-            this.cbbCategoryStudent.Size = new System.Drawing.Size(268, 31);
-            this.cbbCategoryStudent.TabIndex = 11;
-            this.cbbCategoryStudent.Text = "FULL";
-            this.cbbCategoryStudent.SelectedIndexChanged += new System.EventHandler(this.cbbCategoryStudent_SelectedIndexChanged);
+            this.cbbRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbRoom.FormattingEnabled = true;
+            this.cbbRoom.Location = new System.Drawing.Point(1031, 44);
+            this.cbbRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbRoom.Name = "cbbRoom";
+            this.cbbRoom.Size = new System.Drawing.Size(285, 31);
+            this.cbbRoom.TabIndex = 11;
             // 
-            // dgvStudent
+            // cbbBuilding
             // 
-            this.dgvStudent.AllowUserToAddRows = false;
-            this.dgvStudent.AllowUserToDeleteRows = false;
+            this.cbbBuilding.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbBuilding.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbBuilding.FormattingEnabled = true;
+            this.cbbBuilding.Location = new System.Drawing.Point(738, 44);
+            this.cbbBuilding.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbBuilding.Name = "cbbBuilding";
+            this.cbbBuilding.Size = new System.Drawing.Size(285, 31);
+            this.cbbBuilding.TabIndex = 14;
+            // 
+            // txtInput
+            // 
+            this.txtInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInput.Location = new System.Drawing.Point(370, 43);
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(361, 30);
+            this.txtInput.TabIndex = 19;
+            // 
+            // tabBill
+            // 
+            this.tabBill.Controls.Add(this.dgvBill);
+            this.tabBill.Controls.Add(this.tableLayoutPanel2);
+            this.tabBill.Location = new System.Drawing.Point(4, 35);
+            this.tabBill.Name = "tabBill";
+            this.tabBill.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBill.Size = new System.Drawing.Size(1474, 688);
+            this.tabBill.TabIndex = 2;
+            this.tabBill.Text = "BILL";
+            this.tabBill.UseVisualStyleBackColor = true;
+            // 
+            // dgvBill
+            // 
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvStudent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvStudent.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBill.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvBill.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -647,13 +677,12 @@
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Goldenrod;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvStudent.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvStudent.Location = new System.Drawing.Point(3, 82);
-            this.dgvStudent.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.dgvStudent.Name = "dgvStudent";
-            this.dgvStudent.ReadOnly = true;
+            this.dgvBill.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBill.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvBill.Location = new System.Drawing.Point(3, 83);
+            this.dgvBill.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.dgvBill.Name = "dgvBill";
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -661,9 +690,9 @@
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvStudent.RowHeadersVisible = false;
-            this.dgvStudent.RowHeadersWidth = 51;
+            this.dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvBill.RowHeadersVisible = false;
+            this.dgvBill.RowHeadersWidth = 51;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
@@ -674,25 +703,59 @@
             this.dgvBill.Size = new System.Drawing.Size(1468, 602);
             this.dgvBill.TabIndex = 15;
             // 
-            // label7
+            // BillID
             // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label7.Location = new System.Drawing.Point(371, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(359, 40);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "What to search:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BillID.HeaderText = "Bill ID";
+            this.BillID.MinimumWidth = 6;
+            this.BillID.Name = "BillID";
             // 
-            // txtInput
+            // Bill_CreatedTime
             // 
-            this.txtInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInput.Location = new System.Drawing.Point(370, 43);
-            this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(361, 30);
-            this.txtInput.TabIndex = 19;
+            this.Bill_CreatedTime.HeaderText = "Created Time";
+            this.Bill_CreatedTime.MinimumWidth = 6;
+            this.Bill_CreatedTime.Name = "Bill_CreatedTime";
+            // 
+            // Bill_Building
+            // 
+            this.Bill_Building.HeaderText = "Building";
+            this.Bill_Building.MinimumWidth = 6;
+            this.Bill_Building.Name = "Bill_Building";
+            // 
+            // Bill_Room
+            // 
+            this.Bill_Room.HeaderText = "Room";
+            this.Bill_Room.MinimumWidth = 6;
+            this.Bill_Room.Name = "Bill_Room";
+            // 
+            // Month
+            // 
+            this.Month.HeaderText = "Month";
+            this.Month.MinimumWidth = 6;
+            this.Month.Name = "Month";
+            // 
+            // Year
+            // 
+            this.Year.HeaderText = "Year";
+            this.Year.MinimumWidth = 6;
+            this.Year.Name = "Year";
+            // 
+            // Bill_EmployeeID
+            // 
+            this.Bill_EmployeeID.HeaderText = "Employee ID";
+            this.Bill_EmployeeID.MinimumWidth = 6;
+            this.Bill_EmployeeID.Name = "Bill_EmployeeID";
+            // 
+            // Bill_Total
+            // 
+            this.Bill_Total.HeaderText = "Total";
+            this.Bill_Total.MinimumWidth = 6;
+            this.Bill_Total.Name = "Bill_Total";
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
             // 
             // tableLayoutPanel2
             // 
@@ -722,6 +785,18 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1468, 80);
             this.tableLayoutPanel2.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1175, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(140, 40);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Status:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -810,18 +885,6 @@
             this.cbbBuiding_Bill.Size = new System.Drawing.Size(285, 31);
             this.cbbBuiding_Bill.TabIndex = 14;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1175, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(140, 40);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Status:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // ckbPaid
             // 
             this.ckbPaid.AutoSize = true;
@@ -855,205 +918,38 @@
             this.dtpToDate.Size = new System.Drawing.Size(287, 30);
             this.dtpToDate.TabIndex = 22;
             // 
-            // BillID
-            // 
-            this.BillID.HeaderText = "Bill ID";
-            this.BillID.MinimumWidth = 6;
-            this.BillID.Name = "BillID";
-            // 
-            // Bill_CreatedTime
-            // 
-            this.Bill_CreatedTime.HeaderText = "Created Time";
-            this.Bill_CreatedTime.MinimumWidth = 6;
-            this.Bill_CreatedTime.Name = "Bill_CreatedTime";
-            // 
-            // Bill_Building
-            // 
-            this.Bill_Building.HeaderText = "Building";
-            this.Bill_Building.MinimumWidth = 6;
-            this.Bill_Building.Name = "Bill_Building";
-            // 
-            // Bill_Room
-            // 
-            this.Bill_Room.HeaderText = "Room";
-            this.Bill_Room.MinimumWidth = 6;
-            this.Bill_Room.Name = "Bill_Room";
-            // 
-            // Month
-            // 
-            this.Month.HeaderText = "Month";
-            this.Month.MinimumWidth = 6;
-            this.Month.Name = "Month";
-            // 
-            // Year
-            // 
-            this.Year.HeaderText = "Year";
-            this.Year.MinimumWidth = 6;
-            this.Year.Name = "Year";
-            // 
-            // Bill_EmployeeID
-            // 
-            this.Bill_EmployeeID.HeaderText = "Employee ID";
-            this.Bill_EmployeeID.MinimumWidth = 6;
-            this.Bill_EmployeeID.Name = "Bill_EmployeeID";
-            // 
-            // Bill_Total
-            // 
-            this.Bill_Total.HeaderText = "Total";
-            this.Bill_Total.MinimumWidth = 6;
-            this.Bill_Total.Name = "Bill_Total";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            // 
-            // RoomRegID
-            // 
-            this.RoomRegID.HeaderText = "RoomReg ID";
-            this.RoomRegID.MinimumWidth = 6;
-            this.RoomRegID.Name = "RoomRegID";
-            // 
-            // CreatedTime
-            // 
-            this.CreatedTime.HeaderText = "Created Time";
-            this.CreatedTime.MinimumWidth = 6;
-            this.CreatedTime.Name = "CreatedTime";
-            // 
-            // Building
-            // 
-            this.Building.HeaderText = "Building";
-            this.Building.MinimumWidth = 6;
-            this.Building.Name = "Building";
-            // 
-            // Room
-            // 
-            this.Room.HeaderText = "Room";
-            this.Room.MinimumWidth = 6;
-            this.Room.Name = "Room";
-            // 
-            // RoomReg_StudentID
-            // 
-            this.RoomReg_StudentID.HeaderText = "Student ID";
-            this.RoomReg_StudentID.MinimumWidth = 6;
-            this.RoomReg_StudentID.Name = "RoomReg_StudentID";
-            // 
-            // EmployeeID
-            // 
-            this.EmployeeID.HeaderText = "Employee ID";
-            this.EmployeeID.MinimumWidth = 6;
-            this.EmployeeID.Name = "EmployeeID";
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Start Date";
-            this.StartDate.MinimumWidth = 6;
-            this.StartDate.Name = "StartDate";
-            // 
-            // Duration
-            // 
-            this.Duration.HeaderText = "Duration";
-            this.Duration.MinimumWidth = 6;
-            this.Duration.Name = "Duration";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            // 
-            // UserID
-            // 
-            this.UserID.HeaderText = "User ID";
-            this.UserID.MinimumWidth = 6;
-            this.UserID.Name = "UserID";
-            // 
-            // SSN
-            // 
-            this.SSN.HeaderText = "SSN";
-            this.SSN.MinimumWidth = 6;
-            this.SSN.Name = "SSN";
-            // 
-            // StudentID
-            // 
-            this.StudentID.HeaderText = "Student ID";
-            this.StudentID.MinimumWidth = 6;
-            this.StudentID.Name = "StudentID";
-            // 
-            // FullName
-            // 
-            this.FullName.HeaderText = "Full Name";
-            this.FullName.MinimumWidth = 6;
-            this.FullName.Name = "FullName";
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.MinimumWidth = 6;
-            this.Gender.Name = "Gender";
-            // 
-            // DoB
-            // 
-            this.DoB.HeaderText = "DoB";
-            this.DoB.MinimumWidth = 6;
-            this.DoB.Name = "DoB";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            // 
-            // Phone1
-            // 
-            this.Phone1.HeaderText = "Phone 1";
-            this.Phone1.MinimumWidth = 6;
-            this.Phone1.Name = "Phone1";
-            // 
-            // Student_Building
-            // 
-            this.Student_Building.HeaderText = "Building";
-            this.Student_Building.MinimumWidth = 6;
-            this.Student_Building.Name = "Student_Building";
-            // 
-            // Student_Room
-            // 
-            this.Student_Room.HeaderText = "Room";
-            this.Student_Room.MinimumWidth = 6;
-            this.Student_Room.Name = "Student_Room";
-            // 
             // FrmSearch
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1857, 1016);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1482, 803);
             this.Controls.Add(this.tabSearch);
             this.Controls.Add(this.lbTitle);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmSearch";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";
-            this.Load += new System.EventHandler(this.FrmSearch_Load);
-            this.tabBill.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomReg)).EndInit();
+            this.tabSearch.ResumeLayout(false);
             this.tabStudent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
-            this.tabSearch.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomReg)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tabBill.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.TabPage tabEmployee;
+        private System.Windows.Forms.TabControl tabSearch;
+        private System.Windows.Forms.TabPage tabStudent;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabBill;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnSearchStudent;
@@ -1068,16 +964,10 @@
         private System.Windows.Forms.Button btnSearchRoomReg;
         private System.Windows.Forms.ComboBox cbbCategoryRoomReg;
         private System.Windows.Forms.ComboBox cbbBuilding;
-        private System.Windows.Forms.Button btnSearchRoomReg;
-        private System.Windows.Forms.ComboBox cbbRoom;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TabPage tabStudent;
         private System.Windows.Forms.DataGridView dgvStudent;
         private System.Windows.Forms.DataGridView dgvRoomReg;
         private System.Windows.Forms.DataGridView dgvBill;
-        private System.Windows.Forms.TabPage tabEmployee;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
