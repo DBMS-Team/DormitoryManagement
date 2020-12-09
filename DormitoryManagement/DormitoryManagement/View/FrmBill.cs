@@ -17,6 +17,7 @@ namespace DormitoryManagement.View
     {
         private bool payment_status; 
         private UserDTO user;
+        private List<ServiceUnitDTO> listServiceUnit;
         public UserDTO User
         {
             get => user;
@@ -25,6 +26,9 @@ namespace DormitoryManagement.View
                 this.user = value;
             }
         }
+
+        public List<ServiceUnitDTO> ListServiceUnit { get => listServiceUnit; set => listServiceUnit = value; }
+
         public FrmBill(UserDTO user)
         {
             InitializeComponent();
@@ -171,13 +175,13 @@ namespace DormitoryManagement.View
                 return;
             }
             long Employee_ID = User.UserId;
-            string Room_Name = cmbRoom.Text;
-            string Sector_Name = cmbBuilding.Text;
-            string Month = cmbMonth.Text;
+            string Room_Name = cbbRoom.Text;
+            string Sector_Name = cbbBuilding.Text;
+            string Month = cbbMonth.Text;
             string Year = txtYear.Text;
             string Status = "0";
             string Total = txtTotal.Text;
-            DateTime CreatDay = dtCreatedDate.Value;
+            DateTime CreatDay = dtpCreatedDate.Value;
             if (AddBill(Employee_ID, Room_Name, Sector_Name, CreatDay, Month, Year, Status, Total))
             {
                 for (int i = 0; i < dgvBillReg.Rows.Count - 1; i++)
@@ -203,9 +207,9 @@ namespace DormitoryManagement.View
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            string SectorName = cmbBuilding.Text;
-            string RoomId = cmbRoom.Text;
-            string Month = cmbMonth.Text.ToString();
+            string SectorName = cbbBuilding.Text;
+            string RoomId = cbbRoom.Text;
+            string Month = cbbMonth.Text.ToString();
             string Year = txtYear.Text;
             List<BillDetailDTO> ListService = BillDetailDAO.GetViewBillDetail(SectorName, RoomId, Month, Year);
             for (int i = 0; i < ListService.Count; i++)
@@ -231,8 +235,8 @@ namespace DormitoryManagement.View
                 decimal temp = Decimal.Parse(dgvPayment.Rows[i].Cells[5].Value.ToString());
                 Total_Cost_Bill = Total_Cost_Bill + temp;
             }
-            DateTime CreatDay = dtCreatedDate.Value;
-            PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString());
+            DateTime CreatDay = dtpCreatedDate.Value;
+            PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cbbBuilding.Text.ToString(), cbbRoom.Text.ToString(), cbbMonth.Text.ToString(), txtYear.Text.ToString());
             MessageBox.Show(Total_Cost_Bill.ToString());
 
         }
