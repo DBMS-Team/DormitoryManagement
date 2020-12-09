@@ -27,6 +27,11 @@ namespace DormitoryManagement.View
         {
             GetFullListStudent();
             txtInputStudent.Enabled = false;
+            AutoSizeModeColumn(dgvStudent);
+
+            GetListRoomRegistration();
+            AutoSizeModeColumn(dgvRoomReg);
+            GetListSector();
         }
         /// <summary>
         /// ---------------------------STUDENTS
@@ -42,33 +47,33 @@ namespace DormitoryManagement.View
             switch (indexSelected)
             {
                 case 0:
-                {
-                    GetFullListStudent();
-                    txtInputStudent.Enabled = false;
-                    txtInputStudent.Text = "";
-                    break;
-                }  
+                    {
+                        GetFullListStudent();
+                        txtInputStudent.Enabled = false;
+                        txtInputStudent.Text = "";
+                        break;
+                    }
                 case 1:
-                {
-                    GetFullListStudentALive();
-                    txtInputStudent.Enabled = false;
-                    txtInputStudent.Text = "";
-                    break;
-                }
+                    {
+                        GetFullListStudentALive();
+                        txtInputStudent.Enabled = false;
+                        txtInputStudent.Text = "";
+                        break;
+                    }
                 case 2:
-                {
-                    GetFullListStudentGoingOut();
-                    txtInputStudent.Enabled = false;
-                    txtInputStudent.Text = "";
-                    break;
-                }
+                    {
+                        GetFullListStudentGoingOut();
+                        txtInputStudent.Enabled = false;
+                        txtInputStudent.Text = "";
+                        break;
+                    }
                 default:
-                {
-                    GetFullListStudent();
-                    txtInputStudent.Enabled = true;
-                    txtInputStudent.Text = "";
-                    break;
-                }
+                    {
+                        GetFullListStudent();
+                        txtInputStudent.Enabled = true;
+                        txtInputStudent.Text = "";
+                        break;
+                    }
             }
         }
         private void txtInputStudent_TextChanged(object sender, EventArgs e)
@@ -80,7 +85,7 @@ namespace DormitoryManagement.View
                 if (txtInputStudent.Text == "")
                 {
                     GetFullListStudent();
-                }    
+                }
                 else if (txtInputStudent.Text == "HHH")
                 {
                     txtInputStudent.Text = "";
@@ -161,6 +166,14 @@ namespace DormitoryManagement.View
         #endregion
 
         #region Methods
+        void AutoSizeModeColumn(DataGridView dataGridView)
+        {
+            for (int i = 0; i < dataGridView.Columns.Count - 1; i++)
+            {
+                dataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+            dataGridView.Columns[dgvStudent.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
         void GetFullListStudent()
         {
             List<StudentViewDTO> studentViewDTOs = StudentViewDAO.GetListStudentView();
@@ -206,8 +219,23 @@ namespace DormitoryManagement.View
             List<StudentViewDTO> studentViewDTOs = StudentViewDAO.SearchStudentViewByCollege(college);
             dgvStudent.DataSource = studentViewDTOs;
         }
+        /// <summary>
+        /// ---------------------------ROOM_REGISTRATION
+        /// </summary>
+        /// <param ></param>
+        /// <param></param>
+        void GetListRoomRegistration()
+        {
+            DataTable dataTable = RoomDAO.GetListRoomRegistration();
+            dgvRoomReg.DataSource = dataTable;
+        }
+        void GetListSector()
+        {
+            List<SectorDTO> sectorDTOs = SectorDAO.GetListSector();
+            cbbBuilding.DataSource = sectorDTOs;
+            cbbBuilding.DisplayMember = "SectorName";
+        }
         #endregion
-
 
     }
 }

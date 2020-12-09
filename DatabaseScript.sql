@@ -443,6 +443,37 @@ CREATE OR ALTER VIEW [V_STUDENTGENERAL] AS
 		INNER JOIN [dbo].[STUDENT] AS S ON S.[USER_ID] = U.[USER_ID]
 		INNER JOIN [dbo].[COLLEGE] AS C ON C.COLLEGE_ID = S.COLLEGE_ID
 GO
+-- Tạo view room regestration
+CREATE OR ALTER VIEW [V_ROOM_REGISTRATION] AS
+	SELECT 
+		RR.ROOM_REGISTRATION_ID AS [Id],
+		
+		S.SECTOR_NAME AS [Building],
+		R.ROOM_ID AS [Room],
+		STU.STUDENT_ID AS [Student Id],
+		STU.FULL_NAME AS [Student Name],
+
+		E.USER_ID AS [Employee Id],
+		E.FULL_NAME AS [Employee Name],
+
+		RR.START_DATE AS [Start date],
+		RR.DURATION AS [Duration]
+		
+	FROM [dbo].[ROOM_REGISTRATION] AS RR
+		INNER JOIN [dbo].[SECTOR] AS S ON S.SECTOR_ID = RR.SECTOR_ID
+		INNER JOIN [dbo].[ROOM] AS R ON R.ROOM_ID = RR.ROOM_ID
+		INNER JOIN (
+			SELECT U.SSN, S.STUDENT_ID, CONCAT(U.LAST_NAME, ' ', U.FIRST_NAME) AS FULL_NAME
+			FROM [dbo].[STUDENT] AS S 
+				INNER JOIN [dbo].[USER] AS U ON U.[USER_ID] = S.[USER_ID]
+ 		) AS STU ON STU.SSN = RR.SSN
+		INNER JOIN (
+			SELECT E.[USER_ID], CONCAT(U.LAST_NAME, ' ', U.FIRST_NAME) AS FULL_NAME
+			FROM [dbo].[EMPLOYEE] AS E 
+				INNER JOIN [dbo].[USER] AS U ON U.[USER_ID] = E.[USER_ID]
+		) AS E ON E.USER_ID = RR.EMPLOYEE_ID
+GO
+
 ----------------------
 -- FUNCTION
 ----------------------
@@ -1082,7 +1113,12 @@ AS BEGIN
 	SELECT * FROM dbo.[USER]
 END
 GO
-EXEC dbo.USP_GetListUser
+-- Lấy danh sách Room_Registration
+CREATE OR ALTER PROC USP_GetListRoomRegistration
+AS BEGIN
+	SELECT * FROM dbo.V_ROOM_REGISTRATION
+END
+GO
 ------------TRIGGER
 ----------------------
 ----------------------
