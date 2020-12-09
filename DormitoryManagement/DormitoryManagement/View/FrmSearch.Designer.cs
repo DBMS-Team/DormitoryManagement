@@ -47,56 +47,6 @@
             this.tabSearch = new System.Windows.Forms.TabControl();
             this.tabStudent = new System.Windows.Forms.TabPage();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSearchStudent = new System.Windows.Forms.Button();
-            this.cbbCategoryStudent = new System.Windows.Forms.ComboBox();
-            this.lbCategory = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtInputStudent = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvRoomReg = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbbCategoryRoomReg = new System.Windows.Forms.ComboBox();
-            this.cbbBuilding = new System.Windows.Forms.ComboBox();
-            this.btnSearchRoomReg = new System.Windows.Forms.Button();
-            this.cbbRoom = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tabBill = new System.Windows.Forms.TabPage();
-            this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtInput = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSearch_Bill = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbbRoom_Bill = new System.Windows.Forms.ComboBox();
-            this.cbbBuiding_Bill = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.ckbPaid = new System.Windows.Forms.CheckBox();
-            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.BillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomRegID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomReg_StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,6 +57,56 @@
             this.Phone1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Student_Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Student_Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSearchStudent = new System.Windows.Forms.Button();
+            this.cbbCategoryStudent = new System.Windows.Forms.ComboBox();
+            this.lbCategory = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtInputStudent = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvRoomReg = new System.Windows.Forms.DataGridView();
+            this.RoomRegID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomReg_StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbbCategoryRoomReg = new System.Windows.Forms.ComboBox();
+            this.btnSearchRoomReg = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbbRoom = new System.Windows.Forms.ComboBox();
+            this.cbbBuilding = new System.Windows.Forms.ComboBox();
+            this.txtInput = new System.Windows.Forms.TextBox();
+            this.tabBill = new System.Windows.Forms.TabPage();
+            this.dgvBill = new System.Windows.Forms.DataGridView();
+            this.BillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch_Bill = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbbRoom_Bill = new System.Windows.Forms.ComboBox();
+            this.cbbBuiding_Bill = new System.Windows.Forms.ComboBox();
+            this.ckbPaid = new System.Windows.Forms.CheckBox();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.tabSearch.SuspendLayout();
             this.tabStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -224,6 +224,66 @@
             this.dgvStudent.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvStudent.Size = new System.Drawing.Size(1468, 602);
             this.dgvStudent.TabIndex = 14;
+            // 
+            // UserID
+            // 
+            this.UserID.HeaderText = "User ID";
+            this.UserID.MinimumWidth = 6;
+            this.UserID.Name = "UserID";
+            // 
+            // SSN
+            // 
+            this.SSN.HeaderText = "SSN";
+            this.SSN.MinimumWidth = 6;
+            this.SSN.Name = "SSN";
+            // 
+            // StudentID
+            // 
+            this.StudentID.HeaderText = "Student ID";
+            this.StudentID.MinimumWidth = 6;
+            this.StudentID.Name = "StudentID";
+            // 
+            // FullName
+            // 
+            this.FullName.HeaderText = "Full Name";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            // 
+            // DoB
+            // 
+            this.DoB.HeaderText = "DoB";
+            this.DoB.MinimumWidth = 6;
+            this.DoB.Name = "DoB";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            // 
+            // Phone1
+            // 
+            this.Phone1.HeaderText = "Phone 1";
+            this.Phone1.MinimumWidth = 6;
+            this.Phone1.Name = "Phone1";
+            // 
+            // Student_Building
+            // 
+            this.Student_Building.HeaderText = "Building";
+            this.Student_Building.MinimumWidth = 6;
+            this.Student_Building.Name = "Student_Building";
+            // 
+            // Student_Room
+            // 
+            this.Student_Room.HeaderText = "Room";
+            this.Student_Room.MinimumWidth = 6;
+            this.Student_Room.Name = "Student_Room";
             // 
             // tableLayoutPanel1
             // 
@@ -349,7 +409,7 @@
             this.Total});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Goldenrod;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.DarkRed;
@@ -380,6 +440,60 @@
             this.dgvRoomReg.Size = new System.Drawing.Size(1468, 602);
             this.dgvRoomReg.TabIndex = 15;
             // 
+            // RoomRegID
+            // 
+            this.RoomRegID.HeaderText = "RoomReg ID";
+            this.RoomRegID.MinimumWidth = 6;
+            this.RoomRegID.Name = "RoomRegID";
+            // 
+            // CreatedTime
+            // 
+            this.CreatedTime.HeaderText = "Created Time";
+            this.CreatedTime.MinimumWidth = 6;
+            this.CreatedTime.Name = "CreatedTime";
+            // 
+            // Building
+            // 
+            this.Building.HeaderText = "Building";
+            this.Building.MinimumWidth = 6;
+            this.Building.Name = "Building";
+            // 
+            // Room
+            // 
+            this.Room.HeaderText = "Room";
+            this.Room.MinimumWidth = 6;
+            this.Room.Name = "Room";
+            // 
+            // RoomReg_StudentID
+            // 
+            this.RoomReg_StudentID.HeaderText = "Student ID";
+            this.RoomReg_StudentID.MinimumWidth = 6;
+            this.RoomReg_StudentID.Name = "RoomReg_StudentID";
+            // 
+            // EmployeeID
+            // 
+            this.EmployeeID.HeaderText = "Employee ID";
+            this.EmployeeID.MinimumWidth = 6;
+            this.EmployeeID.Name = "EmployeeID";
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Start Date";
+            this.StartDate.MinimumWidth = 6;
+            this.StartDate.Name = "StartDate";
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.MinimumWidth = 6;
+            this.Duration.Name = "Duration";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 5;
@@ -406,6 +520,18 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1468, 80);
             this.tableLayoutPanel3.TabIndex = 13;
             // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label7.Location = new System.Drawing.Point(371, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(359, 40);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "What to search:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // cbbCategoryRoomReg
             // 
             this.cbbCategoryRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -417,18 +543,6 @@
             this.cbbCategoryRoomReg.Name = "cbbCategoryRoomReg";
             this.cbbCategoryRoomReg.Size = new System.Drawing.Size(359, 31);
             this.cbbCategoryRoomReg.TabIndex = 15;
-            // 
-            // cbbBuilding
-            // 
-            this.cbbBuilding.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbBuilding.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbBuilding.FormattingEnabled = true;
-            this.cbbBuilding.Location = new System.Drawing.Point(738, 44);
-            this.cbbBuilding.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbBuilding.Name = "cbbBuilding";
-            this.cbbBuilding.Size = new System.Drawing.Size(285, 31);
-            this.cbbBuilding.TabIndex = 14;
             // 
             // btnSearchRoomReg
             // 
@@ -444,18 +558,6 @@
             this.btnSearchRoomReg.TabIndex = 13;
             this.btnSearchRoomReg.Text = "SEARCH";
             this.btnSearchRoomReg.UseVisualStyleBackColor = true;
-            // 
-            // cbbRoom
-            // 
-            this.cbbRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbRoom.FormattingEnabled = true;
-            this.cbbRoom.Location = new System.Drawing.Point(1031, 44);
-            this.cbbRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbRoom.Name = "cbbRoom";
-            this.cbbRoom.Size = new System.Drawing.Size(285, 31);
-            this.cbbRoom.TabIndex = 11;
             // 
             // label4
             // 
@@ -492,6 +594,38 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Room:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbbRoom
+            // 
+            this.cbbRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbRoom.FormattingEnabled = true;
+            this.cbbRoom.Location = new System.Drawing.Point(1031, 44);
+            this.cbbRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbRoom.Name = "cbbRoom";
+            this.cbbRoom.Size = new System.Drawing.Size(285, 31);
+            this.cbbRoom.TabIndex = 11;
+            // 
+            // cbbBuilding
+            // 
+            this.cbbBuilding.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbBuilding.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbBuilding.FormattingEnabled = true;
+            this.cbbBuilding.Location = new System.Drawing.Point(738, 44);
+            this.cbbBuilding.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbBuilding.Name = "cbbBuilding";
+            this.cbbBuilding.Size = new System.Drawing.Size(285, 31);
+            this.cbbBuilding.TabIndex = 14;
+            // 
+            // txtInput
+            // 
+            this.txtInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInput.Location = new System.Drawing.Point(370, 43);
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(361, 30);
+            this.txtInput.TabIndex = 19;
             // 
             // tabBill
             // 
@@ -569,25 +703,59 @@
             this.dgvBill.Size = new System.Drawing.Size(1468, 602);
             this.dgvBill.TabIndex = 15;
             // 
-            // label7
+            // BillID
             // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label7.Location = new System.Drawing.Point(371, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(359, 40);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "What to search:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BillID.HeaderText = "Bill ID";
+            this.BillID.MinimumWidth = 6;
+            this.BillID.Name = "BillID";
             // 
-            // txtInput
+            // Bill_CreatedTime
             // 
-            this.txtInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInput.Location = new System.Drawing.Point(370, 43);
-            this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(361, 30);
-            this.txtInput.TabIndex = 19;
+            this.Bill_CreatedTime.HeaderText = "Created Time";
+            this.Bill_CreatedTime.MinimumWidth = 6;
+            this.Bill_CreatedTime.Name = "Bill_CreatedTime";
+            // 
+            // Bill_Building
+            // 
+            this.Bill_Building.HeaderText = "Building";
+            this.Bill_Building.MinimumWidth = 6;
+            this.Bill_Building.Name = "Bill_Building";
+            // 
+            // Bill_Room
+            // 
+            this.Bill_Room.HeaderText = "Room";
+            this.Bill_Room.MinimumWidth = 6;
+            this.Bill_Room.Name = "Bill_Room";
+            // 
+            // Month
+            // 
+            this.Month.HeaderText = "Month";
+            this.Month.MinimumWidth = 6;
+            this.Month.Name = "Month";
+            // 
+            // Year
+            // 
+            this.Year.HeaderText = "Year";
+            this.Year.MinimumWidth = 6;
+            this.Year.Name = "Year";
+            // 
+            // Bill_EmployeeID
+            // 
+            this.Bill_EmployeeID.HeaderText = "Employee ID";
+            this.Bill_EmployeeID.MinimumWidth = 6;
+            this.Bill_EmployeeID.Name = "Bill_EmployeeID";
+            // 
+            // Bill_Total
+            // 
+            this.Bill_Total.HeaderText = "Total";
+            this.Bill_Total.MinimumWidth = 6;
+            this.Bill_Total.Name = "Bill_Total";
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
             // 
             // tableLayoutPanel2
             // 
@@ -617,6 +785,18 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1468, 80);
             this.tableLayoutPanel2.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1175, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(140, 40);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Status:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -705,18 +885,6 @@
             this.cbbBuiding_Bill.Size = new System.Drawing.Size(285, 31);
             this.cbbBuiding_Bill.TabIndex = 14;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1175, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(140, 40);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Status:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // ckbPaid
             // 
             this.ckbPaid.AutoSize = true;
@@ -749,174 +917,6 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(287, 30);
             this.dtpToDate.TabIndex = 22;
-            // 
-            // BillID
-            // 
-            this.BillID.HeaderText = "Bill ID";
-            this.BillID.MinimumWidth = 6;
-            this.BillID.Name = "BillID";
-            // 
-            // Bill_CreatedTime
-            // 
-            this.Bill_CreatedTime.HeaderText = "Created Time";
-            this.Bill_CreatedTime.MinimumWidth = 6;
-            this.Bill_CreatedTime.Name = "Bill_CreatedTime";
-            // 
-            // Bill_Building
-            // 
-            this.Bill_Building.HeaderText = "Building";
-            this.Bill_Building.MinimumWidth = 6;
-            this.Bill_Building.Name = "Bill_Building";
-            // 
-            // Bill_Room
-            // 
-            this.Bill_Room.HeaderText = "Room";
-            this.Bill_Room.MinimumWidth = 6;
-            this.Bill_Room.Name = "Bill_Room";
-            // 
-            // Month
-            // 
-            this.Month.HeaderText = "Month";
-            this.Month.MinimumWidth = 6;
-            this.Month.Name = "Month";
-            // 
-            // Year
-            // 
-            this.Year.HeaderText = "Year";
-            this.Year.MinimumWidth = 6;
-            this.Year.Name = "Year";
-            // 
-            // Bill_EmployeeID
-            // 
-            this.Bill_EmployeeID.HeaderText = "Employee ID";
-            this.Bill_EmployeeID.MinimumWidth = 6;
-            this.Bill_EmployeeID.Name = "Bill_EmployeeID";
-            // 
-            // Bill_Total
-            // 
-            this.Bill_Total.HeaderText = "Total";
-            this.Bill_Total.MinimumWidth = 6;
-            this.Bill_Total.Name = "Bill_Total";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            // 
-            // RoomRegID
-            // 
-            this.RoomRegID.HeaderText = "RoomReg ID";
-            this.RoomRegID.MinimumWidth = 6;
-            this.RoomRegID.Name = "RoomRegID";
-            // 
-            // CreatedTime
-            // 
-            this.CreatedTime.HeaderText = "Created Time";
-            this.CreatedTime.MinimumWidth = 6;
-            this.CreatedTime.Name = "CreatedTime";
-            // 
-            // Building
-            // 
-            this.Building.HeaderText = "Building";
-            this.Building.MinimumWidth = 6;
-            this.Building.Name = "Building";
-            // 
-            // Room
-            // 
-            this.Room.HeaderText = "Room";
-            this.Room.MinimumWidth = 6;
-            this.Room.Name = "Room";
-            // 
-            // RoomReg_StudentID
-            // 
-            this.RoomReg_StudentID.HeaderText = "Student ID";
-            this.RoomReg_StudentID.MinimumWidth = 6;
-            this.RoomReg_StudentID.Name = "RoomReg_StudentID";
-            // 
-            // EmployeeID
-            // 
-            this.EmployeeID.HeaderText = "Employee ID";
-            this.EmployeeID.MinimumWidth = 6;
-            this.EmployeeID.Name = "EmployeeID";
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Start Date";
-            this.StartDate.MinimumWidth = 6;
-            this.StartDate.Name = "StartDate";
-            // 
-            // Duration
-            // 
-            this.Duration.HeaderText = "Duration";
-            this.Duration.MinimumWidth = 6;
-            this.Duration.Name = "Duration";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            // 
-            // UserID
-            // 
-            this.UserID.HeaderText = "User ID";
-            this.UserID.MinimumWidth = 6;
-            this.UserID.Name = "UserID";
-            // 
-            // SSN
-            // 
-            this.SSN.HeaderText = "SSN";
-            this.SSN.MinimumWidth = 6;
-            this.SSN.Name = "SSN";
-            // 
-            // StudentID
-            // 
-            this.StudentID.HeaderText = "Student ID";
-            this.StudentID.MinimumWidth = 6;
-            this.StudentID.Name = "StudentID";
-            // 
-            // FullName
-            // 
-            this.FullName.HeaderText = "Full Name";
-            this.FullName.MinimumWidth = 6;
-            this.FullName.Name = "FullName";
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.MinimumWidth = 6;
-            this.Gender.Name = "Gender";
-            // 
-            // DoB
-            // 
-            this.DoB.HeaderText = "DoB";
-            this.DoB.MinimumWidth = 6;
-            this.DoB.Name = "DoB";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            // 
-            // Phone1
-            // 
-            this.Phone1.HeaderText = "Phone 1";
-            this.Phone1.MinimumWidth = 6;
-            this.Phone1.Name = "Phone1";
-            // 
-            // Student_Building
-            // 
-            this.Student_Building.HeaderText = "Building";
-            this.Student_Building.MinimumWidth = 6;
-            this.Student_Building.Name = "Student_Building";
-            // 
-            // Student_Room
-            // 
-            this.Student_Room.HeaderText = "Room";
-            this.Student_Room.MinimumWidth = 6;
-            this.Student_Room.Name = "Student_Room";
             // 
             // FrmSearch
             // 
