@@ -15,9 +15,7 @@ namespace DormitoryManagement.View
 {
     public partial class FrmBill : Form
     {
-        private bool payment_status; 
         private UserDTO user;
-        private List<ServiceUnitDTO> listServiceUnit;
         public UserDTO User
         {
             get => user;
@@ -26,8 +24,6 @@ namespace DormitoryManagement.View
                 this.user = value;
             }
         }
-
-        public List<ServiceUnitDTO> ListServiceUnit { get => listServiceUnit; set => listServiceUnit = value; }
 
         public FrmBill(UserDTO user)
         {
@@ -39,6 +35,8 @@ namespace DormitoryManagement.View
         {
             List<ServiceDTO> ListService = ServiceDAO.GetListService();
             cbbServiceName.DataSource = ListService;
+            List<ServiceUnitDTO> ListServiceUnit = ServiceUnitDAO.GetListServiceUnit();
+            cbbServiceName.DataSource = ListServiceUnit;
             cbbServiceName.DisplayMember = "ServiceName";
             txtPricePerUnit.Text = ListServiceUnit[0].PricePerUnit.ToString();
             txtUnit.Text = ListServiceUnit[0].UnitName.ToString();

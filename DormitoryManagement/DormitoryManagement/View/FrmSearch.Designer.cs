@@ -968,7 +968,6 @@
         private System.Windows.Forms.DataGridView dgvStudent;
         private System.Windows.Forms.DataGridView dgvRoomReg;
         private System.Windows.Forms.DataGridView dgvBill;
-        private System.Windows.Forms.TabPage tabEmployee;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
