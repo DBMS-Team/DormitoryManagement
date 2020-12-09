@@ -102,6 +102,9 @@ CREATE TABLE [dbo].[USER] (
 	[USER_TYPE] VARCHAR(10),				-- ADMIN: TK QUẢN TRỊ, EMPLOYEE: NHÂN VIÊN, STUDENT: SINH VIÊN, RELATIVE: NGƯỜI THÂN
 
 )
+ALTER TABLE dbo.[USER] ADD CONSTRAINT [PK_UNIQUE] UNIQUE(SSN)
+GO
+
 ALTER TABLE dbo.[USER] ADD [STATUS] BIT DEFAULT 1
 GO
 
@@ -1073,6 +1076,13 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@COLLEGE_NAME) + '%'
 END
 GO
+-- Lấy danh sách user
+CREATE OR ALTER PROC USP_GetListUser
+AS BEGIN
+	SELECT * FROM dbo.[USER]
+END
+GO
+EXEC dbo.USP_GetListUser
 ------------TRIGGER
 ----------------------
 ----------------------

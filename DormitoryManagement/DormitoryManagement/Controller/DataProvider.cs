@@ -11,8 +11,8 @@ namespace DormitoryManagement.Controller
 {
     public static class DataProvider
     {
-        private static string connectionString = @"Data Source=DESKTOP-VJSMPL6;Initial Catalog=DormitoryManagement;Integrated Security=True";
-        //private static string connectionString = @"Data Source=Hiae\HOHUYHOANG;Initial Catalog=DormitoryManagement;Integrated Security=True";
+        //private static string connectionString = @"Data Source=DESKTOP-VJSMPL6;Initial Catalog=DormitoryManagement;Integrated Security=True";
+        private static string connectionString = @"Data Source=Hiae\HOHUYHOANG;Initial Catalog=DormitoryManagement;Integrated Security=True";
         //private string connectionString = @"Data Source=(local);Initial Catalog=DormitoryManagement;Integrated Security=True";
         //private static string connectionString = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
