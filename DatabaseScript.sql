@@ -51,7 +51,6 @@ GO
 
 
 -- ĐỊA CHỈ
-DROP TABLE IF EXISTS [dbo].[ADDRESS]
 CREATE TABLE [dbo].[ADDRESS] (
 	[ADDRESS_ID] BIGINT IDENTITY(1, 1),
 	[STREET] NVARCHAR(50) NULL,
@@ -76,6 +75,7 @@ CREATE TABLE [dbo].[COLLEGE] (
 )
 GO
 
+-- BẢO HIỂM Y TẾ
 CREATE TABLE [dbo].[INSURANCE] (
 	[INSURANCE_ID] VARCHAR(15) NOT NULL,
 	[BASE_PRACTICE] NVARCHAR(50) NULL, 			-- NƠI ĐĂNG KÝ KHÁM CHỮA BỆNH BAN ĐẦU
@@ -88,29 +88,30 @@ GO
 
 -- LƯU TÀI KHẢON ĐĂNG NHẬP VÀ THÔNG TIN NGƯỜI DÙNG
 CREATE TABLE [dbo].[USER] (
-	[USER_ID] BIGINT IDENTITY(1, 1),
-	[LAST_NAME] NVARCHAR(40),
-	[FIRST_NAME] NVARCHAR(20),
-	[DOB] DATE,								-- NGÀY SINH
-	[GENDER] NVARCHAR(5),					-- GIỚI TÍNH
-	[SSN] VARCHAR(12), 						-- CHỨNG MINH NHÂN DÂN
+	[USER_ID] BIGINT IDENTITY(1, 1) NOT NULL,
+	[LAST_NAME] NVARCHAR(40) NOT NULL,
+	[FIRST_NAME] NVARCHAR(20) NOT NULL,
+	[DOB] DATE NOT NULL,								-- NGÀY SINH
+	[GENDER] NVARCHAR(5) NOT NULL,						-- GIỚI TÍNH
+	[SSN] VARCHAR(12) NULL, 							-- CHỨNG MINH NHÂN DÂN
 
 	[ADDRESS_ID] BIGINT NOT NULL,
-	[PHONE_NUMBER_1] VARCHAR(15),			-- SỐ ĐIỆN THOẠI 1
-	[PHONE_NUMBER_2] VARCHAR(15),			-- SỐ ĐIỆN THOẠI 2
-	[EMAIL] VARCHAR(40),
-	[IMAGE_PATH] VARCHAR(300),
+	[PHONE_NUMBER_1] VARCHAR(15) NULL,					-- SỐ ĐIỆN THOẠI 1
+	[PHONE_NUMBER_2] VARCHAR(15) NULL,					-- SỐ ĐIỆN THOẠI 2
+	[EMAIL] VARCHAR(40) NULL,
+	[IMAGE_PATH] VARCHAR(300) NULL,
 
-	[USERNAME] VARCHAR(16),
-	[PASSWORD] VARCHAR(32),
-	[USER_TYPE] VARCHAR(10),				-- ADMIN: TK QUẢN TRỊ, EMPLOYEE: NHÂN VIÊN, STUDENT: SINH VIÊN, RELATIVE: NGƯỜI THÂN
-	[STATUS] BIT DEFAULT 1
-
+	[USERNAME] VARCHAR(16) NOT NULL,
+	[PASSWORD] VARCHAR(32) NOT NULL,
+	[USER_TYPE] VARCHAR(10) NOT NULL DEFAULT 'STUDENT',	-- ADMIN: TK QUẢN TRỊ, EMPLOYEE: NHÂN VIÊN, STUDENT: SINH VIÊN, RELATIVE: NGƯỜI THÂN
+	[STATUS] BIT DEFAULT 1 NOT NULL
 )
-ALTER TABLE dbo.[USER] ADD CONSTRAINT [PK_UNIQUE] UNIQUE(SSN)
+GO
+
 ALTER TABLE dbo.[USER] ADD CONSTRAINT [PK_USER] PRIMARY KEY([USER_ID])
 ALTER TABLE dbo.[USER] ADD CONSTRAINT [FK_USER_ADDRESS] FOREIGN KEY ([ADDRESS_ID]) REFERENCES [ADDRESS]([ADDRESS_ID])
 ALTER TABLE dbo.[USER] ADD CONSTRAINT [USERNAME_UNINE] UNIQUE(USERNAME)
+ALTER TABLE dbo.[USER] ADD CONSTRAINT [PK_UNIQUE] UNIQUE(SSN)
 GO
 
 -- Set nullable unique for column email
@@ -1137,94 +1138,4 @@ AS
 	SELECT @Bill_ID = (SELECT MAX(dbo.PAYMENT.BILL_ID) FROM dbo.PAYMENT)
 	UPDATE dbo.BILL
 	SET STATUS = 1 WHERE dbo.BILL.BILL_ID = @Bill_ID
-GO
-
-
-
--------------------------------------------------------------------------------------------
-
--- Insert thông tin trường cao đẳng đại học
-SET IDENTITY_INSERT [dbo].[COLLEGE] ON 
-
-INSERT [dbo].[COLLEGE] ([COLLEGE_ID], [COLLEGE_CODE], [COLLEGE_NAME]) VALUES 
-	(1, N'ANS', N'Đại Học An Ninh Nhân Dân'),
-	(2, N'BVS', N'Học Viện Công Nghệ Bưu Chính Viễn Thông (phía Nam)'),
-	(3, N'CSS', N'Đại Học Cảnh Sát Nhân Dân'),
-	(4, N'DCT', N'Đại Học Công Nghiệp Thực Phẩm TPHCM'),
-	(5, N'DKC', N'Đại học Công Nghệ TPHCM'),
-	(6, N'DLS', N'Đại Học Lao Động – Xã Hội ( Cơ sở phía Nam)'),
-	(7, N'DMS', N'Đại Học Tài Chính Marketing'),
-	(8, N'DNT', N'Đại Học Ngoại Ngữ – Tin Học TPHCM'),
-	(9, N'DSD', N'Đại Học Sân Khấu, Điện Ảnh TPHCM'),
-	(10, N'DSG', N'Đại Học Công Nghệ Sài Gòn'),
-	(11, N'DTM', N'ĐH Tài Nguyên môi trường TPHCM'),
-	(12, N'DTT', N'Đại Học Tôn Đức Thắng'),
-	(13, N'DVH', N'Đại Học Văn Hiến'),
-	(14, N'DVL', N'Đại Học Văn Lang'),
-	(15, N'GDU', N'Đại Học Gia Định'),
-	(16, N'GSA', N'Đại Học Giao Thông Vận Tải ( Cơ sở Phía Nam)'),
-	(17, N'GTS', N'Đại Học Giao Thông Vận Tải TPHCM'),
-	(18, N'HCS', N'Học Viện Hành Chính Quốc Gia (phía Nam)'),
-	(19, N'HHK', N'Học Viện Hàng Không Việt Nam'),
-	(20, N'HIU', N'Đại Học Quốc Tế Hồng Bàng'),
-	(21, N'HSU', N'Đại Học Hoa Sen'),
-	(22, N'IUH', N'Đại Học Công Nghiệp TPHCM'),
-	(23, N'KSA', N'Đại Học Kinh Tế TPHCM'),
-	(24, N'KTS', N'Đại Học Kiến Trúc TPHCM'),
-	(25, N'LPS', N'Đại Học Luật TPHCM'),
-	(26, N'MBS', N'Đại Học Mở TPHCM'),
-	(27, N'MTS', N'Đại Học Mỹ Thuật TPHCM'),
-	(28, N'NHS', N'Đại Học Ngân Hàng TPHCM'),
-	(29, N'NLS', N'Đại Học Nông Lâm TPHCM'),
-	(30, N'NTS', N'Đại Học Ngoại Thương (phía Nam)'),
-	(31, N'NTT', N'Đại Học Nguyễn Tất Thành'),
-	(32, N'NVS', N'Nhạc Viện TPHCM'),
-	(33, N'PCS', N'Đại Học Phòng Cháy Chữa Cháy (phía Nam)'),
-	(34, N'PCS1', N'Đại Học Phòng Cháy Chữa Cháy (Hệ Dân sự Phía Nam)'),
-	(35, N'QSB', N'Đại Học Bách Khoa – Đại Học Quốc Gia TPHCM'),
-	(36, N'QSC', N'Đại Học Công Nghệ Thông Tin – Đại Học Quốc Gia TPHCM'),
-	(37, N'QSK', N'Đại học Kinh Tế – Luật – Đại Học Quốc Gia TPHCM'),
-	(38, N'QSQ', N'Đại Học Quốc Tế – Đại Học Quốc Gia TPHCM'),
-	(39, N'QST', N'Đại Học Khoa Học Tự Nhiên – Đại Học Quốc Gia TPHCM'),
-	(40, N'QSX', N'Đại Học Khoa Học Xã Hội và Nhân Văn – Đại Học Quốc Gia TPHCM'),
-	(41, N'QSY', N'Khoa Y - Đại học Quốc Gia TPHCM'),
-	(42, N'RMU', N'Đại Học Quốc Tế RMIT Việt Nam'),
-	(43, N'SGD', N'Đại Học Sài Gòn'),
-	(44, N'SIU', N'Đại Học Quốc Tế Sài Gòn'),
-	(45, N'SPK', N'Đại Học Sư Phạm Kỹ Thuật TPHCM'),
-	(46, N'SPS', N'Đại Học Sư Phạm TPHCM'),
-	(47, N'STS', N'Đại Học Sư Phạm Thể DụcThể Thao TPHCM'),
-	(48, N'TDS', N'Đại Học Thể Dục Thể Thao TPHCM'),
-	(49, N'TLS', N'Đại Học Thủy Lợi ( Cơ sở 2 )'),
-	(50, N'TYS', N'Đại Học Y Khoa Phạm Ngọc Thạch'),
-	(51, N'UEF', N'Đại Học Kinh Tế -Tài Chính TPHCM'),
-	(52, N'VGU', N'Đại Học Việt Đức'),
-	(53, N'VHS', N'Đại Học Văn Hóa TPHCM'),
-	(54, N'VPH', N'Trường Sĩ Quan Kĩ Thuật Quân Sự - Hệ Quân sự - Đại Học Trần Đại Nghĩa'),
-	(55, N'YDS', N'Đại Học Y Dược TPHCM'),
-	(56, N'ZPH', N'Trường Sĩ Quan Kĩ Thuật Quân Sự - Hệ Dân sự - Đại Học Trần Đại Nghĩa'),
-	(57, N'CBC', N'Cao Đẳng Bán Công Công Nghệ và Quản Trị Doanh Nghiệp'),
-	(58, N'CBV', N'Cao Đẳng Bách Việt'),
-	(59, N'CCO', N'Cao Đẳng Công Nghệ Thủ Đức'),
-	(60, N'CCS', N'Cao Đẳng Kinh Tế Kỹ Thuật Vinatex TPHCM'),
-	(61, N'CDE', N'Cao Đẳng Điện Lực TPHCM'),
-	(62, N'CDV', N'Cao Đẳng Viễn Đông'),
-	(63, N'CEP', N'Cao Đẳng Kinh Tế TPHCM'),
-	(64, N'CES', N'Cao Đẳng Công Thương TPHCM'),
-	(65, N'CET', N'Cao Đẳng Kinh Tế-Công Nghệ TPHCM'),
-	(66, N'CGS', N'Cao Đẳng Giao Thông Vận Tải 3'),
-	(67, N'CGT', N'Cao Đẳng Giao Thông Vận Tải TPHCM'),
-	(68, N'CKC', N'Cao Đẳng Kỹ Thuật Cao Thắng'),
-	(69, N'CKD', N'Cao Đẳng Kinh Tế Đối Ngoại'),
-	(70, N'CKM', N'Cao Đẳng Kinh Tế Kỹ Thuật Miền Nam'),
-	(71, N'CKP', N'Cao Đẳng Kỹ Thuật Lý Tự Trọng TPHCM'),
-	(72, N'CM3', N'Cao Đẳng Sư Phạm Trung Ương TPHCM'),
-	(73, N'CPL', N'Cao Đẳng Kinh Tế Kỹ Thuật TP HCM'),
-	(74, N'CPS', N'Cao Đẳng Phát Thanh Truyền Hình II'),
-	(75, N'CTS', N'Cao Đẳng Tài Chính Hải Quan'),
-	(76, N'CVN', N'Cao Đẳng Văn Hóa Nghệ Thuật TPHCM'),
-	(77, N'CVS', N'Cao Đẳng Văn Hóa Nghệ Thuật và Du Lịch Sài Gòn'),
-	(78, N'CVX', N'Cao Đẳng Kỹ Thuật-Công Nghệ Vạn Xuân'),
-	(79, N'CXS', N'Cao Đẳng Xây Dựng Số 2')
-SET IDENTITY_INSERT [dbo].[COLLEGE] OFF
 GO
