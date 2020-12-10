@@ -158,6 +158,7 @@ CREATE TABLE [dbo].[STUDENT] (
 	CONSTRAINT [FK_STUDENT_INSURANCE] FOREIGN KEY ([INSURANCE_ID]) REFERENCES [INSURANCE]([INSURANCE_ID]),
 )
 GO
+ALTER TABLE dbo.STUDENT ADD [STATUS_REGISTRATION_ROOM] BIT DEFAULT 0
 
 -- THÂN NHÂN
 CREATE TABLE [dbo].[RELATIVE] (
@@ -255,12 +256,15 @@ CREATE TABLE [dbo].[BILL_DETAIL] (
 	[SERVICE_ID] INT NOT NULL,
 	[OLD_QUANTITY] INT NOT NULL,			-- SỐ CŨ
 	[NEW_QUANTITY] INT NOT NULL,			-- SỐ MỚI
-
+	[UNIT_NAME] NVARCHAR(50),
+	[TOTAL_COST] DECIMAL(19,4)
 	CONSTRAINT [PK_BILL_DETAIL] PRIMARY KEY ([BILL_DETAIL_ID], [BILL_ID]),
 	CONSTRAINT [FK_BILL_DETAIL_BILL] FOREIGN KEY ([BILL_ID]) REFERENCES [BILL]([BILL_ID]),
 	CONSTRAINT [FK_BILL_DETAIL_SERVICE] FOREIGN KEY ([SERVICE_ID]) REFERENCES [SERVICE]([SERVICE_ID]),
 )
 GO
+
+
 
 -- THANH TOÁN
 CREATE TABLE [dbo].[PAYMENT] (
@@ -296,7 +300,15 @@ CREATE TABLE [dbo].[ROOM_REGISTRATION]
 	CONSTRAINT [FK_SECTOR_ID] FOREIGN KEY ([SECTOR_ID]) REFERENCES [dbo].[SECTOR]([SECTOR_ID]),
 )
 GO
-
+-- BẢN TẠM BILL
+CREATE TABLE [dbo].[TEMPT]
+(
+	T_Sector_ID VARCHAR(10),
+	T_Room_ID NVARCHAR(10),
+	T_Month INT,
+	T_Year INT
+)
+GO
 
 ----------------------
 -- VIEW
@@ -675,7 +687,52 @@ BEGIN
 	RETURN
 END
 GO
-
+-- Trả về giao diện Bill
+CREATE OR ALTER FUNCTION UFN_ReturnForViewBillDetail
+(
+	@Sector_Name VARCHAR(10), 
+	@Room_ID NVARCHAR(10), 
+	@Month INT, 
+	@Year INT)
+RETURNS @View_BillDetail TABLE (
+	Service_ID INT, 
+	ServiceName NVARCHAR(50), 
+	Unit_Name NVARCHAR(50), 
+	PricePerUnit DECIMAL(19,4), 
+	Old_Quantity INT, 
+	New_Quantity INT, 
+	Total_Cost DECIMAL(19,4),
+	Bill_Detail_ID INT, 
+	Bill_ID INT)
+AS
+BEGIN
+    DECLARE @Bill_ID INT, @Service_Name NVARCHAR(50)
+	SELECT @Bill_ID = dbo.UFN_GetBillIdBySectornameRoomidMonthYear(@Sector_Name,@Room_ID,@Month,@Year)
+	INSERT INTO @View_BillDetail
+	SELECT dbo.BILL_DETAIL.SERVICE_ID, dbo.SERVICE.SERVICE_NAME, 
+	dbo.BILL_DETAIL.UNIT_NAME, dbo.SERVICE.PRICE_PER_UNIT, 
+	dbo.BILL_DETAIL.OLD_QUANTITY, 
+	dbo.BILL_DETAIL.NEW_QUANTITY, 
+	dbo.BILL_DETAIL.TOTAL_COST, 
+	dbo.BILL_DETAIL.BILL_DETAIL_ID, 
+	dbo.BILL_DETAIL.BILL_ID
+	FROM dbo.BILL_DETAIL INNER JOIN dbo.SERVICE ON SERVICE.SERVICE_ID = BILL_DETAIL.SERVICE_ID INNER JOIN 
+	dbo.BILL ON BILL.BILL_ID = BILL_DETAIL.BILL_ID
+	WHERE dbo.BILL_DETAIL.BILL_ID = @Bill_ID AND dbo.BILL.STATUS = 0
+	RETURN
+END
+GO
+-- GetSectorIDBySectorName
+CREATE FUNCTION UFN_Get_SectorID_By_SectorName
+(@SECTOR_NAME NVARCHAR(50))
+RETURNS VARCHAR(10)
+AS
+BEGIN
+    DECLARE @SECTOR_ID VARCHAR(10)
+	SELECT @SECTOR_ID = dbo.SECTOR.SECTOR_ID FROM dbo.SECTOR WHERE dbo.SECTOR.SECTOR_NAME = @SECTOR_NAME
+	RETURN @SECTOR_ID
+END
+GO
 ----------------------
 -- PROC
 ----------------------
@@ -1136,8 +1193,254 @@ AS BEGIN
 	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE Building = @SECTOR_NAME AND Room = @ROOM_ID
 END
 GO
+-- Lấy danh sách đơn vị dịch vụ
+CREATE OR ALTER PROC [dbo].[USP_GetListServiceUnit]
+AS
+BEGIN
+    SELECT *
+	FROM dbo.V_SERVIE_UNIT
+	WHERE STATUS = 1
+END
+-- Lấy danh sách College
+CREATE OR ALTER PROC USP_GetListCollege
+AS
+BEGIN
+    SELECT *
+	FROM dbo.COLLEGE
+END
+GO
+-- Thêm bảo hiểm
+CREATE OR ALTER PROC USP_INSERT_INSURANCE
+(@Insurence_ID VARCHAR(15))
+AS
+BEGIN
+    INSERT INTO dbo.INSURANCE
+    (
+        INSURANCE_ID,
+        BASE_PRACTICE,
+        REGISTRATION_DATE,
+        DURATION
+    )
+    VALUES
+    (   @Insurence_ID,        
+        NULL,       
+        NULL, 
+        NULL
+        )
+END
+GO
+--- THÊM USER - STUDENT
+CREATE OR ALTER PROC USP_INSERT_USER_STUDENT
+(
+	@LAST_NAME NVARCHAR(40),
+	@FIRST_NAME NVARCHAR(20),
+	@DOB DATE,@GENDER NVARCHAR(5),
+	@SSN VARCHAR(12),
+	@PHONE_NUMBER_1 VARCHAR(15),
+	@PHONE_NUMBER_2 VARCHAR(15),
+	@EMAIL VARCHAR(40),
+	@IMAGE_PATH VARCHAR(300),
+	@USER_TYPE VARCHAR(10),
+	@STATUS BIT
+)
+AS
+BEGIN
+	DECLARE @ADDRESS_ID INT
+	SELECT @ADDRESS_ID = (SELECT MAX(ADDRESS_ID) FROM dbo.ADDRESS)
+	INSERT INTO dbo.[USER]
+	(
+	    LAST_NAME,
+	    FIRST_NAME,
+	    DOB,
+	    GENDER,
+	    SSN,
+	    ADDRESS_ID,
+	    PHONE_NUMBER_1,
+	    PHONE_NUMBER_2,
+	    EMAIL,
+	    IMAGE_PATH,
+	    USERNAME,
+	    PASSWORD,
+	    USER_TYPE,
+	    STATUS
+	)
+	VALUES
+	(   @LAST_NAME,       -- LAST_NAME - nvarchar(40)
+	    @FIRST_NAME,       -- FIRST_NAME - nvarchar(20)
+	    @DOB, -- DOB - date
+	    @GENDER,       -- GENDER - nvarchar(5)
+	    @SSN,        -- SSN - varchar(12)
+	    @ADDRESS_ID,         -- ADDRESS_ID - bigint
+	    @PHONE_NUMBER_1,        -- PHONE_NUMBER_1 - varchar(15)
+	    @PHONE_NUMBER_2,        -- PHONE_NUMBER_2 - varchar(15)
+	    @EMAIL,        -- EMAIL - varchar(40)
+	    @IMAGE_PATH,        -- IMAGE_PATH - varchar(300)
+	    @EMAIL,        -- USERNAME - varchar(16)
+	    'student',        -- PASSWORD - varchar(32)
+	    @USER_TYPE,        -- USER_TYPE - varchar(10)
+	    @STATUS       -- STATUS - bit
+	    )
+END
+GO
+-- THÊM SINH VIÊN
+CREATE PROC USP_INSERT_STUDENT
+(
+	@STUDENT_ID VARCHAR(15), 
+	@COLLEGE_NAME NVARCHAR(50),
+	@FACULTY NVARCHAR(50), 
+	@MAJORS NVARCHAR(50),
+	@INSURANCE_ID VARCHAR(15),
+	@STATUS_REGISTRATION_ROOM BIT
+)
+AS
+BEGIN
+    DECLARE @USER_ID BIGINT, @COLLEGE_ID INT
+	SELECT @USER_ID = (SELECT MAX(USER_ID) FROM dbo.[USER])
+	SELECT @COLLEGE_ID = dbo.COLLEGE.COLLEGE_ID FROM dbo.COLLEGE WHERE dbo.COLLEGE.COLLEGE_NAME = @COLLEGE_NAME
+	INSERT INTO dbo.STUDENT
+	(
+	    USER_ID,
+	    STUDENT_ID,
+	    COLLEGE_ID,
+	    FACULTY,
+	    MAJORS,
+	    INSURANCE_ID,
+	    STATUS_REGISTRATION_ROOM
+	)
+	VALUES
+	(   @USER_ID,   -- USER_ID - bigint
+	    @STUDENT_ID,  -- STUDENT_ID - varchar(15)
+	    @COLLEGE_ID,   -- COLLEGE_ID - int
+	    @FACULTY, -- FACULTY - nvarchar(50)
+	    @MAJORS, -- MAJORS - nvarchar(50)
+	    @INSURANCE_ID,  -- INSURANCE_ID - varchar(15)
+	    @STATUS_REGISTRATION_ROOM -- STATUS_REGISTRATION_ROOM - bit
+	    )
+END
+GO
 
-------------TRIGGER
+-- TRANSACTION -- THÊM 1 SINH VIÊN
+CREATE OR ALTER PROC TRANS_INSERT_STUDENT
+(
+	@Street NVARCHAR(50), 
+	@Commune_Name NVARCHAR(50), 
+	@District_Name NVARCHAR(50),
+	@Province_Name NVARCHAR(50),
+	@Insurence_ID VARCHAR(15),
+	@LAST_NAME NVARCHAR(40),
+	@FIRST_NAME NVARCHAR(20),
+	@DOB DATE,@GENDER NVARCHAR(5),
+	@SSN VARCHAR(12),
+	@PHONE_NUMBER_1 VARCHAR(15),
+	@PHONE_NUMBER_2 VARCHAR(15),
+	@EMAIL VARCHAR(40),
+	@IMAGE_PATH VARCHAR(300),
+	@USER_TYPE VARCHAR(10),
+	@STATUS BIT,
+	@STUDENT_ID VARCHAR(15), 
+	@COLLEGE_NAME NVARCHAR(50),
+	@FACULTY NVARCHAR(50), 
+	@MAJORS NVARCHAR(50)
+)
+AS
+BEGIN
+	BEGIN TRANSACTION
+		CREATE TABLE TEMPT_STUDENT
+		(
+			T_SSN VARCHAR(12),
+			T_INSURANCE_ID VARCHAR(15),
+			T_PHONENUMBER1 VARCHAR(15),
+			T_PHONENUMBER2 VARCHAR(15),
+			T_EMAIL VARCHAR(40)
+		)
+		INSERT INTO dbo.TEMPT_STUDENT
+		(
+			T_SSN,
+			T_INSURANCE_ID,
+			T_PHONENUMBER1,
+			T_PHONENUMBER2,
+			T_EMAIL
+		)
+		SELECT dbo.[USER].SSN, dbo.STUDENT.INSURANCE_ID, dbo.[USER].PHONE_NUMBER_1, dbo.[USER].PHONE_NUMBER_2, dbo.[USER].EMAIL
+		FROM dbo.[USER] INNER JOIN dbo.STUDENT ON STUDENT.USER_ID = [USER].USER_ID
+		EXEC dbo.USP_INSERT_INSURANCE @Insurence_ID = @Insurence_ID 
+		EXEC dbo.USP_INSERT_ADDRESS @Street = @Street, 
+		                            @Commune_Name = @Commune_Name, 
+		                            @District_Name = @District_Name, 
+		                            @Province_Name = @Province_Name 
+		EXEC dbo.USP_INSERT_USER_STUDENT @LAST_NAME = @LAST_NAME,     -- nvarchar(40)
+		                                 @FIRST_NAME = @FIRST_NAME,    -- nvarchar(20)
+		                                 @DOB = @DOB,  -- date
+		                                 @GENDER = @GENDER,        -- nvarchar(5)
+		                                 @SSN = @SSN,            -- varchar(12)
+		                                 @PHONE_NUMBER_1 = @PHONE_NUMBER_1, -- varchar(15)
+		                                 @PHONE_NUMBER_2 = @PHONE_NUMBER_2, -- varchar(15)
+		                                 @EMAIL = @EMAIL,          -- varchar(40)
+		                                 @IMAGE_PATH = '',     -- varchar(300)
+		                                 @USER_TYPE = @USER_TYPE,      -- varchar(10)
+		                                 @STATUS = @STATUS        -- bit
+		EXEC dbo.USP_INSERT_STUDENT @STUDENT_ID = @STUDENT_ID,                -- varchar(15)
+		                            @COLLEGE_NAME = @COLLEGE_NAME,             -- nvarchar(50)
+		                            @FACULTY = @FACULTY,                  -- nvarchar(50)
+		                            @MAJORS = @MAJORS,                   -- nvarchar(50)
+		                            @INSURANCE_ID = @Insurence_ID,              -- varchar(15)
+		                            @STATUS_REGISTRATION_ROOM = 0 -- bit
+		
+		IF( @SSN IN (SELECT dbo.TEMPT_STUDENT.T_SSN FROM dbo.TEMPT_STUDENT))
+		BEGIN
+			RAISERROR('SSN Is exist',16,1)
+		    ROLLBACK
+		END
+		ELSE
+		BEGIN
+			DROP TABLE dbo.TEMPT_STUDENT
+			COMMIT
+		END	
+END
+GO
+--USP_INSERT_ROOMREGISTRATION
+CREATE PROC USP_INSERT_ROOMREGISTRATION
+(
+	@EMPLOYEE_ID BIGINT, 
+	@SSN VARCHAR(12), 
+	@SECTOR_NAME NVARCHAR(50), 
+	@ROOM_ID NVARCHAR(10), 
+	@START_DAY DATETIME, 
+	@SEMESTER INT, 
+	@ACADEMIC_YEAR INT, 
+	@DURATION NVARCHAR(20), 
+	@STATUS BIT
+)
+AS
+BEGIN
+    DECLARE @SECTOR_ID VARCHAR(10)
+	SELECT @SECTOR_ID = dbo.UFN_Get_SectorID_By_SectorName(@SECTOR_NAME)
+	INSERT INTO dbo.ROOM_REGISTRATION
+	(
+	    SSN,
+	    ROOM_ID,
+	    EMPLOYEE_ID,
+	    SECTOR_ID,
+	    START_DATE,
+	    SEMESTER,
+	    ACADEMIC_YEAR,
+	    DURATION,
+	    STATUS
+	)
+	VALUES
+	(   @SSN,
+	    @ROOM_ID,
+	    @EMPLOYEE_ID, 
+	    @SECTOR_ID, 
+	    @START_DAY,
+	    @SEMESTER,
+	    @ACADEMIC_YEAR, 
+	    @DURATION,
+	    @STATUS
+	    )
+END
+GO
+------------TRIGGER----
 ----------------------
 ----------------------
 -- Thay đổi mật khẩu mặt định
@@ -1170,5 +1473,82 @@ AS
 	BEGIN
 	    UPDATE dbo.BILL
 		SET STATUS = 1 WHERE dbo.BILL.BILL_ID = @Bill_ID
+	END
+GO
+-- TRG CHECKBILL
+CREATE OR ALTER TRIGGER CheckBill
+ON dbo.BILL
+FOR INSERT
+AS
+	DECLARE @Sector_ID VARCHAR(10),
+		    @Room_ID NVARCHAR(10),
+			@Month INT,
+			@Year INT,
+			@Old_Sector_Name VARCHAR(10),
+			@Old_Room_ID NVARCHAR(10),
+			@Old_Month INT,
+			@Old_Year INT
+	SELECT @Sector_ID = Inserted.Sector_ID FROM Inserted
+	SELECT @Room_ID = Inserted.ROOM_ID FROM Inserted
+	SELECT @Month = Inserted.MONTH FROM Inserted
+	SELECT @Year = Inserted.YEAR FROM Inserted
+	IF(@Sector_ID IN (SELECT dbo.TEMPT.T_Sector_ID FROM dbo.TEMPT)
+		AND @Room_ID IN (SELECT dbo.TEMPT.T_Room_ID FROM dbo.TEMPT WHERE dbo.TEMPT.T_Sector_ID = @Sector_ID)
+		AND @Month IN (SELECT dbo.TEMPT.T_MONTH FROM dbo.TEMPT WHERE dbo.TEMPT.T_Sector_ID = @Sector_ID AND dbo.TEMPT.T_Room_ID = @Room_ID)
+		AND @Year IN (SELECT dbo.TEMPT.T_YEAR FROM dbo.TEMPT WHERE dbo.TEMPT.T_Sector_ID = @Sector_ID AND dbo.TEMPT.T_Room_ID = @Room_ID AND dbo.TEMPT.T_MONTH = @Month)
+		)
+	BEGIN
+		RAISERROR(N'Bill Is Exists',16,1)
+		ROLLBACK
+	END
+	ELSE
+		BEGIN
+				INSERT INTO dbo.TEMPT
+				(
+					T_Sector_ID,
+					T_Room_ID,
+					T_Month,
+					T_Year
+				)
+				VALUES
+				(   
+					@Sector_ID,
+					@Room_ID, 
+					@Month,
+					@Year 
+				)
+		END
+GO
+--TRG_INSERT_ROOM_REGISTRATION
+CREATE TRIGGER TRG_INSERT_ROOM_REGISTRATION
+ON dbo.ROOM_REGISTRATION
+FOR INSERT
+AS
+	DECLARE @SSN VARCHAR(12), @SECTOR_ID VARCHAR(10), @ROOM_ID NVARCHAR(10), @CAPACITY INT, @CURRENT_REGISTRATER INT
+	SELECT @SSN = Inserted.SSN FROM Inserted
+	SELECT @SECTOR_ID =  Inserted.SECTOR_ID FROM Inserted
+	SELECT @ROOM_ID = Inserted.ROOM_ID FROM Inserted
+	SELECT @CAPACITY = dbo.ROOM_TYPE.CAPACITY FROM dbo.ROOM INNER JOIN dbo.ROOM_TYPE ON ROOM_TYPE.ROOM_TYPE_ID = ROOM.ROOM_TYPE_ID
+												WHERE dbo.ROOM.SECTOR_ID = @SECTOR_ID AND dbo.ROOM.ROOM_ID = @ROOM_ID
+	SELECT @CURRENT_REGISTRATER = dbo.CountNumberOfStudentInRoom(@SECTOR_ID,@ROOM_ID)
+	IF (@SSN IN (SELECT dbo.[USER].SSN FROM dbo.STUDENT INNER JOIN dbo.[USER] ON [USER].USER_ID = STUDENT.USER_ID
+										WHERE dbo.STUDENT.STATUS_REGISTRATION_ROOM = 1))
+	BEGIN
+	    RAISERROR(N'SSN Is Exist',16,1)
+		ROLLBACK
+	END
+	ELSE IF(@CURRENT_REGISTRATER = @CAPACITY + 1)
+	BEGIN
+	    RAISERROR(N'ROOM IS FULL',16,1)
+		ROLLBACK
+	END
+	ELSE
+	BEGIN
+	    DECLARE @USER_ID_UPDATE VARCHAR(12)
+		SELECT @USER_ID_UPDATE = dbo.[USER].USER_ID FROM dbo.STUDENT INNER JOIN dbo.[USER] ON [USER].USER_ID = STUDENT.USER_ID
+													WHERE dbo.[USER].SSN = @SSN
+		UPDATE dbo.STUDENT
+		SET STATUS_REGISTRATION_ROOM = 1
+		WHERE dbo.STUDENT.USER_ID = @USER_ID_UPDATE
 	END
 GO
