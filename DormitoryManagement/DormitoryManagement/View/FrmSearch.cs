@@ -17,6 +17,10 @@ namespace DormitoryManagement.View
     {
         #region Var
         int indexSelected;
+        string indexSectorIdSelected="";
+        string indexRoomIdSelected="";
+        string SectorNameSelected="";
+        int indexSelectedRoomRegistration = 0;
         #endregion
         public FrmSearch()
         {
@@ -27,6 +31,14 @@ namespace DormitoryManagement.View
         {
             GetFullListStudent();
             txtInputStudent.Enabled = false;
+            AutoSizeModeColumn(dgvStudent);
+            //
+            GetListRoomRegistration();
+            AutoSizeModeColumn(dgvRoomReg);
+            GetListSector();
+            txtInputRoomRegistration.Enabled = false;
+            //
+
         }
         /// <summary>
         /// ---------------------------STUDENTS
@@ -42,33 +54,33 @@ namespace DormitoryManagement.View
             switch (indexSelected)
             {
                 case 0:
-                {
-                    GetFullListStudent();
-                    txtInputStudent.Enabled = false;
-                    txtInputStudent.Text = "";
-                    break;
-                }  
+                    {
+                        GetFullListStudent();
+                        txtInputStudent.Enabled = false;
+                        txtInputStudent.Text = "";
+                        break;
+                    }
                 case 1:
-                {
-                    GetFullListStudentALive();
-                    txtInputStudent.Enabled = false;
-                    txtInputStudent.Text = "";
-                    break;
-                }
+                    {
+                        GetFullListStudentALive();
+                        txtInputStudent.Enabled = false;
+                        txtInputStudent.Text = "";
+                        break;
+                    }
                 case 2:
-                {
-                    GetFullListStudentGoingOut();
-                    txtInputStudent.Enabled = false;
-                    txtInputStudent.Text = "";
-                    break;
-                }
+                    {
+                        GetFullListStudentGoingOut();
+                        txtInputStudent.Enabled = false;
+                        txtInputStudent.Text = "";
+                        break;
+                    }
                 default:
-                {
-                    GetFullListStudent();
-                    txtInputStudent.Enabled = true;
-                    txtInputStudent.Text = "";
-                    break;
-                }
+                    {
+                        GetFullListStudent();
+                        txtInputStudent.Enabled = true;
+                        txtInputStudent.Text = "";
+                        break;
+                    }
             }
         }
         private void txtInputStudent_TextChanged(object sender, EventArgs e)
@@ -80,7 +92,7 @@ namespace DormitoryManagement.View
                 if (txtInputStudent.Text == "")
                 {
                     GetFullListStudent();
-                }    
+                }
                 else if (txtInputStudent.Text == "HHH")
                 {
                     txtInputStudent.Text = "";
@@ -100,18 +112,10 @@ namespace DormitoryManagement.View
                 {
                     GetFullListStudent();
                 }
-                else if (txtInputStudent.Text == "HHH")
-                {
-                    txtInputStudent.Text = "";
-                }
-                else if (FormatData.IsNumber(inputText) == true && inputText.Length < 16)
+                else if (inputText.Length < 16)
                 {
                     GetFullListStudentByStudentId(inputText);
-                }
-                else if (txtInputStudent.Text != "")
-                {
-                    txtInputStudent.Text = "HHH";
-                }
+                } 
             }
             else if (indexSelected == 5)
             {
@@ -158,9 +162,136 @@ namespace DormitoryManagement.View
                 }
             }
         }
+        /// <summary>
+        /// ---------------------------ROOM_REGISTRATION
+        /// </summary>
+        /// <param ></param>
+        /// <param></param>
+        private void cbbCategoryRoomReg_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox.SelectedItem == null)
+                return;
+            indexSelectedRoomRegistration = comboBox.SelectedIndex;
+            switch (indexSelectedRoomRegistration)
+            {
+                case 0:
+                    {
+                        GetListRoomRegistration();
+                        txtInputRoomRegistration.Enabled = false;
+                        txtInputRoomRegistration.Text = "";
+                        break;
+                    }
+                case 1:
+                    {
+                        GetListRoomRegistration();
+                        txtInputRoomRegistration.Enabled = true;
+                        txtInputRoomRegistration.Text = "";
+                        break;
+                    }
+                case 2:
+                    {
+                        GetListRoomRegistration();
+                        txtInputRoomRegistration.Enabled = true;
+                        txtInputRoomRegistration.Text = "";
+                        break;
+                    }
+                default:
+                    {
+                        GetListRoomRegistration();
+                        txtInputRoomRegistration.Text = "";
+                        break;
+                    }
+            }
+        }
+        private void cbbBuilding_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox.SelectedItem == null)
+                return;
+            SectorDTO sectorDTO = (SectorDTO)comboBox.SelectedValue;
+            indexSectorIdSelected = sectorDTO.SectorId;
+            SectorNameSelected = sectorDTO.SectorName;
+            GetListRoomBySectorId(indexSectorIdSelected);
+            GetListRoomRegistrationByBuildingAndRoom(SectorNameSelected, indexRoomIdSelected);
+        }
+        private void cbbRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox.SelectedItem == null)
+                return;
+            RoomDTO roomDTO = (RoomDTO)comboBox.SelectedValue;
+            indexRoomIdSelected = roomDTO.RoomId;
+            GetListRoomRegistrationByBuildingAndRoom(SectorNameSelected, indexRoomIdSelected);
+        }
+        private void txtInputRoomRegistration_TextChanged(object sender, EventArgs e)
+        {
+            string inputText = "";
+            inputText = txtInputRoomRegistration.Text.Trim().ToString();
+            
+            if (indexSelectedRoomRegistration == 0)
+            {
+                if (txtInputRoomRegistration.Text == "")
+                {
+                    GetListRoomRegistration();
+                }
+            }
+            else if (indexSelectedRoomRegistration == 1)
+            {
+                if (txtInputRoomRegistration.Text == "")
+                {
+                    GetListRoomRegistration();
+                }
+                else if (inputText.Length < 16)
+                {
+                    GetListRoomRegistrationByStudentId(inputText);
+                }
+            }
+            else if (indexSelectedRoomRegistration == 2)
+            {
+                if (txtInputRoomRegistration.Text == "")
+                {
+                    GetListRoomRegistration();
+                }
+                else if (inputText.Length < 101)
+                {
+                    GetListRoomRegistrationByStudentName(inputText);
+                }
+            }
+        }
+        private void btnSearchRoomReg_Click(object sender, EventArgs e)
+        {
+            string test1 = indexSectorIdSelected;
+            string test2 = indexRoomIdSelected;
+
+        }
+        /// <summary>
+        /// ---------------------------BILL
+        /// </summary>
+        /// <param ></param>
+        /// <param></param>
+        /// 
+        private void cbbBuiding_Bill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox.SelectedItem == null)
+                return;
+            SectorDTO sectorDTO = (SectorDTO)comboBox.SelectedValue;
+            indexSectorIdSelected = sectorDTO.SectorId;
+            SectorNameSelected = sectorDTO.SectorName;
+            GetListRoomBySectorId(indexSectorIdSelected);
+        }
         #endregion
 
         #region Methods
+        void AutoSizeModeColumn(DataGridView dataGridView)
+        {
+            for (int i = 0; i < dataGridView.Columns.Count - 1; i++)
+            {
+                dataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+            dataGridView.Columns[dgvStudent.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
         void GetFullListStudent()
         {
             List<StudentViewDTO> studentViewDTOs = StudentViewDAO.GetListStudentView();
@@ -206,6 +337,53 @@ namespace DormitoryManagement.View
             List<StudentViewDTO> studentViewDTOs = StudentViewDAO.SearchStudentViewByCollege(college);
             dgvStudent.DataSource = studentViewDTOs;
         }
+        /// <summary>
+        /// ---------------------------ROOM_REGISTRATION
+        /// </summary>
+        /// <param ></param>
+        /// <param></param>
+        void GetListRoomRegistration()
+        {
+            DataTable dataTable = RoomDAO.GetListRoomRegistration();
+            dgvRoomReg.DataSource = dataTable;
+        }
+        void GetListSector()
+        {
+            List<SectorDTO> sectorDTOs = SectorDAO.GetListSector();
+            cbbBuilding.DataSource = sectorDTOs;
+            cbbBuilding.DisplayMember = "SectorName";
+            cbbBuiding_Bill.DataSource = sectorDTOs;
+            cbbBuiding_Bill.DisplayMember = "SectorName";
+        }
+        void GetListRoomBySectorId(string SectorId)
+        {
+            List<RoomDTO> roomDTOs = RoomDAO.GetListRoomBySector(SectorId);
+            cbbRoom.DataSource = roomDTOs;
+            cbbRoom.DisplayMember = "RoomId";
+            cbbRoom_Bill.DataSource = roomDTOs;
+            cbbRoom_Bill.DisplayMember = "RoomId";
+        }
+        void GetListRoomRegistrationByStudentId(string studentId)
+        {
+            DataTable dataTable = RoomDAO.GetListRoomRegistrationByStudentId(studentId);
+            dgvRoomReg.DataSource = dataTable;
+        }
+        void GetListRoomRegistrationByStudentName(string studentName)
+        {
+            DataTable dataTable = RoomDAO.GetListRoomRegistrationByStudentName(studentName);
+            dgvRoomReg.DataSource = dataTable;
+        }
+        void GetListRoomRegistrationByBuildingAndRoom(string building, string room)
+        {
+            DataTable dataTable = RoomDAO.GetListRoomRegistrationByBuldingAndRoom(building,room);
+            dgvRoomReg.DataSource = dataTable;
+        }
+        /// <summary>
+        /// ---------------------------BILL
+        /// </summary>
+        /// <param ></param>
+        /// <param></param>
+        
         #endregion
 
 

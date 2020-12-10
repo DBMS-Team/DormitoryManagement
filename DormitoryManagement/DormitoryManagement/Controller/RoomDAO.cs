@@ -34,5 +34,28 @@ namespace DormitoryManagement.Controller
             }
             return ListRoom;
         }
+        public static DataTable GetListRoomRegistration() {
+            string query = string.Format("EXEC dbo.USP_GetListRoomRegistration");
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
+        public static DataTable GetListRoomRegistrationByStudentId(string studentId)
+        {
+            string query = string.Format("EXEC dbo.USP_GetListRoomRegistrationByStudentId @STUDENT_ID = '{0}'",studentId);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
+        public static DataTable GetListRoomRegistrationByStudentName(string studentName)
+        {
+            string query = string.Format("EXEC dbo.USP_GetListRoomRegistrationByStudentName @STUDENT_NAME = N'{0}'", studentName);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
+        public static DataTable GetListRoomRegistrationByBuldingAndRoom(string bulding, string room)
+        {
+            string query = string.Format("EXEC dbo.USP_GetListRoomRegistrationBySectorAndRoom @SECTOR_NAME = N'{0}', @ROOM_ID = N'{1}'", bulding,room);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
     }
 }
