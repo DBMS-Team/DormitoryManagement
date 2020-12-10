@@ -18,6 +18,7 @@ namespace DormitoryManagement.View
         {
             InitializeComponent();
         }
+
         #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {

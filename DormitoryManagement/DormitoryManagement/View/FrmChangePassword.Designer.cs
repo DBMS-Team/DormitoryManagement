@@ -67,7 +67,7 @@
             this.lbTitle.Location = new System.Drawing.Point(0, 0);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(800, 55);
+            this.lbTitle.Size = new System.Drawing.Size(802, 55);
             this.lbTitle.TabIndex = 22;
             this.lbTitle.Text = "CHANGE PASSWORD";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,7 +95,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.93291F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.90147F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 477);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 478);
             this.tableLayoutPanel1.TabIndex = 21;
             // 
             // groupOldPassword
@@ -106,7 +106,7 @@
             this.groupOldPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupOldPassword.Location = new System.Drawing.Point(203, 137);
             this.groupOldPassword.Name = "groupOldPassword";
-            this.groupOldPassword.Size = new System.Drawing.Size(394, 66);
+            this.groupOldPassword.Size = new System.Drawing.Size(395, 66);
             this.groupOldPassword.TabIndex = 0;
             this.groupOldPassword.TabStop = false;
             this.groupOldPassword.Text = "Old password";
@@ -123,7 +123,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(388, 37);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(389, 37);
             this.tableLayoutPanel3.TabIndex = 24;
             // 
             // txtOldPassword
@@ -134,7 +134,7 @@
             this.txtOldPassword.Location = new System.Drawing.Point(3, 3);
             this.txtOldPassword.MinimumSize = new System.Drawing.Size(216, 25);
             this.txtOldPassword.Name = "txtOldPassword";
-            this.txtOldPassword.Size = new System.Drawing.Size(343, 34);
+            this.txtOldPassword.Size = new System.Drawing.Size(344, 34);
             this.txtOldPassword.TabIndex = 17;
             this.txtOldPassword.UseSystemPasswordChar = true;
             // 
@@ -143,7 +143,7 @@
             this.btnOldPassword.BackColor = System.Drawing.Color.Transparent;
             this.btnOldPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOldPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOldPassword.Location = new System.Drawing.Point(352, 3);
+            this.btnOldPassword.Location = new System.Drawing.Point(353, 3);
             this.btnOldPassword.Name = "btnOldPassword";
             this.btnOldPassword.Size = new System.Drawing.Size(33, 31);
             this.btnOldPassword.TabIndex = 20;
@@ -158,7 +158,7 @@
             this.groupUsername.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupUsername.Location = new System.Drawing.Point(203, 67);
             this.groupUsername.Name = "groupUsername";
-            this.groupUsername.Size = new System.Drawing.Size(394, 64);
+            this.groupUsername.Size = new System.Drawing.Size(395, 64);
             this.groupUsername.TabIndex = 0;
             this.groupUsername.TabStop = false;
             this.groupUsername.Text = "Username";
@@ -171,7 +171,7 @@
             this.txtUserName.Location = new System.Drawing.Point(3, 26);
             this.txtUserName.MinimumSize = new System.Drawing.Size(216, 25);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(388, 34);
+            this.txtUserName.Size = new System.Drawing.Size(389, 34);
             this.txtUserName.TabIndex = 16;
             // 
             // tableLayoutPanel4
@@ -190,7 +190,7 @@
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(394, 46);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(395, 46);
             this.tableLayoutPanel4.TabIndex = 24;
             // 
             // btnChange
@@ -223,7 +223,7 @@
             this.btnCancel.Location = new System.Drawing.Point(200, 3);
             this.btnCancel.MinimumSize = new System.Drawing.Size(100, 30);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(191, 40);
+            this.btnCancel.Size = new System.Drawing.Size(192, 40);
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -237,7 +237,7 @@
             this.groupNewPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupNewPassword.Location = new System.Drawing.Point(203, 209);
             this.groupNewPassword.Name = "groupNewPassword";
-            this.groupNewPassword.Size = new System.Drawing.Size(394, 70);
+            this.groupNewPassword.Size = new System.Drawing.Size(395, 70);
             this.groupNewPassword.TabIndex = 26;
             this.groupNewPassword.TabStop = false;
             this.groupNewPassword.Text = "New password";
@@ -254,7 +254,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(388, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(389, 41);
             this.tableLayoutPanel2.TabIndex = 23;
             // 
             // txtNewPassword
@@ -265,7 +265,7 @@
             this.txtNewPassword.Location = new System.Drawing.Point(3, 3);
             this.txtNewPassword.MinimumSize = new System.Drawing.Size(216, 25);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(343, 34);
+            this.txtNewPassword.Size = new System.Drawing.Size(344, 34);
             this.txtNewPassword.TabIndex = 17;
             this.txtNewPassword.UseSystemPasswordChar = true;
             // 
@@ -274,7 +274,7 @@
             this.btnNewPassword.BackColor = System.Drawing.Color.Transparent;
             this.btnNewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNewPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNewPassword.Location = new System.Drawing.Point(352, 3);
+            this.btnNewPassword.Location = new System.Drawing.Point(353, 3);
             this.btnNewPassword.Name = "btnNewPassword";
             this.btnNewPassword.Size = new System.Drawing.Size(33, 35);
             this.btnNewPassword.TabIndex = 20;
@@ -289,7 +289,7 @@
             this.groupConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupConfirmPassword.Location = new System.Drawing.Point(203, 285);
             this.groupConfirmPassword.Name = "groupConfirmPassword";
-            this.groupConfirmPassword.Size = new System.Drawing.Size(394, 70);
+            this.groupConfirmPassword.Size = new System.Drawing.Size(395, 70);
             this.groupConfirmPassword.TabIndex = 27;
             this.groupConfirmPassword.TabStop = false;
             this.groupConfirmPassword.Text = "Confirm password";
@@ -306,7 +306,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(388, 41);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(389, 41);
             this.tableLayoutPanel5.TabIndex = 24;
             // 
             // txtConfirm
@@ -317,7 +317,7 @@
             this.txtConfirm.Location = new System.Drawing.Point(3, 3);
             this.txtConfirm.MinimumSize = new System.Drawing.Size(216, 25);
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.Size = new System.Drawing.Size(343, 34);
+            this.txtConfirm.Size = new System.Drawing.Size(344, 34);
             this.txtConfirm.TabIndex = 17;
             this.txtConfirm.UseSystemPasswordChar = true;
             // 
@@ -326,7 +326,7 @@
             this.btnConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.btnConfirmPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirmPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnConfirmPassword.Location = new System.Drawing.Point(352, 3);
+            this.btnConfirmPassword.Location = new System.Drawing.Point(353, 3);
             this.btnConfirmPassword.Name = "btnConfirmPassword";
             this.btnConfirmPassword.Size = new System.Drawing.Size(33, 35);
             this.btnConfirmPassword.TabIndex = 20;
@@ -337,7 +337,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 532);
+            this.ClientSize = new System.Drawing.Size(802, 533);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lbTitle);
             this.Name = "FrmChangePassword";

@@ -11,6 +11,7 @@ namespace DormitoryManagement.View
 
         public static UserDTO User { get => user; set => user = value; }
         #endregion
+
         #region Init
 
         #region General
@@ -171,7 +172,7 @@ namespace DormitoryManagement.View
         #endregion
 
         #endregion
-
+        
         #region Delegate method
 
         #region General
