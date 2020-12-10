@@ -1020,7 +1020,7 @@ CREATE OR ALTER PROC [dbo].[USP_INSERT_PAYMENT]
 AS
 BEGIN
     DECLARE @Bill_ID INT
-	SET @Bill_ID = dbo.UFN_GET_BILL_ID_BY_SECTORNAME_ROOMID_MONTH_YEAR(@Sector_Name,@Room_ID,@Month,@Year)
+	SET @Bill_ID = dbo.UFN_GetBillIdBySectornameRoomidMonthYear(@Sector_Name,@Room_ID,@Month,@Year)
 
 	INSERT INTO dbo.PAYMENT (BILL_ID, EMPLOYEE_ID, PAYING_DATE, AMOUNT)
 	VALUES (@Bill_ID, @Employee_ID, @Paying_Date, @Amount)
@@ -1111,6 +1111,31 @@ AS BEGIN
 	SELECT * FROM dbo.V_ROOM_REGISTRATION
 END
 GO
+-- Lấy danh sách Room_Registration bằng StudentId
+CREATE OR ALTER PROC USP_GetListRoomRegistrationByStudentId(@STUDENT_ID VARCHAR(15))
+AS BEGIN
+	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.[SearchLike]([Student Id]) 
+	LIKE N'%' + dbo.[SearchLike](@STUDENT_ID) + '%'
+END
+GO
+-- Lấy danh sách Room_Registration bằng StudentName
+CREATE OR ALTER PROC USP_GetListRoomRegistrationByStudentName(@STUDENT_NAME NVARCHAR(100))
+AS BEGIN
+	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.[SearchLike]([Student Name]) 
+	LIKE N'%' + dbo.[SearchLike](@STUDENT_NAME) + '%'
+END
+GO
+
+-- Lấy danh sách Room_Registration bằng Sector và room
+CREATE OR ALTER PROC USP_GetListRoomRegistrationBySectorAndRoom(
+	@SECTOR_NAME NVARCHAR(50),
+	@ROOM_ID NVARCHAR(10)
+	)
+AS BEGIN
+	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE Building = @SECTOR_NAME AND Room = @ROOM_ID
+END
+GO
+
 ------------TRIGGER
 ----------------------
 ----------------------
@@ -1127,19 +1152,24 @@ AS
 		UPDATE dbo.[USER] SET PASSWORD = @newPassword WHERE USER_ID = @lass_USER_ID
 	END
 GO
-
--- Cập nhật trạng thái tại bẳng hóa đơn bằng 1 (đã thanh toán)
-CREATE TRIGGER TRG_INSERT_PAYMENT
+-- Cập nhật trạng thái tại bẳng hóa đơn bằng 1 (đã thanh toán) -- nếu hóa đơn đó đã thanh toán thì thông báo "this bill has been paid"
+CREATE OR ALTER TRIGGER TRG_INSERT_PAYMENT
 ON dbo.PAYMENT
 FOR INSERT
 AS
 	DECLARE @Bill_ID INT
-	SELECT @Bill_ID = (SELECT MAX(dbo.PAYMENT.BILL_ID) FROM dbo.PAYMENT)
-	UPDATE dbo.BILL
-	SET STATUS = 1 WHERE dbo.BILL.BILL_ID = @Bill_ID
+	SELECT @Bill_ID = Inserted.BILL_ID FROM Inserted
+	IF(@Bill_ID IN (SELECT dbo.BILL.BILL_ID FROM dbo.BILL WHERE dbo.BILL.STATUS = 1))
+	BEGIN
+	    RAISERROR(N'This bill has been paid',16,1)
+		ROLLBACK
+	END
+	ELSE
+	BEGIN
+	    UPDATE dbo.BILL
+		SET STATUS = 1 WHERE dbo.BILL.BILL_ID = @Bill_ID
+	END
 GO
-
-
 
 -------------------------------------------------------------------------------------------
 

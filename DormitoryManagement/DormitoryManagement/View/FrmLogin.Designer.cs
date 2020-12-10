@@ -82,6 +82,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(339, 29);
             this.txtPassword.TabIndex = 9;
+            this.txtPassword.Text = "dbms000000";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUserName
@@ -96,6 +97,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(339, 29);
             this.txtUserName.TabIndex = 8;
+            this.txtUserName.Text = "admin";
             // 
             // lbMatKhau
             // 

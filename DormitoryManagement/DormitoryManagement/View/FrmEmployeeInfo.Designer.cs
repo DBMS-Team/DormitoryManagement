@@ -465,8 +465,7 @@ namespace DormitoryManagement.View
             // 
             this.cbbUserType.FormattingEnabled = true;
             this.cbbUserType.Items.AddRange(new object[] {
-            "EMPLOYEE",
-            "ADMIN"});
+            "EMPLOYEE"});
             this.cbbUserType.Location = new System.Drawing.Point(133, 125);
             this.cbbUserType.Name = "cbbUserType";
             this.cbbUserType.Size = new System.Drawing.Size(212, 28);
