@@ -72,8 +72,8 @@
             this.btnLogin.Location = new System.Drawing.Point(3, 3);
             this.btnLogin.MinimumSize = new System.Drawing.Size(100, 30);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(191, 52);
-            this.btnLogin.TabIndex = 10;
+            this.btnLogin.Size = new System.Drawing.Size(191, 36);
+            this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -87,7 +87,7 @@
             this.txtUserName.MinimumSize = new System.Drawing.Size(216, 25);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(389, 35);
-            this.txtUserName.TabIndex = 8;
+            this.txtUserName.TabIndex = 1;
             // 
             // btnClose
             // 
@@ -101,8 +101,8 @@
             this.btnClose.Location = new System.Drawing.Point(200, 3);
             this.btnClose.MinimumSize = new System.Drawing.Size(100, 30);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(192, 52);
-            this.btnClose.TabIndex = 11;
+            this.btnClose.Size = new System.Drawing.Size(192, 36);
+            this.btnClose.TabIndex = 7;
             this.btnClose.Text = "EXIT";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -122,12 +122,12 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 323);
-            this.tableLayoutPanel1.TabIndex = 13;
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
@@ -137,21 +137,21 @@
             this.tableLayoutPanel2.Controls.Add(this.btnLogin, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnClose, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(203, 208);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(203, 202);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(395, 58);
-            this.tableLayoutPanel2.TabIndex = 14;
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(395, 42);
+            this.tableLayoutPanel2.TabIndex = 5;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(203, 131);
+            this.groupBox2.Location = new System.Drawing.Point(203, 128);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(395, 71);
-            this.groupBox2.TabIndex = 14;
+            this.groupBox2.Size = new System.Drawing.Size(395, 68);
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Password";
             // 
@@ -167,8 +167,8 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(389, 43);
-            this.tableLayoutPanel3.TabIndex = 14;
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(389, 40);
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
             // txtPassword
             // 
@@ -180,7 +180,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(324, 35);
-            this.txtPassword.TabIndex = 14;
+            this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnHidePassword
@@ -190,8 +190,8 @@
             this.btnHidePassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnHidePassword.Location = new System.Drawing.Point(333, 3);
             this.btnHidePassword.Name = "btnHidePassword";
-            this.btnHidePassword.Size = new System.Drawing.Size(53, 37);
-            this.btnHidePassword.TabIndex = 13;
+            this.btnHidePassword.Size = new System.Drawing.Size(53, 34);
+            this.btnHidePassword.TabIndex = 4;
             this.btnHidePassword.UseVisualStyleBackColor = false;
             this.btnHidePassword.Click += new System.EventHandler(this.btnHidePassword_Click);
             // 
@@ -201,8 +201,8 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(203, 54);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 71);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.Size = new System.Drawing.Size(395, 68);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Username";
             // 

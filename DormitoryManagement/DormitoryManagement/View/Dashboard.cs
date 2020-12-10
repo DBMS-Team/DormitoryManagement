@@ -24,9 +24,9 @@ namespace DormitoryManagement.View
             return ctrlLogin;
         }
 
-        public static Item InitLogout()
+        public static Item InitLogout(Form frm)
         {
-            Item ctrlLogout = new Item(Dashboard.Logout);
+            Item ctrlLogout = new Item(Dashboard.Logout, frm);
             ctrlLogout.picItem.BackgroundImage = Properties.Resources.Logout;
             ctrlLogout.btnTitle.Text = "LOGOUT";
             ctrlLogout.btnTitle.ForeColor = Color.DarkRed;
@@ -184,12 +184,12 @@ namespace DormitoryManagement.View
             ((Form)frm).Show();
         }
 
-        public static void Logout()
+        public static void Logout(object frm)
         {
             DialogResult re = MessageBox.Show("Bạn muốn đăng xuất khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (re == DialogResult.Yes)
             {
-
+                ((Form)frm).Dispose();
             }
         }
 
