@@ -195,8 +195,8 @@ namespace DormitoryManagement.View
             }
             else
             {
-                MessageBox.Show("Error");
-            }
+                dgvBillReg.Rows.Clear();
+            }    
         }
         bool AddBill(long Employee_ID, string Room_Name, string Sector_Name, DateTime CreatDay, string Month, string Year, string Status, string Total)
         {
@@ -233,10 +233,10 @@ namespace DormitoryManagement.View
                 decimal temp = Decimal.Parse(dgvPayment.Rows[i].Cells[5].Value.ToString());
                 Total_Cost_Bill = Total_Cost_Bill + temp;
             }
-            DateTime CreatDay = dtpCreatedDate.Value;
-            PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cbbBuilding.Text.ToString(), cbbRoom.Text.ToString(), cbbMonth.Text.ToString(), txtYear.Text.ToString());
-            MessageBox.Show(Total_Cost_Bill.ToString());
-
+            DateTime CreatDay = dtCreatedDate.Value;
+            PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString());
+            MessageBox.Show("Payment Success");
+            dgvPayment.Rows.Clear();
         }
         #endregion
         private void FrmBill_Load(object sender, EventArgs e)
@@ -280,5 +280,10 @@ namespace DormitoryManagement.View
             }
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
