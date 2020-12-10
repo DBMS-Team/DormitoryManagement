@@ -14,6 +14,10 @@ namespace DormitoryManagement.View
 {
     public partial class FrmLogin : Form
     {
+        private long userID;
+
+        public long UserID { get => userID; set => userID = value; }
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -28,10 +32,11 @@ namespace DormitoryManagement.View
             {
                 UserDTO user = UserDAO.GetUserByUsername(userName);
                 string userType = user.UserType;
-                long UserId = user.UserId;
+                this.userID = user.UserId;
                 if (userType.Equals("ADMIN") && user.Status == true)
                 {
-                    AdminDTO admin = AdminDAO.GetAdminById(UserId);
+                    
+                    AdminDTO admin = AdminDAO.GetAdminById(userID);
                     FrmAdmin frmAdmin = new FrmAdmin(admin, user);
                     this.Hide();
                     frmAdmin.ShowDialog();
@@ -39,7 +44,7 @@ namespace DormitoryManagement.View
                 }
                 else if (userType.Equals("EMPLOYEE") && user.Status == true)
                 {
-                    EmployeeDTO employee = EmployeeDAO.GetEmployeeById(UserId);
+                    EmployeeDTO employee = EmployeeDAO.GetEmployeeById(userID);
                     FrmEmployee frmEmployee = new FrmEmployee(employee, user);
                     this.Hide();
                     frmEmployee.ShowDialog();
@@ -47,13 +52,13 @@ namespace DormitoryManagement.View
                 }
                 else if (user.Status == true)
                 {
-                    StudentDTO student = StudentDAO.GetStudentById(UserId);
+                    StudentDTO student = StudentDAO.GetStudentById(userID);
                     FrmStudent frmStudent = new FrmStudent(student, user);
                     this.Hide();
                     frmStudent.ShowDialog();
                     txtPassword.Text = "";
                 }
-                
+                return;
             }
             else
             {

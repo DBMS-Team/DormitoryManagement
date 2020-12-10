@@ -15,9 +15,9 @@ namespace DormitoryManagement.View
         #region Init
 
         #region General
-        public static Item InitLogin()
+        public static Item InitLogin(Form frm)
         {
-            Item ctrlLogin = new Item(Login);
+            Item ctrlLogin = new Item(Login, frm);
             ctrlLogin.picItem.BackgroundImage = Properties.Resources.Logout;
             ctrlLogin.btnTitle.Text = "LOGIN";
             ctrlLogin.btnTitle.ForeColor = Color.DarkRed;
@@ -176,10 +176,12 @@ namespace DormitoryManagement.View
         #region Delegate method
 
         #region General
-        public static void Login()
+        public static void Login(object frm)
         {
             FrmLogin frmLogin = new FrmLogin();
+            ((Form)frm).Hide();
             frmLogin.ShowDialog();
+            ((Form)frm).Show();
         }
 
         public static void Logout()

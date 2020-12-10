@@ -33,17 +33,17 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnHidePassword = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnHidePassword = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -129,28 +129,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 323);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtUserName);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(203, 54);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 71);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Username";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(203, 131);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(395, 71);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Password";
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -165,6 +143,17 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(395, 58);
             this.tableLayoutPanel2.TabIndex = 14;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(203, 131);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(395, 71);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Password";
             // 
             // tableLayoutPanel3
             // 
@@ -181,17 +170,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(389, 43);
             this.tableLayoutPanel3.TabIndex = 14;
             // 
-            // btnHidePassword
-            // 
-            this.btnHidePassword.BackColor = System.Drawing.Color.Transparent;
-            this.btnHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHidePassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHidePassword.Location = new System.Drawing.Point(333, 3);
-            this.btnHidePassword.Name = "btnHidePassword";
-            this.btnHidePassword.Size = new System.Drawing.Size(53, 37);
-            this.btnHidePassword.TabIndex = 13;
-            this.btnHidePassword.UseVisualStyleBackColor = false;
-            // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
@@ -204,6 +182,29 @@
             this.txtPassword.Size = new System.Drawing.Size(324, 35);
             this.txtPassword.TabIndex = 14;
             this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // btnHidePassword
+            // 
+            this.btnHidePassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHidePassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHidePassword.Location = new System.Drawing.Point(333, 3);
+            this.btnHidePassword.Name = "btnHidePassword";
+            this.btnHidePassword.Size = new System.Drawing.Size(53, 37);
+            this.btnHidePassword.TabIndex = 13;
+            this.btnHidePassword.UseVisualStyleBackColor = false;
+            this.btnHidePassword.Click += new System.EventHandler(this.btnHidePassword_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtUserName);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(203, 54);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(395, 71);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Username";
             // 
             // FrmLogin
             // 
@@ -222,12 +223,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
