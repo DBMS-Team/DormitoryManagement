@@ -47,13 +47,33 @@
             this.tabSearch = new System.Windows.Forms.TabControl();
             this.tabStudent = new System.Windows.Forms.TabPage();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
+            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Student_Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Student_Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSearchStudent = new System.Windows.Forms.Button();
             this.cbbCategoryStudent = new System.Windows.Forms.ComboBox();
             this.lbCategory = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInputStudent = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvRoomReg = new System.Windows.Forms.DataGridView();
+            this.RoomRegID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomReg_StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.cbbCategoryRoomReg = new System.Windows.Forms.ComboBox();
@@ -63,7 +83,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cbbRoom = new System.Windows.Forms.ComboBox();
             this.cbbBuilding = new System.Windows.Forms.ComboBox();
-            this.txtInputRoomRegistration = new System.Windows.Forms.TextBox();
+            this.txtInputRoomReg = new System.Windows.Forms.TextBox();
             this.tabBill = new System.Windows.Forms.TabPage();
             this.dgvBill = new System.Windows.Forms.DataGridView();
             this.BillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -161,6 +181,17 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UserID,
+            this.SSN,
+            this.StudentID,
+            this.FullName,
+            this.Gender,
+            this.DoB,
+            this.Email,
+            this.Phone1,
+            this.Student_Building,
+            this.Student_Room});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,12 +225,73 @@
             this.dgvStudent.Size = new System.Drawing.Size(1468, 602);
             this.dgvStudent.TabIndex = 14;
             // 
+            // UserID
+            // 
+            this.UserID.HeaderText = "User ID";
+            this.UserID.MinimumWidth = 6;
+            this.UserID.Name = "UserID";
+            // 
+            // SSN
+            // 
+            this.SSN.HeaderText = "SSN";
+            this.SSN.MinimumWidth = 6;
+            this.SSN.Name = "SSN";
+            // 
+            // StudentID
+            // 
+            this.StudentID.HeaderText = "Student ID";
+            this.StudentID.MinimumWidth = 6;
+            this.StudentID.Name = "StudentID";
+            // 
+            // FullName
+            // 
+            this.FullName.HeaderText = "Full Name";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            // 
+            // DoB
+            // 
+            this.DoB.HeaderText = "DoB";
+            this.DoB.MinimumWidth = 6;
+            this.DoB.Name = "DoB";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            // 
+            // Phone1
+            // 
+            this.Phone1.HeaderText = "Phone 1";
+            this.Phone1.MinimumWidth = 6;
+            this.Phone1.Name = "Phone1";
+            // 
+            // Student_Building
+            // 
+            this.Student_Building.HeaderText = "Building";
+            this.Student_Building.MinimumWidth = 6;
+            this.Student_Building.Name = "Student_Building";
+            // 
+            // Student_Room
+            // 
+            this.Student_Room.HeaderText = "Room";
+            this.Student_Room.MinimumWidth = 6;
+            this.Student_Room.Name = "Student_Room";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.33243F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.6811989F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.Controls.Add(this.btnSearchStudent, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbbCategoryStudent, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbCategory, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
@@ -213,28 +305,37 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1468, 80);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
+            // btnSearchStudent
+            // 
+            this.btnSearchStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearchStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchStudent.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnSearchStudent.Location = new System.Drawing.Point(1250, 42);
+            this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchStudent.Name = "btnSearchStudent";
+            this.btnSearchStudent.Size = new System.Drawing.Size(215, 36);
+            this.btnSearchStudent.TabIndex = 13;
+            this.btnSearchStudent.Text = "SEARCH";
+            this.btnSearchStudent.UseVisualStyleBackColor = true;
+            // 
             // cbbCategoryStudent
             // 
             this.cbbCategoryStudent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbCategoryStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.cbbCategoryStudent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCategoryStudent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbCategoryStudent.FormattingEnabled = true;
             this.cbbCategoryStudent.Items.AddRange(new object[] {
-            "FULL",
-            "ALIVE",
-            "GOING OUT",
-            "USER_ID",
-            "STUDENT_ID",
-            "FULLNAME",
-            "GENDER",
+            "Student ID",
             "SSN",
-            "COLLEGE"});
+            "Full name",
+            "Email",
+            "Phone 1"});
             this.cbbCategoryStudent.Location = new System.Drawing.Point(4, 44);
             this.cbbCategoryStudent.Margin = new System.Windows.Forms.Padding(4);
             this.cbbCategoryStudent.Name = "cbbCategoryStudent";
-            this.cbbCategoryStudent.Size = new System.Drawing.Size(212, 28);
+            this.cbbCategoryStudent.Size = new System.Drawing.Size(212, 31);
             this.cbbCategoryStudent.TabIndex = 11;
-            this.cbbCategoryStudent.Text = "FULL";
-            this.cbbCategoryStudent.SelectedIndexChanged += new System.EventHandler(this.cbbCategoryStudent_SelectedIndexChanged);
             // 
             // lbCategory
             // 
@@ -255,7 +356,7 @@
             this.label1.Location = new System.Drawing.Point(224, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1229, 40);
+            this.label1.Size = new System.Drawing.Size(1019, 40);
             this.label1.TabIndex = 8;
             this.label1.Text = "What to search:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,9 +367,8 @@
             this.txtInputStudent.Font = new System.Drawing.Font("Segoe UI Black", 12F);
             this.txtInputStudent.Location = new System.Drawing.Point(223, 43);
             this.txtInputStudent.Name = "txtInputStudent";
-            this.txtInputStudent.Size = new System.Drawing.Size(1231, 35);
+            this.txtInputStudent.Size = new System.Drawing.Size(1021, 35);
             this.txtInputStudent.TabIndex = 14;
-            this.txtInputStudent.TextChanged += new System.EventHandler(this.txtInputStudent_TextChanged);
             // 
             // tabPage2
             // 
@@ -303,6 +403,16 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRoomReg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvRoomReg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoomReg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RoomRegID,
+            this.CreatedTime,
+            this.Building,
+            this.Room,
+            this.RoomReg_StudentID,
+            this.EmployeeID,
+            this.StartDate,
+            this.Duration,
+            this.Total});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.InactiveCaption;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -336,6 +446,60 @@
             this.dgvRoomReg.Size = new System.Drawing.Size(1468, 602);
             this.dgvRoomReg.TabIndex = 15;
             // 
+            // RoomRegID
+            // 
+            this.RoomRegID.HeaderText = "RoomReg ID";
+            this.RoomRegID.MinimumWidth = 6;
+            this.RoomRegID.Name = "RoomRegID";
+            // 
+            // CreatedTime
+            // 
+            this.CreatedTime.HeaderText = "Created Time";
+            this.CreatedTime.MinimumWidth = 6;
+            this.CreatedTime.Name = "CreatedTime";
+            // 
+            // Building
+            // 
+            this.Building.HeaderText = "Building";
+            this.Building.MinimumWidth = 6;
+            this.Building.Name = "Building";
+            // 
+            // Room
+            // 
+            this.Room.HeaderText = "Room";
+            this.Room.MinimumWidth = 6;
+            this.Room.Name = "Room";
+            // 
+            // RoomReg_StudentID
+            // 
+            this.RoomReg_StudentID.HeaderText = "Student ID";
+            this.RoomReg_StudentID.MinimumWidth = 6;
+            this.RoomReg_StudentID.Name = "RoomReg_StudentID";
+            // 
+            // EmployeeID
+            // 
+            this.EmployeeID.HeaderText = "Employee ID";
+            this.EmployeeID.MinimumWidth = 6;
+            this.EmployeeID.Name = "EmployeeID";
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Start Date";
+            this.StartDate.MinimumWidth = 6;
+            this.StartDate.Name = "StartDate";
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.MinimumWidth = 6;
+            this.Duration.Name = "Duration";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 5;
@@ -352,7 +516,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label6, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.cbbRoom, 3, 1);
             this.tableLayoutPanel3.Controls.Add(this.cbbBuilding, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.txtInputRoomRegistration, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtInputRoomReg, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -377,23 +541,23 @@
             // cbbCategoryRoomReg
             // 
             this.cbbCategoryRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbCategoryRoomReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.cbbCategoryRoomReg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCategoryRoomReg.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbCategoryRoomReg.FormattingEnabled = true;
             this.cbbCategoryRoomReg.Items.AddRange(new object[] {
-            "FULL",
-            "STUDENT_ID",
-            "STUDENT_NAME"});
+            "Room Registration ID",
+            "Student ID",
+            "Employee ID"});
             this.cbbCategoryRoomReg.Location = new System.Drawing.Point(4, 44);
             this.cbbCategoryRoomReg.Margin = new System.Windows.Forms.Padding(4);
             this.cbbCategoryRoomReg.Name = "cbbCategoryRoomReg";
-            this.cbbCategoryRoomReg.Size = new System.Drawing.Size(359, 28);
+            this.cbbCategoryRoomReg.Size = new System.Drawing.Size(359, 31);
             this.cbbCategoryRoomReg.TabIndex = 15;
-            this.cbbCategoryRoomReg.Text = "FULL";
-            this.cbbCategoryRoomReg.SelectedIndexChanged += new System.EventHandler(this.cbbCategoryRoomReg_SelectedIndexChanged);
             // 
             // btnSearchRoomReg
             // 
             this.btnSearchRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearchRoomReg.Enabled = false;
             this.btnSearchRoomReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchRoomReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchRoomReg.ForeColor = System.Drawing.Color.DarkRed;
@@ -404,7 +568,6 @@
             this.btnSearchRoomReg.TabIndex = 13;
             this.btnSearchRoomReg.Text = "SEARCH";
             this.btnSearchRoomReg.UseVisualStyleBackColor = true;
-            this.btnSearchRoomReg.Click += new System.EventHandler(this.btnSearchRoomReg_Click);
             // 
             // label4
             // 
@@ -446,36 +609,33 @@
             // 
             this.cbbRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.cbbRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbRoom.FormattingEnabled = true;
             this.cbbRoom.Location = new System.Drawing.Point(1031, 44);
             this.cbbRoom.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRoom.Name = "cbbRoom";
-            this.cbbRoom.Size = new System.Drawing.Size(285, 28);
+            this.cbbRoom.Size = new System.Drawing.Size(285, 31);
             this.cbbRoom.TabIndex = 11;
-            this.cbbRoom.SelectedIndexChanged += new System.EventHandler(this.cbbRoom_SelectedIndexChanged);
             // 
             // cbbBuilding
             // 
             this.cbbBuilding.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbBuilding.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.cbbBuilding.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbBuilding.FormattingEnabled = true;
             this.cbbBuilding.Location = new System.Drawing.Point(738, 44);
             this.cbbBuilding.Margin = new System.Windows.Forms.Padding(4);
             this.cbbBuilding.Name = "cbbBuilding";
-            this.cbbBuilding.Size = new System.Drawing.Size(285, 28);
+            this.cbbBuilding.Size = new System.Drawing.Size(285, 31);
             this.cbbBuilding.TabIndex = 14;
-            this.cbbBuilding.SelectedIndexChanged += new System.EventHandler(this.cbbBuilding_SelectedIndexChanged);
             // 
-            // txtInputRoomRegistration
+            // txtInputRoomReg
             // 
-            this.txtInputRoomRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInputRoomRegistration.Location = new System.Drawing.Point(370, 43);
-            this.txtInputRoomRegistration.Name = "txtInputRoomRegistration";
-            this.txtInputRoomRegistration.Size = new System.Drawing.Size(361, 30);
-            this.txtInputRoomRegistration.TabIndex = 19;
-            this.txtInputRoomRegistration.TextChanged += new System.EventHandler(this.txtInputRoomRegistration_TextChanged);
+            this.txtInputRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInputRoomReg.Location = new System.Drawing.Point(370, 43);
+            this.txtInputRoomReg.Name = "txtInputRoomReg";
+            this.txtInputRoomReg.Size = new System.Drawing.Size(361, 30);
+            this.txtInputRoomReg.TabIndex = 19;
             // 
             // tabBill
             // 
@@ -715,26 +875,25 @@
             // 
             this.cbbRoom_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbRoom_Bill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbRoom_Bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.cbbRoom_Bill.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbRoom_Bill.FormattingEnabled = true;
             this.cbbRoom_Bill.Location = new System.Drawing.Point(883, 44);
             this.cbbRoom_Bill.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRoom_Bill.Name = "cbbRoom_Bill";
-            this.cbbRoom_Bill.Size = new System.Drawing.Size(285, 28);
+            this.cbbRoom_Bill.Size = new System.Drawing.Size(285, 31);
             this.cbbRoom_Bill.TabIndex = 11;
             // 
             // cbbBuiding_Bill
             // 
             this.cbbBuiding_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbBuiding_Bill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbBuiding_Bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.cbbBuiding_Bill.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbBuiding_Bill.FormattingEnabled = true;
             this.cbbBuiding_Bill.Location = new System.Drawing.Point(590, 44);
             this.cbbBuiding_Bill.Margin = new System.Windows.Forms.Padding(4);
             this.cbbBuiding_Bill.Name = "cbbBuiding_Bill";
-            this.cbbBuiding_Bill.Size = new System.Drawing.Size(285, 28);
+            this.cbbBuiding_Bill.Size = new System.Drawing.Size(285, 31);
             this.cbbBuiding_Bill.TabIndex = 14;
-            this.cbbBuiding_Bill.SelectedIndexChanged += new System.EventHandler(this.cbbBuiding_Bill_SelectedIndexChanged);
             // 
             // ckbPaid
             // 
@@ -751,7 +910,6 @@
             // 
             // dtpFromDate
             // 
-            this.dtpFromDate.CustomFormat = "M/yyyy";
             this.dtpFromDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -762,7 +920,6 @@
             // 
             // dtpToDate
             // 
-            this.dtpToDate.CustomFormat = "M/yyyy";
             this.dtpToDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -781,7 +938,6 @@
             this.Name = "FrmSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";
-            this.Load += new System.EventHandler(this.FrmSearch_Load);
             this.tabSearch.ResumeLayout(false);
             this.tabStudent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
@@ -806,6 +962,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabBill;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnSearchStudent;
         private System.Windows.Forms.ComboBox cbbCategoryStudent;
         private System.Windows.Forms.Label lbCategory;
         private System.Windows.Forms.Label label1;
@@ -822,7 +979,7 @@
         private System.Windows.Forms.DataGridView dgvRoomReg;
         private System.Windows.Forms.DataGridView dgvBill;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtInputRoomRegistration;
+        private System.Windows.Forms.TextBox txtInputRoomReg;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSearch_Bill;
@@ -844,5 +1001,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Bill_EmployeeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bill_Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SSN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DoB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Student_Building;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Student_Room;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomRegID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Building;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Room;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomReg_StudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

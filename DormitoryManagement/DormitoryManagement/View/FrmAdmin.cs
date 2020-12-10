@@ -79,7 +79,7 @@ namespace DormitoryManagement.View
         {
             #region Management
             //Logout
-            CtrlLogout = Dashboard.InitLogout();
+            CtrlLogout = Dashboard.InitLogout(this);
             tlpManage.Controls.Add(CtrlLogout);
             //Change password
             CtrlChangePassword = Dashboard.InitChangePassword(LoginUser);

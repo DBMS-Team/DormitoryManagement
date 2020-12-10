@@ -36,7 +36,7 @@ namespace DormitoryManagement.View
             GetListRoomRegistration();
             AutoSizeModeColumn(dgvRoomReg);
             GetListSector();
-            txtInputRoomRegistration.Enabled = false;
+            txtInputRoomReg.Enabled = false;
             //
 
         }
@@ -178,28 +178,28 @@ namespace DormitoryManagement.View
                 case 0:
                     {
                         GetListRoomRegistration();
-                        txtInputRoomRegistration.Enabled = false;
-                        txtInputRoomRegistration.Text = "";
+                        txtInputRoomReg.Enabled = false;
+                        txtInputRoomReg.Text = "";
                         break;
                     }
                 case 1:
                     {
                         GetListRoomRegistration();
-                        txtInputRoomRegistration.Enabled = true;
-                        txtInputRoomRegistration.Text = "";
+                        txtInputRoomReg.Enabled = true;
+                        txtInputRoomReg.Text = "";
                         break;
                     }
                 case 2:
                     {
                         GetListRoomRegistration();
-                        txtInputRoomRegistration.Enabled = true;
-                        txtInputRoomRegistration.Text = "";
+                        txtInputRoomReg.Enabled = true;
+                        txtInputRoomReg.Text = "";
                         break;
                     }
                 default:
                     {
                         GetListRoomRegistration();
-                        txtInputRoomRegistration.Text = "";
+                        txtInputRoomReg.Text = "";
                         break;
                     }
             }
@@ -227,18 +227,18 @@ namespace DormitoryManagement.View
         private void txtInputRoomRegistration_TextChanged(object sender, EventArgs e)
         {
             string inputText = "";
-            inputText = txtInputRoomRegistration.Text.Trim().ToString();
+            inputText = txtInputRoomReg.Text.Trim().ToString();
             
             if (indexSelectedRoomRegistration == 0)
             {
-                if (txtInputRoomRegistration.Text == "")
+                if (txtInputRoomReg.Text == "")
                 {
                     GetListRoomRegistration();
                 }
             }
             else if (indexSelectedRoomRegistration == 1)
             {
-                if (txtInputRoomRegistration.Text == "")
+                if (txtInputRoomReg.Text == "")
                 {
                     GetListRoomRegistration();
                 }
@@ -249,7 +249,7 @@ namespace DormitoryManagement.View
             }
             else if (indexSelectedRoomRegistration == 2)
             {
-                if (txtInputRoomRegistration.Text == "")
+                if (txtInputRoomReg.Text == "")
                 {
                     GetListRoomRegistration();
                 }

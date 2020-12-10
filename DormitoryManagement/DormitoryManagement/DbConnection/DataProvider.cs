@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace DormitoryManagement
 {
@@ -9,9 +10,9 @@ namespace DormitoryManagement
    {
       //private static string connectionString = @"Data Source=DESKTOP-VJSMPL6;Initial Catalog=DormitoryManagement;Integrated Security=True";
       //private static string connectionString = @"Data Source=Hiae\HOHUYHOANG;Initial Catalog=DormitoryManagement;Integrated Security=True";
-      private static string connectionString = @"Data Source=(local);Initial Catalog=DormitoryManagement;Integrated Security=True";
+      //private static string connectionString = @"Data Source=(local);Initial Catalog=DormitoryManagement;Integrated Security=True";
 
-      //private static string connectionString = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+      private static string connectionString = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
       public static DataTable ExcuteQuery(string query, object[] parameter = null)
       {
