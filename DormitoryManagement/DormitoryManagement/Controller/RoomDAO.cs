@@ -22,9 +22,9 @@ namespace DormitoryManagement.Controller
             }
             return ListRoom;
         }
-        public static List<RoomDTO> GetListRoomBySector(string Sector_Name)
+        public static List<RoomDTO> GetListRoomBySector(string Sector_ID)
         {
-            string query = string.Format("EXEC dbo.USP_GetListRoomBySectorID @Sector_ID = {0}", Sector_Name);
+            string query = string.Format("EXEC dbo.USP_GetListRoomBySectorID @Sector_ID = {0}", Sector_ID);
             DataTable dataTable = DataProvider.ExcuteQuery(query);
             List<RoomDTO> ListRoom = new List<RoomDTO>();
             foreach (DataRow item in dataTable.Rows)

@@ -177,8 +177,8 @@ namespace DormitoryManagement.View
             }
             else
             {
-                MessageBox.Show("Error");
-            }
+                dgvBillReg.Rows.Clear();
+            }    
         }
         bool AddBill(long Employee_ID, string Room_Name, string Sector_Name, DateTime CreatDay, string Month, string Year, string Status, string Total)
         {
@@ -217,7 +217,8 @@ namespace DormitoryManagement.View
             }
             DateTime CreatDay = dtCreatedDate.Value;
             PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString());
-            MessageBox.Show(Total_Cost_Bill.ToString());
+            MessageBox.Show("Payment Success");
+            dgvPayment.Rows.Clear();
 
         }
         #endregion
@@ -262,5 +263,10 @@ namespace DormitoryManagement.View
             }
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
