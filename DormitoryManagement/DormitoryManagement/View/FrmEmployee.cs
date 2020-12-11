@@ -95,7 +95,7 @@ namespace DormitoryManagement.View
             CtrlBuildings = Dashboard.InitListBuildings();
             tlpInfo.Controls.Add(CtrlBuildings);
             //Phòng
-            CtrlRoom = Dashboard.InitRoom();
+            CtrlRoom = Dashboard.InitRoom(LoginUser);
             tlpInfo.Controls.Add(CtrlRoom);
             //DS Loại Phòng
             CtrlRoomType = Dashboard.InitListRoomType();
