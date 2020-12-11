@@ -1,0 +1,2 @@
+﻿USE [DormitoryManagement]
+GO

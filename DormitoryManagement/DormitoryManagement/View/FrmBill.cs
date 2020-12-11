@@ -24,6 +24,7 @@ namespace DormitoryManagement.View
                 this.user = value;
             }
         }
+
         public FrmBill(UserDTO user)
         {
             InitializeComponent();
@@ -32,24 +33,31 @@ namespace DormitoryManagement.View
         #region FillDaTa
         public void FillDataServiceUnit() //Load tất cả các Service
         {
+            List<ServiceDTO> ListService = ServiceDAO.GetListService();
+            cbbServiceName.DataSource = ListService;
             List<ServiceUnitDTO> ListServiceUnit = ServiceUnitDAO.GetListServiceUnit();
-            cmbTenDV.DataSource = ListServiceUnit;
-            cmbTenDV.DisplayMember = "ServiceName";
+            cbbServiceName.DataSource = ListServiceUnit;
+            cbbServiceName.DisplayMember = "ServiceName";
             txtPricePerUnit.Text = ListServiceUnit[0].PricePerUnit.ToString();
             txtUnit.Text = ListServiceUnit[0].UnitName.ToString();
-
         }
         public void FillDataSector() //Load tất cả các khu phòng
         {
             List<SectorDTO> ListSector = SectorDAO.GetListSector();
-            cmbBuilding.DataSource = ListSector;
-            cmbBuilding.DisplayMember = "SectorName";
+            cbbBuilding.DataSource = ListSector;
+            cbbBuilding.DisplayMember = "SectorName";
+        }
+        public void FillDataRoom() // Load tất cả các phòng
+        {
+            List<RoomDTO> ListRoom = RoomDAO.GetListRoom();
+            cbbRoom.DataSource = ListRoom;
+            cbbRoom.DisplayMember = "RoomId";
         }
         public void FillDataRoomBySector(string Sector_Name) // Load danh sách phòng theo Khu
         {
             List<RoomDTO> ListRoom = RoomDAO.GetListRoomBySector(Sector_Name);
-            cmbRoom.DataSource = ListRoom;
-            cmbRoom.DisplayMember = "RoomId";
+            cbbRoom.DataSource = ListRoom;
+            cbbRoom.DisplayMember = "RoomId";
         }
         #endregion
         #region Get___By____
@@ -71,20 +79,29 @@ namespace DormitoryManagement.View
             return Unit.UnitName;
         }
         #endregion
+        
+        private bool CanLoadPayment()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(cbbBuilding.Text).Append(cbbRoom.Text).Append(cbbMonth.Text).Append(txtYear.Text);
+            if (string.IsNullOrEmpty(sb.ToString()))
+                return false;
+            return true;
+        }
 
         #region Click
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //check du lieu dau vao co du chua
-            if (cmbBuilding.Text == "")
+            if (cbbBuilding.Text == "")
             {
                 MessageBox.Show("Sector not null");
             }
-            else if (cmbRoom.Text == "")
+            else if (cbbRoom.Text == "")
             {
                 MessageBox.Show("Room not null");
             }
-            else if (cmbMonth.Text == "")
+            else if (cbbMonth.Text == "")
             {
                 MessageBox.Show("Month not null");
             }
@@ -92,29 +109,30 @@ namespace DormitoryManagement.View
             {
                 MessageBox.Show("Year not null");
             }
-            else if (cmbTenDV.Text.Trim() == "" || numSoLuong.Value <= 0)//Kiểm tra dữ liệu có phù hợp không
+            else if (cbbServiceName.Text.Trim() == "" || numQuantity.Value <= 0)//Kiểm tra dữ liệu có phù hợp không
             {
                 MessageBox.Show("Số liệu không hợp lệ", "Lỗi nhập dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else 
             {
-                string Service_ID = GetServiceIDByServiceName(cmbTenDV.Text.ToString());
-                int SoLuong = Int32.Parse(numSoLuong.Value.ToString());
+                string Unit = GetUnitNameByServiceName(cbbServiceName.Text.ToString());
+                string Service_ID = GetServiceIDByServiceName(cbbServiceName.Text.ToString());
+                int SoLuong = Int32.Parse(numQuantity.Value.ToString());
                 decimal Gia = Decimal.Parse(txtPricePerUnit.Text.ToString());
                 string Price = (SoLuong * Gia).ToString();
                 decimal total = Decimal.Parse(txtTotal.Text.ToString());
                 total += (SoLuong * Gia);
                 txtTotal.Text = total.ToString();
-                string[] rowValue = new string[] { Service_ID, cmbTenDV.Text, txtUnit.Text, txtPricePerUnit.Text, numSoLuong.Value.ToString(), Price};
+                string[] rowValue = new string[] { Service_ID, cbbServiceName.Text, txtUnit.Text, txtPricePerUnit.Text, numQuantity.Value.ToString(), Price};
                 for (int i = 0; i < dgvBillReg.Rows.Count; i++)// Kiểm tra nếu dịch vụ đó đã có sử dụng thì cộng thêm với số lượng cũ
                 {
-                    if (dgvBillReg.Rows[i].Cells[1].Value == cmbTenDV.Text)
+                    if (dgvBillReg.Rows[i].Cells[1].Value.ToString() == cbbServiceName.Text)
                     {
                         decimal price = Decimal.Parse(dgvBillReg.Rows[i].Cells[5].Value.ToString());
                         decimal Number = Decimal.Parse(dgvBillReg.Rows[i].Cells[4].Value.ToString());
-                        Number += numSoLuong.Value;
-                        price += Gia * numSoLuong.Value;
+                        Number += numQuantity.Value;
+                        price += Gia * numQuantity.Value;
                         dgvBillReg.Rows[i].Cells[4].Value = Number.ToString();
                         dgvBillReg.Rows[i].Cells[5].Value = price.ToString();
                         return;
@@ -155,13 +173,13 @@ namespace DormitoryManagement.View
                 return;
             }
             long Employee_ID = User.UserId;
-            string Room_Name = cmbRoom.Text;
-            string Sector_Name = cmbBuilding.Text;
-            string Month = cmbMonth.Text;
+            string Room_Name = cbbRoom.Text;
+            string Sector_Name = cbbBuilding.Text;
+            string Month = cbbMonth.Text;
             string Year = txtYear.Text;
             string Status = "0";
             string Total = txtTotal.Text;
-            DateTime CreatDay = dtCreatedDate.Value;
+            DateTime CreatDay = dtpCreatedDate.Value;
             if (AddBill(Employee_ID, Room_Name, Sector_Name, CreatDay, Month, Year, Status, Total))
             {
                 for (int i = 0; i < dgvBillReg.Rows.Count - 1; i++)
@@ -187,9 +205,9 @@ namespace DormitoryManagement.View
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            string SectorName = cmbBuilding.Text;
-            string RoomId = cmbRoom.Text;
-            string Month = cmbMonth.Text.ToString();
+            string SectorName = cbbBuilding.Text;
+            string RoomId = cbbRoom.Text;
+            string Month = cbbMonth.Text.ToString();
             string Year = txtYear.Text;
             List<BillDetailDTO> ListService = BillDetailDAO.GetViewBillDetail(SectorName, RoomId, Month, Year);
             for (int i = 0; i < ListService.Count; i++)
@@ -219,7 +237,6 @@ namespace DormitoryManagement.View
             PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString());
             MessageBox.Show("Payment Success");
             dgvPayment.Rows.Clear();
-
         }
         #endregion
         private void FrmBill_Load(object sender, EventArgs e)
@@ -228,7 +245,7 @@ namespace DormitoryManagement.View
             FillDataSector();
             txtEmployee.Text = User.FirstName.ToString() + " "+User.LastName.ToString();
             DateTime now = DateTime.Now;
-            cmbMonth.Text = now.Month.ToString();
+            cbbMonth.Text = now.Month.ToString();
             txtYear.Text = now.Year.ToString();
             dgvBillReg.Rows[0].Cells[5].Value = 0;
             txtTotal.Text = "0";
@@ -236,7 +253,7 @@ namespace DormitoryManagement.View
         #region EventChange
         private void cmbBuilding_SelectedValueChanged(object sender, EventArgs e)
         {
-            string SectorName = cmbBuilding.Text.ToString();
+            string SectorName = cbbBuilding.Text.ToString();
             List<SectorDTO> ListSector = SectorDAO.GetListSector();
             for (int i = 0; i < ListSector.Count; i++)
             {
@@ -250,7 +267,7 @@ namespace DormitoryManagement.View
 
         private void cmbTenDV_SelectedValueChanged(object sender, EventArgs e)
         {
-            string ServiceName = cmbTenDV.Text.ToString();
+            string ServiceName = cbbServiceName.Text.ToString();
             List<ServiceUnitDTO> ListServiceUnit = ServiceUnitDAO.GetListServiceUnit();
             for (int i = 0; i < ListServiceUnit.Count; i++)
             {

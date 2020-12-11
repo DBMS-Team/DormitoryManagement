@@ -37,7 +37,7 @@ namespace DormitoryManagement
         {
             #region Management
             //Đăng nhập
-            CtrlLogin = Dashboard.InitLogin();
+            CtrlLogin = Dashboard.InitLogin(this);
             tlpManage.Controls.Add(ctrlLogin);
             //Thoát
             CtrlExit = Dashboard.InitExit();
