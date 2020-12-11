@@ -28,52 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle96 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle100 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle101 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle102 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle103 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle104 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle105 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbTitle = new System.Windows.Forms.Label();
             this.tabSearch = new System.Windows.Forms.TabControl();
             this.tabStudent = new System.Windows.Forms.TabPage();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Student_Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Student_Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSearchStudent = new System.Windows.Forms.Button();
             this.cbbCategoryStudent = new System.Windows.Forms.ComboBox();
             this.lbCategory = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInputStudent = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvRoomReg = new System.Windows.Forms.DataGridView();
-            this.RoomRegID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomReg_StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.cbbCategoryRoomReg = new System.Windows.Forms.ComboBox();
@@ -86,15 +66,6 @@
             this.txtInputRoomReg = new System.Windows.Forms.TextBox();
             this.tabBill = new System.Windows.Forms.TabPage();
             this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.BillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -162,136 +133,64 @@
             // 
             // dgvStudent
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle96.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle96.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle96.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle96.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle96;
             this.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvStudent.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle97.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle97.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle97.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle97.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle97.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle97.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle97;
             this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.UserID,
-            this.SSN,
-            this.StudentID,
-            this.FullName,
-            this.Gender,
-            this.DoB,
-            this.Email,
-            this.Phone1,
-            this.Student_Building,
-            this.Student_Room});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle98.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle98.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle98.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle98.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle98.SelectionForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle98;
             this.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStudent.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvStudent.Location = new System.Drawing.Point(3, 83);
             this.dgvStudent.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.dgvStudent.Name = "dgvStudent";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle99.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle99.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle99.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle99.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle99.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle99.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle99;
             this.dgvStudent.RowHeadersVisible = false;
             this.dgvStudent.RowHeadersWidth = 51;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle100.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle100.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle100.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle100.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle100.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle100.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudent.RowsDefaultCellStyle = dataGridViewCellStyle100;
             this.dgvStudent.Size = new System.Drawing.Size(1468, 602);
             this.dgvStudent.TabIndex = 14;
-            // 
-            // UserID
-            // 
-            this.UserID.HeaderText = "User ID";
-            this.UserID.MinimumWidth = 6;
-            this.UserID.Name = "UserID";
-            // 
-            // SSN
-            // 
-            this.SSN.HeaderText = "SSN";
-            this.SSN.MinimumWidth = 6;
-            this.SSN.Name = "SSN";
-            // 
-            // StudentID
-            // 
-            this.StudentID.HeaderText = "Student ID";
-            this.StudentID.MinimumWidth = 6;
-            this.StudentID.Name = "StudentID";
-            // 
-            // FullName
-            // 
-            this.FullName.HeaderText = "Full Name";
-            this.FullName.MinimumWidth = 6;
-            this.FullName.Name = "FullName";
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.MinimumWidth = 6;
-            this.Gender.Name = "Gender";
-            // 
-            // DoB
-            // 
-            this.DoB.HeaderText = "DoB";
-            this.DoB.MinimumWidth = 6;
-            this.DoB.Name = "DoB";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            // 
-            // Phone1
-            // 
-            this.Phone1.HeaderText = "Phone 1";
-            this.Phone1.MinimumWidth = 6;
-            this.Phone1.Name = "Phone1";
-            // 
-            // Student_Building
-            // 
-            this.Student_Building.HeaderText = "Building";
-            this.Student_Building.MinimumWidth = 6;
-            this.Student_Building.Name = "Student_Building";
-            // 
-            // Student_Room
-            // 
-            this.Student_Room.HeaderText = "Room";
-            this.Student_Room.MinimumWidth = 6;
-            this.Student_Room.Name = "Student_Room";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSearchStudent, 2, 1);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.40054F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.613079F));
             this.tableLayoutPanel1.Controls.Add(this.cbbCategoryStudent, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbCategory, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
@@ -305,37 +204,28 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1468, 80);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
-            // btnSearchStudent
-            // 
-            this.btnSearchStudent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSearchStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchStudent.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSearchStudent.Location = new System.Drawing.Point(1250, 42);
-            this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearchStudent.Name = "btnSearchStudent";
-            this.btnSearchStudent.Size = new System.Drawing.Size(215, 36);
-            this.btnSearchStudent.TabIndex = 13;
-            this.btnSearchStudent.Text = "SEARCH";
-            this.btnSearchStudent.UseVisualStyleBackColor = true;
-            // 
             // cbbCategoryStudent
             // 
             this.cbbCategoryStudent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbCategoryStudent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCategoryStudent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbCategoryStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cbbCategoryStudent.FormattingEnabled = true;
             this.cbbCategoryStudent.Items.AddRange(new object[] {
-            "Student ID",
+            "FULL",
+            "ALIVE",
+            "GOING OUT",
+            "USER_ID",
+            "STUDENT_ID",
+            "FULLNAME",
+            "GENDER",
             "SSN",
-            "Full name",
-            "Email",
-            "Phone 1"});
+            "COLLEGE"});
             this.cbbCategoryStudent.Location = new System.Drawing.Point(4, 44);
             this.cbbCategoryStudent.Margin = new System.Windows.Forms.Padding(4);
             this.cbbCategoryStudent.Name = "cbbCategoryStudent";
-            this.cbbCategoryStudent.Size = new System.Drawing.Size(212, 31);
+            this.cbbCategoryStudent.Size = new System.Drawing.Size(212, 28);
             this.cbbCategoryStudent.TabIndex = 11;
+            this.cbbCategoryStudent.Text = "FULL";
+            this.cbbCategoryStudent.SelectedIndexChanged += new System.EventHandler(this.cbbCategoryStudent_SelectedIndexChanged);
             // 
             // lbCategory
             // 
@@ -356,7 +246,7 @@
             this.label1.Location = new System.Drawing.Point(224, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1019, 40);
+            this.label1.Size = new System.Drawing.Size(1230, 40);
             this.label1.TabIndex = 8;
             this.label1.Text = "What to search:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -367,8 +257,9 @@
             this.txtInputStudent.Font = new System.Drawing.Font("Segoe UI Black", 12F);
             this.txtInputStudent.Location = new System.Drawing.Point(223, 43);
             this.txtInputStudent.Name = "txtInputStudent";
-            this.txtInputStudent.Size = new System.Drawing.Size(1021, 35);
+            this.txtInputStudent.Size = new System.Drawing.Size(1232, 35);
             this.txtInputStudent.TabIndex = 14;
+            this.txtInputStudent.TextChanged += new System.EventHandler(this.txtInputStudent_TextChanged);
             // 
             // tabPage2
             // 
@@ -384,121 +275,57 @@
             // 
             // dgvRoomReg
             // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRoomReg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle101.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle101.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle101.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle101.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle101.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRoomReg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle101;
             this.dgvRoomReg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRoomReg.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvRoomReg.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvRoomReg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRoomReg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle102.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle102.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle102.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle102.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle102.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRoomReg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle102;
             this.dgvRoomReg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoomReg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RoomRegID,
-            this.CreatedTime,
-            this.Building,
-            this.Room,
-            this.RoomReg_StudentID,
-            this.EmployeeID,
-            this.StartDate,
-            this.Duration,
-            this.Total});
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRoomReg.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle103.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle103.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle103.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle103.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle103.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle103.SelectionForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle103.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRoomReg.DefaultCellStyle = dataGridViewCellStyle103;
             this.dgvRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRoomReg.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvRoomReg.Location = new System.Drawing.Point(3, 83);
             this.dgvRoomReg.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.dgvRoomReg.Name = "dgvRoomReg";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRoomReg.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle104.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle104.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle104.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle104.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle104.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRoomReg.RowHeadersDefaultCellStyle = dataGridViewCellStyle104;
             this.dgvRoomReg.RowHeadersVisible = false;
             this.dgvRoomReg.RowHeadersWidth = 51;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRoomReg.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle105.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle105.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle105.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle105.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle105.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle105.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRoomReg.RowsDefaultCellStyle = dataGridViewCellStyle105;
             this.dgvRoomReg.Size = new System.Drawing.Size(1468, 602);
             this.dgvRoomReg.TabIndex = 15;
-            // 
-            // RoomRegID
-            // 
-            this.RoomRegID.HeaderText = "RoomReg ID";
-            this.RoomRegID.MinimumWidth = 6;
-            this.RoomRegID.Name = "RoomRegID";
-            // 
-            // CreatedTime
-            // 
-            this.CreatedTime.HeaderText = "Created Time";
-            this.CreatedTime.MinimumWidth = 6;
-            this.CreatedTime.Name = "CreatedTime";
-            // 
-            // Building
-            // 
-            this.Building.HeaderText = "Building";
-            this.Building.MinimumWidth = 6;
-            this.Building.Name = "Building";
-            // 
-            // Room
-            // 
-            this.Room.HeaderText = "Room";
-            this.Room.MinimumWidth = 6;
-            this.Room.Name = "Room";
-            // 
-            // RoomReg_StudentID
-            // 
-            this.RoomReg_StudentID.HeaderText = "Student ID";
-            this.RoomReg_StudentID.MinimumWidth = 6;
-            this.RoomReg_StudentID.Name = "RoomReg_StudentID";
-            // 
-            // EmployeeID
-            // 
-            this.EmployeeID.HeaderText = "Employee ID";
-            this.EmployeeID.MinimumWidth = 6;
-            this.EmployeeID.Name = "EmployeeID";
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Start Date";
-            this.StartDate.MinimumWidth = 6;
-            this.StartDate.Name = "StartDate";
-            // 
-            // Duration
-            // 
-            this.Duration.HeaderText = "Duration";
-            this.Duration.MinimumWidth = 6;
-            this.Duration.Name = "Duration";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
             // 
             // tableLayoutPanel3
             // 
@@ -541,18 +368,19 @@
             // cbbCategoryRoomReg
             // 
             this.cbbCategoryRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbCategoryRoomReg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCategoryRoomReg.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbCategoryRoomReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cbbCategoryRoomReg.FormattingEnabled = true;
             this.cbbCategoryRoomReg.Items.AddRange(new object[] {
-            "Room Registration ID",
-            "Student ID",
-            "Employee ID"});
+            "FULL",
+            "STUDENT_ID",
+            "STUDENT_FULLNAME"});
             this.cbbCategoryRoomReg.Location = new System.Drawing.Point(4, 44);
             this.cbbCategoryRoomReg.Margin = new System.Windows.Forms.Padding(4);
             this.cbbCategoryRoomReg.Name = "cbbCategoryRoomReg";
-            this.cbbCategoryRoomReg.Size = new System.Drawing.Size(359, 31);
+            this.cbbCategoryRoomReg.Size = new System.Drawing.Size(359, 28);
             this.cbbCategoryRoomReg.TabIndex = 15;
+            this.cbbCategoryRoomReg.Text = "FULL";
+            this.cbbCategoryRoomReg.SelectedIndexChanged += new System.EventHandler(this.cbbCategoryRoomReg_SelectedIndexChanged);
             // 
             // btnSearchRoomReg
             // 
@@ -609,33 +437,37 @@
             // 
             this.cbbRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cbbRoom.FormattingEnabled = true;
             this.cbbRoom.Location = new System.Drawing.Point(1031, 44);
             this.cbbRoom.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRoom.Name = "cbbRoom";
-            this.cbbRoom.Size = new System.Drawing.Size(285, 31);
+            this.cbbRoom.Size = new System.Drawing.Size(285, 28);
             this.cbbRoom.TabIndex = 11;
+            this.cbbRoom.SelectedIndexChanged += new System.EventHandler(this.cbbRoom_SelectedIndexChanged);
             // 
             // cbbBuilding
             // 
             this.cbbBuilding.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbBuilding.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbBuilding.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cbbBuilding.FormattingEnabled = true;
             this.cbbBuilding.Location = new System.Drawing.Point(738, 44);
             this.cbbBuilding.Margin = new System.Windows.Forms.Padding(4);
             this.cbbBuilding.Name = "cbbBuilding";
-            this.cbbBuilding.Size = new System.Drawing.Size(285, 31);
+            this.cbbBuilding.Size = new System.Drawing.Size(285, 28);
             this.cbbBuilding.TabIndex = 14;
+            this.cbbBuilding.SelectedIndexChanged += new System.EventHandler(this.cbbBuilding_SelectedIndexChanged);
             // 
             // txtInputRoomReg
             // 
             this.txtInputRoomReg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInputRoomReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.txtInputRoomReg.Location = new System.Drawing.Point(370, 43);
             this.txtInputRoomReg.Name = "txtInputRoomReg";
-            this.txtInputRoomReg.Size = new System.Drawing.Size(361, 30);
+            this.txtInputRoomReg.Size = new System.Drawing.Size(361, 26);
             this.txtInputRoomReg.TabIndex = 19;
+            this.txtInputRoomReg.TextChanged += new System.EventHandler(this.txtInputRoomReg_TextChanged);
             // 
             // tabBill
             // 
@@ -651,121 +483,57 @@
             // 
             // dgvBill
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle91.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle91.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle91.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle91.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle91.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle91;
             this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBill.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvBill.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle92.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle92.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle92.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle92.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle92.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle92.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle92;
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BillID,
-            this.Bill_CreatedTime,
-            this.Bill_Building,
-            this.Bill_Room,
-            this.Month,
-            this.Year,
-            this.Bill_EmployeeID,
-            this.Bill_Total,
-            this.Status});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle93.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle93.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle93.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle93.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle93.SelectionForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle93.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBill.DefaultCellStyle = dataGridViewCellStyle93;
             this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBill.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvBill.Location = new System.Drawing.Point(3, 83);
             this.dgvBill.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.dgvBill.Name = "dgvBill";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle94.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle94.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle94.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle94.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle94.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle94.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle94.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle94;
             this.dgvBill.RowHeadersVisible = false;
             this.dgvBill.RowHeadersWidth = 51;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle95.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle95.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle95.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle95.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle95.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle95.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle95;
             this.dgvBill.Size = new System.Drawing.Size(1468, 602);
             this.dgvBill.TabIndex = 15;
-            // 
-            // BillID
-            // 
-            this.BillID.HeaderText = "Bill ID";
-            this.BillID.MinimumWidth = 6;
-            this.BillID.Name = "BillID";
-            // 
-            // Bill_CreatedTime
-            // 
-            this.Bill_CreatedTime.HeaderText = "Created Time";
-            this.Bill_CreatedTime.MinimumWidth = 6;
-            this.Bill_CreatedTime.Name = "Bill_CreatedTime";
-            // 
-            // Bill_Building
-            // 
-            this.Bill_Building.HeaderText = "Building";
-            this.Bill_Building.MinimumWidth = 6;
-            this.Bill_Building.Name = "Bill_Building";
-            // 
-            // Bill_Room
-            // 
-            this.Bill_Room.HeaderText = "Room";
-            this.Bill_Room.MinimumWidth = 6;
-            this.Bill_Room.Name = "Bill_Room";
-            // 
-            // Month
-            // 
-            this.Month.HeaderText = "Month";
-            this.Month.MinimumWidth = 6;
-            this.Month.Name = "Month";
-            // 
-            // Year
-            // 
-            this.Year.HeaderText = "Year";
-            this.Year.MinimumWidth = 6;
-            this.Year.Name = "Year";
-            // 
-            // Bill_EmployeeID
-            // 
-            this.Bill_EmployeeID.HeaderText = "Employee ID";
-            this.Bill_EmployeeID.MinimumWidth = 6;
-            this.Bill_EmployeeID.Name = "Bill_EmployeeID";
-            // 
-            // Bill_Total
-            // 
-            this.Bill_Total.HeaderText = "Total";
-            this.Bill_Total.MinimumWidth = 6;
-            this.Bill_Total.Name = "Bill_Total";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
             // 
             // tableLayoutPanel2
             // 
@@ -823,7 +591,6 @@
             // btnSearch_Bill
             // 
             this.btnSearch_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSearch_Bill.Enabled = false;
             this.btnSearch_Bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch_Bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch_Bill.ForeColor = System.Drawing.Color.DarkRed;
@@ -834,6 +601,7 @@
             this.btnSearch_Bill.TabIndex = 13;
             this.btnSearch_Bill.Text = "SEARCH";
             this.btnSearch_Bill.UseVisualStyleBackColor = true;
+            this.btnSearch_Bill.Click += new System.EventHandler(this.btnSearch_Bill_Click);
             // 
             // label3
             // 
@@ -875,25 +643,27 @@
             // 
             this.cbbRoom_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbRoom_Bill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbRoom_Bill.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbRoom_Bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cbbRoom_Bill.FormattingEnabled = true;
             this.cbbRoom_Bill.Location = new System.Drawing.Point(883, 44);
             this.cbbRoom_Bill.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRoom_Bill.Name = "cbbRoom_Bill";
-            this.cbbRoom_Bill.Size = new System.Drawing.Size(285, 31);
+            this.cbbRoom_Bill.Size = new System.Drawing.Size(285, 28);
             this.cbbRoom_Bill.TabIndex = 11;
+            this.cbbRoom_Bill.SelectedIndexChanged += new System.EventHandler(this.cbbRoom_Bill_SelectedIndexChanged);
             // 
             // cbbBuiding_Bill
             // 
             this.cbbBuiding_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbBuiding_Bill.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbBuiding_Bill.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbBuiding_Bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.cbbBuiding_Bill.FormattingEnabled = true;
             this.cbbBuiding_Bill.Location = new System.Drawing.Point(590, 44);
             this.cbbBuiding_Bill.Margin = new System.Windows.Forms.Padding(4);
             this.cbbBuiding_Bill.Name = "cbbBuiding_Bill";
-            this.cbbBuiding_Bill.Size = new System.Drawing.Size(285, 31);
+            this.cbbBuiding_Bill.Size = new System.Drawing.Size(285, 28);
             this.cbbBuiding_Bill.TabIndex = 14;
+            this.cbbBuiding_Bill.SelectedIndexChanged += new System.EventHandler(this.cbbBuiding_Bill_SelectedIndexChanged);
             // 
             // ckbPaid
             // 
@@ -907,9 +677,11 @@
             this.ckbPaid.TabIndex = 20;
             this.ckbPaid.Text = "Paid";
             this.ckbPaid.UseVisualStyleBackColor = true;
+            this.ckbPaid.CheckedChanged += new System.EventHandler(this.ckbPaid_CheckedChanged);
             // 
             // dtpFromDate
             // 
+            this.dtpFromDate.CustomFormat = "M/yyyy";
             this.dtpFromDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -920,6 +692,7 @@
             // 
             // dtpToDate
             // 
+            this.dtpToDate.CustomFormat = "M/yyyy";
             this.dtpToDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -938,6 +711,7 @@
             this.Name = "FrmSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";
+            this.Load += new System.EventHandler(this.FrmSearch_Load);
             this.tabSearch.ResumeLayout(false);
             this.tabStudent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
@@ -962,7 +736,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabBill;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnSearchStudent;
         private System.Windows.Forms.ComboBox cbbCategoryStudent;
         private System.Windows.Forms.Label lbCategory;
         private System.Windows.Forms.Label label1;
@@ -992,33 +765,5 @@
         private System.Windows.Forms.CheckBox ckbPaid;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.DateTimePicker dtpToDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BillID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bill_CreatedTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bill_Building;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bill_Room;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Month;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Year;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bill_EmployeeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bill_Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SSN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DoB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Student_Building;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Student_Room;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomRegID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Building;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Room;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomReg_StudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

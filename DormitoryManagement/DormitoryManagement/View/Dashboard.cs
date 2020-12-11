@@ -72,8 +72,9 @@ namespace DormitoryManagement.View
             return ctrlRoom;
         }
 
-        public static Item InitBill()
+        public static Item InitBill(UserDTO user)
         {
+            User = user;
             Item ctrlBill = new Item(Dashboard.Bill);
             ctrlBill.picItem.BackgroundImage = Properties.Resources.Form;
             ctrlBill.btnTitle.Text = "BILL";
@@ -181,7 +182,8 @@ namespace DormitoryManagement.View
             FrmLogin frmLogin = new FrmLogin();
             ((Form)frm).Hide();
             frmLogin.ShowDialog();
-            ((Form)frm).Show();
+
+            if (frm is Form f && f.IsDisposed != true) { f.Show(); }
         }
 
         public static void Logout(object frm)

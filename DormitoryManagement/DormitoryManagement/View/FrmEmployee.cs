@@ -116,7 +116,7 @@ namespace DormitoryManagement.View
             ctrlRoomRegistration = Dashboard.InitRoomRegistration();
             tlpAdd.Controls.Add(CtrlRoomRegistration);
             //Hoá đơn
-            CtrlBill = Dashboard.InitBill();
+            CtrlBill = Dashboard.InitBill(LoginUser);
             tlpAdd.Controls.Add(CtrlBill);
             //Sinh viên
             CtrlAddStudent = Dashboard.InitAddStudent();

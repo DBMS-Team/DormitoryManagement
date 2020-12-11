@@ -1,4 +1,4 @@
-﻿namespace DormitoryManagement.View
+namespace DormitoryManagement.View
 {
     partial class FrmBill
     {
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBillReg = new System.Windows.Forms.DataGridView();
             this.ServiceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,47 +55,49 @@
             this.dgvPayment = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLoad = new System.Windows.Forms.Button();
-            this.btnCancalPayment = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.tabRegistration = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnLoadReg = new System.Windows.Forms.Button();
-            this.btnPayReg = new System.Windows.Forms.Button();
+            this.btnLoadRegistration = new System.Windows.Forms.Button();
+            this.btnPayRegistration = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancelReg = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbUnit = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbService = new System.Windows.Forms.Label();
-            this.numQuantity = new System.Windows.Forms.NumericUpDown();
+            this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.lbQuantity = new System.Windows.Forms.Label();
-            this.cbbServiceName = new System.Windows.Forms.ComboBox();
+            this.cmbTenDV = new System.Windows.Forms.ComboBox();
             this.txtPricePerUnit = new System.Windows.Forms.TextBox();
             this.txtUnit = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.cbbRoom = new System.Windows.Forms.ComboBox();
+            this.cmbRoom = new System.Windows.Forms.ComboBox();
             this.lbPhong = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dtpCreatedDate = new System.Windows.Forms.DateTimePicker();
+            this.dtCreatedDate = new System.Windows.Forms.DateTimePicker();
             this.lbNgay = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cbbBuilding = new System.Windows.Forms.ComboBox();
+            this.cmbBuilding = new System.Windows.Forms.ComboBox();
             this.lbKhu = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cbbMonth = new System.Windows.Forms.ComboBox();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtEmployee = new System.Windows.Forms.TextBox();
@@ -111,7 +113,7 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -126,15 +128,15 @@
             this.dgvBillReg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBillReg.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvBillReg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PeachPuff;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Black", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBillReg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.PeachPuff;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBillReg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvBillReg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBillReg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ServiceID,
@@ -148,14 +150,14 @@
             this.dgvBillReg.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBillReg.Name = "dgvBillReg";
             this.dgvBillReg.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.PeachPuff;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Black", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBillReg.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.PeachPuff;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBillReg.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvBillReg.RowHeadersVisible = false;
             this.dgvBillReg.RowHeadersWidth = 51;
             this.dgvBillReg.Size = new System.Drawing.Size(856, 407);
@@ -164,12 +166,12 @@
             // ServiceID
             // 
             this.ServiceID.DataPropertyName = "ServiceID";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ServiceID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ServiceID.DefaultCellStyle = dataGridViewCellStyle14;
             this.ServiceID.HeaderText = "Service ID";
             this.ServiceID.MinimumWidth = 6;
             this.ServiceID.Name = "ServiceID";
@@ -178,14 +180,14 @@
             // ServiceName
             // 
             this.ServiceName.DataPropertyName = "ServiceName";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle15;
             this.ServiceName.HeaderText = "Service";
             this.ServiceName.MinimumWidth = 6;
             this.ServiceName.Name = "ServiceName";
@@ -194,14 +196,14 @@
             // Unit
             // 
             this.Unit.DataPropertyName = "Unit";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Cornsilk;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.Unit.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.Unit.DefaultCellStyle = dataGridViewCellStyle16;
             this.Unit.HeaderText = "Unit";
             this.Unit.MinimumWidth = 6;
             this.Unit.Name = "Unit";
@@ -217,14 +219,14 @@
             // Quantity
             // 
             this.Quantity.DataPropertyName = "Quantity";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.Quantity.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            this.Quantity.DefaultCellStyle = dataGridViewCellStyle17;
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
@@ -301,34 +303,36 @@
             this.dgvPayment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPayment.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvPayment.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.PeachPuff;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Black", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.PeachPuff;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn6});
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
             this.dgvPayment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPayment.Location = new System.Drawing.Point(3, 3);
             this.dgvPayment.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPayment.Name = "dgvPayment";
             this.dgvPayment.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.PeachPuff;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Black", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPayment.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.PeachPuff;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPayment.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvPayment.RowHeadersVisible = false;
             this.dgvPayment.RowHeadersWidth = 51;
             this.dgvPayment.Size = new System.Drawing.Size(856, 493);
@@ -337,12 +341,12 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ServiceID";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewTextBoxColumn3.HeaderText = "Service ID";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -351,38 +355,30 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ServiceName";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewTextBoxColumn5.HeaderText = "Service";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Total";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Unit";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Cornsilk;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewTextBoxColumn6.HeaderText = "Unit";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
@@ -398,14 +394,14 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Quantity";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewTextBoxColumn8.HeaderText = "Quantity";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
@@ -425,7 +421,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33444F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33112F));
             this.tableLayoutPanel3.Controls.Add(this.btnLoad, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnCancalPayment, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button1, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnPay, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 496);
@@ -539,10 +535,10 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.btnLoadReg, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnPayReg, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnLoadRegistration, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnPayRegistration, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnCancelReg, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCancel, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 496);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -551,35 +547,35 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(856, 54);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
-            // btnLoadReg
+            // btnLoadRegistration
             // 
-            this.btnLoadReg.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLoadReg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLoadReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadReg.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadReg.ForeColor = System.Drawing.Color.MediumVioletRed;
-            this.btnLoadReg.Location = new System.Drawing.Point(4, 4);
-            this.btnLoadReg.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLoadReg.Name = "btnLoadReg";
-            this.btnLoadReg.Size = new System.Drawing.Size(206, 46);
-            this.btnLoadReg.TabIndex = 6;
-            this.btnLoadReg.Text = "LOAD";
-            this.btnLoadReg.UseVisualStyleBackColor = false;
+            this.btnLoadRegistration.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLoadRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLoadRegistration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadRegistration.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadRegistration.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.btnLoadRegistration.Location = new System.Drawing.Point(4, 4);
+            this.btnLoadRegistration.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoadRegistration.Name = "btnLoadRegistration";
+            this.btnLoadRegistration.Size = new System.Drawing.Size(206, 46);
+            this.btnLoadRegistration.TabIndex = 6;
+            this.btnLoadRegistration.Text = "LOAD";
+            this.btnLoadRegistration.UseVisualStyleBackColor = false;
             // 
-            // btnPayReg
+            // btnPayRegistration
             // 
-            this.btnPayReg.BackColor = System.Drawing.Color.Orange;
-            this.btnPayReg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPayReg.Enabled = false;
-            this.btnPayReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayReg.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayReg.Location = new System.Drawing.Point(432, 4);
-            this.btnPayReg.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPayReg.Name = "btnPayReg";
-            this.btnPayReg.Size = new System.Drawing.Size(206, 46);
-            this.btnPayReg.TabIndex = 5;
-            this.btnPayReg.Text = "PRINT";
-            this.btnPayReg.UseVisualStyleBackColor = false;
+            this.btnPayRegistration.BackColor = System.Drawing.Color.Orange;
+            this.btnPayRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPayRegistration.Enabled = false;
+            this.btnPayRegistration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayRegistration.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayRegistration.Location = new System.Drawing.Point(432, 4);
+            this.btnPayRegistration.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPayRegistration.Name = "btnPayRegistration";
+            this.btnPayRegistration.Size = new System.Drawing.Size(206, 46);
+            this.btnPayRegistration.TabIndex = 5;
+            this.btnPayRegistration.Text = "PRINT";
+            this.btnPayRegistration.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
@@ -597,20 +593,20 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnCancelReg
+            // btnCancel
             // 
-            this.btnCancelReg.BackColor = System.Drawing.Color.LightCoral;
-            this.btnCancelReg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelReg.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelReg.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnCancelReg.Location = new System.Drawing.Point(646, 4);
-            this.btnCancelReg.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelReg.Name = "btnCancelReg";
-            this.btnCancelReg.Size = new System.Drawing.Size(206, 46);
-            this.btnCancelReg.TabIndex = 3;
-            this.btnCancelReg.Text = "CANCEL";
-            this.btnCancelReg.UseVisualStyleBackColor = false;
+            this.btnCancel.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnCancel.Location = new System.Drawing.Point(646, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(206, 46);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -624,9 +620,9 @@
             this.tableLayoutPanel1.Controls.Add(this.btnRemove, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAdd, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbService, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.numQuantity, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.numSoLuong, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbQuantity, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cbbServiceName, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cmbTenDV, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtPricePerUnit, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtUnit, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -707,22 +703,22 @@
             this.lbService.Text = "Service";
             this.lbService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // numQuantity
+            // numSoLuong
             // 
-            this.numQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numQuantity.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numQuantity.Location = new System.Drawing.Point(175, 39);
-            this.numQuantity.Margin = new System.Windows.Forms.Padding(4);
-            this.numQuantity.Maximum = new decimal(new int[] {
+            this.numSoLuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numSoLuong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numSoLuong.Location = new System.Drawing.Point(175, 39);
+            this.numSoLuong.Margin = new System.Windows.Forms.Padding(4);
+            this.numSoLuong.Maximum = new decimal(new int[] {
             1215752192,
             23,
             0,
             0});
-            this.numQuantity.Name = "numQuantity";
-            this.numQuantity.Size = new System.Drawing.Size(505, 30);
-            this.numQuantity.TabIndex = 16;
-            this.numQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numQuantity.Value = new decimal(new int[] {
+            this.numSoLuong.Name = "numSoLuong";
+            this.numSoLuong.Size = new System.Drawing.Size(505, 30);
+            this.numSoLuong.TabIndex = 16;
+            this.numSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numSoLuong.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -741,16 +737,17 @@
             this.lbQuantity.Text = "Quantity";
             this.lbQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cbbServiceName
+            // cmbTenDV
             // 
-            this.cbbServiceName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbServiceName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbServiceName.FormattingEnabled = true;
-            this.cbbServiceName.Location = new System.Drawing.Point(175, 4);
-            this.cbbServiceName.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbServiceName.Name = "cbbServiceName";
-            this.cbbServiceName.Size = new System.Drawing.Size(505, 31);
-            this.cbbServiceName.TabIndex = 15;
+            this.cmbTenDV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbTenDV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTenDV.FormattingEnabled = true;
+            this.cmbTenDV.Location = new System.Drawing.Point(175, 4);
+            this.cmbTenDV.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTenDV.Name = "cmbTenDV";
+            this.cmbTenDV.Size = new System.Drawing.Size(505, 31);
+            this.cmbTenDV.TabIndex = 15;
+            this.cmbTenDV.SelectedValueChanged += new System.EventHandler(this.cmbTenDV_SelectedValueChanged);
             // 
             // txtPricePerUnit
             // 
@@ -792,7 +789,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.cbbRoom);
+            this.panel6.Controls.Add(this.cmbRoom);
             this.panel6.Controls.Add(this.lbPhong);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(583, 66);
@@ -800,16 +797,16 @@
             this.panel6.Size = new System.Drawing.Size(284, 57);
             this.panel6.TabIndex = 5;
             // 
-            // cbbRoom
+            // cmbRoom
             // 
-            this.cbbRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbRoom.FormattingEnabled = true;
-            this.cbbRoom.Location = new System.Drawing.Point(0, 23);
-            this.cbbRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbRoom.Name = "cbbRoom";
-            this.cbbRoom.Size = new System.Drawing.Size(284, 29);
-            this.cbbRoom.TabIndex = 10;
+            this.cmbRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRoom.FormattingEnabled = true;
+            this.cmbRoom.Location = new System.Drawing.Point(0, 23);
+            this.cmbRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbRoom.Name = "cmbRoom";
+            this.cmbRoom.Size = new System.Drawing.Size(284, 29);
+            this.cmbRoom.TabIndex = 10;
             // 
             // lbPhong
             // 
@@ -857,7 +854,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dtpCreatedDate);
+            this.panel4.Controls.Add(this.dtCreatedDate);
             this.panel4.Controls.Add(this.lbNgay);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 66);
@@ -865,17 +862,17 @@
             this.panel4.Size = new System.Drawing.Size(284, 57);
             this.panel4.TabIndex = 3;
             // 
-            // dtpCreatedDate
+            // dtCreatedDate
             // 
-            this.dtpCreatedDate.CustomFormat = "yyyy-MM-dd hh:mm:ss";
-            this.dtpCreatedDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpCreatedDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCreatedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCreatedDate.Location = new System.Drawing.Point(0, 23);
-            this.dtpCreatedDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpCreatedDate.Name = "dtpCreatedDate";
-            this.dtpCreatedDate.Size = new System.Drawing.Size(284, 29);
-            this.dtpCreatedDate.TabIndex = 14;
+            this.dtCreatedDate.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            this.dtCreatedDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtCreatedDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCreatedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtCreatedDate.Location = new System.Drawing.Point(0, 23);
+            this.dtCreatedDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtCreatedDate.Name = "dtCreatedDate";
+            this.dtCreatedDate.Size = new System.Drawing.Size(284, 29);
+            this.dtCreatedDate.TabIndex = 14;
             // 
             // lbNgay
             // 
@@ -891,7 +888,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.cbbBuilding);
+            this.panel3.Controls.Add(this.cmbBuilding);
             this.panel3.Controls.Add(this.lbKhu);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(583, 3);
@@ -899,17 +896,17 @@
             this.panel3.Size = new System.Drawing.Size(284, 57);
             this.panel3.TabIndex = 2;
             // 
-            // cbbBuilding
+            // cmbBuilding
             // 
-            this.cbbBuilding.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbBuilding.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbBuilding.FormattingEnabled = true;
-            this.cbbBuilding.Location = new System.Drawing.Point(0, 23);
-            this.cbbBuilding.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbBuilding.Name = "cbbBuilding";
-            this.cbbBuilding.Size = new System.Drawing.Size(284, 29);
-            this.cbbBuilding.TabIndex = 9;
-            this.cbbBuilding.SelectedValueChanged += new System.EventHandler(this.cmbBuilding_SelectedValueChanged);
+            this.cmbBuilding.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbBuilding.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBuilding.FormattingEnabled = true;
+            this.cmbBuilding.Location = new System.Drawing.Point(0, 23);
+            this.cmbBuilding.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBuilding.Name = "cmbBuilding";
+            this.cmbBuilding.Size = new System.Drawing.Size(284, 29);
+            this.cmbBuilding.TabIndex = 9;
+            this.cmbBuilding.SelectedValueChanged += new System.EventHandler(this.cmbBuilding_SelectedValueChanged);
             // 
             // lbKhu
             // 
@@ -925,7 +922,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.cbbMonth);
+            this.panel2.Controls.Add(this.cmbMonth);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(293, 3);
@@ -933,13 +930,13 @@
             this.panel2.Size = new System.Drawing.Size(284, 57);
             this.panel2.TabIndex = 1;
             // 
-            // cbbMonth
+            // cmbMonth
             // 
-            this.cbbMonth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbMonth.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbMonth.FormattingEnabled = true;
-            this.cbbMonth.Items.AddRange(new object[] {
+            this.cmbMonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonth.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -952,11 +949,11 @@
             "10",
             "11",
             "12"});
-            this.cbbMonth.Location = new System.Drawing.Point(0, 23);
-            this.cbbMonth.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbMonth.Name = "cbbMonth";
-            this.cbbMonth.Size = new System.Drawing.Size(284, 29);
-            this.cbbMonth.TabIndex = 20;
+            this.cmbMonth.Location = new System.Drawing.Point(0, 23);
+            this.cmbMonth.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(284, 29);
+            this.cmbMonth.TabIndex = 20;
             // 
             // label1
             // 
@@ -1028,7 +1025,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -1053,8 +1050,8 @@
         private System.Windows.Forms.Panel pnContainer;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.NumericUpDown numQuantity;
-        private System.Windows.Forms.ComboBox cbbServiceName;
+        private System.Windows.Forms.NumericUpDown numSoLuong;
+        private System.Windows.Forms.ComboBox cmbTenDV;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPayment;
         private System.Windows.Forms.TabPage tabRegistration;
@@ -1062,29 +1059,29 @@
         private System.Windows.Forms.Label lbService;
         private System.Windows.Forms.Label lbQuantity;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button btnPayReg;
+        private System.Windows.Forms.Button btnPayRegistration;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancelReg;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.Button btnCancalPayment;
-        private System.Windows.Forms.Button btnLoadReg;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoadRegistration;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ComboBox cbbRoom;
+        private System.Windows.Forms.ComboBox cmbRoom;
         private System.Windows.Forms.Label lbPhong;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DateTimePicker dtpCreatedDate;
+        private System.Windows.Forms.DateTimePicker dtCreatedDate;
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cbbBuilding;
+        private System.Windows.Forms.ComboBox cmbBuilding;
         private System.Windows.Forms.Label lbKhu;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cbbMonth;
+        private System.Windows.Forms.ComboBox cmbMonth;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtEmployee;
@@ -1105,7 +1102,9 @@
         private System.Windows.Forms.DataGridView dgvPayment;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

@@ -178,37 +178,37 @@ namespace DormitoryManagement.View
                 List<UserDTO> userDTOs = UserDAO.GetListUser();
                 foreach (var item in userDTOs)
                 {
-                    if (item.Ssn.Equals(ssn))
+                    if (item.Ssn.Equals(ssn) && flag == 0)
                     {
                         MessageBox.Show("SSN already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                         return;
                     }
-                    if (item.PhoneNumber1.Equals(phoneNumber1))
+                    if (item.PhoneNumber1.Equals(phoneNumber1) && flag == 0)
                     {
                         MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                         return;
                     }
-                    if (item.PhoneNumber2.Equals(phoneNumber1))
+                    if (item.PhoneNumber2.Equals(phoneNumber1) && flag == 0)
                     {
                         MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                         return;
                     }
-                    if (item.PhoneNumber1.Equals(phoneNumber2))
+                    if (item.PhoneNumber1.Equals(phoneNumber2) && flag == 0)
                     {
                         MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                         return;
                     }
-                    if (item.PhoneNumber2.Equals(phoneNumber2))
+                    if (item.PhoneNumber2.Equals(phoneNumber2) && flag == 0)
                     {
                         MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                         return;
                     }
-                    if (item.Email.Equals(email))
+                    if (item.Email.Equals(email) && flag == 0)
                     {
                         MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
