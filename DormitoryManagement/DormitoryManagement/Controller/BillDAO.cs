@@ -24,5 +24,11 @@ namespace DormitoryManagement.Controller
             int result = DataProvider.ExcuteNonQuery(query);
             return result > 0;
         }
+        public static DataTable GetListBillView()
+        {
+            string query = string.Format("EXEC dbo.USP_GetListBillView");
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
     }
 }

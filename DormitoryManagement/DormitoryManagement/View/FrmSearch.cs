@@ -38,6 +38,8 @@ namespace DormitoryManagement.View
             GetListSector();
             txtInputRoomReg.Enabled = false;
             //
+            GetListBillView();
+            AutoSizeModeColumn(dgvBill);
         }
         /// <summary>
         /// ---------------------------STUDENTS
@@ -378,19 +380,18 @@ namespace DormitoryManagement.View
             dgvRoomReg.DataSource = dataTable;
         }
 
-
-
-
-
-
         /// <summary>
         /// ---------------------------BILL
         /// </summary>
         /// <param ></param>
         /// <param></param>
-
+        void GetListBillView()
+        {
+            DataTable dataTable = BillDAO.GetListBillView();
+            dgvBill.DataSource = dataTable;
+        }
         #endregion
 
-       
+
     }
 }
