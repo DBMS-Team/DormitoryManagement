@@ -48,3 +48,16 @@ VALUES
 	(N'Nước', 2, 2500, 1),
 	(N'Đổ rác', 3, 10000, 1)
 GO
+
+EXEC dbo.USP_InsetBill @Employee_ID = 2,                     -- bigint
+                       @Room_Name = N'A101',                     -- nvarchar(10)
+                       @Sector_Name = N'Khu A',                   -- nvarchar(50)
+                       @Create_date = '2020-12-04', -- datetime
+                       @Month = 10,                           -- int
+                       @Year = 2021,                            -- int
+                       @Status = 0,                       -- bit
+                       @total = 20                         -- decimal(19, 4)
+
+
+
+	

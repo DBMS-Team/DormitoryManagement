@@ -259,32 +259,32 @@ CREATE OR ALTER PROC [dbo].[USP_INSERT_SERVICE_BILL_DETAIL]
 	@Sector_Name VARCHAR(10), 
 	@Room_ID NVARCHAR(10),
 	@Month INT, 
-	@Year INT
-)
+	@Year INT, 
+	@Unit_Name NVARCHAR(20), 
+	@Total_Cost DECIMAL(19,4))
 AS
 BEGIN
-	DECLARE @Bill_ID BIGINT, 
-			@Service_ID INT, 
-			@Old_Quantity INT,
-			@New_Quantity INT, 
-			@Sector_ID NVARCHAR(20)
-
-	SELECT @Bill_ID = (SELECT MAX(dbo.BILL.BILL_ID) FROM dbo.BILL)
-	SELECT @Sector_ID = dbo.SECTOR.SECTOR_ID FROM dbo.SECTOR WHERE dbo.SECTOR.SECTOR_NAME = @Sector_Name
-	SET @Month = @Month - 1
-
-	IF(@Month = 0)
-	BEGIN
-	    SET @Month = 12
-		SET @Year = @Year -1
-	END
-
-	SELECT @Service_ID = dbo.SERVICE.SERVICE_ID FROM dbo.SERVICE WHERE dbo.SERVICE.SERVICE_NAME = @Service_Name
-	SET @Old_Quantity = dbo.UFN_get_New_Quantity_For_New_Bill(@Sector_ID,@Room_ID,@Month,@Year,@Service_Name)
-	SET @New_Quantity = @Old_Quantity + @Quantity
-
-    INSERT INTO dbo.BILL_DETAIL(BILL_ID, SERVICE_ID, OLD_QUANTITY, NEW_QUANTITY)
-	VALUES (@Bill_ID, @Service_ID, @Old_Quantity, @New_Quantity)
+    DECLARE @Bill_ID BIGINT, @Service_ID INT, @Old_Quantity INT,@New_Quantity INT, @Sector_ID NVARCHAR(20)
+    SELECT @Bill_ID = (SELECT MAX(dbo.BILL.BILL_ID) FROM dbo.BILL)
+    SELECT @Sector_ID = dbo.SECTOR.SECTOR_ID FROM dbo.SECTOR WHERE dbo.SECTOR.SECTOR_NAME = @Sector_Name
+    SET @Month = @Month - 1
+    IF(@Month = 0)
+    BEGIN
+        SET @Month = 12
+        SET @Year = @Year -1
+    END
+    SELECT @Service_ID = dbo.SERVICE.SERVICE_ID FROM dbo.SERVICE WHERE dbo.SERVICE.SERVICE_NAME = @Service_Name
+    SET @Old_Quantity = dbo.UFN_GetOldQuantityForNewBill(@Sector_ID,@Room_ID,@Month,@Year,@Service_Name)
+    SET @New_Quantity = @Old_Quantity + @Quantity
+    INSERT INTO dbo.BILL_DETAIL(BILL_ID, SERVICE_ID, OLD_QUANTITY, NEW_QUANTITY, UNIT_NAME,TOTAL_COST)
+    VALUES
+    (   @Bill_ID, -- BILL_ID - bigint
+        @Service_ID, -- SERVICE_ID - int
+        @Old_Quantity, -- OLD_QUANTITY - int
+        @New_Quantity,  -- NEW_QUANTITY - int
+        @Unit_Name,
+        @Total_Cost
+    )
 END
 GO
 
@@ -509,7 +509,7 @@ BEGIN
 END
 GO
 -- THÊM SINH VIÊN
-CREATE PROC USP_INSERT_STUDENT
+CREATE OR ALTER PROC USP_INSERT_STUDENT
 (
 	@STUDENT_ID VARCHAR(15), 
 	@COLLEGE_NAME NVARCHAR(50),
@@ -625,7 +625,7 @@ BEGIN
 END
 GO
 --USP_INSERT_ROOMREGISTRATION
-CREATE PROC USP_INSERT_ROOMREGISTRATION
+CREATE OR ALTER PROC USP_INSERT_ROOMREGISTRATION
 (
 	@EMPLOYEE_ID BIGINT, 
 	@SSN VARCHAR(12), 

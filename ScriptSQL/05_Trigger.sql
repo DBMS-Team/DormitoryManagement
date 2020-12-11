@@ -46,11 +46,13 @@ AS
 			@Old_Room_ID NVARCHAR(10),
 			@Old_Month INT,
 			@Old_Year INT
+			
 	SELECT @Sector_ID = Inserted.Sector_ID FROM Inserted
 	SELECT @Room_ID = Inserted.ROOM_ID FROM Inserted
 	SELECT @Month = Inserted.MONTH FROM Inserted
 	SELECT @Year = Inserted.YEAR FROM Inserted
-	IF(@Sector_ID IN (SELECT dbo.TEMPT.T_Sector_ID FROM dbo.TEMPT)
+
+	IF (@Sector_ID IN (SELECT dbo.TEMPT.T_Sector_ID FROM dbo.TEMPT)
 		AND @Room_ID IN (SELECT dbo.TEMPT.T_Room_ID FROM dbo.TEMPT WHERE dbo.TEMPT.T_Sector_ID = @Sector_ID)
 		AND @Month IN (SELECT dbo.TEMPT.T_MONTH FROM dbo.TEMPT WHERE dbo.TEMPT.T_Sector_ID = @Sector_ID AND dbo.TEMPT.T_Room_ID = @Room_ID)
 		AND @Year IN (SELECT dbo.TEMPT.T_YEAR FROM dbo.TEMPT WHERE dbo.TEMPT.T_Sector_ID = @Sector_ID AND dbo.TEMPT.T_Room_ID = @Room_ID AND dbo.TEMPT.T_MONTH = @Month)
