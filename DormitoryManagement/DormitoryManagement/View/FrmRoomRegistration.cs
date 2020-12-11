@@ -14,9 +14,20 @@ namespace DormitoryManagement.View
 {
     public partial class FrmRoomRegistration : Form
     {
-        public FrmRoomRegistration()
+        private UserDTO user;
+        public UserDTO User
+        {
+            get => user;
+            set
+            {
+                this.user = value;
+            }
+        }
+        public FrmRoomRegistration(UserDTO user)
         {
             InitializeComponent();
+            this.User = user;
+            lbMaNV.Text = Convert.ToString(User.UserId);
         }
         public void FillDataSector() //Load tất cả các khu phòng
         {
@@ -53,6 +64,7 @@ namespace DormitoryManagement.View
 
         private void FrmRoomRegistration_Load(object sender, EventArgs e)
         {
+
             FillDataSector();
         }
 
@@ -74,7 +86,7 @@ namespace DormitoryManagement.View
             {
                 MessageBox.Show("Bạn Chưa Chọn Thời Hạn");
             }
-            long Employee_ID = 1;
+            long Employee_ID = User.UserId;
             string Ssn = Convert.ToString(txtStudentID.Text);
             string Sector_Name = Convert.ToString(cmbBuilding.Text);
             string Room_ID = Convert.ToString(cmbRoom.Text);

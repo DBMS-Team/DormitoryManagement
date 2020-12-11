@@ -64,8 +64,9 @@ namespace DormitoryManagement.View
 
         #region Add
 
-        public static Item InitRoom()
+        public static Item InitRoom(UserDTO user)
         {
+            User = user;
             Item ctrlRoom = new Item(Dashboard.Room);
             ctrlRoom.picItem.BackgroundImage = Properties.Resources.BunkBed;
             ctrlRoom.btnTitle.Text = "ROOM";
@@ -226,7 +227,7 @@ namespace DormitoryManagement.View
 
         public static void RoomRegistration()
         {
-            FrmRoomRegistration frmDangKyPhong = new FrmRoomRegistration();
+            FrmRoomRegistration frmDangKyPhong = new FrmRoomRegistration(User);
             frmDangKyPhong.ShowDialog();
         }
 
