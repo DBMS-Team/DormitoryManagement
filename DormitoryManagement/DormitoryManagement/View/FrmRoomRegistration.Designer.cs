@@ -35,6 +35,7 @@
             this.lbDuration = new System.Windows.Forms.Label();
             this.blStartDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbDuration = new System.Windows.Forms.ComboBox();
             this.cmbBuilding = new System.Windows.Forms.ComboBox();
             this.cmbRoom = new System.Windows.Forms.ComboBox();
             this.cmbSemester = new System.Windows.Forms.ComboBox();
@@ -49,7 +50,6 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.lbPhieuDangKy = new System.Windows.Forms.Label();
             this.lbMaNV = new System.Windows.Forms.Label();
-            this.cbbDuration = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,6 +139,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(595, 239);
             this.panel1.TabIndex = 39;
+            // 
+            // cbbDuration
+            // 
+            this.cbbDuration.FormattingEnabled = true;
+            this.cbbDuration.Location = new System.Drawing.Point(327, 186);
+            this.cbbDuration.Name = "cbbDuration";
+            this.cbbDuration.Size = new System.Drawing.Size(217, 24);
+            this.cbbDuration.TabIndex = 36;
             // 
             // cmbBuilding
             // 
@@ -267,6 +275,7 @@
             this.btnOK.TabIndex = 37;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnPrint
             // 
@@ -304,14 +313,6 @@
             this.lbMaNV.Size = new System.Drawing.Size(32, 17);
             this.lbMaNV.TabIndex = 42;
             this.lbMaNV.Text = "      ";
-            // 
-            // cbbDuration
-            // 
-            this.cbbDuration.FormattingEnabled = true;
-            this.cbbDuration.Location = new System.Drawing.Point(327, 186);
-            this.cbbDuration.Name = "cbbDuration";
-            this.cbbDuration.Size = new System.Drawing.Size(217, 24);
-            this.cbbDuration.TabIndex = 36;
             // 
             // FrmRoomRegistration
             // 

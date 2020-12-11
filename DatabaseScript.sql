@@ -1,12 +1,8 @@
 USE master
 GO
 
-IF EXISTS (SELECT name FROM sys.databases WHERE name = N'DormitoryManagement')
-BEGIN
-	ALTER DATABASE [DormitoryManagement] SET SINGLE_USER WITH ROLLBACK IMMEDIATE
-	DROP DATABASE IF EXISTS [DormitoryManagement]
-END
-GO
+DROP DATABASE IF EXISTS [DormitoryManagement]
+Go
 
 CREATE DATABASE [DormitoryManagement]
 GO
@@ -51,6 +47,7 @@ GO
 
 
 -- ĐỊA CHỈ
+DROP TABLE IF EXISTS [dbo].[ADDRESS]
 CREATE TABLE [dbo].[ADDRESS] (
 	[ADDRESS_ID] BIGINT IDENTITY(1, 1),
 	[STREET] NVARCHAR(50) NULL,
@@ -75,7 +72,6 @@ CREATE TABLE [dbo].[COLLEGE] (
 )
 GO
 
--- BẢO HIỂM Y TẾ
 CREATE TABLE [dbo].[INSURANCE] (
 	[INSURANCE_ID] VARCHAR(15) NOT NULL,
 	[BASE_PRACTICE] NVARCHAR(50) NULL, 			-- NƠI ĐĂNG KÝ KHÁM CHỮA BỆNH BAN ĐẦU
@@ -88,30 +84,34 @@ GO
 
 -- LƯU TÀI KHẢON ĐĂNG NHẬP VÀ THÔNG TIN NGƯỜI DÙNG
 CREATE TABLE [dbo].[USER] (
-	[USER_ID] BIGINT IDENTITY(1, 1) NOT NULL,
-	[LAST_NAME] NVARCHAR(40) NOT NULL,
-	[FIRST_NAME] NVARCHAR(20) NOT NULL,
-	[DOB] DATE NOT NULL,								-- NGÀY SINH
-	[GENDER] NVARCHAR(5) NOT NULL,						-- GIỚI TÍNH
-	[SSN] VARCHAR(12) NULL, 							-- CHỨNG MINH NHÂN DÂN
+	[USER_ID] BIGINT IDENTITY(1, 1),
+	[LAST_NAME] NVARCHAR(40),
+	[FIRST_NAME] NVARCHAR(20),
+	[DOB] DATE,								-- NGÀY SINH
+	[GENDER] NVARCHAR(5),					-- GIỚI TÍNH
+	[SSN] VARCHAR(12), 						-- CHỨNG MINH NHÂN DÂN
 
 	[ADDRESS_ID] BIGINT NOT NULL,
-	[PHONE_NUMBER_1] VARCHAR(15) NULL,					-- SỐ ĐIỆN THOẠI 1
-	[PHONE_NUMBER_2] VARCHAR(15) NULL,					-- SỐ ĐIỆN THOẠI 2
-	[EMAIL] VARCHAR(40) NULL,
-	[IMAGE_PATH] VARCHAR(300) NULL,
+	[PHONE_NUMBER_1] VARCHAR(15),			-- SỐ ĐIỆN THOẠI 1
+	[PHONE_NUMBER_2] VARCHAR(15),			-- SỐ ĐIỆN THOẠI 2
+	[EMAIL] VARCHAR(40),
+	[IMAGE_PATH] VARCHAR(300),
 
-	[USERNAME] VARCHAR(16) NOT NULL,
-	[PASSWORD] VARCHAR(32) NOT NULL,
-	[USER_TYPE] VARCHAR(10) NOT NULL DEFAULT 'STUDENT',	-- ADMIN: TK QUẢN TRỊ, EMPLOYEE: NHÂN VIÊN, STUDENT: SINH VIÊN, RELATIVE: NGƯỜI THÂN
-	[STATUS] BIT DEFAULT 1 NOT NULL
+	[USERNAME] VARCHAR(16),
+	[PASSWORD] VARCHAR(32),
+	[USER_TYPE] VARCHAR(10),				-- ADMIN: TK QUẢN TRỊ, EMPLOYEE: NHÂN VIÊN, STUDENT: SINH VIÊN, RELATIVE: NGƯỜI THÂN
+
 )
+ALTER TABLE dbo.[USER] ADD [STATUS] BIT DEFAULT 1
 GO
 
 ALTER TABLE dbo.[USER] ADD CONSTRAINT [PK_USER] PRIMARY KEY([USER_ID])
+GO
+
 ALTER TABLE dbo.[USER] ADD CONSTRAINT [FK_USER_ADDRESS] FOREIGN KEY ([ADDRESS_ID]) REFERENCES [ADDRESS]([ADDRESS_ID])
+GO
+
 ALTER TABLE dbo.[USER] ADD CONSTRAINT [USERNAME_UNINE] UNIQUE(USERNAME)
-ALTER TABLE dbo.[USER] ADD CONSTRAINT [PK_UNIQUE] UNIQUE(SSN)
 GO
 
 -- Set nullable unique for column email
@@ -137,8 +137,14 @@ CREATE TABLE [dbo].[EMPLOYEE] (
 
 	CONSTRAINT [PK_EMPLOYEE] PRIMARY KEY([USER_ID]),
 	CONSTRAINT [FK_EMPLOYEE_USER] FOREIGN KEY ([USER_ID]) REFERENCES [USER]([USER_ID]),
-	--CONSTRAINT [FK_EMPLOYEE_ADMIN] FOREIGN KEY ([MANAGER_ID]) REFERENCES [ADMIN]([USER_ID]),
+	CONSTRAINT [FK_EMPLOYEE_ADMIN] FOREIGN KEY ([MANAGER_ID]) REFERENCES [ADMIN]([USER_ID]),
 )
+GO
+
+ALTER TABLE dbo.EMPLOYEE DROP CONSTRAINT FK_EMPLOYEE_ADMIN
+GO
+
+ALTER TABLE dbo.EMPLOYEE DROP COLUMN MANAGER_ID
 GO
 
 -- STUDENT
@@ -158,7 +164,6 @@ CREATE TABLE [dbo].[STUDENT] (
 	CONSTRAINT [FK_STUDENT_INSURANCE] FOREIGN KEY ([INSURANCE_ID]) REFERENCES [INSURANCE]([INSURANCE_ID]),
 )
 GO
-ALTER TABLE dbo.STUDENT ADD [STATUS_REGISTRATION_ROOM] BIT DEFAULT 0
 
 -- THÂN NHÂN
 CREATE TABLE [dbo].[RELATIVE] (
@@ -233,22 +238,26 @@ CREATE TABLE [dbo].[BILL] (
 	[ROOM_ID] NVARCHAR(10) NOT NULL,
 	[CREATE_TIME] DATETIME DEFAULT GETDATE(),
 	[TOTAL] DECIMAL(19, 4),	
-
-	[SECTOR_ID] VARCHAR(10),
-	[STATUS] BIT  DEFAULT 0,
-	[MONTH] INT,
-	[YEAR] INT,
-
 	CONSTRAINT [PK_BILL] PRIMARY KEY ([BILL_ID]),
 	CONSTRAINT [FK_BILL_EMPLOYEE] FOREIGN KEY ([EMPLOYEE_ID]) REFERENCES [EMPLOYEE]([USER_ID]),
 	CONSTRAINT [FK_BILL_ROOM] FOREIGN KEY ([ROOM_ID]) REFERENCES [ROOM]([ROOM_ID]),
 )
 GO
 
-ALTER TABLE [dbo].[BILL] ADD CONSTRAINT [FK_BILL_SECTOR] FOREIGN KEY ([SECTOR_ID]) REFERENCES [SECTOR] ([SECTOR_ID])
+ALTER TABLE dbo.BILL ADD [SECTOR_ID] VARCHAR(10)
+GO
+
+ALTER TABLE dbo.BILL ADD CONSTRAINT [FK_BILL_SECTOR] FOREIGN KEY ([SECTOR_ID]) REFERENCES [SECTOR] ([SECTOR_ID])
 GO 
 
+ALTER TABLE dbo.BILL ADD [STATUS] BIT  DEFAULT 0
+GO
 
+ALTER TABLE dbo.BILL ADD [MONTH] INT 
+GO
+
+ALTER TABLE dbo.BILL ADD [YEAR] INT 
+GO
 -- CHI TIẾT HÓA ĐƠN
 CREATE TABLE [dbo].[BILL_DETAIL] (
 	[BILL_DETAIL_ID] BIGINT IDENTITY(1, 1),
@@ -256,15 +265,12 @@ CREATE TABLE [dbo].[BILL_DETAIL] (
 	[SERVICE_ID] INT NOT NULL,
 	[OLD_QUANTITY] INT NOT NULL,			-- SỐ CŨ
 	[NEW_QUANTITY] INT NOT NULL,			-- SỐ MỚI
-	[UNIT_NAME] NVARCHAR(50),
-	[TOTAL_COST] DECIMAL(19,4)
+
 	CONSTRAINT [PK_BILL_DETAIL] PRIMARY KEY ([BILL_DETAIL_ID], [BILL_ID]),
 	CONSTRAINT [FK_BILL_DETAIL_BILL] FOREIGN KEY ([BILL_ID]) REFERENCES [BILL]([BILL_ID]),
 	CONSTRAINT [FK_BILL_DETAIL_SERVICE] FOREIGN KEY ([SERVICE_ID]) REFERENCES [SERVICE]([SERVICE_ID]),
 )
 GO
-
-
 
 -- THANH TOÁN
 CREATE TABLE [dbo].[PAYMENT] (
@@ -299,16 +305,6 @@ CREATE TABLE [dbo].[ROOM_REGISTRATION]
 	CONSTRAINT [FK_EMPLOYEE_ID] FOREIGN KEY ([EMPLOYEE_ID]) REFERENCES [dbo].[EMPLOYEE]([USER_ID]),
 	CONSTRAINT [FK_SECTOR_ID] FOREIGN KEY ([SECTOR_ID]) REFERENCES [dbo].[SECTOR]([SECTOR_ID]),
 )
-GO
--- BẢN TẠM BILL
-CREATE TABLE [dbo].[TEMPT]
-(
-	T_Sector_ID VARCHAR(10),
-	T_Room_ID NVARCHAR(10),
-	T_Month INT,
-	T_Year INT
-)
-GO
 
 ----------------------
 -- VIEW
@@ -423,7 +419,6 @@ CREATE OR ALTER VIEW [V_STUDENT] AS
 		INNER JOIN [dbo].[STUDENT] AS S ON S.[USER_ID] = U.[USER_ID]
 		INNER JOIN [dbo].[COLLEGE] AS C ON C.COLLEGE_ID = S.COLLEGE_ID
 GO
-
 -- Tạo view sinh viên general
 CREATE OR ALTER VIEW [V_STUDENTGENERAL] AS
 	SELECT 
@@ -445,70 +440,12 @@ CREATE OR ALTER VIEW [V_STUDENTGENERAL] AS
 		INNER JOIN [dbo].[STUDENT] AS S ON S.[USER_ID] = U.[USER_ID]
 		INNER JOIN [dbo].[COLLEGE] AS C ON C.COLLEGE_ID = S.COLLEGE_ID
 GO
--- Tạo view room regestration
-CREATE OR ALTER VIEW [V_ROOM_REGISTRATION] AS
-	SELECT 
-		RR.ROOM_REGISTRATION_ID AS [Id],
-		
-		S.SECTOR_NAME AS [Building],
-		R.ROOM_ID AS [Room],
-		STU.STUDENT_ID AS [Student Id],
-		STU.FULL_NAME AS [Student Name],
-
-		E.USER_ID AS [Employee Id],
-		E.FULL_NAME AS [Employee Name],
-
-		RR.START_DATE AS [Start date],
-		RR.DURATION AS [Duration]
-		
-	FROM [dbo].[ROOM_REGISTRATION] AS RR
-		INNER JOIN [dbo].[SECTOR] AS S ON S.SECTOR_ID = RR.SECTOR_ID
-		INNER JOIN [dbo].[ROOM] AS R ON R.ROOM_ID = RR.ROOM_ID
-		INNER JOIN (
-			SELECT U.SSN, S.STUDENT_ID, CONCAT(U.LAST_NAME, ' ', U.FIRST_NAME) AS FULL_NAME
-			FROM [dbo].[STUDENT] AS S 
-				INNER JOIN [dbo].[USER] AS U ON U.[USER_ID] = S.[USER_ID]
- 		) AS STU ON STU.SSN = RR.SSN
-		INNER JOIN (
-			SELECT E.[USER_ID], CONCAT(U.LAST_NAME, ' ', U.FIRST_NAME) AS FULL_NAME
-			FROM [dbo].[EMPLOYEE] AS E 
-				INNER JOIN [dbo].[USER] AS U ON U.[USER_ID] = E.[USER_ID]
-		) AS E ON E.USER_ID = RR.EMPLOYEE_ID
-GO
-
-<<<<<<< HEAD
--- View bill
-CREATE OR ALTER VIEW [V_BILL] AS
-	SELECT
-		B.BILL_ID AS [Bill Id],
-		B.CREATE_TIME AS [Create time],
-		B.EMPLOYEE_ID AS [Employee Id],
-		CONCAT(U.LAST_NAME, ' ', U.FIRST_NAME) AS [Employee name],
-		SEC.SECTOR_NAME AS [Sector],
-		B.[MONTH] AS [Month],
-		B.[YEAR] AS [Year],
-		B.TOTAL AS [Total],
-		B.[STATUS] AS [Status]
-	FROM [dbo].[BILL] AS B
-		INNER JOIN [dbo].[SECTOR] AS SEC ON SEC.SECTOR_ID = B.SECTOR_ID
-		INNER JOIN [dbo].[USER] AS U ON U.USER_ID = B.EMPLOYEE_ID
-GO
--- View [V_SERVIE_UNIT]
-CREATE OR ALTER VIEW [V_SERVIE_UNIT]
-AS 
-
-SELECT dbo.SERVICE.SERVICE_ID, dbo.SERVICE.SERVICE_NAME, dbo.SERVICE.PRICE_PER_UNIT, dbo.UNIT.UNIT_NAME, dbo.SERVICE.STATUS
-FROM     dbo.SERVICE INNER JOIN
-                  dbo.UNIT ON dbo.UNIT.UNIT_ID = dbo.SERVICE.UNIT_ID
-GO
-=======
->>>>>>> 87109a8293c036dbf004d7ba1947eda28db64e9d
 ----------------------
 -- FUNCTION
 ----------------------
 -- Generate mật khẩu:
-CREATE OR ALTER FUNCTION UFN_GenerateMD5 (@OldPass VARCHAR(32))
-	RETURNS VARCHAR(32)
+CREATE FUNCTION UFN_GenerateMD5(@OldPass VARCHAR(32))
+RETURNS VARCHAR(32)
 AS
 BEGIN
 	RETURN CONVERT(VARCHAR(32), HashBytes('MD5', @OldPass), 2)
@@ -516,8 +453,8 @@ END
 GO
 
 -- Hàm lấy mã tỉnh bằng tên tỉnh:
-CREATE OR ALTER FUNCTION UFN_GetProvinceIdByProvinceName (@PROVINCE_NAME NVARCHAR(20))
-	RETURNS VARCHAR(2)
+CREATE FUNCTION UFN_GetProvinceIdByProvinceName(@PROVINCE_NAME NVARCHAR(20))
+RETURNS VARCHAR(2)
 AS
 BEGIN
 	DECLARE @PROVINCE_ID VARCHAR(2)
@@ -527,7 +464,7 @@ END
 GO
 
 -- Hàm lấy mã huyện bằng tên huyện:
-CREATE OR ALTER FUNCTION UFN_GetDistrictIdByDictrictName(@DISTRICT_NAME NVARCHAR(40),@PROVINCE_ID VARCHAR(2))
+CREATE FUNCTION UFN_GetDistrictIdByDictrictName(@DISTRICT_NAME NVARCHAR(40),@PROVINCE_ID VARCHAR(2))
 RETURNS VARCHAR(3)
 AS
 BEGIN
@@ -538,7 +475,7 @@ END
 GO
 
 -- Hàm tạo mật khẩu mặt định
-CREATE OR ALTER FUNCTION UFN_NewPassword(@lastPassword VARCHAR(32), @preFix VARCHAR(4), @size INT)
+CREATE FUNCTION UFN_NewPassword(@lastPassword VARCHAR(32), @preFix VARCHAR(4), @size INT)
 RETURNS VARCHAR(10)
 AS
 	BEGIN
@@ -552,9 +489,15 @@ AS
 	END
 GO
 
+DROP FUNCTION dbo.UFN_NewPassword
+PRINT(REPLACE('','dbms',32)+1)
+PRINT(REPLICATE('',28))
+PRINT('dbms' + REPLICATE(0, 32- LEN(4)))
+PRINT(dbo.UFN_NewPassword('','dbms',32))
+GO
 
 -- Lấy Commune_ID từ Commune_Name----------
-CREATE OR ALTER FUNCTION UFN_GetCommuneidByCommuneName
+CREATE FUNCTION UFN_GetCommuneidByCommuneName
 (
 	@Commune_Name NVARCHAR(40),
 	@Distric_ID VARCHAR(3)
@@ -568,9 +511,8 @@ BEGIN
 END
 GO
 
-
 -- Lấy Bill ID -- GET_BILL_ID_BY_SECTORNAME_ROOMID_MONTH_YEAR
-CREATE OR ALTER FUNCTION UFN_GetBillIdBySectornameRoomidMonthYear
+CREATE FUNCTION UFN_GetBillIdBySectornameRoomidMonthYear
 (
 	@Sector_Name VARCHAR(10),
 	@Room_ID NVARCHAR(10), 
@@ -592,7 +534,7 @@ END
 GO
 
 -- Lấy chỉ số mới của tháng trước đó của Bill 
-CREATE OR ALTER FUNCTION [dbo].[UFN_GetOldQuantityForNewBill]
+CREATE FUNCTION [dbo].[UFN_GetOldQuantityForNewBill]
 (
 	@Sector_ID VARCHAR(10), 
 	@Room_ID NVARCHAR(10), 
@@ -619,7 +561,7 @@ END
 GO
 
 --Trả về số lượng sinh viên đã đăng lý vào phòng nào đó
-CREATE OR ALTER FUNCTION UFN_CountNumberOfStudentInRoom
+CREATE FUNCTION UFN_CountNumberOfStudentInRoom
 (
 	@Sector_ID VARCHAR(10),
 	@Room_ID NVARCHAR(10)
@@ -632,9 +574,8 @@ AS BEGIN
 		WHERE ROOM_REGISTRATION.SECTOR_ID = @Sector_ID
 		AND ROOM_REGISTRATION.ROOM_ID = @Room_ID
 		RETURN @Number
-END
+   END
 GO
-
 -- Tạo hàm tìm tên gần đúng
 CREATE OR ALTER FUNCTION [dbo].[SearchLike] ( @strInput NVARCHAR(4000) ) 
 RETURNS NVARCHAR(4000) 
@@ -669,103 +610,14 @@ BEGIN
 	SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') 
 	RETURN @strInput 
 END
-GO
-
-
--- lấy danh sách sinh viên theo status
--- status = 0 : outgoing, 
--- status = 1 : alive, 
--- status = 2 : all status 
-
-CREATE OR ALTER FUNCTION UFN_GetListStudent (@STATUS INT)
-RETURNS @Result TABLE (
-	[Id] BIGINT NOT NULL,
-	[Full name] NVARCHAR(51) NULL,
-	[Date of birth] DATE,
-	[Gender] VARCHAR(5),
-	[Ssn] VARCHAR(12),
-	[Phone number] VARCHAR(15),
-	[Email] VARCHAR(40),
-	[Student Id] VARCHAR(15) NOT NULL,
-	[College] NVARCHAR(100) NOT NULL
-)
-AS
-BEGIN
-	INSERT @Result
-    SELECT 
-		U.[USER_ID] AS [Id],
-		CONCAT(U.LAST_NAME, ' ', U.FIRST_NAME) AS [Full name],
-		U.DOB AS [Date of birth],
-		U.GENDER AS [Gender],
-		U.SSN,
-
-		U.PHONE_NUMBER_1 AS [Phone number],
-		U.EMAIL AS [Email],
-
-		S.STUDENT_ID AS [Student Id],
-		C.COLLEGE_NAME AS [College]
-
-	FROM [dbo].[USER] AS U 
-		INNER JOIN [dbo].[V_ADDRESS] AS A ON A.ADDRESS_ID = U.ADDRESS_ID
-		INNER JOIN [dbo].[STUDENT] AS S ON S.[USER_ID] = U.[USER_ID]
-		INNER JOIN [dbo].[COLLEGE] AS C ON C.COLLEGE_ID = S.COLLEGE_ID
-	WHERE U.[STATUS] = @STATUS OR @STATUS = 2
-
-	RETURN
-END
-GO
--- Trả về giao diện Bill
-CREATE OR ALTER FUNCTION UFN_ReturnForViewBillDetail
-(
-	@Sector_Name VARCHAR(10), 
-	@Room_ID NVARCHAR(10), 
-	@Month INT, 
-	@Year INT)
-RETURNS @View_BillDetail TABLE (
-	Service_ID INT, 
-	ServiceName NVARCHAR(50), 
-	Unit_Name NVARCHAR(50), 
-	PricePerUnit DECIMAL(19,4), 
-	Old_Quantity INT, 
-	New_Quantity INT, 
-	Total_Cost DECIMAL(19,4),
-	Bill_Detail_ID INT, 
-	Bill_ID INT)
-AS
-BEGIN
-    DECLARE @Bill_ID INT, @Service_Name NVARCHAR(50)
-	SELECT @Bill_ID = dbo.UFN_GetBillIdBySectornameRoomidMonthYear(@Sector_Name,@Room_ID,@Month,@Year)
-	INSERT INTO @View_BillDetail
-	SELECT dbo.BILL_DETAIL.SERVICE_ID, dbo.SERVICE.SERVICE_NAME, 
-	dbo.BILL_DETAIL.UNIT_NAME, dbo.SERVICE.PRICE_PER_UNIT, 
-	dbo.BILL_DETAIL.OLD_QUANTITY, 
-	dbo.BILL_DETAIL.NEW_QUANTITY, 
-	dbo.BILL_DETAIL.TOTAL_COST, 
-	dbo.BILL_DETAIL.BILL_DETAIL_ID, 
-	dbo.BILL_DETAIL.BILL_ID
-	FROM dbo.BILL_DETAIL INNER JOIN dbo.SERVICE ON SERVICE.SERVICE_ID = BILL_DETAIL.SERVICE_ID INNER JOIN 
-	dbo.BILL ON BILL.BILL_ID = BILL_DETAIL.BILL_ID
-	WHERE dbo.BILL_DETAIL.BILL_ID = @Bill_ID AND dbo.BILL.STATUS = 0
-	RETURN
-END
-GO
--- GetSectorIDBySectorName
-CREATE FUNCTION UFN_Get_SectorID_By_SectorName
-(@SECTOR_NAME NVARCHAR(50))
-RETURNS VARCHAR(10)
-AS
-BEGIN
-    DECLARE @SECTOR_ID VARCHAR(10)
-	SELECT @SECTOR_ID = dbo.SECTOR.SECTOR_ID FROM dbo.SECTOR WHERE dbo.SECTOR.SECTOR_NAME = @SECTOR_NAME
-	RETURN @SECTOR_ID
-END
-GO
 ----------------------
 -- PROC
 ----------------------
 
 -- Dùng để Insert dữ liệu từ file Excel
-CREATE OR ALTER PROCEDURE [USP_INSERT_COMMUNE]
+DROP PROCEDURE IF EXISTS [dbo].[USP_INSERT_COMMUNE] 
+GO
+CREATE PROCEDURE [USP_INSERT_COMMUNE]
 	@COMMUNE_ID VARCHAR(5),
 	@COMMUNE_NAME NVARCHAR(40),
 	@COMMUNE_TYPE VARCHAR(1), 
@@ -805,9 +657,8 @@ END
 GO
 
 -- Dùng để đăng nhập:
-CREATE OR ALTER PROC USP_Login
-	@USERNAME VARCHAR(16), 
-	@PASSWORD VARCHAR(32)
+CREATE PROC USP_Login
+@USERNAME VARCHAR(16), @PASSWORD VARCHAR(32)
 AS
 BEGIN
 	DECLARE @PASSWORD_GENERATE VARCHAR(32)
@@ -819,8 +670,8 @@ END
 GO
 
 -- Dùng để lấy người dùng bằng username.
-CREATE OR ALTER PROC USP_GetUserByUsername
-	@USERNAME VARCHAR(16)
+CREATE PROC USP_GetUserByUsername
+@USERNAME VARCHAR(16)
 AS
 BEGIN
 	SELECT * FROM dbo.[USER] WHERE USERNAME = @USERNAME
@@ -828,8 +679,8 @@ END
 GO
 
 -- Dùng để lấy người dùng bằng id.
-CREATE OR ALTER PROC USP_GetUserById
-	@USER_ID BIGINT
+CREATE PROC USP_GetUserById
+@USER_ID BIGINT
 AS
 BEGIN
 	SELECT * FROM dbo.[USER] WHERE USER_ID = @USER_ID
@@ -837,8 +688,8 @@ END
 GO
 
 -- Dùng để lấy sinh viên bằng id.
-CREATE OR ALTER PROC USP_GetStudentById
-	@USER_ID BIGINT
+CREATE PROC USP_GetStudentById
+@USER_ID BIGINT
 AS
 BEGIN
 	SELECT * FROM dbo.STUDENT WHERE USER_ID = @USER_ID
@@ -846,8 +697,8 @@ END
 GO
 
 -- Dùng để lấy quản trị viên bằng id.
-CREATE OR ALTER PROC USP_GetAdminById
-	@USER_ID BIGINT
+CREATE PROC USP_GetAdminById
+@USER_ID BIGINT
 AS
 BEGIN
 	SELECT * FROM dbo.ADMIN WHERE USER_ID = @USER_ID
@@ -855,8 +706,8 @@ END
 GO
 
 -- Dùng để lấy nhân viên bằng id.
-CREATE OR ALTER PROC USP_GetEmployeeById
-	@USER_ID BIGINT
+CREATE PROC USP_GetEmployeeById
+@USER_ID BIGINT
 AS
 BEGIN
 	SELECT * FROM dbo.EMPLOYEE WHERE USER_ID = @USER_ID
@@ -864,7 +715,7 @@ END
 GO
 
 -- Dùng để lấy Province.
-CREATE OR ALTER PROC USP_GetListProvince
+CREATE PROC USP_GetListProvince
 AS
 BEGIN
 	SELECT * FROM dbo.PROVINCE
@@ -872,8 +723,8 @@ END
 GO
 
 -- Dùng để lấy quận, huyện bằng tên tỉnh.
-CREATE OR ALTER PROC USP_GetListDistrictByProvinceName
-	@PROVINCE_NAME NVARCHAR(20)
+CREATE PROC USP_GetListDistrictByProvinceName
+@PROVINCE_NAME NVARCHAR(20)
 AS
 BEGIN
 	DECLARE @PROVINCE_ID VARCHAR(2)
@@ -883,9 +734,8 @@ END
 GO
 
 -- Dùng để lấy xã, phường bằng của huyện bằng tỉnh, huyện.
-CREATE OR ALTER PROC USP_GetListCommuneByProvinceAndDistrict
-	@PROVINCE_NAME NVARCHAR(20),
-	@DISTRICT_NAME NVARCHAR(40)
+CREATE PROC USP_GetListCommuneByProvinceAndDistrict
+@PROVINCE_NAME NVARCHAR(20),@DISTRICT_NAME NVARCHAR(40)
 AS
 BEGIN
 	DECLARE @PROVINCE_ID VARCHAR(2)
@@ -897,7 +747,7 @@ END
 GO
 
 -- Dùng để lấy danh sách quản trị viên.
-CREATE OR ALTER PROC USP_GetListAdmin
+CREATE PROC USP_GetListAdmin
 AS
 BEGIN
 	SELECT * FROM dbo.[USER] WHERE USER_TYPE = 'ADMIN'
@@ -905,23 +755,11 @@ END
 GO
 
 -- Dùng để thêm nhân viên
-CREATE OR ALTER PROC USP_AddEmployee
-	@LAST_NAME NVARCHAR(40),
-	@FIRST_NAME NVARCHAR(20),
-	@DOB DATE,
-	@GENDER NVARCHAR(5),
-	@SSN VARCHAR(12),
-	@PHONE_NUMBER_1 VARCHAR(15),
-	@PHONE_NUMBER_2 VARCHAR(15),
-	@EMAIL VARCHAR(40),
-	@IMAGE_PATH VARCHAR(300),
-	@USER_TYPE VARCHAR(10),
-	@PROVINCE_NAME NVARCHAR(20),
-	@DISTRICT_NAME NVARCHAR(40),
-	@COMMUNE_NAME NVARCHAR(40),
-	@STREET NVARCHAR(50),
-	@STATR_DATE DATE, 
-	@SALARY DECIMAL(19,4)
+CREATE PROC USP_AddEmployee
+@LAST_NAME NVARCHAR(40),@FIRST_NAME NVARCHAR(20),@DOB DATE,@GENDER NVARCHAR(5),@SSN VARCHAR(12),@PHONE_NUMBER_1 VARCHAR(15),
+@PHONE_NUMBER_2 VARCHAR(15),@EMAIL VARCHAR(40),@IMAGE_PATH VARCHAR(300),@USER_TYPE VARCHAR(10),
+@PROVINCE_NAME NVARCHAR(20),@DISTRICT_NAME NVARCHAR(40),@COMMUNE_NAME NVARCHAR(40),@STREET NVARCHAR(50),
+@STATR_DATE DATE, @SALARY DECIMAL(19,4)
 AS
 BEGIN
 	-- Tạo ra biến
@@ -940,19 +778,20 @@ BEGIN
 	-- Lấy ra mã địa chỉ
 	SET @ADDRESS_ID = ( SELECT TOP 1 ADDRESS_ID FROM dbo.[ADDRESS] ORDER BY ADDRESS_ID DESC)
 	--Thêm vào bảng User
-	INSERT INTO dbo.[USER] (LAST_NAME, FIRST_NAME, DOB, GENDER, SSN, ADDRESS_ID, PHONE_NUMBER_1, PHONE_NUMBER_2, EMAIL, IMAGE_PATH, USERNAME, PASSWORD, USER_TYPE, STATUS)
-	VALUES (@LAST_NAME, @FIRST_NAME, @DOB,@GENDER, @SSN,@ADDRESS_ID, @PHONE_NUMBER_1, @PHONE_NUMBER_2, @EMAIL, @IMAGE_PATH, @SSN,'', @USER_TYPE, 1)
+	INSERT INTO dbo.[USER] (LAST_NAME,FIRST_NAME,DOB,GENDER,SSN,ADDRESS_ID,PHONE_NUMBER_1,PHONE_NUMBER_2,
+	EMAIL,IMAGE_PATH,USERNAME,PASSWORD,USER_TYPE,STATUS)
+	VALUES (@LAST_NAME, @FIRST_NAME, @DOB,@GENDER, @SSN,@ADDRESS_ID, @PHONE_NUMBER_1, @PHONE_NUMBER_2, 
+	@EMAIL, @IMAGE_PATH, @SSN,'', @USER_TYPE,1)
 	-- Lấy ra User vừa được thêm vào
-	SET @USER_ID = (SELECT TOP 1 USER_ID FROM dbo.[USER] ORDER BY USER_ID DESC)
+	SET @USER_ID = ( SELECT TOP 1 USER_ID FROM dbo.[USER] ORDER BY USER_ID DESC)
 	-- Thêm vào bảng nhân viên
-	INSERT INTO dbo.[EMPLOYEE] (USER_ID, START_DATE, SALARY)
-	VALUES(@USER_ID, @STATR_DATE, @SALARY)
+	INSERT INTO dbo.[EMPLOYEE] (USER_ID,START_DATE,SALARY)
+	VALUES(@USER_ID,@STATR_DATE,@SALARY)
 END
 GO
 -- Dùng để thay đổi mật khẩu
-CREATE OR ALTER PROC USP_ChangePassword
-	@USER_ID BIGINT,
-	@NEWPASS VARCHAR(32)
+CREATE PROC USP_ChangePassword
+@USER_ID BIGINT,@NEWPASS VARCHAR(32)
 AS
 BEGIN
 	DECLARE @newPassword VARCHAR(32)
@@ -961,15 +800,17 @@ BEGIN
 END
 GO
 -- Lấy danh sách phòng
-CREATE OR ALTER PROC [dbo].[USP_GetListRoom]
+CREATE PROC [dbo].[USP_GetListRoom]
 AS
 BEGIN
     SELECT * FROM dbo.ROOM
 END
 GO
 -- Lấy danh sách phòng bằng Sector_Id
-CREATE OR ALTER PROC [dbo].[USP_GetListRoomBySectorID]
+CREATE PROC [dbo].[USP_GetListRoomBySectorID]
+(
 	@Sector_ID VARCHAR(10)
+)
 AS
 BEGIN
     SELECT * FROM dbo.ROOM
@@ -978,7 +819,7 @@ END
 GO
 
 -- Lấy danh sách khu
-CREATE OR ALTER PROC [dbo].[USP_GetListSector]
+CREATE PROC [dbo].[USP_GetListSector]
 AS
 BEGIN
     SELECT * FROM dbo.SECTOR
@@ -986,7 +827,7 @@ END
 GO
 
 --Lấy danh sách dịch vụ
-CREATE OR ALTER PROC [dbo].[USP_GetListService]
+CREATE PROC [dbo].[USP_GetListService]
 AS
 BEGIN
 	SELECT * FROM dbo.SERVICE
@@ -994,42 +835,54 @@ END
 GO
 
 -- Lấy danh sách đơn vị của dịch vụ
-CREATE OR ALTER PROC [dbo].[GetUnitByServiceName]
+CREATE PROC [dbo].[GetUnitByServiceName]
+(
 	@Service_name NVARCHAR(60)
+)
 AS
 BEGIN
     SELECT dbo.UNIT.UNIT_NAME, dbo.UNIT.UNIT_ID
     FROM dbo.SERVICE, dbo.UNIT 
     WHERE dbo.SERVICE.UNIT_ID = dbo.UNIT.UNIT_ID 
-		AND SERVICE_NAME = @Service_name
+	  AND SERVICE_NAME = @Service_name
 END
 GO
 
 -- Dùng để thêm địa chỉ
-CREATE OR ALTER PROC [dbo].[USP_INSERT_ADDRESS]
+CREATE PROC [dbo].[USP_INSERT_ADDRESS]
 (
 	@Street NVARCHAR(50), 
 	@Commune_Name NVARCHAR(50), 
 	@District_Name NVARCHAR(50),
 	@Province_Name NVARCHAR(50)
-)
+	)
 AS
 BEGIN
     DECLARE @Commune_ID VARCHAR(5),
 			@District_ID VARCHAR(3),
 			@Province_ID VARCHAR(2)
-
 	SELECT @Province_ID = dbo.UFN_GetProvinceIdByProvinceName(@Province_Name)
 	SELECT @District_ID = dbo.UFN_GetDistrictIdByDictrictName(@District_Name, @Province_ID)
 	SELECT @Commune_ID = dbo.UFN_GetCommuneidByCommuneName(@Commune_Name,@District_ID)
-
-	INSERT INTO dbo.ADDRESS (STREET, COMMNUNE_ID, DISTRICT_ID, PROVINCE_ID)
-	VALUES (@Street, @Commune_ID, @District_ID, @Province_ID )
+	INSERT INTO dbo.ADDRESS
+	(
+	    STREET,
+	    COMMNUNE_ID,
+	    DISTRICT_ID,
+	    PROVINCE_ID
+	)
+	VALUES
+	(   
+		@Street, 
+	    @Commune_ID,
+	    @District_ID,
+	    @Province_ID 
+	    )
 END
 GO
 
 -- Thêm Bill
-CREATE OR ALTER PROC [dbo].[USP_InsetBill]
+CREATE PROC [dbo].[USP_InsetBill]
 (
 	@Employee_ID BIGINT, 
 	@Room_Name NVARCHAR(10), 
@@ -1038,24 +891,29 @@ CREATE OR ALTER PROC [dbo].[USP_InsetBill]
 	@Month INT, 
 	@Year INT, 
 	@Status BIT, 
-	@total DECIMAL(19,4)
-)
+	@total DECIMAL(19,4))
 AS
 BEGIN
 	DECLARE @Room_ID NVARCHAR(10), @Sector_ID VARCHAR(10)
 	SELECT @Sector_ID = dbo.SECTOR.SECTOR_ID FROM dbo.SECTOR WHERE dbo.SECTOR.SECTOR_NAME = @Sector_Name
-
-	SELECT @Room_ID = dbo.ROOM.ROOM_ID FROM dbo.ROOM 
-	WHERE dbo.ROOM.SECTOR_ID = @Sector_ID
-		AND dbo.ROOM.ROOM_ID = @Room_Name 
-
-    INSERT INTO dbo.BILL(EMPLOYEE_ID, ROOM_ID, CREATE_TIME, TOTAL, STATUS, MONTH, YEAR, Sector_ID) 
-	VALUES (@Employee_ID, @Room_ID, @Create_date, @total, @Status, @Month, @Year, @Sector_ID)
+	SELECT @Room_ID = dbo.ROOM.ROOM_ID FROM dbo.ROOM WHERE dbo.ROOM.SECTOR_ID = @Sector_ID
+															AND dbo.ROOM.ROOM_ID = @Room_Name 
+    INSERT INTO dbo.BILL(EMPLOYEE_ID, ROOM_ID, CREATE_TIME, TOTAL, STATUS, MONTH, YEAR, Sector_ID) VALUES
+	(   
+		@Employee_ID ,
+		@Room_ID, 
+        @Create_date,
+        @total,      
+        @Status,      
+        @Month,         
+        @Year,         
+        @Sector_ID 
+    )
 END
 GO
 
 -- Thêm dịch vụ  vào chi tiết hóa đơn
-CREATE OR ALTER PROC [dbo].[USP_INSERT_SERVICE_BILL_DETAIL]
+CREATE PROC [dbo].[USP_INSERT_SERVICE_BILL_DETAIL]
 (
 	@Service_Name NVARCHAR(20), 
 	@Quantity INT,
@@ -1071,28 +929,29 @@ BEGIN
 			@Old_Quantity INT,
 			@New_Quantity INT, 
 			@Sector_ID NVARCHAR(20)
-
 	SELECT @Bill_ID = (SELECT MAX(dbo.BILL.BILL_ID) FROM dbo.BILL)
 	SELECT @Sector_ID = dbo.SECTOR.SECTOR_ID FROM dbo.SECTOR WHERE dbo.SECTOR.SECTOR_NAME = @Sector_Name
 	SET @Month = @Month - 1
-
 	IF(@Month = 0)
 	BEGIN
 	    SET @Month = 12
 		SET @Year = @Year -1
 	END
-
 	SELECT @Service_ID = dbo.SERVICE.SERVICE_ID FROM dbo.SERVICE WHERE dbo.SERVICE.SERVICE_NAME = @Service_Name
 	SET @Old_Quantity = dbo.UFN_get_New_Quantity_For_New_Bill(@Sector_ID,@Room_ID,@Month,@Year,@Service_Name)
 	SET @New_Quantity = @Old_Quantity + @Quantity
-
     INSERT INTO dbo.BILL_DETAIL(BILL_ID, SERVICE_ID, OLD_QUANTITY, NEW_QUANTITY)
-	VALUES (@Bill_ID, @Service_ID, @Old_Quantity, @New_Quantity)
+	VALUES
+	(   @Bill_ID, 
+		@Service_ID, 
+		@Old_Quantity, 
+		@New_Quantity  -
+    
 END
 GO
 
 -- Thanh toán
-CREATE OR ALTER PROC [dbo].[USP_INSERT_PAYMENT]
+CREATE PROC [dbo].[USP_INSERT_PAYMENT]
 (
 	@Employee_ID INT, 
 	@Paying_Date DATETIME, 
@@ -1105,37 +964,67 @@ CREATE OR ALTER PROC [dbo].[USP_INSERT_PAYMENT]
 AS
 BEGIN
     DECLARE @Bill_ID INT
-	SET @Bill_ID = dbo.UFN_GetBillIdBySectornameRoomidMonthYear(@Sector_Name,@Room_ID,@Month,@Year)
-
-	INSERT INTO dbo.PAYMENT (BILL_ID, EMPLOYEE_ID, PAYING_DATE, AMOUNT)
-	VALUES (@Bill_ID, @Employee_ID, @Paying_Date, @Amount)
+	SET @Bill_ID = dbo.UFN_GET_BILL_ID_BY_SECTORNAME_ROOMID_MONTH_YEAR(@Sector_Name,@Room_ID,@Month,@Year)
+	INSERT INTO dbo.PAYMENT
+	(
+	    BILL_ID,
+	    EMPLOYEE_ID,
+	    PAYING_DATE,
+	    AMOUNT
+	)
+	VALUES
+	(   @Bill_ID,         
+	    @Employee_ID,        
+	    @Paying_Date,
+	    @Amount      
+	    )
 END
 GO
-
 -- Lấy danh sách sinh viên general
 CREATE OR ALTER PROC USP_GetListStudentGeneral
 AS
 BEGIN
-	SELECT  * FROM dbo.UFN_GetListStudent(2)
+    SELECT * FROM dbo.V_STUDENTGENERAL
 END
 GO
-
 -- Lấy danh sách sinh viên general Alive
 CREATE OR ALTER PROC USP_GetListStudentGeneralALive
 AS
 BEGIN
-    SELECT  * FROM dbo.UFN_GetListStudent(1)
+    SELECT 
+	dbo.V_STUDENTGENERAL.USER_ID,
+	dbo.V_STUDENTGENERAL.FULL_NAME,
+	dbo.V_STUDENTGENERAL.DOB,
+	dbo.V_STUDENTGENERAL.GENDER,
+	dbo.V_STUDENTGENERAL.SSN,
+	dbo.V_STUDENTGENERAL.PHONE_NUMBER_1,
+	dbo.V_STUDENTGENERAL.EMAIL,
+	dbo.V_STUDENTGENERAL.STUDENT_ID,
+	dbo.V_STUDENTGENERAL.COLLEGE_NAME
+	FROM dbo.V_STUDENTGENERAL,dbo.[USER]
+	WHERE dbo.V_STUDENTGENERAL.USER_ID = dbo.[USER].USER_ID
+	AND dbo.[USER].STATUS = 1
 END
 GO
-
 -- Lấy danh sách sinh viên general Alive
 CREATE OR ALTER PROC USP_GetListStudentGeneralGoingOut
 AS
 BEGIN
-    SELECT * FROM dbo.UFN_GetListStudent(0)
+    SELECT 
+	dbo.V_STUDENTGENERAL.USER_ID,
+	dbo.V_STUDENTGENERAL.FULL_NAME,
+	dbo.V_STUDENTGENERAL.DOB,
+	dbo.V_STUDENTGENERAL.GENDER,
+	dbo.V_STUDENTGENERAL.SSN,
+	dbo.V_STUDENTGENERAL.PHONE_NUMBER_1,
+	dbo.V_STUDENTGENERAL.EMAIL,
+	dbo.V_STUDENTGENERAL.STUDENT_ID,
+	dbo.V_STUDENTGENERAL.COLLEGE_NAME
+	FROM dbo.V_STUDENTGENERAL,dbo.[USER]
+	WHERE dbo.V_STUDENTGENERAL.USER_ID = dbo.[USER].USER_ID
+	AND dbo.[USER].STATUS = 0
 END
 GO
-
 -- Tìm kiếm gần đúng sinh viên bởi userId
 CREATE OR ALTER PROC USP_GetListStudentGeneralByUserId(@USER_ID VARCHAR(10))
 AS BEGIN
@@ -1184,290 +1073,7 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@COLLEGE_NAME) + '%'
 END
 GO
--- Lấy danh sách user
-CREATE OR ALTER PROC USP_GetListUser
-AS BEGIN
-	SELECT * FROM dbo.[USER]
-END
-GO
--- Lấy danh sách Room_Registration
-CREATE OR ALTER PROC USP_GetListRoomRegistration
-AS BEGIN
-	SELECT * FROM dbo.V_ROOM_REGISTRATION
-END
-GO
--- Lấy danh sách Room_Registration bằng StudentId
-CREATE OR ALTER PROC USP_GetListRoomRegistrationByStudentId(@STUDENT_ID VARCHAR(15))
-AS BEGIN
-	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.[SearchLike]([Student Id]) 
-	LIKE N'%' + dbo.[SearchLike](@STUDENT_ID) + '%'
-END
-GO
--- Lấy danh sách Room_Registration bằng StudentName
-CREATE OR ALTER PROC USP_GetListRoomRegistrationByStudentName(@STUDENT_NAME NVARCHAR(100))
-AS BEGIN
-	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.[SearchLike]([Student Name]) 
-	LIKE N'%' + dbo.[SearchLike](@STUDENT_NAME) + '%'
-END
-GO
-
--- Lấy danh sách Room_Registration bằng Sector và room
-CREATE OR ALTER PROC USP_GetListRoomRegistrationBySectorAndRoom(
-	@SECTOR_NAME NVARCHAR(50),
-	@ROOM_ID NVARCHAR(10)
-	)
-AS BEGIN
-	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE Building = @SECTOR_NAME AND Room = @ROOM_ID
-END
-GO
--- Lấy danh sách đơn vị dịch vụ
-CREATE OR ALTER PROC [dbo].[USP_GetListServiceUnit]
-AS
-BEGIN
-    SELECT *
-	FROM dbo.V_SERVIE_UNIT
-	WHERE STATUS = 1
-END
--- Lấy danh sách College
-CREATE OR ALTER PROC USP_GetListCollege
-AS
-BEGIN
-    SELECT *
-	FROM dbo.COLLEGE
-END
-GO
--- Thêm bảo hiểm
-CREATE OR ALTER PROC USP_INSERT_INSURANCE
-(@Insurence_ID VARCHAR(15))
-AS
-BEGIN
-    INSERT INTO dbo.INSURANCE
-    (
-        INSURANCE_ID,
-        BASE_PRACTICE,
-        REGISTRATION_DATE,
-        DURATION
-    )
-    VALUES
-    (   @Insurence_ID,        
-        NULL,       
-        NULL, 
-        NULL
-        )
-END
-GO
---- THÊM USER - STUDENT
-CREATE OR ALTER PROC USP_INSERT_USER_STUDENT
-(
-	@LAST_NAME NVARCHAR(40),
-	@FIRST_NAME NVARCHAR(20),
-	@DOB DATE,@GENDER NVARCHAR(5),
-	@SSN VARCHAR(12),
-	@PHONE_NUMBER_1 VARCHAR(15),
-	@PHONE_NUMBER_2 VARCHAR(15),
-	@EMAIL VARCHAR(40),
-	@IMAGE_PATH VARCHAR(300),
-	@USER_TYPE VARCHAR(10),
-	@STATUS BIT
-)
-AS
-BEGIN
-	DECLARE @ADDRESS_ID INT
-	SELECT @ADDRESS_ID = (SELECT MAX(ADDRESS_ID) FROM dbo.ADDRESS)
-	INSERT INTO dbo.[USER]
-	(
-	    LAST_NAME,
-	    FIRST_NAME,
-	    DOB,
-	    GENDER,
-	    SSN,
-	    ADDRESS_ID,
-	    PHONE_NUMBER_1,
-	    PHONE_NUMBER_2,
-	    EMAIL,
-	    IMAGE_PATH,
-	    USERNAME,
-	    PASSWORD,
-	    USER_TYPE,
-	    STATUS
-	)
-	VALUES
-	(   @LAST_NAME,       -- LAST_NAME - nvarchar(40)
-	    @FIRST_NAME,       -- FIRST_NAME - nvarchar(20)
-	    @DOB, -- DOB - date
-	    @GENDER,       -- GENDER - nvarchar(5)
-	    @SSN,        -- SSN - varchar(12)
-	    @ADDRESS_ID,         -- ADDRESS_ID - bigint
-	    @PHONE_NUMBER_1,        -- PHONE_NUMBER_1 - varchar(15)
-	    @PHONE_NUMBER_2,        -- PHONE_NUMBER_2 - varchar(15)
-	    @EMAIL,        -- EMAIL - varchar(40)
-	    @IMAGE_PATH,        -- IMAGE_PATH - varchar(300)
-	    @EMAIL,        -- USERNAME - varchar(16)
-	    'student',        -- PASSWORD - varchar(32)
-	    @USER_TYPE,        -- USER_TYPE - varchar(10)
-	    @STATUS       -- STATUS - bit
-	    )
-END
-GO
--- THÊM SINH VIÊN
-CREATE PROC USP_INSERT_STUDENT
-(
-	@STUDENT_ID VARCHAR(15), 
-	@COLLEGE_NAME NVARCHAR(50),
-	@FACULTY NVARCHAR(50), 
-	@MAJORS NVARCHAR(50),
-	@INSURANCE_ID VARCHAR(15),
-	@STATUS_REGISTRATION_ROOM BIT
-)
-AS
-BEGIN
-    DECLARE @USER_ID BIGINT, @COLLEGE_ID INT
-	SELECT @USER_ID = (SELECT MAX(USER_ID) FROM dbo.[USER])
-	SELECT @COLLEGE_ID = dbo.COLLEGE.COLLEGE_ID FROM dbo.COLLEGE WHERE dbo.COLLEGE.COLLEGE_NAME = @COLLEGE_NAME
-	INSERT INTO dbo.STUDENT
-	(
-	    USER_ID,
-	    STUDENT_ID,
-	    COLLEGE_ID,
-	    FACULTY,
-	    MAJORS,
-	    INSURANCE_ID,
-	    STATUS_REGISTRATION_ROOM
-	)
-	VALUES
-	(   @USER_ID,   -- USER_ID - bigint
-	    @STUDENT_ID,  -- STUDENT_ID - varchar(15)
-	    @COLLEGE_ID,   -- COLLEGE_ID - int
-	    @FACULTY, -- FACULTY - nvarchar(50)
-	    @MAJORS, -- MAJORS - nvarchar(50)
-	    @INSURANCE_ID,  -- INSURANCE_ID - varchar(15)
-	    @STATUS_REGISTRATION_ROOM -- STATUS_REGISTRATION_ROOM - bit
-	    )
-END
-GO
-
--- TRANSACTION -- THÊM 1 SINH VIÊN
-CREATE OR ALTER PROC TRANS_INSERT_STUDENT
-(
-	@Street NVARCHAR(50), 
-	@Commune_Name NVARCHAR(50), 
-	@District_Name NVARCHAR(50),
-	@Province_Name NVARCHAR(50),
-	@Insurence_ID VARCHAR(15),
-	@LAST_NAME NVARCHAR(40),
-	@FIRST_NAME NVARCHAR(20),
-	@DOB DATE,@GENDER NVARCHAR(5),
-	@SSN VARCHAR(12),
-	@PHONE_NUMBER_1 VARCHAR(15),
-	@PHONE_NUMBER_2 VARCHAR(15),
-	@EMAIL VARCHAR(40),
-	@IMAGE_PATH VARCHAR(300),
-	@USER_TYPE VARCHAR(10),
-	@STATUS BIT,
-	@STUDENT_ID VARCHAR(15), 
-	@COLLEGE_NAME NVARCHAR(50),
-	@FACULTY NVARCHAR(50), 
-	@MAJORS NVARCHAR(50)
-)
-AS
-BEGIN
-	BEGIN TRANSACTION
-		CREATE TABLE TEMPT_STUDENT
-		(
-			T_SSN VARCHAR(12),
-			T_INSURANCE_ID VARCHAR(15),
-			T_PHONENUMBER1 VARCHAR(15),
-			T_PHONENUMBER2 VARCHAR(15),
-			T_EMAIL VARCHAR(40)
-		)
-		INSERT INTO dbo.TEMPT_STUDENT
-		(
-			T_SSN,
-			T_INSURANCE_ID,
-			T_PHONENUMBER1,
-			T_PHONENUMBER2,
-			T_EMAIL
-		)
-		SELECT dbo.[USER].SSN, dbo.STUDENT.INSURANCE_ID, dbo.[USER].PHONE_NUMBER_1, dbo.[USER].PHONE_NUMBER_2, dbo.[USER].EMAIL
-		FROM dbo.[USER] INNER JOIN dbo.STUDENT ON STUDENT.USER_ID = [USER].USER_ID
-		EXEC dbo.USP_INSERT_INSURANCE @Insurence_ID = @Insurence_ID 
-		EXEC dbo.USP_INSERT_ADDRESS @Street = @Street, 
-		                            @Commune_Name = @Commune_Name, 
-		                            @District_Name = @District_Name, 
-		                            @Province_Name = @Province_Name 
-		EXEC dbo.USP_INSERT_USER_STUDENT @LAST_NAME = @LAST_NAME,     -- nvarchar(40)
-		                                 @FIRST_NAME = @FIRST_NAME,    -- nvarchar(20)
-		                                 @DOB = @DOB,  -- date
-		                                 @GENDER = @GENDER,        -- nvarchar(5)
-		                                 @SSN = @SSN,            -- varchar(12)
-		                                 @PHONE_NUMBER_1 = @PHONE_NUMBER_1, -- varchar(15)
-		                                 @PHONE_NUMBER_2 = @PHONE_NUMBER_2, -- varchar(15)
-		                                 @EMAIL = @EMAIL,          -- varchar(40)
-		                                 @IMAGE_PATH = '',     -- varchar(300)
-		                                 @USER_TYPE = @USER_TYPE,      -- varchar(10)
-		                                 @STATUS = @STATUS        -- bit
-		EXEC dbo.USP_INSERT_STUDENT @STUDENT_ID = @STUDENT_ID,                -- varchar(15)
-		                            @COLLEGE_NAME = @COLLEGE_NAME,             -- nvarchar(50)
-		                            @FACULTY = @FACULTY,                  -- nvarchar(50)
-		                            @MAJORS = @MAJORS,                   -- nvarchar(50)
-		                            @INSURANCE_ID = @Insurence_ID,              -- varchar(15)
-		                            @STATUS_REGISTRATION_ROOM = 0 -- bit
-		
-		IF( @SSN IN (SELECT dbo.TEMPT_STUDENT.T_SSN FROM dbo.TEMPT_STUDENT))
-		BEGIN
-			RAISERROR('SSN Is exist',16,1)
-		    ROLLBACK
-		END
-		ELSE
-		BEGIN
-			DROP TABLE dbo.TEMPT_STUDENT
-			COMMIT
-		END	
-END
-GO
---USP_INSERT_ROOMREGISTRATION
-CREATE PROC USP_INSERT_ROOMREGISTRATION
-(
-	@EMPLOYEE_ID BIGINT, 
-	@SSN VARCHAR(12), 
-	@SECTOR_NAME NVARCHAR(50), 
-	@ROOM_ID NVARCHAR(10), 
-	@START_DAY DATETIME, 
-	@SEMESTER INT, 
-	@ACADEMIC_YEAR INT, 
-	@DURATION NVARCHAR(20), 
-	@STATUS BIT
-)
-AS
-BEGIN
-    DECLARE @SECTOR_ID VARCHAR(10)
-	SELECT @SECTOR_ID = dbo.UFN_Get_SectorID_By_SectorName(@SECTOR_NAME)
-	INSERT INTO dbo.ROOM_REGISTRATION
-	(
-	    SSN,
-	    ROOM_ID,
-	    EMPLOYEE_ID,
-	    SECTOR_ID,
-	    START_DATE,
-	    SEMESTER,
-	    ACADEMIC_YEAR,
-	    DURATION,
-	    STATUS
-	)
-	VALUES
-	(   @SSN,
-	    @ROOM_ID,
-	    @EMPLOYEE_ID, 
-	    @SECTOR_ID, 
-	    @START_DAY,
-	    @SEMESTER,
-	    @ACADEMIC_YEAR, 
-	    @DURATION,
-	    @STATUS
-	    )
-END
-GO
-------------TRIGGER----
+------------TRIGGER
 ----------------------
 ----------------------
 -- Thay đổi mật khẩu mặt định
@@ -1484,101 +1090,178 @@ AS
 	END
 GO
 
--- Cập nhật trạng thái tại bẳng hóa đơn bằng 1 (đã thanh toán) -- nếu hóa đơn đó đã thanh toán thì thông báo "this bill has been paid"
-CREATE OR ALTER TRIGGER TRG_INSERT_PAYMENT
+-- Cập nhật trạng thái tại bẳng hóa đơn bằng 1 (đã thanh toán)
+CREATE TRIGGER TRG_INSERT_PAYMENT
 ON dbo.PAYMENT
 FOR INSERT
 AS
 	DECLARE @Bill_ID INT
-	SELECT @Bill_ID = Inserted.BILL_ID FROM Inserted
-	IF(@Bill_ID IN (SELECT dbo.BILL.BILL_ID FROM dbo.BILL WHERE dbo.BILL.STATUS = 1))
-	BEGIN
-	    RAISERROR(N'This bill has been paid',16,1)
-		ROLLBACK
-	END
-	ELSE
-	BEGIN
-	    UPDATE dbo.BILL
-		SET STATUS = 1 WHERE dbo.BILL.BILL_ID = @Bill_ID
-	END
+	SELECT @Bill_ID = (SELECT MAX(dbo.PAYMENT.BILL_ID) FROM dbo.PAYMENT)
+	UPDATE dbo.BILL
+	SET STATUS = 1 WHERE dbo.BILL.BILL_ID = @Bill_ID
 GO
--- TRG CHECKBILL
-CREATE OR ALTER TRIGGER CheckBill
-ON dbo.BILL
-FOR INSERT
-AS
-	DECLARE @Sector_ID VARCHAR(10),
-		    @Room_ID NVARCHAR(10),
-			@Month INT,
-			@Year INT,
-			@Old_Sector_Name VARCHAR(10),
-			@Old_Room_ID NVARCHAR(10),
-			@Old_Month INT,
-			@Old_Year INT
-	SELECT @Sector_ID = Inserted.Sector_ID FROM Inserted
-	SELECT @Room_ID = Inserted.ROOM_ID FROM Inserted
-	SELECT @Month = Inserted.MONTH FROM Inserted
-	SELECT @Year = Inserted.YEAR FROM Inserted
-	IF(@Sector_ID IN (SELECT dbo.TEMPT.T_Sector_ID FROM dbo.TEMPT)
-		AND @Room_ID IN (SELECT dbo.TEMPT.T_Room_ID FROM dbo.TEMPT WHERE dbo.TEMPT.T_Sector_ID = @Sector_ID)
-		AND @Month IN (SELECT dbo.TEMPT.T_MONTH FROM dbo.TEMPT WHERE dbo.TEMPT.T_Sector_ID = @Sector_ID AND dbo.TEMPT.T_Room_ID = @Room_ID)
-		AND @Year IN (SELECT dbo.TEMPT.T_YEAR FROM dbo.TEMPT WHERE dbo.TEMPT.T_Sector_ID = @Sector_ID AND dbo.TEMPT.T_Room_ID = @Room_ID AND dbo.TEMPT.T_MONTH = @Month)
-		)
-	BEGIN
-		RAISERROR(N'Bill Is Exists',16,1)
-		ROLLBACK
-	END
-	ELSE
-		BEGIN
-				INSERT INTO dbo.TEMPT
-				(
-					T_Sector_ID,
-					T_Room_ID,
-					T_Month,
-					T_Year
-				)
-				VALUES
-				(   
-					@Sector_ID,
-					@Room_ID, 
-					@Month,
-					@Year 
-				)
-		END
-GO
---TRG_INSERT_ROOM_REGISTRATION
-CREATE TRIGGER TRG_INSERT_ROOM_REGISTRATION
-ON dbo.ROOM_REGISTRATION
-FOR INSERT
-AS
-	DECLARE @SSN VARCHAR(12), @SECTOR_ID VARCHAR(10), @ROOM_ID NVARCHAR(10), @CAPACITY INT, @CURRENT_REGISTRATER INT
-	SELECT @SSN = Inserted.SSN FROM Inserted
-	SELECT @SECTOR_ID =  Inserted.SECTOR_ID FROM Inserted
-	SELECT @ROOM_ID = Inserted.ROOM_ID FROM Inserted
-	SELECT @CAPACITY = dbo.ROOM_TYPE.CAPACITY FROM dbo.ROOM INNER JOIN dbo.ROOM_TYPE ON ROOM_TYPE.ROOM_TYPE_ID = ROOM.ROOM_TYPE_ID
-												WHERE dbo.ROOM.SECTOR_ID = @SECTOR_ID AND dbo.ROOM.ROOM_ID = @ROOM_ID
-	SELECT @CURRENT_REGISTRATER = dbo.CountNumberOfStudentInRoom(@SECTOR_ID,@ROOM_ID)
-	IF (@SSN IN (SELECT dbo.[USER].SSN FROM dbo.STUDENT INNER JOIN dbo.[USER] ON [USER].USER_ID = STUDENT.USER_ID
-										WHERE dbo.STUDENT.STATUS_REGISTRATION_ROOM = 1))
-	BEGIN
-	    RAISERROR(N'SSN Is Exist',16,1)
-		ROLLBACK
-	END
-	ELSE IF(@CURRENT_REGISTRATER = @CAPACITY + 1)
-	BEGIN
-	    RAISERROR(N'ROOM IS FULL',16,1)
-		ROLLBACK
-	END
-	ELSE
-	BEGIN
-	    DECLARE @USER_ID_UPDATE VARCHAR(12)
-		SELECT @USER_ID_UPDATE = dbo.[USER].USER_ID FROM dbo.STUDENT INNER JOIN dbo.[USER] ON [USER].USER_ID = STUDENT.USER_ID
-													WHERE dbo.[USER].SSN = @SSN
-		UPDATE dbo.STUDENT
-		SET STATUS_REGISTRATION_ROOM = 1
-		WHERE dbo.STUDENT.USER_ID = @USER_ID_UPDATE
-	END
-GO
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Insert thông tin trường cao đẳng đại học
+SET IDENTITY_INSERT [dbo].[COLLEGE] ON 
+
+INSERT [dbo].[COLLEGE] ([COLLEGE_ID], [COLLEGE_CODE], [COLLEGE_NAME]) VALUES 
+	(1, N'ANS', N'Đại Học An Ninh Nhân Dân'),
+	(2, N'BVS', N'Học Viện Công Nghệ Bưu Chính Viễn Thông (phía Nam)'),
+	(3, N'CSS', N'Đại Học Cảnh Sát Nhân Dân'),
+	(4, N'DCT', N'Đại Học Công Nghiệp Thực Phẩm TPHCM'),
+	(5, N'DKC', N'Đại học Công Nghệ TPHCM'),
+	(6, N'DLS', N'Đại Học Lao Động – Xã Hội ( Cơ sở phía Nam)'),
+	(7, N'DMS', N'Đại Học Tài Chính Marketing'),
+	(8, N'DNT', N'Đại Học Ngoại Ngữ – Tin Học TPHCM'),
+	(9, N'DSD', N'Đại Học Sân Khấu, Điện Ảnh TPHCM'),
+	(10, N'DSG', N'Đại Học Công Nghệ Sài Gòn'),
+	(11, N'DTM', N'ĐH Tài Nguyên môi trường TPHCM'),
+	(12, N'DTT', N'Đại Học Tôn Đức Thắng'),
+	(13, N'DVH', N'Đại Học Văn Hiến'),
+	(14, N'DVL', N'Đại Học Văn Lang'),
+	(15, N'GDU', N'Đại Học Gia Định'),
+	(16, N'GSA', N'Đại Học Giao Thông Vận Tải ( Cơ sở Phía Nam)'),
+	(17, N'GTS', N'Đại Học Giao Thông Vận Tải TPHCM'),
+	(18, N'HCS', N'Học Viện Hành Chính Quốc Gia (phía Nam)'),
+	(19, N'HHK', N'Học Viện Hàng Không Việt Nam'),
+	(20, N'HIU', N'Đại Học Quốc Tế Hồng Bàng'),
+	(21, N'HSU', N'Đại Học Hoa Sen'),
+	(22, N'IUH', N'Đại Học Công Nghiệp TPHCM'),
+	(23, N'KSA', N'Đại Học Kinh Tế TPHCM'),
+	(24, N'KTS', N'Đại Học Kiến Trúc TPHCM'),
+	(25, N'LPS', N'Đại Học Luật TPHCM'),
+	(26, N'MBS', N'Đại Học Mở TPHCM'),
+	(27, N'MTS', N'Đại Học Mỹ Thuật TPHCM'),
+	(28, N'NHS', N'Đại Học Ngân Hàng TPHCM'),
+	(29, N'NLS', N'Đại Học Nông Lâm TPHCM'),
+	(30, N'NTS', N'Đại Học Ngoại Thương (phía Nam)'),
+	(31, N'NTT', N'Đại Học Nguyễn Tất Thành'),
+	(32, N'NVS', N'Nhạc Viện TPHCM'),
+	(33, N'PCS', N'Đại Học Phòng Cháy Chữa Cháy (phía Nam)'),
+	(34, N'PCS1', N'Đại Học Phòng Cháy Chữa Cháy (Hệ Dân sự Phía Nam)'),
+	(35, N'QSB', N'Đại Học Bách Khoa – Đại Học Quốc Gia TPHCM'),
+	(36, N'QSC', N'Đại Học Công Nghệ Thông Tin – Đại Học Quốc Gia TPHCM'),
+	(37, N'QSK', N'Đại học Kinh Tế – Luật – Đại Học Quốc Gia TPHCM'),
+	(38, N'QSQ', N'Đại Học Quốc Tế – Đại Học Quốc Gia TPHCM'),
+	(39, N'QST', N'Đại Học Khoa Học Tự Nhiên – Đại Học Quốc Gia TPHCM'),
+	(40, N'QSX', N'Đại Học Khoa Học Xã Hội và Nhân Văn – Đại Học Quốc Gia TPHCM'),
+	(41, N'QSY', N'Khoa Y - Đại học Quốc Gia TPHCM'),
+	(42, N'RMU', N'Đại Học Quốc Tế RMIT Việt Nam'),
+	(43, N'SGD', N'Đại Học Sài Gòn'),
+	(44, N'SIU', N'Đại Học Quốc Tế Sài Gòn'),
+	(45, N'SPK', N'Đại Học Sư Phạm Kỹ Thuật TPHCM'),
+	(46, N'SPS', N'Đại Học Sư Phạm TPHCM'),
+	(47, N'STS', N'Đại Học Sư Phạm Thể DụcThể Thao TPHCM'),
+	(48, N'TDS', N'Đại Học Thể Dục Thể Thao TPHCM'),
+	(49, N'TLS', N'Đại Học Thủy Lợi ( Cơ sở 2 )'),
+	(50, N'TYS', N'Đại Học Y Khoa Phạm Ngọc Thạch'),
+	(51, N'UEF', N'Đại Học Kinh Tế -Tài Chính TPHCM'),
+	(52, N'VGU', N'Đại Học Việt Đức'),
+	(53, N'VHS', N'Đại Học Văn Hóa TPHCM'),
+	(54, N'VPH', N'Trường Sĩ Quan Kĩ Thuật Quân Sự - Hệ Quân sự - Đại Học Trần Đại Nghĩa'),
+	(55, N'YDS', N'Đại Học Y Dược TPHCM'),
+	(56, N'ZPH', N'Trường Sĩ Quan Kĩ Thuật Quân Sự - Hệ Dân sự - Đại Học Trần Đại Nghĩa'),
+	(57, N'CBC', N'Cao Đẳng Bán Công Công Nghệ và Quản Trị Doanh Nghiệp'),
+	(58, N'CBV', N'Cao Đẳng Bách Việt'),
+	(59, N'CCO', N'Cao Đẳng Công Nghệ Thủ Đức'),
+	(60, N'CCS', N'Cao Đẳng Kinh Tế Kỹ Thuật Vinatex TPHCM'),
+	(61, N'CDE', N'Cao Đẳng Điện Lực TPHCM'),
+	(62, N'CDV', N'Cao Đẳng Viễn Đông'),
+	(63, N'CEP', N'Cao Đẳng Kinh Tế TPHCM'),
+	(64, N'CES', N'Cao Đẳng Công Thương TPHCM'),
+	(65, N'CET', N'Cao Đẳng Kinh Tế-Công Nghệ TPHCM'),
+	(66, N'CGS', N'Cao Đẳng Giao Thông Vận Tải 3'),
+	(67, N'CGT', N'Cao Đẳng Giao Thông Vận Tải TPHCM'),
+	(68, N'CKC', N'Cao Đẳng Kỹ Thuật Cao Thắng'),
+	(69, N'CKD', N'Cao Đẳng Kinh Tế Đối Ngoại'),
+	(70, N'CKM', N'Cao Đẳng Kinh Tế Kỹ Thuật Miền Nam'),
+	(71, N'CKP', N'Cao Đẳng Kỹ Thuật Lý Tự Trọng TPHCM'),
+	(72, N'CM3', N'Cao Đẳng Sư Phạm Trung Ương TPHCM'),
+	(73, N'CPL', N'Cao Đẳng Kinh Tế Kỹ Thuật TP HCM'),
+	(74, N'CPS', N'Cao Đẳng Phát Thanh Truyền Hình II'),
+	(75, N'CTS', N'Cao Đẳng Tài Chính Hải Quan'),
+	(76, N'CVN', N'Cao Đẳng Văn Hóa Nghệ Thuật TPHCM'),
+	(77, N'CVS', N'Cao Đẳng Văn Hóa Nghệ Thuật và Du Lịch Sài Gòn'),
+	(78, N'CVX', N'Cao Đẳng Kỹ Thuật-Công Nghệ Vạn Xuân'),
+	(79, N'CXS', N'Cao Đẳng Xây Dựng Số 2')
+SET IDENTITY_INSERT [dbo].[COLLEGE] OFF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
