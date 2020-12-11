@@ -30,5 +30,17 @@ namespace DormitoryManagement.Controller
             DataTable dataTable = DataProvider.ExcuteQuery(query);
             return dataTable;
         }
+        public static DataTable GetListBillViewByBuldingAndRoom(string bulding, string room)
+        {
+            string query = string.Format("EXEC dbo.USP_GetListBillViewBySectorAndRoom @SECTOR_NAME = N'{0}', @ROOM_ID = N'{1}'", bulding, room);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
+        public static DataTable GetListBillViewByStatus(bool status)
+        {
+            string query = string.Format("EXEC dbo.USP_GetListBillViewByStatus @STATUS = {0}", status);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
     }
 }
