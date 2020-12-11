@@ -38,7 +38,6 @@ namespace DormitoryManagement.View
             GetListSector();
             txtInputRoomReg.Enabled = false;
             //
-
         }
         /// <summary>
         /// ---------------------------STUDENTS
@@ -115,7 +114,7 @@ namespace DormitoryManagement.View
                 else if (inputText.Length < 16)
                 {
                     GetFullListStudentByStudentId(inputText);
-                } 
+                }
             }
             else if (indexSelected == 5)
             {
@@ -167,6 +166,7 @@ namespace DormitoryManagement.View
         /// </summary>
         /// <param ></param>
         /// <param></param>
+
         private void cbbCategoryRoomReg_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
@@ -204,31 +204,12 @@ namespace DormitoryManagement.View
                     }
             }
         }
-        private void cbbBuilding_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox comboBox = sender as ComboBox;
-            if (comboBox.SelectedItem == null)
-                return;
-            SectorDTO sectorDTO = (SectorDTO)comboBox.SelectedValue;
-            indexSectorIdSelected = sectorDTO.SectorId;
-            SectorNameSelected = sectorDTO.SectorName;
-            GetListRoomBySectorId(indexSectorIdSelected);
-            GetListRoomRegistrationByBuildingAndRoom(SectorNameSelected, indexRoomIdSelected);
-        }
-        private void cbbRoom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox comboBox = sender as ComboBox;
-            if (comboBox.SelectedItem == null)
-                return;
-            RoomDTO roomDTO = (RoomDTO)comboBox.SelectedValue;
-            indexRoomIdSelected = roomDTO.RoomId;
-            GetListRoomRegistrationByBuildingAndRoom(SectorNameSelected, indexRoomIdSelected);
-        }
-        private void txtInputRoomRegistration_TextChanged(object sender, EventArgs e)
+
+        private void txtInputRoomReg_TextChanged(object sender, EventArgs e)
         {
             string inputText = "";
             inputText = txtInputRoomReg.Text.Trim().ToString();
-            
+
             if (indexSelectedRoomRegistration == 0)
             {
                 if (txtInputRoomReg.Text == "")
@@ -259,12 +240,30 @@ namespace DormitoryManagement.View
                 }
             }
         }
-        private void btnSearchRoomReg_Click(object sender, EventArgs e)
-        {
-            string test1 = indexSectorIdSelected;
-            string test2 = indexRoomIdSelected;
 
+        private void cbbBuilding_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox.SelectedItem == null)
+                return;
+            SectorDTO sectorDTO = (SectorDTO)comboBox.SelectedValue;
+            indexSectorIdSelected = sectorDTO.SectorId;
+            SectorNameSelected = sectorDTO.SectorName;
+            GetListRoomBySectorId(indexSectorIdSelected);
+            GetListRoomRegistrationByBuildingAndRoom(SectorNameSelected, indexRoomIdSelected);
         }
+
+        private void cbbRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox.SelectedItem == null)
+                return;
+            RoomDTO roomDTO = (RoomDTO)comboBox.SelectedValue;
+            indexRoomIdSelected = roomDTO.RoomId;
+            GetListRoomRegistrationByBuildingAndRoom(SectorNameSelected, indexRoomIdSelected);
+        }
+
+
         /// <summary>
         /// ---------------------------BILL
         /// </summary>
@@ -378,14 +377,20 @@ namespace DormitoryManagement.View
             DataTable dataTable = RoomDAO.GetListRoomRegistrationByBuldingAndRoom(building,room);
             dgvRoomReg.DataSource = dataTable;
         }
+
+
+
+
+
+
         /// <summary>
         /// ---------------------------BILL
         /// </summary>
         /// <param ></param>
         /// <param></param>
-        
+
         #endregion
 
-
+       
     }
 }
