@@ -666,3 +666,18 @@ BEGIN
 	    )
 END
 GO
+-- Lấy danh sách College
+CREATE OR ALTER PROC USP_GetListBillView
+AS
+BEGIN
+    SELECT * FROM dbo.[V_BILL]
+END
+GO
+-- Lấy danh sách Room_Registration bằng Sector và room
+CREATE OR ALTER PROC USP_GetListBillViewBySector(
+	@SECTOR_NAME NVARCHAR(50)
+	)
+AS BEGIN
+	SELECT * FROM dbo.[V_BILL] WHERE Sector = @SECTOR_NAME 
+END
+GO
