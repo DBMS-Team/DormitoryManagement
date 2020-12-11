@@ -65,9 +65,9 @@ namespace DormitoryManagement.View
         public FrmEmployee(EmployeeDTO employee, UserDTO user)
         {
             InitializeComponent();
-            Init();
             this.LoginEmployee = employee;
             this.LoginUser = user;
+            Init();
         }
 
         private void Init()
