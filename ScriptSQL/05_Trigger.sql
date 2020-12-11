@@ -1,7 +1,7 @@
 ﻿USE [DormitoryManagement]
 GO
 
--- Thay đổi mật khẩu mặt định
+-- Thay đổi mật khẩu mặc định
 CREATE OR ALTER TRIGGER TRG_DefaultPassword ON [dbo].[USER]
 FOR INSERT
 AS
