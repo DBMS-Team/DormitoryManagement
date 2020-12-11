@@ -11,10 +11,9 @@ AS
 		SET @lass_USER_ID= ( SELECT TOP 1 USER_ID FROM dbo.[USER] ORDER BY USER_ID DESC)
 		SET @newPassword = dbo.UFN_NewPassword('','dbms',32)
 		SET @newPassword = dbo.UFN_GenerateMD5(@newPassword)
-		UPDATE dbo.[USER] SET PASSWORD = @newPassword WHERE USER_ID = @lass_USER_ID
+		UPDATE dbo.[USER] SET PASSWORD = @newPassword WHERE USER_ID = @lass_USER_ID AND USER_TYPE = 'EMPLOYEE'
 	END
 GO
-
 -- Cập nhật trạng thái tại bẳng hóa đơn bằng 1 (đã thanh toán) -- nếu hóa đơn đó đã thanh toán thì thông báo "this bill has been paid"
 CREATE OR ALTER TRIGGER TRG_INSERT_PAYMENT
 ON dbo.PAYMENT
@@ -108,5 +107,20 @@ AS
 		UPDATE dbo.STUDENT
 		SET STATUS_REGISTRATION_ROOM = 1
 		WHERE dbo.STUDENT.USER_ID = @USER_ID_UPDATE
+	END
+GO
+
+-- Thay đổi mật khẩu mặt định sinh viên
+CREATE OR ALTER TRIGGER TRG_DefaultPasswordStudent ON [dbo].[USER]
+FOR INSERT
+AS
+	BEGIN
+	    DECLARE @lass_USER_ID BIGINT
+		DECLARE @newPassword VARCHAR(32)
+		SET @lass_USER_ID= ( SELECT TOP 1 USER_ID FROM dbo.[USER] ORDER BY USER_ID DESC)
+		SET @newPassword = dbo.UFN_NewPassword('','mem',32)
+		SET @newPassword = dbo.UFN_GenerateMD5(@newPassword)
+		UPDATE dbo.[USER] SET PASSWORD = @newPassword WHERE USER_ID = @lass_USER_ID
+		AND USER_TYPE = 'STUDENT'
 	END
 GO
