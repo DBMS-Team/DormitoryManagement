@@ -91,6 +91,7 @@
     <Compile Include="Controller\PayMentDAO.cs" />
     <Compile Include="Controller\ProvinceDAO.cs" />
     <Compile Include="Controller\RoomDAO.cs" />
+    <Compile Include="Controller\RoomRegistrationDAO.cs" />
     <Compile Include="Controller\SectorDAO.cs" />
     <Compile Include="Controller\ServiceDAO.cs" />
     <Compile Include="Controller\ServiceUnitDAO.cs" />
@@ -218,14 +219,14 @@
     <Compile Include="View\FrmStudentInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmStudentInfo.Designer.cs">
-      <DependentUpon>FrmStudentInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FrmStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FrmStudent.Designer.cs">
       <DependentUpon>FrmStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmStudentInfo.Designer.cs">
+      <DependentUpon>FrmStudentInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Item.cs">
       <SubType>UserControl</SubType>

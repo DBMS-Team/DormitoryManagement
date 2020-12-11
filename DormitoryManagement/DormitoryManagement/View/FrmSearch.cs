@@ -40,6 +40,8 @@ namespace DormitoryManagement.View
             //
             GetListBillView();
             AutoSizeModeColumn(dgvBill);
+            dtpFromDate.Enabled = false;
+            dtpToDate.Enabled = false;
         }
         /// <summary>
         /// ---------------------------STUDENTS
@@ -281,6 +283,29 @@ namespace DormitoryManagement.View
             indexSectorIdSelected = sectorDTO.SectorId;
             SectorNameSelected = sectorDTO.SectorName;
             GetListRoomBySectorId(indexSectorIdSelected);
+            GetListBillViewByBuildingAndRoom(SectorNameSelected, indexRoomIdSelected);
+        }
+        private void cbbRoom_Bill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox.SelectedItem == null)
+                return;
+            RoomDTO roomDTO = (RoomDTO)comboBox.SelectedValue;
+            indexRoomIdSelected = roomDTO.RoomId;
+            GetListBillViewByBuildingAndRoom(SectorNameSelected, indexRoomIdSelected);
+        }
+        private void ckbPaid_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbPaid.Checked)
+            {
+                GetListBillViewByStatus(true);
+            }
+            else
+                GetListBillViewByStatus(false);
+        }
+        private void btnSearch_Bill_Click(object sender, EventArgs e)
+        {
+            GetListBillView();
         }
         #endregion
 
@@ -390,8 +415,20 @@ namespace DormitoryManagement.View
             DataTable dataTable = BillDAO.GetListBillView();
             dgvBill.DataSource = dataTable;
         }
+        void GetListBillViewByBuildingAndRoom(string building, string room)
+        {
+            DataTable dataTable = BillDAO.GetListBillViewByBuldingAndRoom(building, room);
+            dgvBill.DataSource = dataTable;
+        }
+        void GetListBillViewByStatus(bool status)
+        {
+            DataTable dataTable = BillDAO.GetListBillViewByStatus(status);
+            dgvBill.DataSource = dataTable;
+        }
+
+
         #endregion
 
-
+        
     }
 }

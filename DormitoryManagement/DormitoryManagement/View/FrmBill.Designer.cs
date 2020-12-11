@@ -1,4 +1,4 @@
-﻿namespace DormitoryManagement.View
+namespace DormitoryManagement.View
 {
     partial class FrmBill
     {
