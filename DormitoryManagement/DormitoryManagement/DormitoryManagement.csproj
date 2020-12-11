@@ -83,6 +83,7 @@
     <Compile Include="Controller\AdminDAO.cs" />
     <Compile Include="Controller\BillDAO.cs" />
     <Compile Include="Controller\BillDetailDAO.cs" />
+    <Compile Include="Controller\CollegeDAO.cs" />
     <Compile Include="Controller\CommuneDAO.cs" />
     <Compile Include="DbConnection\DataProvider.cs" />
     <Compile Include="Controller\DistrictDAO.cs" />
@@ -96,7 +97,6 @@
     <Compile Include="Controller\StudentDAO.cs" />
     <Compile Include="Controller\StudentViewDAO.cs" />
     <Compile Include="Controller\UnitDAO.cs" />
-    <Compile Include="Controller\UniversityDAO.cs" />
     <Compile Include="Controller\UserDAO.cs" />
     <Compile Include="Model\AddressDTO.cs" />
     <Compile Include="Model\AdminDTO.cs" />

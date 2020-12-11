@@ -67,9 +67,7 @@ namespace DormitoryManagement.View
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmGuest frmGuest = new FrmGuest();
-            frmGuest.ShowDialog();
+            this.Close();
         }
         private void btnHidePassword_Click(object sender, EventArgs e)
         {

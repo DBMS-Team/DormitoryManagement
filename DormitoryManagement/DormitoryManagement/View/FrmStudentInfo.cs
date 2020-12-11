@@ -118,6 +118,12 @@ namespace DormitoryManagement.View
             cbbCommune.DataSource = communeDTOs;
             cbbCommune.DisplayMember = "CommuneName";
         }
+        void LoadListCollege()
+        {
+            List<CollegeDTO> ListCollege = CollegeDAO.GetListColloge();
+            cbbUniversity.DataSource = ListCollege;
+            cbbUniversity.DisplayMember = "CollegeName";
+        }
         void LoadListUniversityInCombobox()
         {
 
@@ -128,6 +134,7 @@ namespace DormitoryManagement.View
         {
             btnSave.Enabled = true;
             LoadListProvinceInCombobox();
+            LoadListCollege();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
