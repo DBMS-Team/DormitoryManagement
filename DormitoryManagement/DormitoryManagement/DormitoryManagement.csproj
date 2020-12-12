@@ -85,6 +85,7 @@
     <Compile Include="Controller\BillDetailDAO.cs" />
     <Compile Include="Controller\CollegeDAO.cs" />
     <Compile Include="Controller\CommuneDAO.cs" />
+    <Compile Include="DbConnection\DatabaseConnection.cs" />
     <Compile Include="DbConnection\DataProvider.cs" />
     <Compile Include="Controller\DistrictDAO.cs" />
     <Compile Include="Controller\EmployeeDAO.cs" />
@@ -222,6 +223,12 @@
     <Compile Include="View\FrmSearch.Designer.cs">
       <DependentUpon>FrmSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmServiceInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmServiceInfo.Designer.cs">
+      <DependentUpon>FrmServiceInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmServices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmSearch.resx">
       <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmServiceInfo.resx">
+      <DependentUpon>FrmServiceInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmServices.resx">
       <DependentUpon>FrmServices.cs</DependentUpon>

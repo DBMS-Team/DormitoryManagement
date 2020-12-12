@@ -70,7 +70,7 @@ namespace DormitoryManagement.View
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (txtStudentID.Text == "")
+            if (txtSSN.Text == "")
             {
                 MessageBox.Show("Bạn Chưa Nhập Chứng Minh Nhân Dân");
             }
@@ -87,7 +87,7 @@ namespace DormitoryManagement.View
                 MessageBox.Show("Bạn Chưa Chọn Thời Hạn");
             }
             long Employee_ID = User.UserId;
-            string Ssn = Convert.ToString(txtStudentID.Text);
+            string Ssn = Convert.ToString(txtSSN.Text);
             string Sector_Name = Convert.ToString(cmbBuilding.Text);
             string Room_ID = Convert.ToString(cmbRoom.Text);
             DateTime Start_Day = dtpStartDate.Value;

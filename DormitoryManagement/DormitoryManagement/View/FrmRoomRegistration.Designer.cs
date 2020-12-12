@@ -41,7 +41,7 @@
             this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.lbBuilding = new System.Windows.Forms.Label();
             this.txtAcademicYear = new System.Windows.Forms.TextBox();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
+            this.txtSSN = new System.Windows.Forms.TextBox();
             this.lbAcademicYear = new System.Windows.Forms.Label();
             this.lbSemester = new System.Windows.Forms.Label();
             this.lbRoom = new System.Windows.Forms.Label();
@@ -129,7 +129,7 @@
             this.panel1.Controls.Add(this.cmbSemester);
             this.panel1.Controls.Add(this.lbBuilding);
             this.panel1.Controls.Add(this.txtAcademicYear);
-            this.panel1.Controls.Add(this.txtStudentID);
+            this.panel1.Controls.Add(this.txtSSN);
             this.panel1.Controls.Add(this.lbAcademicYear);
             this.panel1.Controls.Add(this.lbSemester);
             this.panel1.Controls.Add(this.lbRoom);
@@ -211,17 +211,17 @@
             this.txtAcademicYear.TabIndex = 15;
             this.txtAcademicYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtStudentID
+            // txtSSN
             // 
-            this.txtStudentID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtStudentID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.txtStudentID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentID.Location = new System.Drawing.Point(44, 50);
-            this.txtStudentID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(217, 27);
-            this.txtStudentID.TabIndex = 14;
-            this.txtStudentID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSSN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtSSN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.txtSSN.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSSN.Location = new System.Drawing.Point(44, 50);
+            this.txtSSN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSSN.Name = "txtSSN";
+            this.txtSSN.Size = new System.Drawing.Size(217, 27);
+            this.txtSSN.TabIndex = 14;
+            this.txtSSN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbAcademicYear
             // 
@@ -259,9 +259,9 @@
             this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStudentID.Location = new System.Drawing.Point(40, 25);
             this.lbStudentID.Name = "lbStudentID";
-            this.lbStudentID.Size = new System.Drawing.Size(98, 20);
+            this.lbStudentID.Size = new System.Drawing.Size(46, 20);
             this.lbStudentID.TabIndex = 0;
-            this.lbStudentID.Text = "Student ID";
+            this.lbStudentID.Text = "SSN";
             // 
             // btnOK
             // 
@@ -353,7 +353,7 @@
         private System.Windows.Forms.ComboBox cmbSemester;
         private System.Windows.Forms.Label lbBuilding;
         private System.Windows.Forms.TextBox txtAcademicYear;
-        private System.Windows.Forms.TextBox txtStudentID;
+        private System.Windows.Forms.TextBox txtSSN;
         private System.Windows.Forms.Label lbAcademicYear;
         private System.Windows.Forms.Label lbSemester;
         private System.Windows.Forms.Label lbRoom;

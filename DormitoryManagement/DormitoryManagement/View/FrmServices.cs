@@ -16,5 +16,15 @@ namespace DormitoryManagement.View
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmServiceInfo frmServiceInfo = new FrmServiceInfo();
+            frmServiceInfo.btnDelete.Visible = false;
+            frmServiceInfo.btnOK.Visible = true;
+            frmServiceInfo.btnOK.Enabled = true;
+            frmServiceInfo.btnEdit.Visible = false;
+            frmServiceInfo.ShowDialog();
+        }
     }
 }

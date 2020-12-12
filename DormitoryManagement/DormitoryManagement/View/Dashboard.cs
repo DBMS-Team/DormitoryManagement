@@ -285,6 +285,8 @@ namespace DormitoryManagement.View
         public static void ListServices()
         {
             FrmServices frmServices = new FrmServices();
+            if (User == null)
+                frmServices.btnAdd.Visible = false;
             frmServices.ShowDialog();
         }
 
