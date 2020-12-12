@@ -6,9 +6,11 @@ namespace DormitoryManagement.View
 {
     public static class Dashboard
     {
-        #region Var
+        #region Fields
         private static UserDTO user;
+        #endregion
 
+        #region Properties
         public static UserDTO User { get => user; set => user = value; }
         #endregion
 
@@ -108,67 +110,78 @@ namespace DormitoryManagement.View
         #endregion
 
         #region Information
+
+        #region Persional Information
+        public static Item InitStudentInfo()
+        {
+            Item ctrlStudentInfo = new Item(Dashboard.StudentInfo);
+            ctrlStudentInfo.ImageItem = Properties.Resources.Student;
+            ctrlStudentInfo.Title = "INFORMATION";
+            return ctrlStudentInfo;
+        }
+        #endregion
+
         public static Item InitListEmployees()
         {
-            Item ctrlListEmployees = new Item(ItemType.Employee);
-            ctrlListEmployees.picItem.BackgroundImage = Properties.Resources.Collaboration;
-            ctrlListEmployees.btnTitle.Text = "EMPLOYEES";
+            Item ctrlListEmployees = new Item(Dashboard.ListEmployees);
+            ctrlListEmployees.ImageItem = Properties.Resources.Collaboration;
+            ctrlListEmployees.Title = "EMPLOYEES";
             return ctrlListEmployees;
         }
 
         public static Item InitListStudents()
         {
             Item ctrlListStudents = new Item(Dashboard.ListStudents);
-            ctrlListStudents.picItem.BackgroundImage = Properties.Resources.Student;
-            ctrlListStudents.btnTitle.Text = "STUDENTS";
+            ctrlListStudents.ImageItem = Properties.Resources.Student;
+            ctrlListStudents.Title = "STUDENTS";
             return ctrlListStudents;
         }
 
         public static Item InitSearch()
         {
             Item ctrlSearch = new Item(Dashboard.Search);
-            ctrlSearch.picItem.BackgroundImage = Properties.Resources.Search;
-            ctrlSearch.btnTitle.Text = "SEARCH";
+            ctrlSearch.ImageItem = Properties.Resources.Search;
+            ctrlSearch.Title = "SEARCH";
             return ctrlSearch;
         }
 
         public static Item InitReport()
         {
             Item ctrlReport = new Item(Dashboard.Report);
-            ctrlReport.picItem.BackgroundImage = Properties.Resources.Report;
-            ctrlReport.btnTitle.Text = "REPORT";
+            ctrlReport.ImageItem = Properties.Resources.Report;
+            ctrlReport.Title = "REPORT";
             return ctrlReport;
         }
 
         public static Item InitListBuildings()
         {
             Item ctrlBuildings = new Item(Dashboard.ListBuildings);
-            ctrlBuildings.picItem.BackgroundImage = Properties.Resources.Building;
-            ctrlBuildings.btnTitle.Text = "BUILDINGS";
+            ctrlBuildings.ImageItem = Properties.Resources.Building;
+            ctrlBuildings.Title = "BUILDINGS";
             return ctrlBuildings;
         }
 
         public static Item InitListRoomType()
         {
             Item ctrlRoomType = new Item(Dashboard.ListRoomTypes);
-            ctrlRoomType.picItem.BackgroundImage = Properties.Resources.BunkBed;
-            ctrlRoomType.btnTitle.Text = "ROOM TYPES";
+            ctrlRoomType.ImageItem = Properties.Resources.BunkBed;
+            ctrlRoomType.Title = "ROOM TYPES";
             return ctrlRoomType;
         }
 
         public static Item InitListServices()
         {
             Item ctrlServices = new Item(Dashboard.ListServices);
-            ctrlServices.picItem.BackgroundImage = Properties.Resources.Water;
-            ctrlServices.btnTitle.Text = "SERVICES";
+            ctrlServices.ImageItem = Properties.Resources.Water;
+            ctrlServices.Title = "SERVICES";
             return ctrlServices;
         }
 
         public static Item InitGuide()
         {
             Item ctrlGuide = new Item(Dashboard.Guide);
-            ctrlGuide.picItem.BackgroundImage = Properties.Resources.Info;
-            ctrlGuide.btnTitle.Text = "GUIDE";
+            ctrlGuide.ImageItem = Properties.Resources.Info;
+            ctrlGuide.Title = "GUIDE";
             return ctrlGuide;
         }
         #endregion
@@ -236,7 +249,11 @@ namespace DormitoryManagement.View
             FrmEmployeeInfo frmEmployeeInfo = new FrmEmployeeInfo();
             frmEmployeeInfo.ShowDialog();
         }
+        #endregion
 
+        #region Information
+
+        #region Persional Information
         public static void StudentInfo()
         {
             FrmStudentInfo frmStudentInfo = new FrmStudentInfo();
@@ -244,18 +261,21 @@ namespace DormitoryManagement.View
         }
         #endregion
 
-        #region Information
-
         public static void Room()
         {
             FrmRoom frmRoom = new FrmRoom();
             frmRoom.ShowDialog();
         }
 
+        public static void ListEmployees()
+        {
+            FrmListEmployees frmListEmployees = new FrmListEmployees();
+            frmListEmployees.ShowDialog();
+        }
         public static void ListStudents()
         {
-            FrmStudent frmStudent = new FrmStudent(null, null);
-            frmStudent.ShowDialog();
+            FrmListStudents frmListStudents = new FrmListStudents();
+            frmListStudents.ShowDialog();
         }
 
         public static void ListServices()

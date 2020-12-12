@@ -35,7 +35,7 @@ namespace DormitoryManagement.View
          txtPricePerUnit.Text = ListServiceUnit[0].PricePerUnit.ToString();
          txtUnit.Text = ListServiceUnit[0].UnitName.ToString();
       }
-
+        //comment
       public void FillDataSector() //Load tất cả các khu phòng
       {
          List<SectorDTO> ListSector = SectorDAO.GetListSector();
