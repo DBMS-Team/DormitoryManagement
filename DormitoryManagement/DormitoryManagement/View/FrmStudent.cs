@@ -66,6 +66,8 @@ namespace DormitoryManagement.View
         public FrmStudent(StudentDTO student, UserDTO user)
         {
             InitializeComponent();
+            this.LoginStudent = student;
+            this.LoginUser = user;
             Init();
         }
 
@@ -77,13 +79,13 @@ namespace DormitoryManagement.View
             CtrlLogout = Dashboard.InitLogout(this);
             tlpManage.Controls.Add(CtrlLogout);
             //Change password
-            CtrlChangePassword = Dashboard.InitChangePassword(null);
+            CtrlChangePassword = Dashboard.InitChangePassword(LoginUser);
             tlpManage.Controls.Add(CtrlChangePassword);
             //Exit
             CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(CtrlExit);
             //Sinh viên
-            CtrlStudentInfo = Dashboard.InitStudentInfo();
+            CtrlStudentInfo = Dashboard.InitStudentInfo(LoginStudent,LoginUser);
             tlpManage.Controls.Add(CtrlStudentInfo);
             #endregion
 
