@@ -8,32 +8,63 @@ namespace DormitoryManagement
    public static class DataProvider
    {
       //private static string connectionString = @"Data Source=DESKTOP-VJSMPL6;Initial Catalog=DormitoryManagement;Integrated Security=True";
-      private static string connectionString = @"Data Source=Hiae\HOHUYHOANG;Initial Catalog=DormitoryManagement;Integrated Security=True";
+      //private static string connectionString = @"Data Source=Hiae\HOHUYHOANG;Initial Catalog=DormitoryManagement;Integrated Security=True";
       //private static string connectionString = @"Data Source=(local);Initial Catalog=DormitoryManagement;Integrated Security=True";
 
       //private static string connectionString = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
-      public static DataTable ExcuteQuery(string query, object[] parameter = null)
+      public static bool TestConnection()
       {
-         DataTable data = new DataTable();
+         bool result = false;
+         SqlConnection connection = null;
 
          try
          {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-               connection.Open();
-
-               SqlCommand command = new SqlCommand(query, connection);
-               SetParameters(query, command, parameter);
-               SqlDataAdapter adapter = new SqlDataAdapter(command);
-               adapter.Fill(data);
-
-               connection.Close();
-            }
+            connection = DatabaseConnection.GetConnection();
+            result = true;
          }
          catch (System.Exception e)
          {
             MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
+         finally
+         {
+            if (connection != null)
+            {
+               connection.Close();
+               connection.Dispose();
+            }
+         }
+
+         return result;
+      }
+
+      public static DataTable ExcuteQuery(string query, object[] parameter = null)
+      {
+         DataTable data = new DataTable();
+         SqlConnection connection = null;
+
+         try
+         {
+            connection = DatabaseConnection.GetConnection();
+
+            SqlCommand command = new SqlCommand(query, connection);
+            SetParameters(query, command, parameter);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(data);
+         }
+         catch (System.Exception e)
+         {
+            MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
+         finally
+         {
+            if (connection != null)
+            {
+               connection.Close();
+               connection.Dispose();
+            }
          }
 
          return data;
@@ -42,48 +73,60 @@ namespace DormitoryManagement
       public static int ExcuteNonQuery(string query, object[] parameter = null)
       {
          int data = 0;
+         SqlConnection connection = null;
 
          try
          {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-               connection.Open();
+            connection = DatabaseConnection.GetConnection();
 
-               SqlCommand command = new SqlCommand(query, connection);
-               SetParameters(query, command, parameter);
-               data = command.ExecuteNonQuery();
+            SqlCommand command = new SqlCommand(query, connection);
+            SetParameters(query, command, parameter);
+            data = command.ExecuteNonQuery();
 
-               connection.Close();
-            }
+            connection.Close();
+
          }
          catch (System.Exception e)
          {
             MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
          }
-         
+         finally
+         {
+            if (connection != null)
+            {
+               connection.Close();
+               connection.Dispose();
+            }
+         }
+
          return data;
       }
 
       public static object ExcuteScalar(string query, object[] parameter = null)
       {
          object data = 0;
+         SqlConnection connection = null;
 
          try
          {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-               connection.Open();
+            connection = DatabaseConnection.GetConnection();
+            connection.Open();
 
-               SqlCommand command = new SqlCommand(query, connection);
-               SetParameters(query, command, parameter);
-               data = command.ExecuteScalar();
-
-               connection.Close();
-            }
+            SqlCommand command = new SqlCommand(query, connection);
+            SetParameters(query, command, parameter);
+            data = command.ExecuteScalar();
          }
          catch (System.Exception e)
          {
             MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
+         finally
+         {
+            if (connection != null)
+            {
+               connection.Close();
+               connection.Dispose();
+            }
          }
 
          return data;
