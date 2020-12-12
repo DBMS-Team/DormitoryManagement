@@ -37,22 +37,16 @@
             this.lbThongTin = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.pnPersionalInfo = new System.Windows.Forms.Panel();
-            this.tlpPersionalInfo = new System.Windows.Forms.TableLayoutPanel();
-            this.lbAdd = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbNgay = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pnQuanTri.SuspendLayout();
             this.pnInfo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlpMain.SuspendLayout();
-            this.pnPersionalInfo.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.pnBottom.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -77,7 +71,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(726, 39);
+            this.label1.Size = new System.Drawing.Size(1464, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "MANAGEMENT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,21 +86,22 @@
             this.pnQuanTri.Location = new System.Drawing.Point(3, 2);
             this.pnQuanTri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnQuanTri.Name = "pnQuanTri";
-            this.pnQuanTri.Size = new System.Drawing.Size(726, 242);
+            this.pnQuanTri.Size = new System.Drawing.Size(1464, 242);
             this.pnQuanTri.TabIndex = 1;
             // 
             // tlpManage
             // 
-            this.tlpManage.ColumnCount = 3;
-            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpManage.ColumnCount = 4;
+            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpManage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpManage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpManage.Location = new System.Drawing.Point(0, 39);
             this.tlpManage.Name = "tlpManage";
             this.tlpManage.RowCount = 1;
             this.tlpManage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpManage.Size = new System.Drawing.Size(726, 203);
+            this.tlpManage.Size = new System.Drawing.Size(1464, 203);
             this.tlpManage.TabIndex = 1;
             // 
             // pnInfo
@@ -119,7 +114,7 @@
             this.pnInfo.Location = new System.Drawing.Point(4, 250);
             this.pnInfo.Margin = new System.Windows.Forms.Padding(4);
             this.pnInfo.Name = "pnInfo";
-            this.pnInfo.Size = new System.Drawing.Size(724, 238);
+            this.pnInfo.Size = new System.Drawing.Size(1462, 238);
             this.pnInfo.TabIndex = 3;
             // 
             // tlpInfo
@@ -134,7 +129,7 @@
             this.tlpInfo.Name = "tlpInfo";
             this.tlpInfo.RowCount = 1;
             this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpInfo.Size = new System.Drawing.Size(724, 196);
+            this.tlpInfo.Size = new System.Drawing.Size(1462, 196);
             this.tlpInfo.TabIndex = 1;
             // 
             // lbThongTin
@@ -145,7 +140,7 @@
             this.lbThongTin.Location = new System.Drawing.Point(0, 0);
             this.lbThongTin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbThongTin.Name = "lbThongTin";
-            this.lbThongTin.Size = new System.Drawing.Size(724, 42);
+            this.lbThongTin.Size = new System.Drawing.Size(1462, 42);
             this.lbThongTin.TabIndex = 0;
             this.lbThongTin.Text = "INFORMATION";
             this.lbThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,16 +157,14 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 492);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1470, 492);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tlpMain
             // 
-            this.tlpMain.ColumnCount = 2;
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMain.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tlpMain.Controls.Add(this.pnPersionalInfo, 1, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(3, 3);
             this.tlpMain.Name = "tlpMain";
@@ -179,47 +172,6 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMain.Size = new System.Drawing.Size(1476, 498);
             this.tlpMain.TabIndex = 0;
-            // 
-            // pnPersionalInfo
-            // 
-            this.pnPersionalInfo.AutoSize = true;
-            this.pnPersionalInfo.BackColor = System.Drawing.Color.Goldenrod;
-            this.pnPersionalInfo.Controls.Add(this.tableLayoutPanel3);
-            this.pnPersionalInfo.Controls.Add(this.lbAdd);
-            this.pnPersionalInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnPersionalInfo.Location = new System.Drawing.Point(741, 2);
-            this.pnPersionalInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnPersionalInfo.Name = "pnPersionalInfo";
-            this.pnPersionalInfo.Size = new System.Drawing.Size(732, 494);
-            this.pnPersionalInfo.TabIndex = 2;
-            // 
-            // tlpPersionalInfo
-            // 
-            this.tlpPersionalInfo.BackColor = System.Drawing.Color.Pink;
-            this.tlpPersionalInfo.ColumnCount = 3;
-            this.tlpPersionalInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpPersionalInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpPersionalInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpPersionalInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPersionalInfo.Location = new System.Drawing.Point(3, 116);
-            this.tlpPersionalInfo.Name = "tlpPersionalInfo";
-            this.tlpPersionalInfo.RowCount = 1;
-            this.tlpPersionalInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPersionalInfo.Size = new System.Drawing.Size(726, 221);
-            this.tlpPersionalInfo.TabIndex = 1;
-            // 
-            // lbAdd
-            // 
-            this.lbAdd.BackColor = System.Drawing.Color.LightPink;
-            this.lbAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbAdd.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lbAdd.Location = new System.Drawing.Point(0, 0);
-            this.lbAdd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbAdd.Name = "lbAdd";
-            this.lbAdd.Size = new System.Drawing.Size(732, 39);
-            this.lbAdd.TabIndex = 0;
-            this.lbAdd.Text = "PERSIONAL INFORMATION";
-            this.lbAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel2
             // 
@@ -273,22 +225,6 @@
             this.lbNgay.Text = "Ngày hiện tại:";
             this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Pink;
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.tlpPersionalInfo, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 39);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(732, 455);
-            this.tableLayoutPanel3.TabIndex = 2;
-            // 
             // FrmStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,11 +240,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tlpMain.ResumeLayout(false);
-            this.tlpMain.PerformLayout();
-            this.pnPersionalInfo.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.pnBottom.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -324,13 +257,9 @@
         private System.Windows.Forms.Label lbThongTin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tlpMain;
-        private System.Windows.Forms.Panel pnPersionalInfo;
-        private System.Windows.Forms.TableLayoutPanel tlpPersionalInfo;
-        private System.Windows.Forms.Label lbAdd;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel pnBottom;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbNgay;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

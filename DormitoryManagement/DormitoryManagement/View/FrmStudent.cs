@@ -21,9 +21,7 @@ namespace DormitoryManagement.View
         private Item ctrlRoomType;
         private Item ctrlServices;
         private Item ctrlGuide;
-        private Item ctrlBill;
         private Item ctrlStudentInfo;
-        private Item ctrlRoomRegistration;
         private AdminDTO loginAdmin;
         private UserDTO loginUser;
         private StudentDTO loginStudent;
@@ -36,9 +34,7 @@ namespace DormitoryManagement.View
         protected Item CtrlRoomType { get => ctrlRoomType; set => ctrlRoomType = value; }
         protected Item CtrlServices { get => ctrlServices; set => ctrlServices = value; }
         protected Item CtrlGuide { get => ctrlGuide; set => ctrlGuide = value; }
-        public Item CtrlBill { get => ctrlBill; set => ctrlBill = value; }
         public Item CtrlStudentInfo { get => ctrlStudentInfo; set => ctrlStudentInfo = value; }
-        public Item CtrlRoom { get => ctrlRoomRegistration; set => ctrlRoomRegistration = value; }
         public Item CtrlChangePassword { get => ctrlChangePassword; set => ctrlChangePassword = value; }
         public AdminDTO LoginAdmin
         {
@@ -86,6 +82,9 @@ namespace DormitoryManagement.View
             //Exit
             CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(CtrlExit);
+            //Sinh viên
+            CtrlStudentInfo = Dashboard.InitStudentInfo();
+            tlpManage.Controls.Add(CtrlStudentInfo);
             #endregion
 
             #region Information
@@ -101,18 +100,6 @@ namespace DormitoryManagement.View
             //Hướng dẫn
             CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(CtrlGuide);
-            #endregion
-
-            #region Persional Information
-            //Phòng
-            CtrlRoom = Dashboard.InitRoom(Dashboard.User);
-            tlpPersionalInfo.Controls.Add(CtrlRoom);
-            //Hoá đơn
-            CtrlBill = Dashboard.InitBill(LoginUser);
-            tlpPersionalInfo.Controls.Add(CtrlBill);
-            //Sinh viên
-            CtrlStudentInfo = Dashboard.InitStudentInfo();
-            tlpPersionalInfo.Controls.Add(CtrlStudentInfo);
             #endregion
         }
         #endregion
