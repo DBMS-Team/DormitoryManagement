@@ -442,13 +442,9 @@ namespace DormitoryManagement.View
             DataTable dataTable = BillDAO.GetListBillViewByBuldingAndRoom(building, room);
             dgvBill.DataSource = dataTable;
         }
-        void GetListBillViewByStatus(bool status)
-        {
-            DataTable dataTable = BillDAO.GetListBillViewByStatus(status);
-            dgvBill.DataSource = dataTable;
-        }
         void GetListBillViewByDate(int monthFrom, int yearFrom, int monthTo, int yearTo)
         {
+
             DataTable dataTable = BillDAO.GetListBillViewByDate(monthFrom, yearFrom, monthTo, yearTo);
             dgvBill.DataSource = dataTable;
         }
