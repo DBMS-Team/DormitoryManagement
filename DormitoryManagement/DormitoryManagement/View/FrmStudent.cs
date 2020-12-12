@@ -22,10 +22,8 @@ namespace DormitoryManagement.View
         private Item ctrlServices;
         private Item ctrlGuide;
         private Item ctrlBill;
-        private Item ctrlAddStudent;
-        private Item ctrlAddEmployee;
+        private Item ctrlStudentInfo;
         private Item ctrlRoomRegistration;
-        private Item ctrlSearch;
         private AdminDTO loginAdmin;
         private UserDTO loginUser;
         private StudentDTO loginStudent;
@@ -39,8 +37,7 @@ namespace DormitoryManagement.View
         protected Item CtrlServices { get => ctrlServices; set => ctrlServices = value; }
         protected Item CtrlGuide { get => ctrlGuide; set => ctrlGuide = value; }
         public Item CtrlBill { get => ctrlBill; set => ctrlBill = value; }
-        public Item CtrlAddStudent { get => ctrlAddStudent; set => ctrlAddStudent = value; }
-        public Item CtrlAddEmployee { get => ctrlAddEmployee; set => ctrlAddEmployee = value; }
+        public Item CtrlStudentInfo { get => ctrlStudentInfo; set => ctrlStudentInfo = value; }
         public Item CtrlRoom { get => ctrlRoomRegistration; set => ctrlRoomRegistration = value; }
         public Item CtrlChangePassword { get => ctrlChangePassword; set => ctrlChangePassword = value; }
         public AdminDTO LoginAdmin
@@ -68,8 +65,6 @@ namespace DormitoryManagement.View
                 this.loginStudent = value;
             }
         }
-
-        public Item CtrlSearch { get => ctrlSearch; set => ctrlSearch = value; }
         #endregion
 
         public FrmStudent(StudentDTO student, UserDTO user)
@@ -116,8 +111,8 @@ namespace DormitoryManagement.View
             CtrlBill = Dashboard.InitBill(LoginUser);
             tlpPersionalInfo.Controls.Add(CtrlBill);
             //Sinh viên
-            CtrlAddStudent = Dashboard.InitAddStudent();
-            tlpPersionalInfo.Controls.Add(CtrlAddStudent);
+            CtrlStudentInfo = Dashboard.InitStudentInfo();
+            tlpPersionalInfo.Controls.Add(CtrlStudentInfo);
             #endregion
         }
         #endregion

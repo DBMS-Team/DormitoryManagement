@@ -148,6 +148,18 @@
     <Compile Include="View\FrmEmployee.Designer.cs">
       <DependentUpon>FrmEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmListEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmListEmployees.Designer.cs">
+      <DependentUpon>FrmListEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmListStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmListStudents.Designer.cs">
+      <DependentUpon>FrmListStudents.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +254,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmEmployeeInfo.resx">
       <DependentUpon>FrmEmployeeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmListEmployees.resx">
+      <DependentUpon>FrmListEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmListStudents.resx">
+      <DependentUpon>FrmListStudents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmReport.resx">
       <DependentUpon>FrmReport.cs</DependentUpon>

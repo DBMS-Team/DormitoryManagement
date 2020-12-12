@@ -38,12 +38,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.pnPersionalInfo = new System.Windows.Forms.Panel();
-            this.lbAdd = new System.Windows.Forms.Label();
             this.tlpPersionalInfo = new System.Windows.Forms.TableLayoutPanel();
+            this.lbAdd = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbNgay = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnBottom = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbNgay = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pnQuanTri.SuspendLayout();
             this.pnInfo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -51,6 +52,7 @@
             this.pnPersionalInfo.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.pnBottom.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -182,7 +184,7 @@
             // 
             this.pnPersionalInfo.AutoSize = true;
             this.pnPersionalInfo.BackColor = System.Drawing.Color.Goldenrod;
-            this.pnPersionalInfo.Controls.Add(this.tlpPersionalInfo);
+            this.pnPersionalInfo.Controls.Add(this.tableLayoutPanel3);
             this.pnPersionalInfo.Controls.Add(this.lbAdd);
             this.pnPersionalInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnPersionalInfo.Location = new System.Drawing.Point(741, 2);
@@ -190,6 +192,21 @@
             this.pnPersionalInfo.Name = "pnPersionalInfo";
             this.pnPersionalInfo.Size = new System.Drawing.Size(732, 494);
             this.pnPersionalInfo.TabIndex = 2;
+            // 
+            // tlpPersionalInfo
+            // 
+            this.tlpPersionalInfo.BackColor = System.Drawing.Color.Pink;
+            this.tlpPersionalInfo.ColumnCount = 3;
+            this.tlpPersionalInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpPersionalInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpPersionalInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpPersionalInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpPersionalInfo.Location = new System.Drawing.Point(3, 116);
+            this.tlpPersionalInfo.Name = "tlpPersionalInfo";
+            this.tlpPersionalInfo.RowCount = 1;
+            this.tlpPersionalInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPersionalInfo.Size = new System.Drawing.Size(726, 221);
+            this.tlpPersionalInfo.TabIndex = 1;
             // 
             // lbAdd
             // 
@@ -203,21 +220,6 @@
             this.lbAdd.TabIndex = 0;
             this.lbAdd.Text = "PERSIONAL INFORMATION";
             this.lbAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tlpPersionalInfo
-            // 
-            this.tlpPersionalInfo.BackColor = System.Drawing.Color.Pink;
-            this.tlpPersionalInfo.ColumnCount = 3;
-            this.tlpPersionalInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpPersionalInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpPersionalInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpPersionalInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPersionalInfo.Location = new System.Drawing.Point(0, 39);
-            this.tlpPersionalInfo.Name = "tlpPersionalInfo";
-            this.tlpPersionalInfo.RowCount = 1;
-            this.tlpPersionalInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPersionalInfo.Size = new System.Drawing.Size(732, 455);
-            this.tlpPersionalInfo.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -235,17 +237,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1482, 553);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
-            // lbNgay
+            // pnBottom
             // 
-            this.lbNgay.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgay.Location = new System.Drawing.Point(1021, 0);
-            this.lbNgay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(453, 41);
-            this.lbNgay.TabIndex = 0;
-            this.lbNgay.Text = "Ngày hiện tại:";
-            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pnBottom.BackColor = System.Drawing.Color.Silver;
+            this.pnBottom.Controls.Add(this.label3);
+            this.pnBottom.Controls.Add(this.lbNgay);
+            this.pnBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnBottom.Location = new System.Drawing.Point(4, 508);
+            this.pnBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.pnBottom.Name = "pnBottom";
+            this.pnBottom.Size = new System.Drawing.Size(1474, 41);
+            this.pnBottom.TabIndex = 4;
             // 
             // label3
             // 
@@ -259,17 +261,33 @@
             this.label3.Text = "(c) Bản quyền thuộc về FIT";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnBottom
+            // lbNgay
             // 
-            this.pnBottom.BackColor = System.Drawing.Color.Silver;
-            this.pnBottom.Controls.Add(this.label3);
-            this.pnBottom.Controls.Add(this.lbNgay);
-            this.pnBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnBottom.Location = new System.Drawing.Point(4, 508);
-            this.pnBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.pnBottom.Name = "pnBottom";
-            this.pnBottom.Size = new System.Drawing.Size(1474, 41);
-            this.pnBottom.TabIndex = 4;
+            this.lbNgay.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgay.Location = new System.Drawing.Point(1021, 0);
+            this.lbNgay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNgay.Name = "lbNgay";
+            this.lbNgay.Size = new System.Drawing.Size(453, 41);
+            this.lbNgay.TabIndex = 0;
+            this.lbNgay.Text = "Ngày hiện tại:";
+            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Pink;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.tlpPersionalInfo, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 39);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(732, 455);
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
             // FrmStudent
             // 
@@ -290,6 +308,7 @@
             this.pnPersionalInfo.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.pnBottom.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -312,5 +331,6 @@
         private System.Windows.Forms.Panel pnBottom;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbNgay;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }
