@@ -21,15 +21,11 @@ namespace DormitoryManagement.View
         private Item ctrlRoomType;
         private Item ctrlServices;
         private Item ctrlGuide;
-        private Item ctrlListStudents;
-        private Item ctrlListEmployees;
-        private Item ctrlRoom;
         private Item ctrlBill;
         private Item ctrlAddStudent;
         private Item ctrlAddEmployee;
         private Item ctrlRoomRegistration;
         private Item ctrlSearch;
-        private Item ctrlReport;
         private AdminDTO loginAdmin;
         private UserDTO loginUser;
         private StudentDTO loginStudent;
@@ -42,14 +38,10 @@ namespace DormitoryManagement.View
         protected Item CtrlRoomType { get => ctrlRoomType; set => ctrlRoomType = value; }
         protected Item CtrlServices { get => ctrlServices; set => ctrlServices = value; }
         protected Item CtrlGuide { get => ctrlGuide; set => ctrlGuide = value; }
-        public Item CtrlListStudents { get => ctrlListStudents; set => ctrlListStudents = value; }
-        public Item CtrlRoom { get => ctrlRoom; set => ctrlRoom = value; }
         public Item CtrlBill { get => ctrlBill; set => ctrlBill = value; }
-        public Item CtrlListEmployees { get => ctrlListEmployees; set => ctrlListEmployees = value; }
         public Item CtrlAddStudent { get => ctrlAddStudent; set => ctrlAddStudent = value; }
-        public Item CtrlReport { get => ctrlReport; set => ctrlReport = value; }
         public Item CtrlAddEmployee { get => ctrlAddEmployee; set => ctrlAddEmployee = value; }
-        public Item CtrlRoomRegistration { get => ctrlRoomRegistration; set => ctrlRoomRegistration = value; }
+        public Item CtrlRoom { get => ctrlRoomRegistration; set => ctrlRoomRegistration = value; }
         public Item CtrlChangePassword { get => ctrlChangePassword; set => ctrlChangePassword = value; }
         public AdminDTO LoginAdmin
         {
@@ -111,27 +103,21 @@ namespace DormitoryManagement.View
             //DS dịch vụ
             CtrlServices = Dashboard.InitListServices();
             tlpInfo.Controls.Add(CtrlServices);
-            //Search
-            CtrlSearch = Dashboard.InitSearch();
-            tlpInfo.Controls.Add(CtrlSearch);
             //Hướng dẫn
             CtrlGuide = Dashboard.InitGuide();
             tlpInfo.Controls.Add(CtrlGuide);
             #endregion
 
-            #region Add
+            #region Persional Information
             //Phòng
-            CtrlRoomRegistration = Dashboard.InitRoomRegistration();
-            tlpAdd.Controls.Add(CtrlRoomRegistration);
+            CtrlRoom = Dashboard.InitRoom(Dashboard.User);
+            tlpPersionalInfo.Controls.Add(CtrlRoom);
             //Hoá đơn
             CtrlBill = Dashboard.InitBill(LoginUser);
-            tlpAdd.Controls.Add(CtrlBill);
+            tlpPersionalInfo.Controls.Add(CtrlBill);
             //Sinh viên
             CtrlAddStudent = Dashboard.InitAddStudent();
-            tlpAdd.Controls.Add(CtrlAddStudent);
-            //Nhân viên
-            CtrlAddEmployee = Dashboard.InitAddEmployee();
-            tlpAdd.Controls.Add(CtrlAddEmployee);
+            tlpPersionalInfo.Controls.Add(CtrlAddStudent);
             #endregion
         }
         #endregion
