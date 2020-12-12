@@ -245,6 +245,7 @@ namespace DormitoryManagement.View
             this.btnEdit.TabIndex = 29;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // groupAvatar
             // 
@@ -668,7 +669,6 @@ namespace DormitoryManagement.View
         private System.Windows.Forms.TextBox txtPhone1;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbPhone1;
-        private System.Windows.Forms.Panel pnContainer;
         private System.Windows.Forms.CheckBox ckbFemale;
         private System.Windows.Forms.TextBox txtSSN;
         private System.Windows.Forms.Label lbSSN;
@@ -702,11 +702,12 @@ namespace DormitoryManagement.View
         private System.Windows.Forms.DateTimePicker dtpDoB;
         private System.Windows.Forms.ComboBox cbbPriority;
         private System.Windows.Forms.Label lbPriority;
-        private System.Windows.Forms.TableLayoutPanel tlpBottom;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.ComboBox cbbUserType;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel pnContainer;
+        public System.Windows.Forms.Button btnDelete;
+        public System.Windows.Forms.Button btnSave;
+        public System.Windows.Forms.Button btnEdit;
+        public System.Windows.Forms.TableLayoutPanel tlpBottom;
     }
 }

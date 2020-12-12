@@ -9,6 +9,7 @@ namespace DormitoryManagement.View
         private Item ctrlLogout;
         private Item ctrlChangePassword;
         private Item ctrlExit;
+        private Item ctrlAdminInfo;
         private Item ctrlBuildings;
         private Item ctrlRoomType;
         private Item ctrlServices;
@@ -60,6 +61,7 @@ namespace DormitoryManagement.View
         }
 
         public Item CtrlSearch { get => ctrlSearch; set => ctrlSearch = value; }
+        public Item CtrlAdminInfo { get => ctrlAdminInfo; set => ctrlAdminInfo = value; }
         #endregion
 
         public FrmAdmin(AdminDTO admin, UserDTO user)
@@ -87,6 +89,9 @@ namespace DormitoryManagement.View
             //Exit
             CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(CtrlExit);
+            //About Employee
+            CtrlAdminInfo = Dashboard.InitEmployeeInfo();
+            tlpManage.Controls.Add(CtrlAdminInfo);
             #endregion
 
             #region Information

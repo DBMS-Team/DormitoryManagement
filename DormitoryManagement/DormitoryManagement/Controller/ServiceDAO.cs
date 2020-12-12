@@ -22,5 +22,12 @@ namespace DormitoryManagement.Controller
             }
             return listService;
         }
+
+        public static DataTable GetServicesInfo()
+        {
+            string query = string.Format("EXEC dbo.USP_GetServicesInfo");
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
     }
 }
