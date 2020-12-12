@@ -8,10 +8,12 @@ namespace DormitoryManagement.View
     {
         #region Fields
         private static UserDTO user;
+        private static StudentDTO student;
         #endregion
 
         #region Properties
         public static UserDTO User { get => user; set => user = value; }
+        public static StudentDTO Student { get => student; set => student = value; }
         #endregion
 
         #region Init
@@ -115,8 +117,10 @@ namespace DormitoryManagement.View
         #region Information
 
         #region Persional Information
-        public static Item InitStudentInfo()
+        public static Item InitStudentInfo(StudentDTO student, UserDTO user)
         {
+            Student = student;
+            User = user;
             Item ctrlStudentInfo = new Item(Dashboard.StudentInfo);
             ctrlStudentInfo.ImageItem = Properties.Resources.Student;
             ctrlStudentInfo.Title = "INFORMATION";
@@ -272,7 +276,7 @@ namespace DormitoryManagement.View
         #region Persional Information
         public static void StudentInfo()
         {
-            FrmStudentInfo frmStudentInfo = new FrmStudentInfo();
+            FrmStudentInfo frmStudentInfo = new FrmStudentInfo(Student, User);
             frmStudentInfo.ShowDialog();
         }
         #endregion

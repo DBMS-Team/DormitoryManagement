@@ -70,5 +70,11 @@ namespace DormitoryManagement.Controller
             return userDTOs;
 
         }
+        public static DataTable GetListStudentView(long user)
+        {
+            string query = string.Format("EXEC dbo.USP_GetListStudentView @USER_ID = {0}",user);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
     }
 }

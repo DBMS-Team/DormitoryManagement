@@ -16,15 +16,37 @@ namespace DormitoryManagement.View
     {
         #region Fields
         private string img_path;
+        private UserDTO loginUser;
+        private StudentDTO loginStudent;
         #endregion
 
         #region Properties
+        public UserDTO LoginUser
+        {
+            get => loginUser;
+            set
+            {
+                this.loginUser = value;
+            }
+        }
+
+        public StudentDTO LoginStudent
+        {
+            get => loginStudent;
+            set
+            {
+                this.loginStudent = value;
+            }
+        }
         public string Img_path { get => img_path; set => img_path = value; }
         #endregion
 
-        public FrmStudentInfo()
+        public FrmStudentInfo(StudentDTO student, UserDTO user)
         {
             InitializeComponent();
+            this.LoginStudent = student;
+            this.LoginUser = user;
+
         }
         bool flagAddStudent = false;
         string provinceName = "";
@@ -135,6 +157,35 @@ namespace DormitoryManagement.View
             btnSave.Enabled = true;
             LoadListProvinceInCombobox();
             LoadListCollege();
+            if (LoginUser.UserType.Equals("STUDENT"))
+            {
+                //txtStudentID.Text = LoginStudent.StudentId;
+                txtFirstName.Text = LoginUser.FirstName;
+                txtLastName.Text = LoginUser.LastName;
+                dateTimePicker1.Value = LoginUser.Dob;
+                if (LoginUser.Gender.Equals("Nữ"))
+                {
+                    ckbFemale.Checked = true;
+                }
+                else
+                    ckbFemale.Checked = false;
+                txtID.Text = LoginUser.Ssn;
+                txtHealthInsurance.Text = LoginStudent.InsuranceId;
+                DataGridView gridView = new DataGridView();
+                gridView.DataSource = UserDAO.GetListStudentView(LoginUser.UserId);
+                gridView.Rows[0].Cells[1].Value.ToString();
+                cbbProvince.Text = gridView.Rows[0].Cells[9].Value.ToString();
+                cbbDistrict.Text = gridView.Rows[0].Cells[10].Value.ToString();
+                cbbCommune.Text = gridView.Rows[0].Cells[11].Value.ToString();
+                txtAddress.Text = gridView.Rows[0].Cells[8].Value.ToString();
+                cbbPriority.Text = "3";
+                txtPhone1.Text = gridView.Rows[0].Cells[12].Value.ToString();
+                txtPhone2.Text = gridView.Rows[0].Cells[13].Value.ToString();
+                txtEmail.Text = gridView.Rows[0].Cells[14].Value.ToString();
+                cbbUniversity.Text = gridView.Rows[0].Cells[16].Value.ToString();
+                txtFaculty.Text = gridView.Rows[0].Cells[17].Value.ToString();
+                txtMajor.Text = gridView.Rows[0].Cells[18].Value.ToString();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
