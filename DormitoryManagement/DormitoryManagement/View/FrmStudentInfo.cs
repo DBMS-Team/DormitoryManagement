@@ -203,7 +203,44 @@ namespace DormitoryManagement.View
             }
             #endregion
             //Luu Du Lieu Vao data
-
+            string AddRess = Convert.ToString(txtAddress.Text);
+            string Commune_Name = Convert.ToString(cbbCommune.Text);
+            string District_Name = Convert.ToString(cbbDistrict.Text);
+            string Province_Name = Convert.ToString(cbbProvince.Text);
+            string Insurance_ID = Convert.ToString(txtHealthInsurance.Text);
+            string Last_Name = Convert.ToString(txtLastName.Text);
+            string First_Name = Convert.ToString(txtFirstName.Text);
+            DateTime DOB = dateTimePicker1.Value;
+            string gender = "Nam";
+            if(ckbFemale.Checked)
+            {
+                gender = "Nữ";
+            }    
+            string Ssn = Convert.ToString(txtID.Text);
+            string Phone_Number_1 = Convert.ToString(txtPhone1.Text);
+            string Phone_Number_2 = Convert.ToString(txtPhone2.Text);
+            string Email = Convert.ToString(txtEmail.Text);
+            string Image_Path = "NULL";
+            string User_Type = "STUDENT";
+            string Status = "1";
+            string Student_ID = Convert.ToString(txtStudentID.Text);
+            string College_Name = Convert.ToString(cbbUniversity.Text);
+            string Faculty = Convert.ToString(txtFaculty.Text);
+            string Major = Convert.ToString(txtMajor.Text);
+            if(AddStudent(AddRess, Commune_Name, District_Name, Province_Name, Insurance_ID, Last_Name, First_Name,
+                DOB, gender, Ssn, Phone_Number_1, Phone_Number_2, Email, Image_Path, User_Type, Status, Student_ID, College_Name, Faculty, Major))
+            {
+                MessageBox.Show("Add Studetn Success!");
+            }
+            else
+            {
+                MessageBox.Show("Error!!!!");
+            }    
+        }
+        bool AddStudent(string Street, string Commune_Name, string District_Name, string Province_Name, string Insurance_ID, string Last_Name, string First_Name, DateTime DoB, string Gender, string Ssn, string Phone_Number_1, string Phone_Number_2, string Email, string Image_Path, string User_Type, string Status, string Student_ID, string College_Name, string Faculty, string Majors)
+        {
+            return StudentDAO.AddStudent(Street, Commune_Name, District_Name, Province_Name, Insurance_ID, Last_Name, First_Name,
+                DoB, Gender, Ssn, Phone_Number_1, Phone_Number_2, Email, Image_Path, User_Type, Status, Student_ID, College_Name, Faculty, Majors);
         }
     }
 }

@@ -14,9 +14,20 @@ namespace DormitoryManagement.View
 {
     public partial class FrmRoomRegistration : Form
     {
-        public FrmRoomRegistration()
+        private UserDTO user;
+        public UserDTO User
+        {
+            get => user;
+            set
+            {
+                this.user = value;
+            }
+        }
+        public FrmRoomRegistration(UserDTO user)
         {
             InitializeComponent();
+            this.User = user;
+            lbMaNV.Text = Convert.ToString(User.UserId);
         }
         public void FillDataSector() //Load tất cả các khu phòng
         {
@@ -53,7 +64,49 @@ namespace DormitoryManagement.View
 
         private void FrmRoomRegistration_Load(object sender, EventArgs e)
         {
+
             FillDataSector();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            if (txtStudentID.Text == "")
+            {
+                MessageBox.Show("Bạn Chưa Nhập Chứng Minh Nhân Dân");
+            }
+            else if (cmbSemester.Text == "")
+            {
+                MessageBox.Show("Bạn Chưa Chọn Học Kỳ");
+            }
+            else if (txtAcademicYear.Text == "")
+            {
+                MessageBox.Show("Bạn Chưa Nhập Năm Học");
+            }
+            else if (cbbDuration.Text == "")
+            {
+                MessageBox.Show("Bạn Chưa Chọn Thời Hạn");
+            }
+            long Employee_ID = User.UserId;
+            string Ssn = Convert.ToString(txtStudentID.Text);
+            string Sector_Name = Convert.ToString(cmbBuilding.Text);
+            string Room_ID = Convert.ToString(cmbRoom.Text);
+            DateTime Start_Day = dtpStartDate.Value;
+            int Semester = Convert.ToInt32(cmbSemester.Text);
+            int Academic_Year = Convert.ToInt32(txtAcademicYear.Text);
+            string Duaration = Convert.ToString(cbbDuration.Text);
+            string Status = "1";
+            if(AddRoomRegistration(Employee_ID, Ssn, Sector_Name, Room_ID, Start_Day, Semester, Academic_Year, Duaration, Status))
+            {
+                MessageBox.Show("Registration Success");
+            }    
+            else
+            {
+                MessageBox.Show("Error");
+            }    
+        }
+        bool AddRoomRegistration(long Employee_ID, string Ssn, string Sector_Name, string Room_ID, DateTime Start_Day, int Semester, int Academic_Year, string Duaration, string Status)
+        {
+            return RoomRegistrationDAO.AddRoomRegistration(Employee_ID, Ssn, Sector_Name, Room_ID, Start_Day, Semester, Academic_Year, Duaration, Status);
         }
     }
 }
