@@ -682,14 +682,31 @@ AS BEGIN
 	SELECT * FROM dbo.[V_BILL] WHERE Sector = @SECTOR_NAME AND Room = @ROOM_ID
 END
 GO
--- Lấy danh sách Bill View bằng Sector và room
-CREATE OR ALTER PROC USP_GetListBillViewByStatus(
-	@STATUS BIT
+-- Lấy danh sách Bill View từ tháng này, năm ngày đến tháng kia năm kia
+
+CREATE OR ALTER PROC USP_GetListBillViewByDate(
+	@MONTH_FROM INT,
+	@YEAR_FROM INT,
+	@MONTH_TO INT,
+	@YEAR_TO INT
 	)
-AS BEGIN
-	SELECT * FROM dbo.[V_BILL] WHERE Status = @STATUS
-END
+AS 
+	BEGIN
+		IF(@YEAR_FROM > @YEAR_TO)
+			BEGIN
+				SELECT * FROM dbo.[V_BILL] WHERE Year > @YEAR_FROM AND YEAR < @YEAR_TO
+			END
+		IF (@YEAR_FROM = @YEAR_TO)
+			BEGIN
+				SELECT * FROM dbo.[V_BILL] WHERE Month > @MONTH_FROM - 1 AND Month < @MONTH_TO + 1 AND Year = @YEAR_TO
+			END
+		IF (@YEAR_FROM < @YEAR_TO)
+			BEGIN
+				SELECT * FROM dbo.[V_BILL] WHERE Month > @MONTH_FROM - 1 AND Month < 13 AND Year = @YEAR_FROM
+				UNION 
+				SELECT * FROM dbo.[V_BILL] WHERE Month > 0 AND Month < @MONTH_TO + 1 AND Year = @YEAR_TO
+				UNION
+				SELECT * FROM dbo.[V_BILL] WHERE Month > 0 AND Month < 13 AND Year > @YEAR_FROM AND Year < @YEAR_TO
+			END
+	END
 GO
-EXEC dbo.USP_GetListBillViewByStatus @STATUS = NULL -- bit
-
-

@@ -40,8 +40,6 @@ namespace DormitoryManagement.View
             //
             GetListBillView();
             AutoSizeModeColumn(dgvBill);
-            dtpFromDate.Enabled = false;
-            dtpToDate.Enabled = false;
         }
         /// <summary>
         /// ---------------------------STUDENTS
@@ -296,16 +294,40 @@ namespace DormitoryManagement.View
         }
         private void ckbPaid_CheckedChanged(object sender, EventArgs e)
         {
+            GetListBillView();
+            int Temp = dgvBill.Rows.Count -1;
             if (ckbPaid.Checked)
             {
-                GetListBillViewByStatus(true);
+                for (int i = 0; i < Temp - 1; i++)
+                {
+                    if (dgvBill.Rows[i].Cells[9].Value != null && (bool)dgvBill.Rows[i].Cells[9].Value != true)
+                    {
+                        dgvBill.Rows.RemoveAt(i);
+                        i--;
+                    }
+                }
             }
             else
-                GetListBillViewByStatus(false);
+            {
+                for (int i = 0; i < Temp - 1; i++)
+                {
+                    if (dgvBill.Rows[i].Cells[9].Value != null && (bool)dgvBill.Rows[i].Cells[9].Value == true )
+                    {
+                        dgvBill.Rows.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }    
         }
         private void btnSearch_Bill_Click(object sender, EventArgs e)
         {
-            GetListBillView();
+            DateTime from = dtpFromDate.Value;
+            DateTime to = dtpToDate.Value;
+            int monthFrom = from.Month;
+            int yearFrom = from.Year;
+            int monthTo = to.Month;
+            int yearTo = to.Year;
+            GetListBillViewByDate(monthFrom, yearFrom, monthTo, yearTo);
         }
         #endregion
 
@@ -425,10 +447,15 @@ namespace DormitoryManagement.View
             DataTable dataTable = BillDAO.GetListBillViewByStatus(status);
             dgvBill.DataSource = dataTable;
         }
+        void GetListBillViewByDate(int monthFrom, int yearFrom, int monthTo, int yearTo)
+        {
+            DataTable dataTable = BillDAO.GetListBillViewByDate(monthFrom, yearFrom, monthTo, yearTo);
+            dgvBill.DataSource = dataTable;
+        }
+
 
 
         #endregion
 
-        
     }
 }

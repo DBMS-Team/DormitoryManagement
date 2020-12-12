@@ -40,5 +40,11 @@ namespace DormitoryManagement.Controller
          DataTable dataTable = DataProvider.ExcuteQuery(query);
          return dataTable;
       }
-   }
+      public static DataTable GetListBillViewByDate(int monthFrom, int yearFrom, int monthTo, int yearTo)
+      {
+         string query = string.Format("EXEC dbo.USP_GetListBillViewByDate @MONTH_FROM = {0}, @YEAR_FROM = {1}, @MONTH_TO = {2}, @YEAR_TO = {3}", monthFrom, yearFrom, monthTo, yearTo);
+         DataTable dataTable = DataProvider.ExcuteQuery(query);
+         return dataTable;
+      }
+    }
 }
