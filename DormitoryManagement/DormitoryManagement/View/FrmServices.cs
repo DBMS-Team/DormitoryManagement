@@ -39,7 +39,7 @@ namespace DormitoryManagement.View
 
         private void dgvServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var data = dgvServices.SelectedRows;
+            
         }
     }
 }

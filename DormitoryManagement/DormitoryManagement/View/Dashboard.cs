@@ -254,8 +254,10 @@ namespace DormitoryManagement.View
         public static void AddEmployee()
         {
             FrmEmployeeInfo frmAddEmployee = new FrmEmployeeInfo();
-            frmAddEmployee.btnEdit.Enabled = false;
-            frmAddEmployee.btnDelete.Enabled = false;
+            frmAddEmployee.btnEdit.Visible = false;
+            frmAddEmployee.btnDelete.Visible = false;
+            frmAddEmployee.btnSave.Visible = true;
+            frmAddEmployee.tlpBottom.ColumnCount = 1;
             frmAddEmployee.IsOnlyViewInfo = false;
             frmAddEmployee.ShowDialog();
         }
