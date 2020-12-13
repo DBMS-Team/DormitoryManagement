@@ -31,18 +31,20 @@ namespace DormitoryManagement.View
             if (Login(userName, passWord))
             {
                 UserDTO user = UserDAO.GetUserByUsername(userName);
-                string userType = user.UserType;
                 this.userID = user.UserId;
-                if (userType.Equals("ADMIN") && user.Status == true)
+
+                // Change user connect to database
+                //DatabaseConnection.ChangeConnection(true, user.UserType + userName, passWord);
+
+                if (user.UserType.Equals("ADMIN") && user.Status == true)
                 {
-                    
                     AdminDTO admin = AdminDAO.GetAdminById(userID);
                     FrmAdmin frmAdmin = new FrmAdmin(admin, user);
                     this.Hide();
                     frmAdmin.ShowDialog();
                     txtPassword.Text = "";
                 }
-                else if (userType.Equals("EMPLOYEE") && user.Status == true)
+                else if (user.UserType.Equals("EMPLOYEE") && user.Status == true)
                 {
                     EmployeeDTO employee = EmployeeDAO.GetEmployeeById(userID);
                     FrmEmployee frmEmployee = new FrmEmployee(employee, user);
