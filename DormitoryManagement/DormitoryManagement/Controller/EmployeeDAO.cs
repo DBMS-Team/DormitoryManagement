@@ -24,7 +24,15 @@ namespace DormitoryManagement.Controller
 
         public static DataTable GetEmployees()
         {
-            return null;
+            string query = string.Format("EXEC dbo.USP_GetListEmployeeView");
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
+        public static DataTable GetEmployeesByUserId(long userId)
+        {
+            string query = string.Format("EXEC dbo.USP_GetEmployeeView @USER_ID = {0}",userId);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
         }
     }
 }

@@ -82,7 +82,7 @@ namespace DormitoryManagement.View
             CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(CtrlExit);
             //About Employee
-            CtrlEmployee = Dashboard.InitEmployeeInfo();
+            CtrlEmployee = Dashboard.InitEmployeeInfo(LoginEmployee,LoginUser);
             tlpManage.Controls.Add(CtrlEmployee);
             #endregion
 

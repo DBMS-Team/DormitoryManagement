@@ -9,11 +9,15 @@ namespace DormitoryManagement.View
         #region Fields
         private static UserDTO user;
         private static StudentDTO student;
+        private static AdminDTO admin;
+        private static EmployeeDTO employee;
         #endregion
 
         #region Properties
         public static UserDTO User { get => user; set => user = value; }
         public static StudentDTO Student { get => student; set => student = value; }
+        public static AdminDTO Admin { get => admin; set => admin = value; }
+        public static EmployeeDTO Employee { get => employee; set => employee = value; }
         #endregion
 
         #region Init
@@ -89,14 +93,24 @@ namespace DormitoryManagement.View
             return ctrlAddStudent;
         }
 
-        public static Item InitEmployeeInfo()
+        public static Item InitEmployeeInfo(AdminDTO admin, UserDTO user)
         {
+            Admin = admin;
+            User = user;
             Item ctrlEmployee = new Item(Dashboard.EmployeeInfo);
             ctrlEmployee.picItem.BackgroundImage = Properties.Resources.Employee;
             ctrlEmployee.btnTitle.Text = "ABOUT";
             return ctrlEmployee;
         }
-
+        public static Item InitEmployeeInfo(EmployeeDTO employee, UserDTO user)
+        {
+            Employee = employee;
+            User = user;
+            Item ctrlEmployee = new Item(Dashboard.EmployeeInfo);
+            ctrlEmployee.picItem.BackgroundImage = Properties.Resources.Employee;
+            ctrlEmployee.btnTitle.Text = "ABOUT";
+            return ctrlEmployee;
+        }
         public static Item InitAddEmployee()
         {
             Item ctrlAddEmployee = new Item(Dashboard.AddEmployee);
@@ -253,16 +267,18 @@ namespace DormitoryManagement.View
 
         public static void AddEmployee()
         {
-            FrmEmployeeInfo frmAddEmployee = new FrmEmployeeInfo();
-            frmAddEmployee.btnEdit.Enabled = false;
-            frmAddEmployee.btnDelete.Enabled = false;
+            FrmEmployeeInfo frmAddEmployee = new FrmEmployeeInfo(Employee, User);
+            frmAddEmployee.btnDelete.Visible = false;
+            frmAddEmployee.btnEdit.Visible = false;
+            frmAddEmployee.btnSave.Visible = true;
             frmAddEmployee.IsOnlyViewInfo = false;
+            frmAddEmployee.tlpBottom.ColumnCount = 1;
             frmAddEmployee.ShowDialog();
         }
 
         public static void EmployeeInfo()
         {
-            FrmEmployeeInfo frmEmployeeInfo = new FrmEmployeeInfo();
+            FrmEmployeeInfo frmEmployeeInfo = new FrmEmployeeInfo(Employee,User);
             frmEmployeeInfo.btnDelete.Visible = false;
             frmEmployeeInfo.btnSave.Enabled = false;
             frmEmployeeInfo.IsOnlyViewInfo = true;
