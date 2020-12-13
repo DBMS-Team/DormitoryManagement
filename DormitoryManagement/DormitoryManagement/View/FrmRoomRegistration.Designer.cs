@@ -50,7 +50,10 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.lbPhieuDangKy = new System.Windows.Forms.Label();
             this.lbMaNV = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.tlpBottom = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
+            this.tlpBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbNgayGioDK
@@ -265,13 +268,14 @@
             // 
             // btnOK
             // 
+            this.btnOK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnOK.Location = new System.Drawing.Point(183, 382);
+            this.btnOK.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnOK.Location = new System.Drawing.Point(3, 2);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(133, 39);
+            this.btnOK.Size = new System.Drawing.Size(192, 36);
             this.btnOK.TabIndex = 37;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -279,13 +283,14 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPrint.Enabled = false;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(341, 382);
+            this.btnPrint.Location = new System.Drawing.Point(202, 4);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(133, 39);
+            this.btnPrint.Size = new System.Drawing.Size(190, 32);
             this.btnPrint.TabIndex = 38;
             this.btnPrint.Text = "PRINT";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -314,17 +319,47 @@
             this.lbMaNV.TabIndex = 42;
             this.lbMaNV.Text = "      ";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.Enabled = false;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Crimson;
+            this.btnDelete.Location = new System.Drawing.Point(400, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(192, 32);
+            this.btnDelete.TabIndex = 44;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // tlpBottom
+            // 
+            this.tlpBottom.ColumnCount = 3;
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpBottom.Controls.Add(this.btnOK, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnDelete, 2, 0);
+            this.tlpBottom.Controls.Add(this.btnPrint, 1, 0);
+            this.tlpBottom.Location = new System.Drawing.Point(41, 389);
+            this.tlpBottom.Name = "tlpBottom";
+            this.tlpBottom.RowCount = 1;
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpBottom.Size = new System.Drawing.Size(596, 40);
+            this.tlpBottom.TabIndex = 44;
+            // 
             // FrmRoomRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 441);
+            this.Controls.Add(this.tlpBottom);
             this.Controls.Add(this.lbNgayGioDK);
             this.Controls.Add(this.lbNgay);
             this.Controls.Add(this.lbEmployeeID);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lbPhieuDangKy);
             this.Controls.Add(this.lbMaNV);
             this.MaximizeBox = false;
@@ -334,6 +369,7 @@
             this.Load += new System.EventHandler(this.FrmRoomRegistration_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tlpBottom.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,10 +394,12 @@
         private System.Windows.Forms.Label lbSemester;
         private System.Windows.Forms.Label lbRoom;
         private System.Windows.Forms.Label lbStudentID;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label lbPhieuDangKy;
         private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.ComboBox cbbDuration;
+        public System.Windows.Forms.Button btnDelete;
+        public System.Windows.Forms.Button btnOK;
+        public System.Windows.Forms.Button btnPrint;
+        public System.Windows.Forms.TableLayoutPanel tlpBottom;
     }
 }

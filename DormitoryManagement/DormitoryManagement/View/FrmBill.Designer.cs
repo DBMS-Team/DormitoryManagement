@@ -59,9 +59,9 @@ namespace DormitoryManagement.View
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpBottom = new System.Windows.Forms.TableLayoutPanel();
             this.btnLoad = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.tabRegistration = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -108,7 +108,7 @@ namespace DormitoryManagement.View
             this.tabControl.SuspendLayout();
             this.tabPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayment)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.tlpBottom.SuspendLayout();
             this.tabRegistration.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -289,7 +289,7 @@ namespace DormitoryManagement.View
             // tabPayment
             // 
             this.tabPayment.Controls.Add(this.dgvPayment);
-            this.tabPayment.Controls.Add(this.tableLayoutPanel3);
+            this.tabPayment.Controls.Add(this.tlpBottom);
             this.tabPayment.Location = new System.Drawing.Point(4, 29);
             this.tabPayment.Name = "tabPayment";
             this.tabPayment.Padding = new System.Windows.Forms.Padding(3);
@@ -414,23 +414,23 @@ namespace DormitoryManagement.View
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
-            // tableLayoutPanel3
+            // tlpBottom
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33444F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33444F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33112F));
-            this.tableLayoutPanel3.Controls.Add(this.btnLoad, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnPay, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 496);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(856, 54);
-            this.tableLayoutPanel3.TabIndex = 7;
+            this.tlpBottom.ColumnCount = 3;
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33444F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33444F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33112F));
+            this.tlpBottom.Controls.Add(this.btnLoad, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnDelete, 2, 0);
+            this.tlpBottom.Controls.Add(this.btnPay, 1, 0);
+            this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlpBottom.Location = new System.Drawing.Point(3, 496);
+            this.tlpBottom.Name = "tlpBottom";
+            this.tlpBottom.RowCount = 1;
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tlpBottom.Size = new System.Drawing.Size(856, 54);
+            this.tlpBottom.TabIndex = 7;
             // 
             // btnLoad
             // 
@@ -448,21 +448,21 @@ namespace DormitoryManagement.View
             this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.BackColor = System.Drawing.Color.LightCoral;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkRed;
-            this.button1.Location = new System.Drawing.Point(574, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(278, 46);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "CANCEL";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnDelete.Location = new System.Drawing.Point(574, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(278, 46);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnPay
             // 
@@ -1018,7 +1018,7 @@ namespace DormitoryManagement.View
             this.tabControl.ResumeLayout(false);
             this.tabPayment.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayment)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tlpBottom.ResumeLayout(false);
             this.tabRegistration.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -1062,10 +1062,6 @@ namespace DormitoryManagement.View
         private System.Windows.Forms.Button btnPayRegistration;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button btnPay;
-        private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnLoadRegistration;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel6;
@@ -1106,5 +1102,9 @@ namespace DormitoryManagement.View
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        public System.Windows.Forms.TableLayoutPanel tlpBottom;
+        public System.Windows.Forms.Button btnPay;
+        public System.Windows.Forms.Button btnLoad;
+        public System.Windows.Forms.Button btnDelete;
     }
 }

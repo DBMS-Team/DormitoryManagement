@@ -112,6 +112,7 @@ namespace DormitoryManagement.View
             ctrlRoomRegistration.btnTitle.Text = "ROOM";
             return ctrlRoomRegistration;
         }
+
         #endregion
 
         #region Information
@@ -242,12 +243,23 @@ namespace DormitoryManagement.View
         public static void Bill()
         {
             FrmBill frmBill = new FrmBill(User);
+            frmBill.tlpBottom.ColumnCount = 2;
+            frmBill.btnDelete.Visible = false;
             frmBill.ShowDialog();
+        }
+
+        public static void RoomRegInfo()
+        {
+            FrmRoomRegistration frmRoomRegInfo = new FrmRoomRegistration(User);
+            frmRoomRegInfo.ShowDialog();
         }
 
         public static void RoomRegistration()
         {
             FrmRoomRegistration frmRoomRegistration = new FrmRoomRegistration(User);
+            frmRoomRegistration.btnDelete.Visible = false;
+            frmRoomRegistration.btnPrint.Enabled = false;
+            frmRoomRegistration.tlpBottom.ColumnCount = 2;
             frmRoomRegistration.ShowDialog();
         }
 
