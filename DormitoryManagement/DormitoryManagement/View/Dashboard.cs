@@ -213,6 +213,7 @@ namespace DormitoryManagement.View
             if (re == DialogResult.Yes)
             {
                 ((Form)frm).Dispose();
+                DatabaseConnection.SetDefault();
             }
         }
 

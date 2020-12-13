@@ -12,8 +12,8 @@ namespace DormitoryManagement.Controller
     {
         public static bool Login(string userName, string passWord)
         {
-            string query = string.Format("EXEC dbo.USP_Login @USERNAME = '{0}',@PASSWORD = '{1}'", userName, passWord);
-            DataTable result = DataProvider.ExcuteQuery(query);
+            string query = "EXEC dbo.USP_Login @USERNAME , @PASSWORD";//, userName, passWord);
+            DataTable result = DataProvider.ExcuteQuery(query, new object[] { userName, passWord });
             return result.Rows.Count > 0;
         }
         public static UserDTO GetUserByUsername(string userName)
