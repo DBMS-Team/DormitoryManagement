@@ -218,7 +218,6 @@ namespace DormitoryManagement.View
             FrmLogin frmLogin = new FrmLogin();
             ((Form)frm).Hide();
             frmLogin.ShowDialog();
-
             if (frm is Form f && f.IsDisposed != true) { f.Show(); }
         }
 

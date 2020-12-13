@@ -293,6 +293,7 @@ namespace DormitoryManagement.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
         }
     }
 }
