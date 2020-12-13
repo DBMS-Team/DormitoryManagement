@@ -126,3 +126,34 @@ AS
 		AND USER_TYPE = 'STUDENT'
 	END
 GO
+-- huy đăng kí phòng
+CREATE TRIGGER TRG_CANCEL_ROOM_REGISTRATION
+ON dbo.ROOM_REGISTRATION
+FOR UPDATE
+AS
+	DECLARE @User_ID INT, @Tempt_Ssn VARCHAR(12)
+	SELECT @Tempt_Ssn = Inserted.SSN FROM Inserted
+	SELECT @User_ID = dbo.[USER].USER_ID FROM dbo.[USER] WHERE dbo.[USER].SSN = @Tempt_Ssn
+	UPDATE dbo.STUDENT
+	SET dbo.STUDENT.STATUS_REGISTRATION_ROOM =0
+	WHERE dbo.STUDENT.USER_ID = @User_ID
+GO
+-- Phân quyền
+CREATE TRIGGER CREATE_PHAN_QUYEN
+ON dbo.[USER]
+FOR INSERT
+AS
+	DECLARE @Email VARCHAR(50), 
+			@Password VARCHAR(20), 
+			@Role VARCHAR(20), 
+			@membername VARCHAR(50)
+	SELECT @Email = Inserted.EMAIL FROM Inserted
+	SELECT @Role = Inserted.USER_TYPE FROM Inserted
+	SET @Password = '000000'
+	SET @membername = @Role + @Email
+	EXEC dbo.USP_CREATE_LOGIN_USER @Role_Name = @Role, 
+	                          @Login_Name = @Email, 
+	                          @Password_Login = @Password 
+	EXEC sys.sp_addrolemember @rolename = @Role, 
+	                          @membername = @membername 
+
