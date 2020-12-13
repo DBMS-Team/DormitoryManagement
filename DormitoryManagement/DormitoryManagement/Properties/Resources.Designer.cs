@@ -191,6 +191,15 @@ namespace DormitoryManagement.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {\rtf1 \ansi \ansicpg1252 \deff0 \stshfdbch2 \stshfloch0 \stshfhich0 \deflang1033 \deflangfe1033 {\fonttbl {\f0 \froman \fcharset0 \fprq2 {\*\panose 02020603050405020304}Times New Roman{\*\falt Times New Roman};}{\f2 \fnil \fcharset134 \fprq0 {\*\panose 02010600030101010101}SimSun{\*\falt SimSun};}{\f3 \fnil \fcharset2 \fprq0 {\*\panose 05000000000000000000}Wingdings{\*\falt Wingdings};}{\f4 \froman \fcharset2 \fprq0 {\*\panose 05050102010706020507}Symbol{\*\falt Symbol};}{\f5 \fmodern \fcharset0 \fprq0 {\* [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Guide {
+            get {
+                return ResourceManager.GetString("Guide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icons8_paid_parking_100 {

@@ -15,6 +15,8 @@ namespace DormitoryManagement.View
         public FrmGuide()
         {
             InitializeComponent();
+
+            rtbGuide.Rtf = Properties.Resources.Guide;
         }
     }
 }
