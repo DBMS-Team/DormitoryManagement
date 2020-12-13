@@ -17,10 +17,16 @@ namespace DormitoryManagement.View
     {
         #region Fields
         private string img_path;
+        private bool isOnlyViewInfo = false;
         #endregion
 
         #region Properties
         public string Img_path { get => img_path; set => img_path = value; }
+
+        /// <summary>
+        /// Check xem form đang được tạo để thêm mới nhân viên hay chỉ để xem thông tin của user
+        /// </summary>
+        public bool IsOnlyViewInfo { get => isOnlyViewInfo; set => isOnlyViewInfo = value; }
         #endregion
 
         public FrmEmployeeInfo()
@@ -67,6 +73,10 @@ namespace DormitoryManagement.View
         private void FrmEmployeeInfo_Load(object sender, EventArgs e)
         {
             LoadListProvinceInCombobox();
+            if (IsOnlyViewInfo)
+            {
+                //Load Employee's info
+            }   
         }
         private void cbbProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -245,14 +255,9 @@ namespace DormitoryManagement.View
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
+            btnSave.Enabled = true;
+            btnDelete.Enabled = true;
         }
         #endregion
-
-        
     }
 }

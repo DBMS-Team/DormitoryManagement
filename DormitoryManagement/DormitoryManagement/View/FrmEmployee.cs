@@ -9,19 +9,20 @@ namespace DormitoryManagement.View
         private Item ctrlLogout;
         private Item ctrlChangePassword;
         private Item ctrlExit;
+        private Item ctrlEmployee;
         private Item ctrlBuildings;
         private Item ctrlRoomType;
         private Item ctrlServices;
         private Item ctrlGuide;
         private Item ctrlSearch;
         private Item ctrlListStudents;
-        private Item ctrlListEmployees;
         private Item ctrlRoom;
         private Item ctrlBill;
         private Item ctrlAddStudent;
         private Item ctrlRoomRegistration;
         private Item ctrlReport;
-
+        private EmployeeDTO loginEmployee;
+        private UserDTO loginUser;
         #endregion
 
         #region Properties
@@ -34,14 +35,10 @@ namespace DormitoryManagement.View
         public Item CtrlListStudents { get => ctrlListStudents; set => ctrlListStudents = value; }
         public Item CtrlRoom { get => ctrlRoom; set => ctrlRoom = value; }
         public Item CtrlBill { get => ctrlBill; set => ctrlBill = value; }
-        public Item CtrlListEmployees { get => ctrlListEmployees; set => ctrlListEmployees = value; }
         public Item CtrlAddStudent { get => ctrlAddStudent; set => ctrlAddStudent = value; }
         public Item CtrlReport { get => ctrlReport; set => ctrlReport = value; }
         public Item CtrlRoomRegistration { get => ctrlRoomRegistration; set => ctrlRoomRegistration = value; }
-
-        #endregion
-        private EmployeeDTO loginEmployee;
-        private UserDTO loginUser;
+        
         public EmployeeDTO LoginEmployee
         {
             get => loginEmployee;
@@ -61,6 +58,8 @@ namespace DormitoryManagement.View
 
         public Item CtrlChangePassword { get => ctrlChangePassword; set => ctrlChangePassword = value; }
         public Item CtrlSearch { get => ctrlSearch; set => ctrlSearch = value; }
+        public Item CtrlEmployee { get => ctrlEmployee; set => ctrlEmployee = value; }
+        #endregion
 
         public FrmEmployee(EmployeeDTO employee, UserDTO user)
         {
@@ -82,6 +81,9 @@ namespace DormitoryManagement.View
             //Thoát
             CtrlExit = Dashboard.InitExit();
             tlpManage.Controls.Add(CtrlExit);
+            //About Employee
+            CtrlEmployee = Dashboard.InitEmployeeInfo();
+            tlpManage.Controls.Add(CtrlEmployee);
             #endregion
 
             #region Information

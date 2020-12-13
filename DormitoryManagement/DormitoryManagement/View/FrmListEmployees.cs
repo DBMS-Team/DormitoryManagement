@@ -16,5 +16,10 @@ namespace DormitoryManagement.View
         {
             InitializeComponent();
         }
+
+        private void FrmListEmployees_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

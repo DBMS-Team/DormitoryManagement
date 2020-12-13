@@ -22,5 +22,9 @@ namespace DormitoryManagement.Controller
             return null;
         }
 
+        public static DataTable GetEmployees()
+        {
+            return null;
+        }
     }
 }
