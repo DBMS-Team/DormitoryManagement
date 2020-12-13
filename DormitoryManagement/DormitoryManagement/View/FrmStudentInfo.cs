@@ -181,7 +181,7 @@ namespace DormitoryManagement.View
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Check dien day du du lieu khong
-            if(LoginUser.UserType.Equals("EMPLOYEE"))
+            if(LoginUser.UserType.Equals("EMPLOYEE") || LoginUser.UserType.Equals("ADMIN"))
             {
                 if (txtStudentID.Text == "")
                 {
