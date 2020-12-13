@@ -150,6 +150,7 @@
             this.dgvServices.RowHeadersWidth = 51;
             this.dgvServices.Size = new System.Drawing.Size(1482, 691);
             this.dgvServices.TabIndex = 16;
+            this.dgvServices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServices_CellContentClick);
             // 
             // FrmServices
             // 

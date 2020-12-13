@@ -75,8 +75,6 @@ namespace DormitoryManagement.View
 
       #endregion Get___By____
 
-      #region Click
-
       private void btnAdd_Click(object sender, EventArgs e)
       {
          //check du lieu dau vao co du chua
@@ -222,13 +220,22 @@ namespace DormitoryManagement.View
             decimal temp = Decimal.Parse(dgvPayment.Rows[i].Cells[5].Value.ToString());
             Total_Cost_Bill = Total_Cost_Bill + temp;
          }
-         DateTime CreatDay = dtCreatedDate.Value;
-         PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString());
-         MessageBox.Show("Payment Success");
-         dgvPayment.Rows.Clear();
+         string User_ID = Convert.ToString(User.UserId);
+            string Sector_Name = Convert.ToString(cmbBuilding.Text);
+            string Room_ID = Convert.ToString(cmbRoom.Text);
+            string Month = Convert.ToString(cmbMonth.Text);
+            string Year = Convert.ToString(txtYear.Text);
+            DateTime CreatDay = dtCreatedDate.Value;
+            if(AddPayMent(User_ID, CreatDay, Total_Cost_Bill, Sector_Name, Room_ID, Month, Year))
+            {
+                MessageBox.Show("Payment Success");
+                dgvPayment.Rows.Clear();
+            }
       }
-
-      #endregion Click
+      public bool AddPayMent(string Employee_ID, DateTime Paying_Date, Decimal Amount, string Sector_Name, string Room_ID, string Month, string Year)
+      {
+            return PayMentDAO.AddPayMent(Employee_ID, Paying_Date, Amount, Sector_Name, Room_ID, Month, Year);
+      }
 
       private void FrmBill_Load(object sender, EventArgs e)
       {
