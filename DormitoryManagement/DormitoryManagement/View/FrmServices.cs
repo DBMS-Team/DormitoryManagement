@@ -36,5 +36,10 @@ namespace DormitoryManagement.View
             dgvServices.Columns[2].HeaderText = "Price/Unit";
             dgvServices.Columns[3].HeaderText = "Unit";
         }
+
+        private void dgvServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var data = dgvServices.SelectedRows;
+        }
     }
 }
