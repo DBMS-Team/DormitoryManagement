@@ -264,7 +264,6 @@
             this.cbbUniversity.Name = "cbbUniversity";
             this.cbbUniversity.Size = new System.Drawing.Size(212, 28);
             this.cbbUniversity.TabIndex = 15;
-            this.cbbUniversity.SelectedIndexChanged += new System.EventHandler(this.cmbUniversity_SelectedIndexChanged);
             // 
             // lbUniversity
             // 
@@ -299,6 +298,7 @@
             // 
             this.cbbPriority.BackColor = System.Drawing.SystemColors.Window;
             this.cbbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPriority.Enabled = false;
             this.cbbPriority.FormattingEnabled = true;
             this.cbbPriority.ItemHeight = 20;
             this.cbbPriority.Items.AddRange(new object[] {
@@ -350,7 +350,6 @@
             this.cbbCommune.Name = "cbbCommune";
             this.cbbCommune.Size = new System.Drawing.Size(212, 28);
             this.cbbCommune.TabIndex = 14;
-            this.cbbCommune.SelectedIndexChanged += new System.EventHandler(this.cmbCommune_SelectedIndexChanged);
             // 
             // cbbDistrict
             // 

@@ -68,21 +68,6 @@ namespace DormitoryManagement.View
             }
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbPriority_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cmbProvice_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
@@ -101,25 +86,6 @@ namespace DormitoryManagement.View
             LoadListCommunateByProvinceName(provinceName, districtName);
         }
 
-        private void cmbCommune_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbUniversity_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbFaculty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbMajor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         #endregion
         #region methods
         void LoadListProvinceInCombobox()
@@ -139,6 +105,8 @@ namespace DormitoryManagement.View
             List<CommuneDTO> communeDTOs = CommuneDAO.GetLisCommuneByProvinceAndDistrict(provinceName, districtName);
             cbbCommune.DataSource = communeDTOs;
             cbbCommune.DisplayMember = "CommuneName";
+            cbbPriority.DataSource = communeDTOs;
+            cbbPriority.DisplayMember = "Priority";
         }
         void LoadListCollege()
         {
