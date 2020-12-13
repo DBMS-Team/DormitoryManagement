@@ -33,18 +33,18 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.txtServiceName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtUnit = new System.Windows.Forms.TextBox();
-            this.txtPricePerUnit = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnOK = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtPricePerUnit = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtUnit = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -124,60 +124,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 467);
             this.tableLayoutPanel1.TabIndex = 48;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtServiceName);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Black", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(115, 96);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(331, 64);
-            this.groupBox1.TabIndex = 49;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Service Name";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtUnit);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Black", 10F);
-            this.groupBox2.Location = new System.Drawing.Point(115, 166);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(331, 64);
-            this.groupBox2.TabIndex = 49;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Unit";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txtPricePerUnit);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI Black", 10F);
-            this.groupBox3.Location = new System.Drawing.Point(115, 236);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(331, 64);
-            this.groupBox3.TabIndex = 50;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Price/Unit";
-            // 
-            // txtUnit
-            // 
-            this.txtUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUnit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.txtUnit.Location = new System.Drawing.Point(3, 26);
-            this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(325, 34);
-            this.txtUnit.TabIndex = 0;
-            // 
-            // txtPricePerUnit
-            // 
-            this.txtPricePerUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPricePerUnit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPricePerUnit.Location = new System.Drawing.Point(3, 26);
-            this.txtPricePerUnit.Name = "txtPricePerUnit";
-            this.txtPricePerUnit.Size = new System.Drawing.Size(325, 34);
-            this.txtPricePerUnit.TabIndex = 0;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
@@ -210,6 +156,60 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtPricePerUnit);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI Black", 10F);
+            this.groupBox3.Location = new System.Drawing.Point(115, 236);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(331, 64);
+            this.groupBox3.TabIndex = 50;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Price/Unit";
+            // 
+            // txtPricePerUnit
+            // 
+            this.txtPricePerUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPricePerUnit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtPricePerUnit.Location = new System.Drawing.Point(3, 26);
+            this.txtPricePerUnit.Name = "txtPricePerUnit";
+            this.txtPricePerUnit.Size = new System.Drawing.Size(325, 34);
+            this.txtPricePerUnit.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtServiceName);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Black", 10F);
+            this.groupBox1.Location = new System.Drawing.Point(115, 96);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(331, 64);
+            this.groupBox1.TabIndex = 49;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Service Name";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtUnit);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Black", 10F);
+            this.groupBox2.Location = new System.Drawing.Point(115, 166);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(331, 64);
+            this.groupBox2.TabIndex = 49;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Unit";
+            // 
+            // txtUnit
+            // 
+            this.txtUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtUnit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtUnit.Location = new System.Drawing.Point(3, 26);
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.Size = new System.Drawing.Size(325, 34);
+            this.txtUnit.TabIndex = 0;
+            // 
             // FrmServiceInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -220,14 +220,15 @@
             this.Name = "FrmServiceInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Service";
+            this.Load += new System.EventHandler(this.FrmServiceInfo_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

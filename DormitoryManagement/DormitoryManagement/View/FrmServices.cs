@@ -17,7 +17,7 @@ namespace DormitoryManagement.View
         {
             InitializeComponent();
         }
-
+      
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmServiceInfo frmServiceInfo = new FrmServiceInfo();
@@ -26,6 +26,7 @@ namespace DormitoryManagement.View
             frmServiceInfo.btnOK.Enabled = true;
             frmServiceInfo.btnEdit.Visible = false;
             frmServiceInfo.ShowDialog();
+            FrmServices_Load(this, new EventArgs());
         }
 
         private void FrmServices_Load(object sender, EventArgs e)
@@ -39,7 +40,11 @@ namespace DormitoryManagement.View
 
         private void dgvServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            int index = dgvServices.CurrentCell.RowIndex;
+            FrmServiceInfo frmServiceInfo = new FrmServiceInfo();
+            frmServiceInfo.Service_ID = Convert.ToInt32(dgvServices.Rows[index].Cells[0].Value);
+            frmServiceInfo.ShowDialog();
+            FrmServices_Load(this, new EventArgs());
         }
     }
 }

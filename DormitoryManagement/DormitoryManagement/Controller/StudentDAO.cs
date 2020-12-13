@@ -50,5 +50,21 @@ namespace DormitoryManagement.Controller
          int result = DataProvider.ExcuteNonQuery(query, paras);
          return result > 0;
       }
+      public static bool UpdateStudent(string Ssn, string Street, string Commune_Name, string District_Name, string Province_Name, string College_Name, string Faculty, string Major, string Phone_Number_1, string Phone_Number_2, string Email)
+      {
+            string query = string.Format("EXEC dbo.USP_TRANSACTION_UpdateStudent @Ssn = '{0}'," +
+                                                                                "@Street = N'{1}'," +
+                                                                                "@Commune_Name = N'{2}'," +
+                                                                                "@District_Name = N'{3}'," +
+                                                                                "@Province_Name = N'{4}'," +
+                                                                                "@College_Name = N'{5}'," +
+                                                                                "@Faculty = N'{6}'," +
+                                                                                "@Major = N'{7}'," +
+                                                                                "@Phone_Number_1 = '{8}'," +
+                                                                                "@Phone_Number_2 = '{9}'," +
+                                                                                "@Email = '{10}'", Ssn, Street, Commune_Name, District_Name,Province_Name, College_Name,Faculty,Major, Phone_Number_1, Phone_Number_2, Email);
+            int result = DataProvider.ExcuteNonQuery(query);
+            return result > 0;
+      }
    }
 }

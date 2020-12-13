@@ -205,6 +205,7 @@
             this.btnEdit.TabIndex = 29;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click_1);
             // 
             // groupUniversity
             // 
