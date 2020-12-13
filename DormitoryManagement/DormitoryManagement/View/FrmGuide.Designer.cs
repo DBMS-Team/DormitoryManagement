@@ -50,7 +50,9 @@
             // 
             this.rtbGuide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbGuide.Location = new System.Drawing.Point(0, 55);
+            this.rtbGuide.Margin = new System.Windows.Forms.Padding(10);
             this.rtbGuide.Name = "rtbGuide";
+            this.rtbGuide.ReadOnly = true;
             this.rtbGuide.Size = new System.Drawing.Size(1482, 748);
             this.rtbGuide.TabIndex = 2;
             this.rtbGuide.Text = "";

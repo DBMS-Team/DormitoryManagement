@@ -453,5 +453,30 @@ namespace DormitoryManagement.View
 
         #endregion
 
+        private void dgvRoomReg_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int index = dgvRoomReg.SelectedRows[0].Index;
+                var selectedRow = dgvRoomReg.Rows[index];
+                string id = Convert.ToString(selectedRow.Cells["Id"].Value);
+                string ssn = Convert.ToString(selectedRow.Cells["Student Id"].Value);
+                string building = Convert.ToString(selectedRow.Cells["Building"].Value);
+                string room = Convert.ToString(selectedRow.Cells["Room"].Value);
+                DateTime startDate = Convert.ToDateTime(selectedRow.Cells["Start date"].Value);
+                string duration = Convert.ToString(selectedRow.Cells["Duration"].Value);
+                string empID = Convert.ToString(selectedRow.Cells["Employee Id"].Value);
+                string createdDate = Convert.ToString(selectedRow.Cells["Created Date"].Value);
+                string semester = Convert.ToString(selectedRow.Cells["Semester"].Value);
+                string academicYear = Convert.ToString(selectedRow.Cells["Academic year"].Value);
+
+                FrmRoomRegistration frmRoomRegInfo = new FrmRoomRegistration(Dashboard.User, id);
+                frmRoomRegInfo.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

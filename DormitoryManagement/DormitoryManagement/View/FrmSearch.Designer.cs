@@ -326,6 +326,7 @@
             this.dgvRoomReg.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvRoomReg.Size = new System.Drawing.Size(1468, 602);
             this.dgvRoomReg.TabIndex = 15;
+            this.dgvRoomReg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoomReg_CellContentClick);
             // 
             // tableLayoutPanel3
             // 

@@ -389,6 +389,8 @@
     <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Guide.docx" />
+    <None Include="Resources\Guide.rtf" />
     <None Include="Resources\icons8-building-100.png" />
   </ItemGroup>
   <ItemGroup>

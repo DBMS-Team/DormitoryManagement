@@ -126,6 +126,7 @@ namespace DormitoryManagement.View
             ctrlRoomRegistration.btnTitle.Text = "ROOM";
             return ctrlRoomRegistration;
         }
+
         #endregion
 
         #region Information
@@ -256,21 +257,40 @@ namespace DormitoryManagement.View
         public static void Bill()
         {
             FrmBill frmBill = new FrmBill(User);
+            frmBill.tlpBottom.ColumnCount = 2;
+            frmBill.btnDelete.Visible = false;
             frmBill.ShowDialog();
+        }
+
+        public static void RoomRegInfo()
+        {
+            FrmRoomRegistration frmRoomRegInfo = new FrmRoomRegistration(User);
+            frmRoomRegInfo.ShowDialog();
         }
 
         public static void RoomRegistration()
         {
             FrmRoomRegistration frmRoomRegistration = new FrmRoomRegistration(User);
+            frmRoomRegistration.btnDelete.Visible = false;
+            frmRoomRegistration.btnPrint.Enabled = false;
+            frmRoomRegistration.tlpBottom.ColumnCount = 2;
             frmRoomRegistration.ShowDialog();
         }
 
         public static void AddEmployee()
         {
+<<<<<<< HEAD
             FrmEmployeeInfo frmAddEmployee = new FrmEmployeeInfo(Employee, User);
             frmAddEmployee.btnDelete.Visible = false;
             frmAddEmployee.btnEdit.Visible = false;
             frmAddEmployee.btnSave.Visible = true;
+=======
+            FrmEmployeeInfo frmAddEmployee = new FrmEmployeeInfo();
+            frmAddEmployee.btnEdit.Visible = false;
+            frmAddEmployee.btnDelete.Visible = false;
+            frmAddEmployee.btnSave.Visible = true;
+            frmAddEmployee.tlpBottom.ColumnCount = 1;
+>>>>>>> 2ffb744b8c1aafa9a8575a484177a3d52828d14a
             frmAddEmployee.IsOnlyViewInfo = false;
             frmAddEmployee.tlpBottom.ColumnCount = 1;
             frmAddEmployee.ShowDialog();
