@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DormitoryManagement.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace DormitoryManagement.View
         public FrmRoomTypes()
         {
             InitializeComponent();
+        }
+        void AutoSizeModeColumn(DataGridView dataGridView)
+        {
+            for (int i = 0; i < dataGridView.Columns.Count - 1; i++)
+            {
+                dataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+            dataGridView.Columns[dataGridView.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void FrmRoomTypes_Load(object sender, EventArgs e)
+        {
+            dgvRoomTypes.DataSource = RoomDAO.GetListRoomView();
+            AutoSizeModeColumn(dgvRoomTypes);
         }
     }
 }

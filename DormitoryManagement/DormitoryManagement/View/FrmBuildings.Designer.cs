@@ -92,6 +92,7 @@
             this.Name = "FrmBuildings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buildings";
+            this.Load += new System.EventHandler(this.FrmBuildings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuildings)).EndInit();
             this.ResumeLayout(false);
 

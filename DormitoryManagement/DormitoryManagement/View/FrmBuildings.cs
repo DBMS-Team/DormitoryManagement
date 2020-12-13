@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DormitoryManagement.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace DormitoryManagement.View
         public FrmBuildings()
         {
             InitializeComponent();
+        }
+
+        private void FrmBuildings_Load(object sender, EventArgs e)
+        {
+            dgvBuildings.DataSource = SectorDAO.GetListSector();
         }
     }
 }

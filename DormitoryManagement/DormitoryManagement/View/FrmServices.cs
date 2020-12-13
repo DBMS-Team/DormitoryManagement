@@ -32,6 +32,7 @@ namespace DormitoryManagement.View
         private void FrmServices_Load(object sender, EventArgs e)
         {
             dgvServices.DataSource = ServiceDAO.GetServicesInfo();
+            txtQuantity.Text = (dgvServices.Rows.Count - 1).ToString();
             dgvServices.Columns[0].HeaderText = "Service ID";
             dgvServices.Columns[1].HeaderText = "Service Name";
             dgvServices.Columns[2].HeaderText = "Price/Unit";

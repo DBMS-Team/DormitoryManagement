@@ -785,8 +785,239 @@ BEGIN
 	WHERE USER_ID = @USER_ID
 END
 GO
+-- Cập nhật lương cho nhân viên
+CREATE OR ALTER PROC USP_UpdateSalary(
+	@USER_ID INT,
+	@SALARY DECIMAL(19,4)
+	)
+AS
+BEGIN
+    UPDATE dbo.EMPLOYEE SET SALARY = @SALARY WHERE USER_ID = @USER_ID
+END
+GO
 
+-- Lấy danh sách roomview
+CREATE OR ALTER PROC USP_GetListRoomView
+AS
+BEGIN
+    SELECT * FROM V_GetRoomSectorType ORDER BY SECTOR_NAME ASC
+END
+GO
+-- Lấy danh sách service
+CREATE OR ALTER PROC [dbo].[USP_GetServicesInfo]
+AS
+BEGIN
+	SELECT s.SERVICE_ID, s.SERVICE_NAME, s.PRICE_PER_UNIT, u.UNIT_NAME
+	FROM DBO.SERVICE s INNER JOIN dbo.UNIT u ON s.UNIT_ID = u.UNIT_ID
+	WHERE s.STATUS = 1;
+END
 
+-- cập nhật địa chỉ
+CREATE PROC USP_UpdateAddRess
+(
+	@AddRess_ID INT,
+	@Street NVARCHAR(50), 
+	@Commune_Name NVARCHAR(50), 
+	@District_Name NVARCHAR(50),
+	@Province_Name NVARCHAR(50)
+)
+AS
+BEGIN
+	DECLARE @Commune_ID VARCHAR(5),
+			@District_ID VARCHAR(3),
+			@Province_ID VARCHAR(2)
+	SELECT @Province_ID = dbo.UFN_GetProvinceIdByProvinceName(@Province_Name)
+	SELECT @District_ID = dbo.UFN_GetDistrictIdByDictrictName(@District_Name, @Province_ID)
+	SELECT @Commune_ID = dbo.UFN_GetCommuneidByCommuneName(@Commune_Name, @District_ID)
+	UPDATE dbo.ADDRESS
+	SET 
+		dbo.ADDRESS.STREET = @Street,
+		dbo.ADDRESS.COMMNUNE_ID = @Commune_ID,
+		dbo.ADDRESS.DISTRICT_ID = @District_ID,
+		dbo.ADDRESS.PROVINCE_ID = @Province_ID
+	WHERE dbo.ADDRESS.ADDRESS_ID = @AddRess_ID;
+END
+GO
+-- Cập nhật trường đại học
 
-
-
+CREATE PROC USP_UpdateStudentCollege
+(
+	@User_ID INT,
+	@College_Name NVARCHAR(50),
+	@Faculty NVARCHAR(50),
+	@Major NVARCHAR(50)
+)
+AS
+BEGIN
+    DECLARE @College_ID INT
+	SELECT @College_ID = dbo.COLLEGE.COLLEGE_ID FROM dbo.COLLEGE WHERE dbo.COLLEGE.COLLEGE_NAME = @College_Name
+	UPDATE dbo.STUDENT
+	SET dbo.STUDENT.COLLEGE_ID = @College_ID,
+		dbo.STUDENT.FACULTY = @Faculty,
+		dbo.STUDENT.MAJORS = @Major
+	WHERE dbo.STUDENT.USER_ID = @User_ID;
+END
+GO
+-- cập nhật sinh viên
+CREATE OR ALTER PROC USP_TRANSACTION_UpdateStudent
+(
+	@Ssn VARCHAR(12), 
+	@Street NVARCHAR(50), 
+	@Commune_Name NVARCHAR(50), 
+	@District_Name NVARCHAR(50), 
+	@Province_Name NVARCHAR(50),
+	@College_Name NVARCHAR(50),
+	@Faculty NVARCHAR(50), 
+	@Major NVARCHAR(50),
+	@Phone_Number_1 VARCHAR(15),
+	@Phone_Number_2 VARCHAR(15),
+	@Email VARCHAR(40)
+)
+AS
+BEGIN
+    DECLARE @User_ID INT,
+			@Address_ID INT
+	SELECT @User_ID = dbo.[USER].USER_ID FROM dbo.[USER] WHERE dbo.[USER].SSN = @Ssn
+	SELECT @Address_ID = dbo.[USER].ADDRESS_ID FROM dbo.[USER] WHERE dbo.[USER].SSN = @Ssn
+	BEGIN TRANSACTION
+		EXEC dbo.USP_UpdateAddRess @AddRess_ID = @Address_ID,    
+		                           @Street = @Street,       
+		                           @Commune_Name = @Commune_Name, 
+		                           @District_Name = @District_Name, 
+		                           @Province_Name = @Province_Name 
+		EXEC dbo.USP_UpdateStudentCollege @User_ID = @User_ID,
+		                                  @College_Name = @College_Name, 
+		                                  @Faculty = @Faculty, 
+		                                  @Major = @Major 
+		UPDATE dbo.[USER]
+		SET dbo.[USER].PHONE_NUMBER_1 = NULL,
+			dbo.[USER].PHONE_NUMBER_2 = NULL,
+			dbo.[USER].EMAIL = NULL
+		WHERE dbo.[USER].USER_ID = @User_ID;
+		IF(@Phone_Number_1 IN (SELECT dbo.[USER].PHONE_NUMBER_1 FROM dbo.[USER]) OR @Phone_Number_1 IN (SELECT dbo.[USER].PHONE_NUMBER_2 FROM dbo.[USER]))
+		BEGIN
+		    RAISERROR('Phone_Number_1 Is Exist',16,1)
+			ROLLBACK
+		END
+		ELSE IF(@Phone_Number_2 IN (SELECT dbo.[USER].PHONE_NUMBER_2 FROM dbo.[USER]) OR @Phone_Number_2 IN (SELECT dbo.[USER].PHONE_NUMBER_1 FROM dbo.[USER]))
+		BEGIN
+		    RAISERROR('Phone_Number_2 Is Exist',16,1)
+			ROLLBACK
+		END
+		ELSE IF(@Email IN (SELECT dbo.[USER].EMAIL FROM dbo.[USER]))
+		BEGIN
+		    RAISERROR('Email Is Exist',16,1)
+			ROLLBACK
+		END
+		ELSE
+		BEGIN
+		    UPDATE dbo.[USER]
+			SET dbo.[USER].PHONE_NUMBER_1 = @Phone_Number_1,
+				dbo.[USER].PHONE_NUMBER_2 = @Phone_Number_2,
+				dbo.[USER].EMAIL = @Email
+			WHERE dbo.[USER].USER_ID = @User_ID;
+			COMMIT
+		END
+END
+GO
+-- hủy đăng kí phòng
+CREATE PROC USP_UpdateRoomRegistration
+(
+	@Ssn VARCHAR(15)
+)
+AS
+BEGIN
+    UPDATE dbo.ROOM_REGISTRATION
+	SET dbo.ROOM_REGISTRATION.STATUS = 0
+	WHERE dbo.ROOM_REGISTRATION.SSN = @Ssn;
+END
+GO
+-- cập nhật dịch vụ
+CREATE PROC USP_UpdateService
+(
+	@Service_Name NVARCHAR(50),
+	@Price DECIMAL (19,4)
+)
+AS
+BEGIN
+    UPDATE dbo.SERVICE
+	SET dbo.SERVICE.PRICE_PER_UNIT = @Price
+	WHERE dbo.SERVICE.SERVICE_NAME = @Service_Name;
+END
+GO
+-----------------Insert Unit--------------------------------------
+CREATE PROC USP_InsertUnit
+(@Unit_Name NVARCHAR(20))
+AS
+BEGIN
+    INSERT INTO dbo.UNIT
+    (
+        UNIT_NAME
+    )
+    VALUES
+    (
+	 @Unit_Name
+    )
+END
+GO
+----------------Insert service------------------------------------
+GO
+CREATE PROC USP_InsertService
+(
+	@Service_Name NVARCHAR(20), 
+	@Price_Per_Unit DECIMAL(19,4), 
+	@Unit_Name NVARCHAR(20)
+)
+AS
+BEGIN
+	DECLARE @Unit_ID INT
+    EXEC dbo.USP_InsertUnit @Unit_Name = @Unit_Name
+    SELECT @Unit_ID = (SELECT MAX(dbo.UNIT.UNIT_ID) FROM dbo.UNIT)
+	INSERT INTO dbo.SERVICE
+	(
+	    SERVICE_NAME,
+	    UNIT_ID,
+	    PRICE_PER_UNIT,
+	    STATUS
+	)
+	VALUES
+	(   @Service_Name,  
+	    @Unit_ID, 
+	    @Price_Per_Unit, 
+	    1 
+	    )
+END
+GO
+-------------------------------------------------------------------
+---------------------Xóa Service-----------------------------------
+GO
+CREATE PROC USP_UnableService
+(
+	@Service_Name NVARCHAR(20)
+)
+AS
+BEGIN
+    UPDATE dbo.SERVICE
+	SET dbo.SERVICE.STATUS = 0
+	WHERE dbo.SERVICE.SERVICE_NAME = @Service_Name;
+END
+GO
+--Tạo login SQL
+CREATE PROC USP_CREATE_LOGIN_USER
+(
+	@Role_Name VARCHAR(50),
+	@Login_Name VARCHAR(50), 
+	@Password_Login VARCHAR(50)
+)
+AS
+BEGIN
+    DECLARE @Login_UserName VARCHAR(50),
+			@QueryLogin VARCHAR(100),
+			@QueryUser VARCHAR(100)
+	SET @Login_UserName = @Role_Name + @Login_Name
+	SET @QueryLogin ='CREATE LOGIN ' + @Login_UserName + ' WITH PASSWORD = ' + QUOTENAME(@Password_Login, '''')
+	SET @QueryUser = CONCAT('CREATE USER ', @Login_UserName, ' FOR LOGIN ', @Login_UserName);
+	EXEC (@QueryLogin)
+	EXEC (@QueryUser)
+END
+GO
