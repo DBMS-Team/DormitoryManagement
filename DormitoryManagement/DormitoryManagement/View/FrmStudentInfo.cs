@@ -159,7 +159,7 @@ namespace DormitoryManagement.View
             LoadListCollege();
             if (LoginUser.UserType.Equals("STUDENT"))
             {
-                //txtStudentID.Text = LoginStudent.StudentId;
+                txtStudentID.Text = LoginStudent.StudentId;
                 txtFirstName.Text = LoginUser.FirstName;
                 txtLastName.Text = LoginUser.LastName;
                 dateTimePicker1.Value = LoginUser.Dob;
@@ -172,19 +172,24 @@ namespace DormitoryManagement.View
                 txtID.Text = LoginUser.Ssn;
                 txtHealthInsurance.Text = LoginStudent.InsuranceId;
                 DataGridView gridView = new DataGridView();
-                gridView.DataSource = UserDAO.GetListStudentView(LoginUser.UserId);
-                gridView.Rows[0].Cells[1].Value.ToString();
-                cbbProvince.Text = gridView.Rows[0].Cells[9].Value.ToString();
-                cbbDistrict.Text = gridView.Rows[0].Cells[10].Value.ToString();
-                cbbCommune.Text = gridView.Rows[0].Cells[11].Value.ToString();
-                txtAddress.Text = gridView.Rows[0].Cells[8].Value.ToString();
+                
+                DataTable dt = UserDAO.GetListStudentView(LoginUser.UserId);
+                //gridView.Rows[0].Cells[1].Value.ToString();
+                /*object list = gridView.DataSource;
+                string a = list;
+                gridView.ColumnCount = 18;
+                object a = gridView.Rows[0];*/
+                cbbProvince.Text = dt.Rows[0][8].ToString();
+                cbbDistrict.Text = dt.Rows[0][9].ToString();
+                cbbCommune.Text = dt.Rows[0][10].ToString();
+                txtAddress.Text = dt.Rows[0][7].ToString();
                 cbbPriority.Text = "3";
-                txtPhone1.Text = gridView.Rows[0].Cells[12].Value.ToString();
-                txtPhone2.Text = gridView.Rows[0].Cells[13].Value.ToString();
-                txtEmail.Text = gridView.Rows[0].Cells[14].Value.ToString();
-                cbbUniversity.Text = gridView.Rows[0].Cells[16].Value.ToString();
-                txtFaculty.Text = gridView.Rows[0].Cells[17].Value.ToString();
-                txtMajor.Text = gridView.Rows[0].Cells[18].Value.ToString();
+                txtPhone1.Text = dt.Rows[0][11].ToString();
+                txtPhone2.Text = dt.Rows[0][12].ToString();
+                txtEmail.Text = dt.Rows[0][13].ToString();
+                cbbUniversity.Text = dt.Rows[0][15].ToString();
+                txtFaculty.Text = dt.Rows[0][16].ToString();
+                txtMajor.Text = dt.Rows[0][17].ToString();
             }
         }
 
