@@ -185,63 +185,63 @@ namespace DormitoryManagement.View
             {
                 if (txtStudentID.Text == "")
                 {
-                    MessageBox.Show("Ban Chua Nhap MSSV");
+                    MessageBox.Show("Student ID Not Null");
                 }
                 else if (txtFirstName.Text == "")
                 {
-                    MessageBox.Show("Ban Chua Nhap Ho cua Minh");
+                    MessageBox.Show("First Not Null");
                 }
                 else if (txtLastName.Text == "")
                 {
-                    MessageBox.Show("Ban Chua Nhap Ten Lot Va Ten Cua Minh");
+                    MessageBox.Show("Last Name Not Null");
                 }
                 else if (txtID.Text == "")
                 {
-                    MessageBox.Show("Ban Chua Nhap CMND");
+                    MessageBox.Show("SSN Not Null");
                 }
                 else if (txtHealthInsurance.Text == "")
                 {
-                    MessageBox.Show("Ban Chua Nhap So Bao Hiem Y Te");
+                    MessageBox.Show("InsuranceID Not Null");
                 }
                 else if (cbbProvince.Text == "")
                 {
-                    MessageBox.Show("Ban Chua Chon Thanh Pho");
+                    MessageBox.Show("Province Not Null");
                 }
                 else if (cbbDistrict.Text == "")
                 {
-                    MessageBox.Show("Ban Chua Chon Huyen");
+                    MessageBox.Show("District Not Null");
                 }
                 else if (cbbCommune.Text == "")
                 {
-                    MessageBox.Show("Ban Chua Chon Xa");
+                    MessageBox.Show("Commune Not Null");
                 }
                 else if (txtAddress.Text == "")
                 {
-                    MessageBox.Show("Ban Chua Nhap Dia Chi");
+                    MessageBox.Show("Address Not Null");
                 }
                 else if (txtPhone1.Text == "")
                 {
-                    MessageBox.Show("Ban chua nhap sdt 1");
+                    MessageBox.Show("Phone Number 1 Not Null");
                 }
                 else if (txtPhone2.Text == "")
                 {
-                    MessageBox.Show("Ban chua nhap sdt 2");
+                    MessageBox.Show("Phone Number 2 Not Null");
                 }
                 else if (txtEmail.Text == "")
                 {
-                    MessageBox.Show("Ban chua nhap email");
+                    MessageBox.Show("Email Not Null");
                 }
                 else if (cbbUniversity.Text == "")
                 {
-                    MessageBox.Show("Ban chua chon ten truong");
+                    MessageBox.Show("University Not Null");
                 }
                 else if (txtFaculty.Text == "")
                 {
-                    MessageBox.Show("Ban chua chon Khoa");
+                    MessageBox.Show("Faculty Not Null");
                 }
                 else if (txtMajor.Text == "")
                 {
-                    MessageBox.Show("ban chua chon Nganh Hoc");
+                    MessageBox.Show("Major Not Null");
                 }
                 //Luu Du Lieu Vao data
                 string AddRess = Convert.ToString(txtAddress.Text);

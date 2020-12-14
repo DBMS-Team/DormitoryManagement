@@ -256,6 +256,7 @@ namespace DormitoryManagement.View
             txtYear.Text = now.Year.ToString();
             dgvBillReg.Rows[0].Cells[5].Value = 0;
             txtTotal.Text = "0";
+            //cmt
         }
 
         #region EventChange
@@ -293,6 +294,7 @@ namespace DormitoryManagement.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //cmt
         }
     }
 }
