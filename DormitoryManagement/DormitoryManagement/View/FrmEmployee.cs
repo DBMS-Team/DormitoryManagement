@@ -16,7 +16,6 @@ namespace DormitoryManagement.View
         private Item ctrlGuide;
         private Item ctrlSearch;
         private Item ctrlListStudents;
-        private Item ctrlRoom;
         private Item ctrlBill;
         private Item ctrlAddStudent;
         private Item ctrlRoomRegistration;
@@ -33,7 +32,6 @@ namespace DormitoryManagement.View
         protected Item CtrlServices { get => ctrlServices; set => ctrlServices = value; }
         protected Item CtrlGuide { get => ctrlGuide; set => ctrlGuide = value; }
         public Item CtrlListStudents { get => ctrlListStudents; set => ctrlListStudents = value; }
-        public Item CtrlRoom { get => ctrlRoom; set => ctrlRoom = value; }
         public Item CtrlBill { get => ctrlBill; set => ctrlBill = value; }
         public Item CtrlAddStudent { get => ctrlAddStudent; set => ctrlAddStudent = value; }
         public Item CtrlReport { get => ctrlReport; set => ctrlReport = value; }
@@ -96,9 +94,6 @@ namespace DormitoryManagement.View
             //DS Khu phòng
             CtrlBuildings = Dashboard.InitListBuildings();
             tlpInfo.Controls.Add(CtrlBuildings);
-            //Phòng
-            CtrlRoom = Dashboard.InitRoom(LoginUser);
-            tlpInfo.Controls.Add(CtrlRoom);
             //DS Loại Phòng
             CtrlRoomType = Dashboard.InitListRoomType();
             tlpInfo.Controls.Add(CtrlRoomType);
