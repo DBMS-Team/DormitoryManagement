@@ -42,7 +42,6 @@
             this.lbAdd = new System.Windows.Forms.Label();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbNgay = new System.Windows.Forms.Label();
             this.pnQuanTri.SuspendLayout();
             this.pnInfo.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -227,7 +226,6 @@
             // 
             this.pnBottom.BackColor = System.Drawing.Color.Silver;
             this.pnBottom.Controls.Add(this.label3);
-            this.pnBottom.Controls.Add(this.lbNgay);
             this.pnBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnBottom.Location = new System.Drawing.Point(4, 508);
             this.pnBottom.Margin = new System.Windows.Forms.Padding(4);
@@ -246,18 +244,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "(c) Bản quyền thuộc về FIT";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbNgay
-            // 
-            this.lbNgay.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgay.Location = new System.Drawing.Point(1021, 0);
-            this.lbNgay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(453, 41);
-            this.lbNgay.TabIndex = 0;
-            this.lbNgay.Text = "Ngày hiện tại:";
-            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FrmEmployee
             // 
@@ -297,6 +283,5 @@
         private System.Windows.Forms.Label lbAdd;
         private System.Windows.Forms.Panel pnBottom;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbNgay;
     }
 }

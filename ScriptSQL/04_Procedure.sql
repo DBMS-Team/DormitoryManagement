@@ -811,9 +811,10 @@ BEGIN
 	FROM DBO.SERVICE s INNER JOIN dbo.UNIT u ON s.UNIT_ID = u.UNIT_ID
 	WHERE s.STATUS = 1;
 END
+GO
 
 -- cập nhật địa chỉ
-CREATE PROC USP_UpdateAddRess
+CREATE OR ALTER PROC USP_UpdateAddRess
 (
 	@AddRess_ID INT,
 	@Street NVARCHAR(50), 
@@ -840,7 +841,7 @@ END
 GO
 -- Cập nhật trường đại học
 
-CREATE PROC USP_UpdateStudentCollege
+CREATE OR ALTER PROC USP_UpdateStudentCollege
 (
 	@User_ID INT,
 	@College_Name NVARCHAR(50),
@@ -921,7 +922,7 @@ BEGIN
 END
 GO
 -- hủy đăng kí phòng
-CREATE PROC USP_UpdateRoomRegistration
+CREATE OR ALTER PROC USP_UpdateRoomRegistration
 (
 	@Ssn VARCHAR(15)
 )
@@ -933,7 +934,7 @@ BEGIN
 END
 GO
 -- cập nhật dịch vụ
-CREATE PROC USP_UpdateService
+CREATE OR ALTER PROC USP_UpdateService
 (
 	@Service_Name NVARCHAR(50),
 	@Price DECIMAL (19,4)
@@ -946,7 +947,7 @@ BEGIN
 END
 GO
 -----------------Insert Unit--------------------------------------
-CREATE PROC USP_InsertUnit
+CREATE OR ALTER PROC USP_InsertUnit
 (@Unit_Name NVARCHAR(20))
 AS
 BEGIN
@@ -961,8 +962,7 @@ BEGIN
 END
 GO
 ----------------Insert service------------------------------------
-GO
-CREATE PROC USP_InsertService
+CREATE OR ALTER PROC USP_InsertService
 (
 	@Service_Name NVARCHAR(20), 
 	@Price_Per_Unit DECIMAL(19,4), 
@@ -991,7 +991,7 @@ GO
 -------------------------------------------------------------------
 ---------------------Xóa Service-----------------------------------
 GO
-CREATE PROC USP_UnableService
+CREATE OR ALTER PROC USP_UnableService
 (
 	@Service_Name NVARCHAR(20)
 )
@@ -1003,7 +1003,7 @@ BEGIN
 END
 GO
 --Tạo login SQL
-CREATE PROC USP_CREATE_LOGIN_USER
+CREATE OR ALTER PROC USP_CREATE_LOGIN_USER
 (
 	@Role_Name VARCHAR(50),
 	@Login_Name VARCHAR(50), 
