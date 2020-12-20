@@ -47,8 +47,8 @@ namespace DormitoryManagement.View
         {
             int index = dgvStudents.CurrentCell.RowIndex;
             FrmStudentInfo frmStudentInfo = new FrmStudentInfo(null, User);
-            frmStudentInfo.SSN = Convert.ToString(dgvStudents.Rows[index].Cells[5].Value);
-            MessageBox.Show(Convert.ToString(dgvStudents.Rows[index].Cells[5].Value));
+            frmStudentInfo.SSN = Convert.ToString(dgvStudents.Rows[index].Cells[4].Value);
+            MessageBox.Show(Convert.ToString(dgvStudents.Rows[index].Cells[4].Value));
             frmStudentInfo.ShowDialog();
             FrmListStudents_Load(this, new EventArgs());
         }
