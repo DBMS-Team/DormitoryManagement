@@ -221,68 +221,84 @@ namespace DormitoryManagement.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            int dem = 0;
             //Check dien day du du lieu khong
             if(LoginUser.UserType.Equals("EMPLOYEE") || LoginUser.UserType.Equals("ADMIN"))
             {
                 if (txtStudentID.Text == "")
                 {
                     MessageBox.Show("Student ID Not Null");
+                    dem++;
                 }
                 else if (txtFirstName.Text == "")
                 {
                     MessageBox.Show("First Not Null");
+                    dem++;
                 }
                 else if (txtLastName.Text == "")
                 {
                     MessageBox.Show("Last Name Not Null");
+                    dem++;
                 }
                 else if (txtID.Text == "")
                 {
                     MessageBox.Show("SSN Not Null");
+                    dem++;
                 }
                 else if (txtHealthInsurance.Text == "")
                 {
                     MessageBox.Show("InsuranceID Not Null");
+                    dem++;
                 }
                 else if (cbbProvince.Text == "")
                 {
                     MessageBox.Show("Province Not Null");
+                    dem++;
                 }
                 else if (cbbDistrict.Text == "")
                 {
                     MessageBox.Show("District Not Null");
+                    dem++;
                 }
                 else if (cbbCommune.Text == "")
                 {
                     MessageBox.Show("Commune Not Null");
+                    dem++;
                 }
                 else if (txtAddress.Text == "")
                 {
                     MessageBox.Show("Address Not Null");
+                    dem++;
                 }
                 else if (txtPhone1.Text == "")
                 {
                     MessageBox.Show("Phone Number 1 Not Null");
+                    dem++;
                 }
                 else if (txtPhone2.Text == "")
                 {
                     MessageBox.Show("Phone Number 2 Not Null");
+                    dem++;
                 }
                 else if (txtEmail.Text == "")
                 {
                     MessageBox.Show("Email Not Null");
+                    dem++;
                 }
                 else if (cbbUniversity.Text == "")
                 {
                     MessageBox.Show("University Not Null");
+                    dem++;
                 }
                 else if (txtFaculty.Text == "")
                 {
                     MessageBox.Show("Faculty Not Null");
+                    dem++;
                 }
                 else if (txtMajor.Text == "")
                 {
                     MessageBox.Show("Major Not Null");
+                    dem++;
                 }
                 //Luu Du Lieu Vao data
                 string AddRess = Convert.ToString(txtAddress.Text);
@@ -310,17 +326,24 @@ namespace DormitoryManagement.View
                 string Faculty = Convert.ToString(txtFaculty.Text);
                 string Major = Convert.ToString(txtMajor.Text);
                 DatabaseConnection.ChangeConnection(false);
-                if (AddStudent(AddRess, Commune_Name, District_Name, Province_Name, Insurance_ID, Last_Name, First_Name,
-                    DOB, gender, Ssn, Phone_Number_1, Phone_Number_2, Email, Image_Path, User_Type, Status, Student_ID, College_Name, Faculty, Major))
+                if(dem == 0)
                 {
-                    MessageBox.Show("Add Studetn Success!");
-                    UserDAO.AddUserLogin("STUDENT", Email, "000000");
-                    DatabaseConnection.ChangeConnection(true);
-                }
+                    if (AddStudent(AddRess, Commune_Name, District_Name, Province_Name, Insurance_ID, Last_Name, First_Name,
+                    DOB, gender, Ssn, Phone_Number_1, Phone_Number_2, Email, Image_Path, User_Type, Status, Student_ID, College_Name, Faculty, Major))
+                    {
+                        MessageBox.Show("Add Studetn Success!");
+                        UserDAO.AddUserLogin("STUDENT", Email, "000000");
+                        DatabaseConnection.ChangeConnection(true);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error!!!!");
+                    }
+                } 
                 else
                 {
-                    MessageBox.Show("Error!!!!");
-                }
+                    MessageBox.Show("Bạn chưa nhập đủ dữ liệu");
+                }    
             }   
             else
             {
