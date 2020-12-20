@@ -471,6 +471,7 @@ namespace DormitoryManagement.View
 
                 FrmRoomRegistration frmRoomRegInfo = new FrmRoomRegistration(Dashboard.User, Student_ID);
                 frmRoomRegInfo.ShowDialog();
+                GetListRoomRegistration();
             }
             catch (Exception ex)
             {

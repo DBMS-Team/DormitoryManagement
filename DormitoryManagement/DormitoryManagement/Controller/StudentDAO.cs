@@ -66,5 +66,11 @@ namespace DormitoryManagement.Controller
             int result = DataProvider.ExcuteNonQuery(query);
             return result > 0;
       }
-   }
+        public static bool LockUserStudent(string SSN)
+        {
+            string query = string.Format("EXEC dbo.USP_LockUserStudent @SSN = '{0}'", SSN);
+            int result = DataProvider.ExcuteNonQuery(query);
+            return result > 0;
+        }
+    }
 }

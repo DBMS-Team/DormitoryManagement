@@ -23,5 +23,11 @@ namespace DormitoryManagement.Controller
             }
             return provinceDTOs;
         }
+        public static DataTable GetProvinceNameByProvinceID(int Province_ID)
+        {
+            string query = string.Format("EXEC dbo.USP_GetProvinceNameByProvinceID @Province_ID = {0}", Province_ID);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
     }
 }

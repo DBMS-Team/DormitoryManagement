@@ -18,6 +18,7 @@ namespace DormitoryManagement.View
         private string img_path;
         private UserDTO loginUser;
         private StudentDTO loginStudent;
+        public string SSN = "";
         #endregion
 
         #region Properties
@@ -172,10 +173,50 @@ namespace DormitoryManagement.View
                 txtFaculty.Enabled = false;
                 txtMajor.Enabled = false;
             }
+            else if(SSN != "")
+            {
+                DataTable dt = StudentViewDAO.GetStudentInfo(SSN);
+                txtStudentID.Text = dt.Rows[0][0].ToString();
+                txtFirstName.Text = dt.Rows[0][1].ToString();
+                txtLastName.Text = dt.Rows[0][2].ToString();
+                //dtp
+                DateTime dob = Convert.ToDateTime(dt.Rows[0][3]);
+                dateTimePicker1.Value = dob;
+                //
+                if (dt.Rows[0][4].ToString() != "Nam")
+                {
+                    ckbFemale.Checked = true;
+                }
+                txtID.Text = dt.Rows[0][5].ToString();
+                txtHealthInsurance.Text = dt.Rows[0][6].ToString();
+                txtAddress.Text = dt.Rows[0][7].ToString();
+                txtPhone1.Text = dt.Rows[0][11].ToString();
+                txtPhone2.Text = dt.Rows[0][12].ToString();
+                txtEmail.Text = dt.Rows[0][13].ToString();
+                txtFaculty.Text = dt.Rows[0][15].ToString();
+                txtMajor.Text = dt.Rows[0][16].ToString();
+                DataTable province = ProvinceDAO.GetProvinceNameByProvinceID(Convert.ToInt32(dt.Rows[0][8]));
+                cbbProvince.Text = province.Rows[0][0].ToString();
+                DataTable District = DistrictDAO.GetDistrictNameByDistricID(Convert.ToInt32(dt.Rows[0][9]));
+                cbbDistrict.Text = District.Rows[0][0].ToString();
+                DataTable Commune= CommuneDAO.GetCommuneNameByCommuneID(Convert.ToInt32(dt.Rows[0][10]));
+                cbbCommune.Text = Commune.Rows[0][0].ToString();
+                DataTable College = CollegeDAO.GetCollegeNameByCollegeID(Convert.ToInt32(dt.Rows[0][14]));
+                cbbUniversity.Text = College.Rows[0][0].ToString();
+                //string District_Name = DistrictDAO.
+                //string Commune_Name = CommuneDAO.GetLisCommuneByProvinceAndDistrict()
+                btnEdit.Enabled = false;
+                btnSave.Enabled = false;
+                groupPersionalInfo.Enabled = false;
+                groupAddress.Enabled = false;
+                groupContact.Enabled = false;
+                groupUniversity.Enabled = false;
+            }   
             else
             {
                 btnEdit.Enabled = false;
-            }    
+                btnDelete.Enabled = false;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -268,12 +309,11 @@ namespace DormitoryManagement.View
                 string College_Name = Convert.ToString(cbbUniversity.Text);
                 string Faculty = Convert.ToString(txtFaculty.Text);
                 string Major = Convert.ToString(txtMajor.Text);
+                DatabaseConnection.ChangeConnection(false);
                 if (AddStudent(AddRess, Commune_Name, District_Name, Province_Name, Insurance_ID, Last_Name, First_Name,
                     DOB, gender, Ssn, Phone_Number_1, Phone_Number_2, Email, Image_Path, User_Type, Status, Student_ID, College_Name, Faculty, Major))
                 {
                     MessageBox.Show("Add Studetn Success!");
-
-                    DatabaseConnection.ChangeConnection(false);
                     UserDAO.AddUserLogin("STUDENT", Email, "000000");
                     DatabaseConnection.ChangeConnection(true);
                 }
@@ -325,6 +365,21 @@ namespace DormitoryManagement.View
             cbbUniversity.Enabled = true;
             txtFaculty.Enabled = true;
             txtMajor.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(SSN != "")
+            {
+                DialogResult dlr = MessageBox.Show("Do you want to Lock this Student ? ", "Notify", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlr == DialogResult.Yes)
+                {
+                    StudentDAO.LockUserStudent(txtID.Text);
+                    this.Dispose();
+                    //FrmServices a = new FrmServices();
+                    //a.ShowDialog();
+                }
+            }
         }
     }
 }

@@ -23,5 +23,11 @@ namespace DormitoryManagement.Controller
             }
             return communeDTOs;
         }
+        public static DataTable GetCommuneNameByCommuneID(int Commune_ID)
+        {
+            string query = string.Format("EXEC dbo.USP_GetCommuneNameByCommuneID @Commune_ID = {0}", Commune_ID);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
     }
 }
