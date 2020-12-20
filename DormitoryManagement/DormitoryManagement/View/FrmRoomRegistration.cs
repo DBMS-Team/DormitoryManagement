@@ -30,24 +30,35 @@ namespace DormitoryManagement.View
             lbMaNV.Text = Convert.ToString(User.UserId);
         }
 
-        public FrmRoomRegistration(UserDTO user, string roomRegID)
+        public FrmRoomRegistration(UserDTO user, string Student_ID)
         {
             InitializeComponent();
             this.User = user;
-            btnOK.Visible = false;
-            tlpBottom.ColumnCount = 2;
+            btnOK.Enabled = false;
+            btnPrint.Enabled = false;
+            btnDelete.Enabled = true;
+            //tlpBottom.ColumnCount = 2;
             panel1.Enabled = false;
 
             //Load RoomReg Info using roomRegID
-            LoadRoomRegInfo(roomRegID);
+            LoadRoomRegInfo(Student_ID);
         }
 
         /// <summary>
         /// Load thông tin chi tiết của RoomReg dựa vào ID
         /// </summary>
-        private void LoadRoomRegInfo(string id)
+        private void LoadRoomRegInfo(string Student_ID)
         {
-
+            DataTable dt = RoomRegistrationDAO.LoadRoomRegistration(Student_ID);
+            txtSSN.Text = dt.Rows[0][1].ToString();
+            //cmbBuilding.Text = dt.Rows[0][]
+            cmbRoom.Text = dt.Rows[0][2].ToString();
+            cmbSemester.Text = dt.Rows[0][6].ToString();
+            txtAcademicYear.Text = dt.Rows[0][7].ToString();
+            cbbDuration.Text = dt.Rows[0][8].ToString();
+            lbMaNV.Text = dt.Rows[0][3].ToString();
+            DateTime daytime = Convert.ToDateTime(dt.Rows[0][5]);
+            dtpStartDate.Value = daytime;
         }
 
         public void FillDataSector() //Load tất cả các khu phòng
@@ -93,19 +104,19 @@ namespace DormitoryManagement.View
         {
             if (txtSSN.Text == "")
             {
-                MessageBox.Show("Bạn Chưa Nhập Chứng Minh Nhân Dân");
+                MessageBox.Show("You have not entered your identity card");
             }
             else if (cmbSemester.Text == "")
             {
-                MessageBox.Show("Bạn Chưa Chọn Học Kỳ");
+                MessageBox.Show("You have not chosen a semester");
             }
             else if (txtAcademicYear.Text == "")
             {
-                MessageBox.Show("Bạn Chưa Nhập Năm Học");
+                MessageBox.Show("You have not entered the academic year");
             }
             else if (cbbDuration.Text == "")
             {
-                MessageBox.Show("Bạn Chưa Chọn Thời Hạn");
+                MessageBox.Show("You have not chosen duration");
             }
             else
             {
@@ -123,15 +134,26 @@ namespace DormitoryManagement.View
                     MessageBox.Show("Registration Success");
                     btnPrint.Enabled = true;
                 }
-                else
-                {
-                    MessageBox.Show("Error");
-                }
             }
         }
         bool AddRoomRegistration(long Employee_ID, string Ssn, string Sector_Name, string Room_ID, DateTime Start_Day, int Semester, int Academic_Year, string Duaration, string Status)
         {
             return RoomRegistrationDAO.AddRoomRegistration(Employee_ID, Ssn, Sector_Name, Room_ID, Start_Day, Semester, Academic_Year, Duaration, Status);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dlr = MessageBox.Show("Do you want to delete this room registration? ", "Notify", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                //ServiceDAO.DeleteService(txtServiceName.Text);
+                //this.Dispose();
+                //FrmServices a = new FrmServices();
+                //a.ShowDialog();
+                RoomRegistrationDAO.DeleteRoomRegistration(txtSSN.Text);
+                MessageBox.Show("Deleted Successfully!");
+                this.Dispose();
+            }
         }
     }
 }

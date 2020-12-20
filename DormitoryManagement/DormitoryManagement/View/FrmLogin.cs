@@ -34,7 +34,8 @@ namespace DormitoryManagement.View
                 this.userID = user.UserId;
 
                 // Change user connect to database
-                //DatabaseConnection.ChangeConnection(true, user.UserType + userName, passWord);
+                //DatabaseConnection.ChangeConnection(true, user.Email, "000000");
+                DatabaseConnection.ChangeConnection(false);
 
                 if (user.UserType.Equals("ADMIN") && user.Status == true)
                 {

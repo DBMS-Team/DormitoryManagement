@@ -25,5 +25,17 @@ namespace DormitoryManagement.Controller
             int result = DataProvider.ExcuteNonQuery(query);
             return result > 0;
         }
+        public static DataTable LoadRoomRegistration(string Student_ID)
+        {
+            string query = string.Format("EXEC dbo.USP_LoadRoomRegistrationByStudentID @Student_ID = '{0}'", Student_ID);
+            DataTable dt = DataProvider.ExcuteQuery(query);
+            return dt;
+        }
+        public static bool DeleteRoomRegistration(string SSN)
+        {
+            string query = string.Format("EXEC dbo.USP_UpdateRoomRegistration @Ssn = '{0}'", SSN);
+            int result = DataProvider.ExcuteNonQuery(query);
+            return result > 0;
+        }
     }
 }

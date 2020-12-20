@@ -272,6 +272,10 @@ namespace DormitoryManagement.View
                     DOB, gender, Ssn, Phone_Number_1, Phone_Number_2, Email, Image_Path, User_Type, Status, Student_ID, College_Name, Faculty, Major))
                 {
                     MessageBox.Show("Add Studetn Success!");
+
+                    DatabaseConnection.ChangeConnection(false);
+                    UserDAO.AddUserLogin("STUDENT", Email, "000000");
+                    DatabaseConnection.ChangeConnection(true);
                 }
                 else
                 {

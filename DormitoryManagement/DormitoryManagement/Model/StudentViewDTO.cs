@@ -21,15 +21,15 @@ namespace DormitoryManagement.Model
 
 		public StudentViewDTO(DataRow dr)
 		{
-			this.UserId = Convert.ToInt64(dr["USER_ID"]);
-			this.StudentId = Convert.ToString(dr["STUDENT_ID"]).Trim();
-			this.FullName = Convert.ToString(dr["FULL_NAME"]).Trim();
-			this.Gender = Convert.ToString(dr["GENDER"]).Trim();
-			this.Dob = Convert.ToDateTime(dr["DOB"]);
+			this.UserId = Convert.ToInt64(dr["Id"]);
+			this.StudentId = Convert.ToString(dr["Student Id"]).Trim();
+			this.FullName = Convert.ToString(dr["Full name"]).Trim();
+			this.Gender = Convert.ToString(dr["Gender"]).Trim();
+			this.Dob = Convert.ToDateTime(dr["Date of birth"]);
 			this.Ssn = Convert.ToString(dr["SSN"]).Trim();
-			this.PhoneNumber = Convert.ToString(dr["PHONE_NUMBER_1"]).Trim();
-			this.Email = Convert.ToString(dr["EMAIL"]).Trim();
-			this.College = Convert.ToString(dr["COLLEGE_NAME"]).Trim();
+			this.PhoneNumber = Convert.ToString(dr["Phone number"]).Trim();
+			this.Email = Convert.ToString(dr["Email"]).Trim();
+			this.College = Convert.ToString(dr["College"]).Trim();
 		}
 	}
 }

@@ -457,20 +457,19 @@ namespace DormitoryManagement.View
         {
             try
             {
-                int index = dgvRoomReg.SelectedRows[0].Index;
-                var selectedRow = dgvRoomReg.Rows[index];
-                string id = Convert.ToString(selectedRow.Cells["Id"].Value);
-                string ssn = Convert.ToString(selectedRow.Cells["Student Id"].Value);
-                string building = Convert.ToString(selectedRow.Cells["Building"].Value);
+                int index = dgvRoomReg.CurrentCell.RowIndex;
+                //string id = Convert.ToString(selectedRow.Cells["Id"].Value);
+                string Student_ID = Convert.ToString(dgvRoomReg.Rows[index].Cells[3].Value);
+                /*string building = Convert.ToString(selectedRow.Cells["Building"].Value);
                 string room = Convert.ToString(selectedRow.Cells["Room"].Value);
                 DateTime startDate = Convert.ToDateTime(selectedRow.Cells["Start date"].Value);
                 string duration = Convert.ToString(selectedRow.Cells["Duration"].Value);
                 string empID = Convert.ToString(selectedRow.Cells["Employee Id"].Value);
                 string createdDate = Convert.ToString(selectedRow.Cells["Created Date"].Value);
                 string semester = Convert.ToString(selectedRow.Cells["Semester"].Value);
-                string academicYear = Convert.ToString(selectedRow.Cells["Academic year"].Value);
+                string academicYear = Convert.ToString(selectedRow.Cells["Academic year"].Value);*/
 
-                FrmRoomRegistration frmRoomRegInfo = new FrmRoomRegistration(Dashboard.User, id);
+                FrmRoomRegistration frmRoomRegInfo = new FrmRoomRegistration(Dashboard.User, Student_ID);
                 frmRoomRegInfo.ShowDialog();
             }
             catch (Exception ex)
