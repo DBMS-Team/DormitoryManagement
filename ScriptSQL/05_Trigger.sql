@@ -93,12 +93,17 @@ AS
 	IF (@SSN IN (SELECT dbo.[USER].SSN FROM dbo.STUDENT INNER JOIN dbo.[USER] ON [USER].USER_ID = STUDENT.USER_ID
 										WHERE dbo.STUDENT.STATUS_REGISTRATION_ROOM = 1))
 	BEGIN
-	    RAISERROR(N'SSN Is Exist',16,1)
+	    RAISERROR(N'SSN registered',16,1)
 		ROLLBACK
 	END
 	ELSE IF(@CURRENT_REGISTRATER = @CAPACITY + 1)
 	BEGIN
 	    RAISERROR(N'ROOM IS FULL',16,1)
+		ROLLBACK
+	END
+	ELSE IF (@SSN NOT IN (SELECT dbo.[USER].SSN FROM dbo.STUDENT INNER JOIN dbo.[USER] ON [USER].USER_ID = STUDENT.USER_ID))
+	BEGIN
+	    RAISERROR(N'SSN dose not exist',16,1)
 		ROLLBACK
 	END
 	ELSE
@@ -138,22 +143,4 @@ AS
 	SET dbo.STUDENT.STATUS_REGISTRATION_ROOM =0
 	WHERE dbo.STUDENT.USER_ID = @User_ID
 GO
--- Phân quyền
-CREATE TRIGGER CREATE_PHAN_QUYEN
-ON dbo.[USER]
-FOR INSERT
-AS
-	DECLARE @Email VARCHAR(50), 
-			@Password VARCHAR(20), 
-			@Role VARCHAR(20), 
-			@membername VARCHAR(50)
-	SELECT @Email = Inserted.EMAIL FROM Inserted
-	SELECT @Role = Inserted.USER_TYPE FROM Inserted
-	SET @Password = '000000'
-	SET @membername = @Role + @Email
-	EXEC dbo.USP_CREATE_LOGIN_USER @Role_Name = @Role, 
-	                          @Login_Name = @Email, 
-	                          @Password_Login = @Password 
-	EXEC sys.sp_addrolemember @rolename = @Role, 
-	                          @membername = @membername 
 

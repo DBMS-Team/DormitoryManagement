@@ -342,48 +342,48 @@ namespace DormitoryManagement.View
         }
         void GetFullListStudent()
         {
-            List<StudentViewDTO> studentViewDTOs = StudentViewDAO.GetListStudentView();
-            dgvStudent.DataSource = studentViewDTOs;
+            DataTable dataTable = StudentViewDAO.GetListStudentView();
+            dgvStudent.DataSource = dataTable;
         }
         void GetFullListStudentALive()
         {
-            List<StudentViewDTO> studentViewDTOs = StudentViewDAO.GetListStudentViewALive();
-            dgvStudent.DataSource = studentViewDTOs;
+            DataTable dataTable = StudentViewDAO.GetListStudentViewALive();
+            dgvStudent.DataSource = dataTable;
         }
         void GetFullListStudentGoingOut()
         {
-            List<StudentViewDTO> studentViewDTOs = StudentViewDAO.GetListStudentViewGoingOut();
-            dgvStudent.DataSource = studentViewDTOs;
+            DataTable dataTable = StudentViewDAO.GetListStudentViewGoingOut();
+            dgvStudent.DataSource = dataTable;
         }
         void GetFullListStudentByUserId(string userId)
         {
-            List<StudentViewDTO> studentViewDTOs = StudentViewDAO.SearchStudentViewByUserId(userId);
-            dgvStudent.DataSource = studentViewDTOs;
+            DataTable dataTable = StudentViewDAO.SearchStudentViewByUserId(userId);
+            dgvStudent.DataSource = dataTable;
         }
         void GetFullListStudentByStudentId(string studentId)
         {
-            List<StudentViewDTO> studentViewDTOs = StudentViewDAO.SearchStudentViewByStudentId(studentId);
-            dgvStudent.DataSource = studentViewDTOs;
+            DataTable dataTable = StudentViewDAO.SearchStudentViewByStudentId(studentId);
+            dgvStudent.DataSource = dataTable;
         }
         void GetFullListStudentByFullName(string fullName)
         {
-            List<StudentViewDTO> studentViewDTOs = StudentViewDAO.SearchStudentViewByFullName(fullName);
-            dgvStudent.DataSource = studentViewDTOs;
+            DataTable dataTable = StudentViewDAO.SearchStudentViewByFullName(fullName);
+            dgvStudent.DataSource = dataTable;
         }
         void GetFullListStudentByGender(string gender)
         {
-            List<StudentViewDTO> studentViewDTOs = StudentViewDAO.SearchStudentViewByGender(gender);
-            dgvStudent.DataSource = studentViewDTOs;
+            DataTable dataTable = StudentViewDAO.SearchStudentViewByGender(gender);
+            dgvStudent.DataSource = dataTable;
         }
         void GetFullListStudentBySsn(string ssn)
         {
-            List<StudentViewDTO> studentViewDTOs = StudentViewDAO.SearchStudentViewBySsn(ssn);
-            dgvStudent.DataSource = studentViewDTOs;
+            DataTable dataTable = StudentViewDAO.SearchStudentViewBySsn(ssn);
+            dgvStudent.DataSource = dataTable;
         }
         void GetFullListStudentByCollege(string college)
         {
-            List<StudentViewDTO> studentViewDTOs = StudentViewDAO.SearchStudentViewByCollege(college);
-            dgvStudent.DataSource = studentViewDTOs;
+            DataTable dataTable = StudentViewDAO.SearchStudentViewByCollege(college);
+            dgvStudent.DataSource = dataTable;
         }
         /// <summary>
         /// ---------------------------ROOM_REGISTRATION

@@ -593,7 +593,7 @@ BEGIN
 		EXEC dbo.USP_INSERT_ADDRESS @Street = @Street, 
 		                            @Commune_Name = @Commune_Name, 
 		                            @District_Name = @District_Name, 
-		                            @Province_Name = @Province_Name 
+		                            @Province_Name = @Province_Name
 		EXEC dbo.USP_INSERT_USER_STUDENT @LAST_NAME = @LAST_NAME,     -- nvarchar(40)
 		                                 @FIRST_NAME = @FIRST_NAME,    -- nvarchar(20)
 		                                 @DOB = @DOB,  -- date
@@ -605,23 +605,23 @@ BEGIN
 		                                 @IMAGE_PATH = '',     -- varchar(300)
 		                                 @USER_TYPE = @USER_TYPE,      -- varchar(10)
 		                                 @STATUS = @STATUS        -- bit
-		EXEC dbo.USP_INSERT_STUDENT @STUDENT_ID = @STUDENT_ID,                -- varchar(15)
+		IF( @SSN IN (SELECT dbo.TEMPT_STUDENT.T_SSN FROM dbo.TEMPT_STUDENT))
+		BEGIN
+			RAISERROR('SSN Is exist',16,1)
+			DROP TABLE dbo.TEMPT_STUDENT
+		    ROLLBACK TRANSACTION
+		END
+		ELSE
+		BEGIN
+		    EXEC dbo.USP_INSERT_STUDENT @STUDENT_ID = @STUDENT_ID,                -- varchar(15)
 		                            @COLLEGE_NAME = @COLLEGE_NAME,             -- nvarchar(50)
 		                            @FACULTY = @FACULTY,                  -- nvarchar(50)
 		                            @MAJORS = @MAJORS,                   -- nvarchar(50)
 		                            @INSURANCE_ID = @Insurence_ID,              -- varchar(15)
 		                            @STATUS_REGISTRATION_ROOM = 0 -- bit
-		
-		IF( @SSN IN (SELECT dbo.TEMPT_STUDENT.T_SSN FROM dbo.TEMPT_STUDENT))
-		BEGIN
-			RAISERROR('SSN Is exist',16,1)
-		    ROLLBACK
-		END
-		ELSE
-		BEGIN
 			DROP TABLE dbo.TEMPT_STUDENT
-			COMMIT
-		END	
+			COMMIT TRANSACTION
+		END
 END
 GO
 --USP_INSERT_ROOMREGISTRATION
@@ -1021,3 +1021,40 @@ BEGIN
 	EXEC (@QueryUser)
 END
 GO
+--Tạo Proc LoadRoomRegistrationByStudentID
+CREATE OR ALTER PROC USP_LoadRoomRegistrationByStudentID
+(
+	@Student_ID VARCHAR(15)
+)
+AS
+BEGIN
+    DECLARE @User_ID BIGINT,
+			@SSN VARCHAR(15)
+	SELECT @User_ID = dbo.STUDENT.USER_ID FROM dbo.STUDENT WHERE dbo.STUDENT.STUDENT_ID = @Student_ID
+	SELECT @SSN = dbo.[USER].SSN FROM dbo.[USER] WHERE dbo.[USER].USER_ID = @User_ID
+	SELECT * FROM dbo.ROOM_REGISTRATION WHERE dbo.ROOM_REGISTRATION.SSN = @SSN
+END
+GO
+-- Tạo Proc tạo login - user -Thêm vào role
+CREATE OR ALTER PROC USP_CREATE_LOGIN_USER
+(
+	@Role_Name VARCHAR(50),
+	@Login_Name VARCHAR(50), 
+	@Password_Login VARCHAR(50)
+)
+AS
+BEGIN
+    DECLARE @Login_UserName VARCHAR(50),
+			@QueryLogin VARCHAR(100),
+			@QueryUser VARCHAR(100)
+	SET @Login_UserName = @Login_Name
+	SET @QueryLogin ='CREATE LOGIN ' + @Login_UserName + ' WITH PASSWORD = ' + QUOTENAME(@Password_Login, '''')
+	SET @QueryUser = CONCAT('CREATE USER ', @Login_UserName, ' FOR LOGIN ', @Login_UserName);
+	EXEC (@QueryLogin)
+	EXEC (@QueryUser)
+
+	EXEC sys.sp_addrolemember @rolename = @Role_Name, 
+	                          @membername = @Login_Name 
+END
+GO
+
