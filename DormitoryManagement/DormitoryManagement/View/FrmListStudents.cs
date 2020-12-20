@@ -32,7 +32,7 @@ namespace DormitoryManagement.View
         public void LoadListStudentAvailable()
         {
             dgvStudents.DataSource = StudentViewDAO.GetListStudentViewALive();
-            txtQuantity.Text = dgvStudents.RowCount.ToString();
+            txtQuantity.Text = (dgvStudents.RowCount - 1).ToString();
         }
         public void AutoSizeModeColumn(DataGridView dataGridView)
         {
