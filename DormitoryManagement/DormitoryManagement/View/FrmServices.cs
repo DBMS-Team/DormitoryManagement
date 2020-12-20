@@ -8,14 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DormitoryManagement.Controller;
+using DormitoryManagement.Model;
 
 namespace DormitoryManagement.View
 {
     public partial class FrmServices : Form
     {
-        public FrmServices()
+        private UserDTO loginUser;
+        public UserDTO LoginUser
+        {
+            get => loginUser;
+            set
+            {
+                this.loginUser = value;
+            }
+        }
+        public FrmServices(UserDTO user)
         {
             InitializeComponent();
+            this.LoginUser = user;
         }
       
         private void btnAdd_Click(object sender, EventArgs e)
@@ -31,6 +42,10 @@ namespace DormitoryManagement.View
 
         private void FrmServices_Load(object sender, EventArgs e)
         {
+            if (LoginUser.UserType == "STUDENT")
+            {
+                btnAdd.Visible = false;
+            }
             dgvServices.DataSource = ServiceDAO.GetServicesInfo();
             txtQuantity.Text = (dgvServices.Rows.Count - 1).ToString();
             dgvServices.Columns[0].HeaderText = "Service ID";
@@ -41,11 +56,19 @@ namespace DormitoryManagement.View
 
         private void dgvServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = dgvServices.CurrentCell.RowIndex;
-            FrmServiceInfo frmServiceInfo = new FrmServiceInfo();
-            frmServiceInfo.Service_ID = Convert.ToInt32(dgvServices.Rows[index].Cells[0].Value);
-            frmServiceInfo.ShowDialog();
-            FrmServices_Load(this, new EventArgs());
+            if(LoginUser.UserType == "STUDENT")
+            {
+                btnAdd.Enabled = true;
+                btnAdd.Visible = false;
+            }    
+            else if(LoginUser.UserType != "STUDENT")
+            {
+                int index = dgvServices.CurrentCell.RowIndex;
+                FrmServiceInfo frmServiceInfo = new FrmServiceInfo();
+                frmServiceInfo.Service_ID = Convert.ToInt32(dgvServices.Rows[index].Cells[0].Value);
+                frmServiceInfo.ShowDialog();
+                FrmServices_Load(this, new EventArgs());
+            }    
         }
     }
 }

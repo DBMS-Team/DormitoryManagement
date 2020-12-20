@@ -328,9 +328,13 @@ namespace DormitoryManagement.View
 
         public static void ListServices()
         {
-            FrmServices frmServices = new FrmServices();
+            FrmServices frmServices = new FrmServices(User);
+            
             if (User == null)
+            {
+                frmServices.dgvServices.Enabled = false;
                 frmServices.btnAdd.Visible = false;
+            }    
             frmServices.ShowDialog();
         }
 

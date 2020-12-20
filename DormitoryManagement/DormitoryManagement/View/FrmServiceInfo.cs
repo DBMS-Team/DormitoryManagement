@@ -38,7 +38,7 @@ namespace DormitoryManagement.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dlr = MessageBox.Show("Bạn muốn xóa dịch vụ này?","Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dlr = MessageBox.Show("Do you want to delete this service ? ","Notify", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
             {
                 ServiceDAO.DeleteService(txtServiceName.Text);

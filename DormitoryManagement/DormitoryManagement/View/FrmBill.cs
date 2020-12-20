@@ -114,7 +114,7 @@ namespace DormitoryManagement.View
             }
             else if (cmbTenDV.Text.Trim() == "" || numSoLuong.Value <= 0)//Kiểm tra dữ liệu có phù hợp không
             {
-                MessageBox.Show("Số liệu không hợp lệ", "Lỗi nhập dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid number", "Data entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -160,11 +160,11 @@ namespace DormitoryManagement.View
                     dgvBillReg.Rows.Remove(row);
                 }
                 dgvBillReg.Refresh();
-                MessageBox.Show("Đã xóa xong!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Deleted successfully!", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
             {
-                MessageBox.Show("Lỗi");
+                MessageBox.Show("Error");
             }
         }
 
@@ -172,7 +172,7 @@ namespace DormitoryManagement.View
         {
             if (dgvBillReg.Rows.Count <= 1)
             {
-                MessageBox.Show("Vui lòng chọn ít nhất 1 dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select at least one service", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             long Employee_ID = User.UserId;
@@ -209,6 +209,7 @@ namespace DormitoryManagement.View
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            dgvPayment.Rows.Clear();
             string SectorName = cmbBuilding.Text;
             string RoomId = cmbRoom.Text;
             string Month = cmbMonth.Text.ToString();
@@ -239,9 +240,18 @@ namespace DormitoryManagement.View
                 Total_Cost_Bill = Total_Cost_Bill + temp;
             }
             DateTime CreatDay = dtCreatedDate.Value;
-            PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString());
-            MessageBox.Show("Payment Success");
+            if(AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString()))
+            {
+                MessageBox.Show("Payment Success");
+            }    
+
+            //PayMentDAO.AddPayMent(User.UserId.ToString(), CreatDay, Total_Cost_Bill, cmbBuilding.Text.ToString(), cmbRoom.Text.ToString(), cmbMonth.Text.ToString(), txtYear.Text.ToString());
+            
             dgvPayment.Rows.Clear();
+        }
+        bool AddPayMent(string User_ID, DateTime CreatDay, decimal Total_Cost_Bill, string Sector_Name, string Room_ID, string Month, string Year)
+        {
+            return PayMentDAO.AddPayMent(User_ID, CreatDay, Total_Cost_Bill, Sector_Name, Room_ID, Month, Year);
         }
 
         #endregion Click

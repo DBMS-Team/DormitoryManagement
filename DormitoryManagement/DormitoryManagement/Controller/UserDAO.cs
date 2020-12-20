@@ -57,6 +57,14 @@ namespace DormitoryManagement.Controller
             int result = DataProvider.ExcuteNonQuery(query);
             return result > 0;
         }
+
+        public static bool AddUserLogin(string role, string username, string password)
+        {
+            string query = "EXECUTE USP_CREATE_LOGIN_USER @Role_Name , @Login_Name , @Password_Login";
+            int result = DataProvider.ExcuteNonQuery(query, new object[] { role, username, password });
+            return result > 0;
+        }
+
         public static List<UserDTO> GetListUser()
         {
             List<UserDTO> userDTOs = new List<UserDTO>();

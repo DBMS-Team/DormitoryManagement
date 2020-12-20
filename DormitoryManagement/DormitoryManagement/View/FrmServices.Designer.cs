@@ -179,6 +179,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtQuantity;
         public System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvServices;
+        public System.Windows.Forms.DataGridView dgvServices;
     }
 }

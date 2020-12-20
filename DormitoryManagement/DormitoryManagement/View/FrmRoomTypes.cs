@@ -19,6 +19,8 @@ namespace DormitoryManagement.View
         }
         void AutoSizeModeColumn(DataGridView dataGridView)
         {
+            if (dataGridView.Columns.Count == 0) { return; }
+
             for (int i = 0; i < dataGridView.Columns.Count - 1; i++)
             {
                 dataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

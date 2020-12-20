@@ -33,8 +33,8 @@ namespace DormitoryManagement
         public static void ChangeConnection(bool _isSQLAuthentication, string _username = "", string _password = "")
         {
             IsSQLAuthentication = _isSQLAuthentication;
-            Username = _username;
-            Password = _password;
+            Username = _username == "" ? Username : _username;
+            Password = _password == "" ? Password : _password;
         }
 
         /// <summary>

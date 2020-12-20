@@ -246,11 +246,11 @@ namespace DormitoryManagement.View
                         MessageBox.Show("Not Is Phone Number 2", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                     }
-                    else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
+                    /*else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
                     {
                         MessageBox.Show("Not Is Mail", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
-                    }
+                    }*/
                     else if ((txtSalary.Text == "" && flag == 0) || FormatData.IsNumber(txtSalary.Text) == false)
                     {
                         MessageBox.Show("Not Is Salary", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -293,25 +293,25 @@ namespace DormitoryManagement.View
                     {
                         if (item.PhoneNumber1.Equals(phoneNumber1) && flag == 0)
                         {
-                            MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Phone number 1 already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
                         if (item.PhoneNumber2.Equals(phoneNumber1) && flag == 0)
                         {
-                            MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Phone number 1 already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
                         if (item.PhoneNumber1.Equals(phoneNumber2) && flag == 0)
                         {
-                            MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Phone number 2 already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
                         if (item.PhoneNumber2.Equals(phoneNumber2) && flag == 0)
                         {
-                            MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Phone number 2 already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
@@ -375,11 +375,11 @@ namespace DormitoryManagement.View
                         MessageBox.Show("Not Is Phone Number 2", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                     }
-                    else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
+                    /*else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
                     {
                         MessageBox.Show("Not Is Mail", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
-                    }
+                    }*/
                     else if ((txtSalary.Text == "" && flag == 0) || FormatData.IsNumber(txtSalary.Text) == false)
                     {
                         MessageBox.Show("Not Is Salary", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
