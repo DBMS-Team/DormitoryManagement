@@ -99,7 +99,7 @@ namespace DormitoryManagement.View
             CtrlListEmployees = Dashboard.InitListEmployees();
             tlpInfo.Controls.Add(CtrlListEmployees);
             //List Students
-            CtrlListStudents = Dashboard.InitListStudents();
+            CtrlListStudents = Dashboard.InitListStudents(LoginUser);
             tlpInfo.Controls.Add(CtrlListStudents);
             //Report
             CtrlReport = Dashboard.InitReport();

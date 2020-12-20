@@ -151,8 +151,9 @@ namespace DormitoryManagement.View
             return ctrlListEmployees;
         }
 
-        public static Item InitListStudents()
+        public static Item InitListStudents(UserDTO user)
         {
+            User = user;
             Item ctrlListStudents = new Item(Dashboard.ListStudents);
             ctrlListStudents.ImageItem = Properties.Resources.Student;
             ctrlListStudents.Title = "STUDENTS";
@@ -322,7 +323,7 @@ namespace DormitoryManagement.View
         }
         public static void ListStudents()
         {
-            FrmListStudents frmListStudents = new FrmListStudents();
+            FrmListStudents frmListStudents = new FrmListStudents(User);
             frmListStudents.ShowDialog();
         }
 

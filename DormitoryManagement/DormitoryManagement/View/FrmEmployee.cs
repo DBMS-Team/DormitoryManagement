@@ -86,7 +86,7 @@ namespace DormitoryManagement.View
 
             #region Information
             //DS Sinh viên
-            CtrlListStudents = Dashboard.InitListStudents();
+            CtrlListStudents = Dashboard.InitListStudents(LoginUser);
             tlpInfo.Controls.Add(CtrlListStudents);
             //Báo cáo
             CtrlReport = Dashboard.InitReport();

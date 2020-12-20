@@ -133,6 +133,7 @@
             this.dgvStudents.RowHeadersWidth = 51;
             this.dgvStudents.Size = new System.Drawing.Size(1482, 691);
             this.dgvStudents.TabIndex = 19;
+            this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
             // 
             // FrmListStudents
             // 
@@ -145,6 +146,7 @@
             this.Name = "FrmListStudents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List Students";
+            this.Load += new System.EventHandler(this.FrmListStudents_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();

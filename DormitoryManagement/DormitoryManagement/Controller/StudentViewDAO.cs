@@ -123,5 +123,11 @@ namespace DormitoryManagement.Controller
             return studentViewDTOs;
 
         }
+        public static DataTable GetStudentInfo(string SSN)
+        {
+            string query = string.Format("EXEC dbo.USP_GetStudentInfo @SSN = '{0}'", SSN);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
     }
 }

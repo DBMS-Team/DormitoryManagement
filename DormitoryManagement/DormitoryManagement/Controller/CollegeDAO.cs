@@ -22,5 +22,11 @@ namespace DormitoryManagement.Controller
             }
             return listCollege;
         }
+        public static DataTable GetCollegeNameByCollegeID(int College_ID)
+        {
+            string query = string.Format("EXEC dbo.USP_GetCollegeNameByCollegeID @College_ID = {0}", College_ID);
+            DataTable dataTable = DataProvider.ExcuteQuery(query);
+            return dataTable;
+        }
     }
 }
