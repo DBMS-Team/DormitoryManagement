@@ -246,11 +246,11 @@ namespace DormitoryManagement.View
                         MessageBox.Show("Not Is Phone Number 2", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                     }
-                    /*else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
+                    else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
                     {
                         MessageBox.Show("Not Is Mail", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
-                    }*/
+                    }
                     else if ((txtSalary.Text == "" && flag == 0) || FormatData.IsNumber(txtSalary.Text) == false)
                     {
                         MessageBox.Show("Not Is Salary", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -258,7 +258,7 @@ namespace DormitoryManagement.View
                     }
                     else if (txtStreet.Text.Length > 50 && flag == 0)
                     {
-                        MessageBox.Show("Stree < 50", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Street < 50", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                     }
                     string lastName = txtLastName.Text;
@@ -279,6 +279,9 @@ namespace DormitoryManagement.View
                     string phoneNumber1 = txtPhone1.Text.Trim().ToString();
                     string phoneNumber2 = txtPhone2.Text.Trim().ToString();
                     string email = txtEmail.Text.Trim().ToString();
+                    string phoneNumber1Temp = phoneNumber1;
+                    string phoneNumber2Temp = phoneNumber2;
+                    string emailTemp = email;
                     string imagePath = "tobe";
                     string userType = cbbUserType.Text;
                     string provinceName = cbbProvince.Text;
@@ -291,33 +294,33 @@ namespace DormitoryManagement.View
                     List<UserDTO> userDTOs = UserDAO.GetListUser();
                     foreach (var item in userDTOs)
                     {
-                        if (item.PhoneNumber1.Equals(phoneNumber1) && flag == 0)
+                        if (item.PhoneNumber1.Equals(phoneNumber1) && flag == 0 && phoneNumber1 != phoneNumber1Temp)
                         {
                             MessageBox.Show("Phone number 1 already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
-                        if (item.PhoneNumber2.Equals(phoneNumber1) && flag == 0)
+                        if (item.PhoneNumber2.Equals(phoneNumber1) && flag ==  0 && phoneNumber1 != phoneNumber1Temp) 
                         {
                             MessageBox.Show("Phone number 1 already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
-                        if (item.PhoneNumber1.Equals(phoneNumber2) && flag == 0)
+                        if (item.PhoneNumber1.Equals(phoneNumber2) && flag == 0 && phoneNumber2 != phoneNumber2Temp)
                         {
                             MessageBox.Show("Phone number 2 already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
-                        if (item.PhoneNumber2.Equals(phoneNumber2) && flag == 0)
+                        if (item.PhoneNumber2.Equals(phoneNumber2) && flag == 0 && phoneNumber2 != phoneNumber2Temp)
                         {
                             MessageBox.Show("Phone number 2 already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
-                        if (item.Email.Equals(email) && flag == 0)
+                        if (item.Email.Equals(email) && flag == 0 && email != emailTemp)
                         {
-                            MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Email already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
@@ -375,11 +378,11 @@ namespace DormitoryManagement.View
                         MessageBox.Show("Not Is Phone Number 2", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                     }
-                    /*else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
+                    else if ((txtEmail.Text == "" && flag == 0) || FormatData.IsEmail(txtEmail.Text) == false)
                     {
                         MessageBox.Show("Not Is Mail", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
-                    }*/
+                    }
                     else if ((txtSalary.Text == "" && flag == 0) || FormatData.IsNumber(txtSalary.Text) == false)
                     {
                         MessageBox.Show("Not Is Salary", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -452,7 +455,7 @@ namespace DormitoryManagement.View
                         }
                         if (item.Email.Equals(email) && flag == 0)
                         {
-                            MessageBox.Show("Phone already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Email already exist", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             flag = 1;
                             return;
                         }
