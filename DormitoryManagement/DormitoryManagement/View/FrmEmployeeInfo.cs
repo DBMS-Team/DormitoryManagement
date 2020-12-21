@@ -390,7 +390,7 @@ namespace DormitoryManagement.View
                     }
                     else if (txtStreet.Text.Length > 50 && flag == 0)
                     {
-                        MessageBox.Show("Stree < 50", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Street < 50", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         flag = 1;
                     }
                     string lastName = txtLastName.Text;
