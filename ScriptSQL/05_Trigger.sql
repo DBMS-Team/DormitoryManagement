@@ -40,11 +40,7 @@ AS
 	DECLARE @Sector_ID VARCHAR(10),
 		    @Room_ID NVARCHAR(10),
 			@Month INT,
-			@Year INT,
-			@Old_Sector_Name VARCHAR(10),
-			@Old_Room_ID NVARCHAR(10),
-			@Old_Month INT,
-			@Old_Year INT
+			@Year INT
 			
 	SELECT @Sector_ID = Inserted.Sector_ID FROM Inserted
 	SELECT @Room_ID = Inserted.ROOM_ID FROM Inserted
