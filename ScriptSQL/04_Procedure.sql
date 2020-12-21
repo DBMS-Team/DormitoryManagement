@@ -403,7 +403,7 @@ GO
 -- Lấy danh sách Room_Registration bằng StudentName
 CREATE OR ALTER PROC USP_GetListRoomRegistrationByStudentName(@STUDENT_NAME NVARCHAR(100))
 AS BEGIN
-	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.[SearchLike]([Student Name]) 
+	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.V_ROOM_REGISTRATION.STATUS = 1 AND dbo.[SearchLike]([Student Name]) 
 	LIKE N'%' + dbo.[SearchLike](@STUDENT_NAME) + '%'
 END
 GO
