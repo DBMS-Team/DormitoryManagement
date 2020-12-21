@@ -132,7 +132,7 @@ namespace DormitoryManagement.View
                 txtFirstName.Text = LoginUser.FirstName;
                 txtLastName.Text = LoginUser.LastName;
                 dateTimePicker1.Value = LoginUser.Dob;
-                if (LoginUser.Gender.Equals("Nữ"))
+                if (LoginUser.Gender.Equals("Female"))
                 {
                     ckbFemale.Checked = true;
                 }
@@ -183,7 +183,7 @@ namespace DormitoryManagement.View
                 DateTime dob = Convert.ToDateTime(dt.Rows[0][3]);
                 dateTimePicker1.Value = dob;
                 //
-                if (dt.Rows[0][4].ToString() != "Nam")
+                if (dt.Rows[0][4].ToString() != "Male")
                 {
                     ckbFemale.Checked = true;
                 }
@@ -309,10 +309,10 @@ namespace DormitoryManagement.View
                 string Last_Name = Convert.ToString(txtLastName.Text);
                 string First_Name = Convert.ToString(txtFirstName.Text);
                 DateTime DOB = dateTimePicker1.Value;
-                string gender = "Nam";
+                string gender = "Male";
                 if (ckbFemale.Checked)
                 {
-                    gender = "Nữ";
+                    gender = "Female";
                 }
                 string Ssn = Convert.ToString(txtID.Text);
                 string Phone_Number_1 = Convert.ToString(txtPhone1.Text);
@@ -325,15 +325,15 @@ namespace DormitoryManagement.View
                 string College_Name = Convert.ToString(cbbUniversity.Text);
                 string Faculty = Convert.ToString(txtFaculty.Text);
                 string Major = Convert.ToString(txtMajor.Text);
-                DatabaseConnection.ChangeConnection(false);
+                //DatabaseConnection.ChangeConnection(false);
                 if(dem == 0)
                 {
                     if (AddStudent(AddRess, Commune_Name, District_Name, Province_Name, Insurance_ID, Last_Name, First_Name,
                     DOB, gender, Ssn, Phone_Number_1, Phone_Number_2, Email, Image_Path, User_Type, Status, Student_ID, College_Name, Faculty, Major))
                     {
                         MessageBox.Show("Add Studetn Success!");
-                        UserDAO.AddUserLogin("STUDENT", Email, "000000");
-                        DatabaseConnection.ChangeConnection(true);
+                        //UserDAO.AddUserLogin("STUDENT", Email, "000000");
+                        //DatabaseConnection.ChangeConnection(true);
                     }
                     else
                     {

@@ -946,7 +946,7 @@ BEGIN
 	WHERE dbo.SERVICE.SERVICE_NAME = @Service_Name;
 END
 GO
------------------Insert Unit--------------------------------------
+--Insert Unit
 CREATE OR ALTER PROC USP_InsertUnit
 (@Unit_Name NVARCHAR(20))
 AS
@@ -961,7 +961,7 @@ BEGIN
     )
 END
 GO
-----------------Insert service------------------------------------
+--Insert service
 CREATE OR ALTER PROC USP_InsertService
 (
 	@Service_Name NVARCHAR(20), 
@@ -988,8 +988,7 @@ BEGIN
 	    )
 END
 GO
--------------------------------------------------------------------
----------------------Xóa Service-----------------------------------
+--Xóa Service
 GO
 CREATE OR ALTER PROC USP_UnableService
 (
@@ -1085,7 +1084,7 @@ BEGIN
 	WHERE dbo.[USER].SSN = @SSN;
 END
 GO
---
+-- lấy tỉnh
 CREATE OR ALTER PROC USP_GetProvinceNameByProvinceID
 (
 	@Province_ID INT
@@ -1096,7 +1095,7 @@ BEGIN
 	FROM dbo.PROVINCE WHERE dbo.PROVINCE.PROVINCE_ID = @Province_ID
 END
 GO
---
+-- lấy huyện
 CREATE OR ALTER PROC USP_GetDistrictNameByDistrictID
 (
 	@District_ID INT
@@ -1107,7 +1106,7 @@ BEGIN
 	FROM dbo.DISTRICT WHERE dbo.DISTRICT.DISTRICT_ID = @District_ID
 END
 GO
---
+-- lấy tên xã
 CREATE OR ALTER PROC USP_GetCommuneNameByCommuneID
 (
 	@Commune_ID INT
@@ -1118,7 +1117,7 @@ BEGIN
 	FROM dbo.COMMUNE WHERE dbo.COMMUNE.COMMUNE_ID = @Commune_ID
 END
 GO
---
+-- Lấy tên trường đại học
 CREATE OR ALTER PROC USP_GetCollegeNameByCollegeID
 (
 	@College_ID INT
@@ -1129,8 +1128,8 @@ BEGIN
 	FROM dbo.COLLEGE WHERE dbo.COLLEGE.COLLEGE_ID = @College_ID
 END
 GO
---
-CREATE PROC USP_DropLoginDropUserStudent
+-- Xóa sinh viên
+CREATE OR ALTER PROC USP_DropLoginDropUserStudent
 (
 	@Email VARCHAR(50)
 )

@@ -42,7 +42,7 @@ namespace DormitoryManagement.View
 
         private void FrmServices_Load(object sender, EventArgs e)
         {
-            if (LoginUser.UserType == "STUDENT")
+            if (LoginUser!= null && LoginUser.UserType == "STUDENT")
             {
                 btnAdd.Visible = false;
             }
