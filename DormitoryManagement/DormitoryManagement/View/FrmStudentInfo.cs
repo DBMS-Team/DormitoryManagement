@@ -342,7 +342,7 @@ namespace DormitoryManagement.View
                 } 
                 else
                 {
-                    MessageBox.Show("Bạn chưa nhập đủ dữ liệu");
+                    MessageBox.Show("You must enter all information");
                 }    
             }   
             else
@@ -358,7 +358,6 @@ namespace DormitoryManagement.View
                 string College_Name = Convert.ToString(cbbUniversity.Text);
                 string Faculty = Convert.ToString(txtFaculty.Text);
                 string Major = Convert.ToString(txtMajor.Text);
-                //StudentDAO.UpdateStudent(Ssn, Street, Commune_Name, District_Name, Province_Name, College_Name, Faculty, Major, Phone1, Phone2, Email);
                 if(UpdateStudent(Ssn, Street, Commune_Name, District_Name, Province_Name, College_Name, Faculty, Major, Phone1, Phone2, Email))
                 {
                     MessageBox.Show("Update Success!!!");
@@ -398,9 +397,11 @@ namespace DormitoryManagement.View
                 if (dlr == DialogResult.Yes)
                 {
                     StudentDAO.LockUserStudent(txtID.Text);
+                    DatabaseConnection.ChangeConnection(false);
+                    UserDAO.DropLoginDropUserStudent(txtEmail.Text);
+                    DatabaseConnection.ChangeConnection(true);
+                    MessageBox.Show("Deleted successfully");
                     this.Dispose();
-                    //FrmServices a = new FrmServices();
-                    //a.ShowDialog();
                 }
             }
         }
