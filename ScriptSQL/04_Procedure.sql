@@ -390,13 +390,13 @@ GO
 -- Lấy danh sách Room_Registration
 CREATE OR ALTER PROC USP_GetListRoomRegistration
 AS BEGIN
-	SELECT * FROM dbo.V_ROOM_REGISTRATION
+	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.V_ROOM_REGISTRATION.STATUS = 1
 END
 GO
 -- Lấy danh sách Room_Registration bằng StudentId
 CREATE OR ALTER PROC USP_GetListRoomRegistrationByStudentId(@STUDENT_ID VARCHAR(15))
 AS BEGIN
-	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.[SearchLike]([Student Id]) 
+	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.V_ROOM_REGISTRATION.STATUS = 1 AND dbo.[SearchLike]([Student Id]) 
 	LIKE N'%' + dbo.[SearchLike](@STUDENT_ID) + '%'
 END
 GO
@@ -1127,5 +1127,20 @@ AS
 BEGIN
     SELECT dbo.COLLEGE.COLLEGE_NAME
 	FROM dbo.COLLEGE WHERE dbo.COLLEGE.COLLEGE_ID = @College_ID
+END
+GO
+--
+CREATE PROC USP_DropLoginDropUserStudent
+(
+	@Email VARCHAR(50)
+)
+AS
+BEGIN
+    DECLARE @QueryDropLogin VARCHAR(100),
+			@QueryDropUser VARCHAR(100)
+	SET @QueryDropLogin = 'DROP LOGIN ' + @Email
+	SET @QueryDropUser = 'DROP USER ' + @Email
+	EXEC(@QueryDropLogin)
+	EXEC(@QueryDropUser)
 END
 GO
