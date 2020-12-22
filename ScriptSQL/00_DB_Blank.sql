@@ -309,15 +309,11 @@ CREATE TABLE [dbo].[TEMPT]
 )
 GO
 
+--------------------
+--Insert common data
+--------------------
 USE [DormitoryManagement]
 GO
-
--- delete if exitst
---DELETE FROM [dbo].[COMMUNE] WHERE [COMMUNE_ID] <> ''
---DELETE FROM [dbo].[DISTRICT] WHERE [DISTRICT_ID] <> ''
---DELETE FROM [dbo].[PROVINCE] WHERE [PROVINCE_ID] <> ''
---DELETE FROM [dbo].[COLLEGE] WHERE [COLLEGE_ID] > -1
---GO
 
 -- Province
 INSERT INTO [dbo].[PROVINCE] ([PROVINCE_ID], [PROVINCE_NAME], [PROVINCE_TYPE])

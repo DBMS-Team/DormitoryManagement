@@ -1,7 +1,7 @@
 ﻿USE [DormitoryManagement]
 GO
 
--- Dùng để đăng nhập:
+-- Dùng để đăng nhập
 CREATE OR ALTER PROC USP_Login
 	@USERNAME VARCHAR(16), 
 	@PASSWORD VARCHAR(32)
@@ -10,7 +10,8 @@ BEGIN
 	DECLARE @PASSWORD_GENERATE VARCHAR(32)
 	SET @PASSWORD_GENERATE = dbo.UFN_GenerateMD5(@PASSWORD)
 
-	SELECT * FROM dbo.[USER] WHERE USERNAME = @USERNAME COLLATE SQL_Latin1_General_CP1_CS_AS
+	SELECT * FROM dbo.[USER] 
+	WHERE USERNAME = @USERNAME COLLATE SQL_Latin1_General_CP1_CS_AS
 	AND PASSWORD = @PASSWORD_GENERATE COLLATE SQL_Latin1_General_CP1_CS_AS -- Phân biệt chữ hoa chữ thường
 END
 GO
@@ -146,6 +147,7 @@ BEGIN
 	VALUES(@USER_ID, @STATR_DATE, @SALARY)
 END
 GO
+
 -- Dùng để thay đổi mật khẩu
 CREATE OR ALTER PROC USP_ChangePassword
 	@USER_ID BIGINT,
@@ -157,6 +159,7 @@ BEGIN
 	UPDATE dbo.[USER] SET PASSWORD = @newPassword WHERE USER_ID = @USER_ID
 END
 GO
+
 -- Lấy danh sách phòng
 CREATE OR ALTER PROC [dbo].[USP_GetListRoom]
 AS
@@ -164,6 +167,7 @@ BEGIN
     SELECT * FROM dbo.ROOM
 END
 GO
+
 -- Lấy danh sách phòng bằng Sector_Id
 CREATE OR ALTER PROC [dbo].[USP_GetListRoomBySectorID]
 	@Sector_ID VARCHAR(10)
@@ -341,6 +345,7 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@USER_ID) + '%'
 END
 GO
+
 -- Tìm kiếm gần đúng sinh viên bởi StudentId
 CREATE OR ALTER PROC USP_GetListStudentGeneralByStudentId(@STUDENT_ID VARCHAR(15))
 AS BEGIN
@@ -349,6 +354,7 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@STUDENT_ID) + '%'
 END
 GO
+
 -- Tìm kiếm gần đúng sinh viên bởi FullName
 CREATE OR ALTER PROC USP_GetListStudentGeneralByFullName(@FULL_NAME NVARCHAR(100))
 AS BEGIN
@@ -357,6 +363,7 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@FULL_NAME) + '%'
 END
 GO
+
 -- Tìm kiếm gần đúng sinh viên bởi Gender
 CREATE OR ALTER PROC USP_GetListStudentGeneralByGender(@GENDER NVARCHAR(10))
 AS BEGIN
@@ -365,6 +372,7 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@GENDER) + '%'
 END
 GO
+
 -- Tìm kiếm gần đúng sinh viên bởi Ssn
 CREATE OR ALTER PROC USP_GetListStudentGeneralBySsn (@SSN VARCHAR(12))
 AS BEGIN
@@ -373,6 +381,7 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@SSN) + '%'
 END
 GO
+
 -- Tìm kiếm gần đúng sinh viên bởi Gender
 CREATE OR ALTER PROC USP_GetListStudentGeneralByCollegeName(@COLLEGE_NAME NVARCHAR(150))
 AS BEGIN
@@ -381,18 +390,21 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@COLLEGE_NAME) + '%'
 END
 GO
+
 -- Lấy danh sách user
 CREATE OR ALTER PROC USP_GetListUser
 AS BEGIN
 	SELECT * FROM dbo.[USER]
 END
 GO
+
 -- Lấy danh sách Room_Registration
 CREATE OR ALTER PROC USP_GetListRoomRegistration
 AS BEGIN
 	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.V_ROOM_REGISTRATION.STATUS = 1
 END
 GO
+
 -- Lấy danh sách Room_Registration bằng StudentId
 CREATE OR ALTER PROC USP_GetListRoomRegistrationByStudentId(@STUDENT_ID VARCHAR(15))
 AS BEGIN
@@ -400,11 +412,13 @@ AS BEGIN
 	LIKE N'%' + dbo.[SearchLike](@STUDENT_ID) + '%'
 END
 GO
+
 -- Lấy danh sách Room_Registration bằng StudentName
 CREATE OR ALTER PROC USP_GetListRoomRegistrationByStudentName(@STUDENT_NAME NVARCHAR(100))
 AS BEGIN
-	SELECT * FROM dbo.V_ROOM_REGISTRATION WHERE dbo.V_ROOM_REGISTRATION.STATUS = 1 AND dbo.[SearchLike]([Student Name]) 
-	LIKE N'%' + dbo.[SearchLike](@STUDENT_NAME) + '%'
+	SELECT * FROM dbo.V_ROOM_REGISTRATION 
+	WHERE dbo.V_ROOM_REGISTRATION.STATUS = 1 
+		AND dbo.[SearchLike]([Student Name]) LIKE N'%' + dbo.[SearchLike](@STUDENT_NAME) + '%'
 END
 GO
 
@@ -473,8 +487,7 @@ AS
 BEGIN
 	DECLARE @ADDRESS_ID INT
 	SELECT @ADDRESS_ID = (SELECT MAX(ADDRESS_ID) FROM dbo.ADDRESS)
-	INSERT INTO dbo.[USER]
-	(
+	INSERT INTO dbo.[USER] (
 	    LAST_NAME,
 	    FIRST_NAME,
 	    DOB,
@@ -508,6 +521,7 @@ BEGIN
 	    )
 END
 GO
+
 -- THÊM SINH VIÊN
 CREATE OR ALTER PROC USP_INSERT_STUDENT
 (
@@ -614,16 +628,17 @@ BEGIN
 		ELSE
 		BEGIN
 		    EXEC dbo.USP_INSERT_STUDENT @STUDENT_ID = @STUDENT_ID,                -- varchar(15)
-		                            @COLLEGE_NAME = @COLLEGE_NAME,             -- nvarchar(50)
-		                            @FACULTY = @FACULTY,                  -- nvarchar(50)
-		                            @MAJORS = @MAJORS,                   -- nvarchar(50)
-		                            @INSURANCE_ID = @Insurence_ID,              -- varchar(15)
-		                            @STATUS_REGISTRATION_ROOM = 0 -- bit
+										@COLLEGE_NAME = @COLLEGE_NAME,             -- nvarchar(50)
+										@FACULTY = @FACULTY,                  -- nvarchar(50)
+										@MAJORS = @MAJORS,                   -- nvarchar(50)
+										@INSURANCE_ID = @Insurence_ID,              -- varchar(15)
+										@STATUS_REGISTRATION_ROOM = 0 -- bit
 			DROP TABLE dbo.TEMPT_STUDENT
 			COMMIT TRANSACTION
 		END
 END
 GO
+
 --USP_INSERT_ROOMREGISTRATION
 CREATE OR ALTER PROC USP_INSERT_ROOMREGISTRATION
 (
@@ -641,86 +656,72 @@ AS
 BEGIN
     DECLARE @SECTOR_ID VARCHAR(10)
 	SELECT @SECTOR_ID = dbo.UFN_Get_SectorID_By_SectorName(@SECTOR_NAME)
-	INSERT INTO dbo.ROOM_REGISTRATION
-	(
-	    SSN,
-	    ROOM_ID,
-	    EMPLOYEE_ID,
-	    SECTOR_ID,
-	    START_DATE,
-	    SEMESTER,
-	    ACADEMIC_YEAR,
-	    DURATION,
-	    STATUS
-	)
-	VALUES
-	(   @SSN,
-	    @ROOM_ID,
-	    @EMPLOYEE_ID, 
-	    @SECTOR_ID, 
-	    @START_DAY,
-	    @SEMESTER,
-	    @ACADEMIC_YEAR, 
-	    @DURATION,
-	    @STATUS
-	    )
+
+	INSERT INTO dbo.ROOM_REGISTRATION (SSN, ROOM_ID, EMPLOYEE_ID, SECTOR_ID, START_DATE, SEMESTER, ACADEMIC_YEAR, DURATION, STATUS)
+	VALUES (@SSN, @ROOM_ID, @EMPLOYEE_ID, @SECTOR_ID,  @START_DAY, @SEMESTER, @ACADEMIC_YEAR,  @DURATION, @STATUS)
 END
 GO
--- Lấy danh sách College
+
+-- Lấy danh sách Bill
 CREATE OR ALTER PROC USP_GetListBillView
 AS
 BEGIN
     SELECT * FROM dbo.[V_BILL]
 END
 GO
+
 -- Lấy danh sách Bill View bằng Sector và room
-CREATE OR ALTER PROC USP_GetListBillViewBySectorAndRoom(
+CREATE OR ALTER PROC USP_GetListBillViewBySectorAndRoom
+(
 	@SECTOR_NAME NVARCHAR(50),
 	@ROOM_ID NVARCHAR(10)
-	)
+)
 AS BEGIN
 	SELECT * FROM dbo.[V_BILL] WHERE Sector = @SECTOR_NAME AND Room = @ROOM_ID
 END
 GO
--- Lấy danh sách Bill View từ tháng này, năm ngày đến tháng kia năm kia
 
-CREATE OR ALTER PROC USP_GetListBillViewByDate(
+
+-- Lấy danh sách Bill View từ tháng này, năm ngày đến tháng kia năm kia
+CREATE OR ALTER PROC USP_GetListBillViewByDate
+(
 	@MONTH_FROM INT,
 	@YEAR_FROM INT,
 	@MONTH_TO INT,
 	@YEAR_TO INT
-	)
+)
 AS 
 	BEGIN
 		IF(@YEAR_FROM > @YEAR_TO)
-			BEGIN
-				SELECT * FROM dbo.[V_BILL] WHERE Year > @YEAR_FROM AND YEAR < @YEAR_TO
-			END
+		BEGIN
+			SELECT * FROM dbo.[V_BILL] WHERE Year > @YEAR_FROM AND YEAR < @YEAR_TO
+		END
+
 		IF (@YEAR_FROM = @YEAR_TO)
-			BEGIN
-				SELECT * FROM dbo.[V_BILL] WHERE Month > @MONTH_FROM - 1 AND Month < @MONTH_TO + 1 AND Year = @YEAR_TO
-			END
+		BEGIN
+			SELECT * FROM dbo.[V_BILL] WHERE Month > @MONTH_FROM - 1 AND Month < @MONTH_TO + 1 AND Year = @YEAR_TO
+		END
+
 		IF (@YEAR_FROM < @YEAR_TO)
-			BEGIN
-				SELECT * FROM dbo.[V_BILL] WHERE Month > @MONTH_FROM - 1 AND Month < 13 AND Year = @YEAR_FROM
-				UNION 
-				SELECT * FROM dbo.[V_BILL] WHERE Month > 0 AND Month < @MONTH_TO + 1 AND Year = @YEAR_TO
-				UNION
-				SELECT * FROM dbo.[V_BILL] WHERE Month > 0 AND Month < 13 AND Year > @YEAR_FROM AND Year < @YEAR_TO
-			END
+		BEGIN
+			SELECT * FROM dbo.[V_BILL] WHERE Month > @MONTH_FROM - 1 AND Month < 13 AND Year = @YEAR_FROM
+			UNION 
+			SELECT * FROM dbo.[V_BILL] WHERE Month > 0 AND Month < @MONTH_TO + 1 AND Year = @YEAR_TO
+			UNION
+			SELECT * FROM dbo.[V_BILL] WHERE Month > 0 AND Month < 13 AND Year > @YEAR_FROM AND Year < @YEAR_TO
+		END
 	END
 GO
 
 
 -- Lấy sinh viên bằng mã
-CREATE OR ALTER PROC USP_GetListStudentView(
-	@USER_ID INT
-	)
+CREATE OR ALTER PROC USP_GetListStudentView (@USER_ID INT)
 AS
 BEGIN
     SELECT * FROM dbo.[V_STUDENT] WHERE USER_ID = @USER_ID
 END
 GO
+
 -- Lấy danh sách nhân viên
 CREATE OR ALTER PROC USP_GetListEmployeeView
 AS
@@ -728,15 +729,15 @@ BEGIN
     SELECT * FROM dbo.V_EMPLOYEE
 END
 GO
+
 -- Lấy 1 nhân viên
-CREATE OR ALTER PROC USP_GetEmployeeView(
-	@USER_ID INT
-	)
+CREATE OR ALTER PROC USP_GetEmployeeView (@USER_ID INT)
 AS
 BEGIN
     SELECT * FROM dbo.V_EMPLOYEE WHERE USER_ID = @USER_ID
 END
 GO
+
 -- Dùng để sửa nhân viên
 CREATE OR ALTER PROC USP_EditEmployee
 	@LAST_NAME NVARCHAR(40),
@@ -761,35 +762,39 @@ BEGIN
 	DECLARE @DISTRICT_ID VARCHAR(3)
 	DECLARE @COMMUNE_ID VARCHAR(5)
 	DECLARE @ADDRESS_ID BIGINT
+
 	-- Gán dữ liệu cho 3 biến
 	SET @PROVINCE_ID = dbo.UFN_GetProvinceIdByProvinceName(@PROVINCE_NAME)
 	SET @DISTRICT_ID = dbo.UFN_GetDistrictIdByDictrictName(@DISTRICT_NAME,@PROVINCE_ID)
 	SELECT @COMMUNE_ID = COMMUNE_ID FROM dbo.COMMUNE WHERE DISTRICT_ID = @DISTRICT_ID AND COMMUNE_NAME = @COMMUNE_NAME
-	-- Sửa địa chỉ
 	
+	-- Sửa địa chỉ
 	SELECT @ADDRESS_ID = ADDRESS_ID FROM dbo.[USER] WHERE dbo.[USER].USER_ID = @USER_ID
 	UPDATE dbo.ADDRESS SET STREET =@STREET, PROVINCE_ID = @PROVINCE_ID, DISTRICT_ID = @DISTRICT_ID, COMMNUNE_ID = @COMMUNE_ID
 	WHERE ADDRESS_ID = @ADDRESS_ID
+
 	-- Sửa tài khoản
 	UPDATE dbo.[USER] SET
-	LAST_NAME =@LAST_NAME,
-	FIRST_NAME = @FIRST_NAME,
-	DOB = @DOB,
-	GENDER = @GENDER,
-	ADDRESS_ID =@ADDRESS_ID,
-	PHONE_NUMBER_1 = @PHONE_NUMBER_1,
-	PHONE_NUMBER_2 = @PHONE_NUMBER_2,
-	EMAIL = @EMAIL,
-	IMAGE_PATH  = @IMAGE_PATH,
-	SSN = @SSN
+		LAST_NAME =@LAST_NAME,
+		FIRST_NAME = @FIRST_NAME,
+		DOB = @DOB,
+		GENDER = @GENDER,
+		ADDRESS_ID =@ADDRESS_ID,
+		PHONE_NUMBER_1 = @PHONE_NUMBER_1,
+		PHONE_NUMBER_2 = @PHONE_NUMBER_2,
+		EMAIL = @EMAIL,
+		IMAGE_PATH  = @IMAGE_PATH,
+		SSN = @SSN
 	WHERE USER_ID = @USER_ID
 END
 GO
+
 -- Cập nhật lương cho nhân viên
-CREATE OR ALTER PROC USP_UpdateSalary(
+CREATE OR ALTER PROC USP_UpdateSalary
+(
 	@USER_ID INT,
 	@SALARY DECIMAL(19,4)
-	)
+)
 AS
 BEGIN
     UPDATE dbo.EMPLOYEE SET SALARY = @SALARY WHERE USER_ID = @USER_ID
@@ -803,6 +808,7 @@ BEGIN
     SELECT * FROM V_GetRoomSectorType ORDER BY SECTOR_NAME ASC
 END
 GO
+
 -- Lấy danh sách service
 CREATE OR ALTER PROC [dbo].[USP_GetServicesInfo]
 AS
@@ -827,9 +833,11 @@ BEGIN
 	DECLARE @Commune_ID VARCHAR(5),
 			@District_ID VARCHAR(3),
 			@Province_ID VARCHAR(2)
+
 	SELECT @Province_ID = dbo.UFN_GetProvinceIdByProvinceName(@Province_Name)
 	SELECT @District_ID = dbo.UFN_GetDistrictIdByDictrictName(@District_Name, @Province_ID)
 	SELECT @Commune_ID = dbo.UFN_GetCommuneidByCommuneName(@Commune_Name, @District_ID)
+
 	UPDATE dbo.ADDRESS
 	SET 
 		dbo.ADDRESS.STREET = @Street,
@@ -852,6 +860,7 @@ AS
 BEGIN
     DECLARE @College_ID INT
 	SELECT @College_ID = dbo.COLLEGE.COLLEGE_ID FROM dbo.COLLEGE WHERE dbo.COLLEGE.COLLEGE_NAME = @College_Name
+
 	UPDATE dbo.STUDENT
 	SET dbo.STUDENT.COLLEGE_ID = @College_ID,
 		dbo.STUDENT.FACULTY = @Faculty,
@@ -859,6 +868,7 @@ BEGIN
 	WHERE dbo.STUDENT.USER_ID = @User_ID;
 END
 GO
+
 -- cập nhật sinh viên
 CREATE OR ALTER PROC USP_TRANSACTION_UpdateStudent
 (
@@ -886,26 +896,31 @@ BEGIN
 		                           @Commune_Name = @Commune_Name, 
 		                           @District_Name = @District_Name, 
 		                           @Province_Name = @Province_Name 
+
 		EXEC dbo.USP_UpdateStudentCollege @User_ID = @User_ID,
 		                                  @College_Name = @College_Name, 
 		                                  @Faculty = @Faculty, 
 		                                  @Major = @Major 
+
 		UPDATE dbo.[USER]
 		SET dbo.[USER].PHONE_NUMBER_1 = NULL,
 			dbo.[USER].PHONE_NUMBER_2 = NULL,
 			dbo.[USER].EMAIL = NULL
 		WHERE dbo.[USER].USER_ID = @User_ID;
-		IF(@Phone_Number_1 IN (SELECT dbo.[USER].PHONE_NUMBER_1 FROM dbo.[USER]) OR @Phone_Number_1 IN (SELECT dbo.[USER].PHONE_NUMBER_2 FROM dbo.[USER]))
+
+		IF (@Phone_Number_1 IN (SELECT dbo.[USER].PHONE_NUMBER_1 FROM dbo.[USER]) 
+			OR @Phone_Number_1 IN (SELECT dbo.[USER].PHONE_NUMBER_2 FROM dbo.[USER]))
 		BEGIN
 		    RAISERROR('Phone_Number_1 Is Exist',16,1)
 			ROLLBACK
 		END
-		ELSE IF(@Phone_Number_2 IN (SELECT dbo.[USER].PHONE_NUMBER_2 FROM dbo.[USER]) OR @Phone_Number_2 IN (SELECT dbo.[USER].PHONE_NUMBER_1 FROM dbo.[USER]))
+		ELSE IF (@Phone_Number_2 IN (SELECT dbo.[USER].PHONE_NUMBER_2 FROM dbo.[USER]) 
+				 OR @Phone_Number_2 IN (SELECT dbo.[USER].PHONE_NUMBER_1 FROM dbo.[USER]))
 		BEGIN
 		    RAISERROR('Phone_Number_2 Is Exist',16,1)
 			ROLLBACK
 		END
-		ELSE IF(@Email IN (SELECT dbo.[USER].EMAIL FROM dbo.[USER]))
+		ELSE IF (@Email IN (SELECT dbo.[USER].EMAIL FROM dbo.[USER]))
 		BEGIN
 		    RAISERROR('Email Is Exist',16,1)
 			ROLLBACK
@@ -921,11 +936,9 @@ BEGIN
 		END
 END
 GO
--- hủy đăng kí phòng
-CREATE OR ALTER PROC USP_UpdateRoomRegistration
-(
-	@Ssn VARCHAR(15)
-)
+
+-- Hủy đăng kí phòng
+CREATE OR ALTER PROC USP_UpdateRoomRegistration(@Ssn VARCHAR(15))
 AS
 BEGIN
     UPDATE dbo.ROOM_REGISTRATION
@@ -933,6 +946,7 @@ BEGIN
 	WHERE dbo.ROOM_REGISTRATION.SSN = @Ssn;
 END
 GO
+
 -- cập nhật dịch vụ
 CREATE OR ALTER PROC USP_UpdateService
 (
@@ -946,21 +960,16 @@ BEGIN
 	WHERE dbo.SERVICE.SERVICE_NAME = @Service_Name;
 END
 GO
+
 --Insert Unit
-CREATE OR ALTER PROC USP_InsertUnit
-(@Unit_Name NVARCHAR(20))
+CREATE OR ALTER PROC USP_InsertUnit (@Unit_Name NVARCHAR(20))
 AS
 BEGIN
-    INSERT INTO dbo.UNIT
-    (
-        UNIT_NAME
-    )
-    VALUES
-    (
-	 @Unit_Name
-    )
+    INSERT INTO dbo.UNIT (UNIT_NAME)
+    VALUES (@Unit_Name)
 END
 GO
+
 --Insert service
 CREATE OR ALTER PROC USP_InsertService
 (
@@ -973,27 +982,14 @@ BEGIN
 	DECLARE @Unit_ID INT
     EXEC dbo.USP_InsertUnit @Unit_Name = @Unit_Name
     SELECT @Unit_ID = (SELECT MAX(dbo.UNIT.UNIT_ID) FROM dbo.UNIT)
-	INSERT INTO dbo.SERVICE
-	(
-	    SERVICE_NAME,
-	    UNIT_ID,
-	    PRICE_PER_UNIT,
-	    STATUS
-	)
-	VALUES
-	(   @Service_Name,  
-	    @Unit_ID, 
-	    @Price_Per_Unit, 
-	    1 
-	    )
+
+	INSERT INTO dbo.SERVICE (SERVICE_NAME, UNIT_ID, PRICE_PER_UNIT, STATUS)
+	VALUES (@Service_Name, @Unit_ID, @Price_Per_Unit, 1)
 END
 GO
+
 --Xóa Service
-GO
-CREATE OR ALTER PROC USP_UnableService
-(
-	@Service_Name NVARCHAR(20)
-)
+CREATE OR ALTER PROC USP_UnableService (@Service_Name NVARCHAR(20))
 AS
 BEGIN
     UPDATE dbo.SERVICE
@@ -1001,6 +997,7 @@ BEGIN
 	WHERE dbo.SERVICE.SERVICE_NAME = @Service_Name;
 END
 GO
+
 --Tạo login SQL
 CREATE OR ALTER PROC USP_CREATE_LOGIN_USER
 (
@@ -1013,18 +1010,18 @@ BEGIN
     DECLARE @Login_UserName VARCHAR(50),
 			@QueryLogin VARCHAR(100),
 			@QueryUser VARCHAR(100)
+
 	SET @Login_UserName = @Role_Name + @Login_Name
 	SET @QueryLogin ='CREATE LOGIN ' + @Login_UserName + ' WITH PASSWORD = ' + QUOTENAME(@Password_Login, '''')
 	SET @QueryUser = CONCAT('CREATE USER ', @Login_UserName, ' FOR LOGIN ', @Login_UserName);
+
 	EXEC (@QueryLogin)
 	EXEC (@QueryUser)
 END
 GO
+
 --Tạo Proc LoadRoomRegistrationByStudentID
-CREATE OR ALTER PROC USP_LoadRoomRegistrationByStudentID
-(
-	@Student_ID VARCHAR(15)
-)
+CREATE OR ALTER PROC USP_LoadRoomRegistrationByStudentID (@Student_ID VARCHAR(15))
 AS
 BEGIN
     DECLARE @User_ID BIGINT,
@@ -1034,6 +1031,7 @@ BEGIN
 	SELECT * FROM dbo.ROOM_REGISTRATION WHERE dbo.ROOM_REGISTRATION.SSN = @SSN
 END
 GO
+
 -- Tạo Proc tạo login - user -Thêm vào role
 CREATE OR ALTER PROC USP_CREATE_LOGIN_USER
 (
@@ -1046,9 +1044,11 @@ BEGIN
     DECLARE @Login_UserName VARCHAR(50),
 			@QueryLogin VARCHAR(100),
 			@QueryUser VARCHAR(100)
+
 	SET @Login_UserName = @Login_Name
 	SET @QueryLogin ='CREATE LOGIN ' + @Login_UserName + ' WITH PASSWORD = ' + QUOTENAME(@Password_Login, '''')
 	SET @QueryUser = CONCAT('CREATE USER ', @Login_UserName, ' FOR LOGIN ', @Login_UserName);
+
 	EXEC (@QueryLogin)
 	EXEC (@QueryUser)
 
@@ -1056,27 +1056,26 @@ BEGIN
 	                          @membername = @Login_Name 
 END
 GO
+
 --GetStudentInfo
-CREATE OR ALTER PROC USP_GetStudentInfo
-(
-	@SSN VARCHAR(15)
-)
+CREATE OR ALTER PROC USP_GetStudentInfo (@SSN VARCHAR(15))
 AS
 BEGIN
-    SELECT dbo.STUDENT.STUDENT_ID, dbo.[USER].FIRST_NAME, dbo.[USER].LAST_NAME, dbo.[USER].DOB, dbo.[USER].GENDER, dbo.[USER].SSN, dbo.STUDENT.INSURANCE_ID,
-			dbo.ADDRESS.STREET, dbo.ADDRESS.PROVINCE_ID, dbo.ADDRESS.DISTRICT_ID, dbo.ADDRESS.COMMNUNE_ID, dbo.[USER].PHONE_NUMBER_1, dbo.[USER].PHONE_NUMBER_2, dbo.[USER].EMAIL, dbo.STUDENT.COLLEGE_ID, dbo.STUDENT.FACULTY, dbo.STUDENT.MAJORS
-	FROM dbo.[USER] INNER JOIN dbo.STUDENT ON STUDENT.USER_ID = [USER].USER_ID
-					INNER JOIN dbo.INSURANCE ON INSURANCE.INSURANCE_ID = STUDENT.INSURANCE_ID
-					INNER JOIN dbo.ADDRESS ON ADDRESS.ADDRESS_ID = [USER].ADDRESS_ID
-					AND dbo.[USER].SSN = @SSN
+    SELECT STU.STUDENT_ID, 
+		   U.FIRST_NAME, U.LAST_NAME, U.DOB, U.GENDER, U.SSN,
+		   STU.INSURANCE_ID,
+		   A.STREET, A.PROVINCE_ID, A.DISTRICT_ID, A.COMMNUNE_ID, 
+		   U.PHONE_NUMBER_1, U.PHONE_NUMBER_2, U.EMAIL, 
+		   STU.COLLEGE_ID, STU.FACULTY, STU.MAJORS
+	FROM dbo.[USER] AS U INNER JOIN dbo.STUDENT AS STU ON U.USER_ID = STU.USER_ID
+					INNER JOIN dbo.INSURANCE ON INSURANCE.INSURANCE_ID = STU.INSURANCE_ID
+					INNER JOIN dbo.ADDRESS AS A ON A.ADDRESS_ID = U.ADDRESS_ID
+					AND U.SSN = @SSN
 END
 GO
---
+
 --Proc Khóa User Student
-CREATE OR ALTER PROC USP_LockUserStudent
-(
-	@SSN VARCHAR(15)
-)
+CREATE OR ALTER PROC USP_LockUserStudent (@SSN VARCHAR(15))
 AS
 BEGIN
     UPDATE dbo.[USER]
@@ -1084,61 +1083,49 @@ BEGIN
 	WHERE dbo.[USER].SSN = @SSN;
 END
 GO
--- lấy tỉnh
-CREATE OR ALTER PROC USP_GetProvinceNameByProvinceID
-(
-	@Province_ID INT
-)
+
+-- Lấy tên tỉnh bằng mã tỉnh
+CREATE OR ALTER PROC USP_GetProvinceNameByProvinceID (@Province_ID VARCHAR(2))
 AS
 BEGIN
-    SELECT dbo.PROVINCE.PROVINCE_NAME
-	FROM dbo.PROVINCE WHERE dbo.PROVINCE.PROVINCE_ID = @Province_ID
+    SELECT P.PROVINCE_NAME FROM dbo.PROVINCE AS P WHERE P.PROVINCE_ID = @Province_ID
 END
 GO
--- lấy huyện
-CREATE OR ALTER PROC USP_GetDistrictNameByDistrictID
-(
-	@District_ID INT
-)
+
+-- Lấy tên huyện
+CREATE OR ALTER PROC USP_GetDistrictNameByDistrictID (@District_ID VARCHAR(3))
 AS
 BEGIN
-    SELECT dbo.DISTRICT.DISTRICT_NAME
-	FROM dbo.DISTRICT WHERE dbo.DISTRICT.DISTRICT_ID = @District_ID
+    SELECT D.DISTRICT_NAME FROM dbo.DISTRICT AS D WHERE D.DISTRICT_ID = @District_ID
 END
 GO
+
 -- lấy tên xã
-CREATE OR ALTER PROC USP_GetCommuneNameByCommuneID
-(
-	@Commune_ID INT
-)
+CREATE OR ALTER PROC USP_GetCommuneNameByCommuneID (@Commune_ID VARCHAR(5))
 AS
 BEGIN
-    SELECT dbo.COMMUNE.COMMUNE_NAME
-	FROM dbo.COMMUNE WHERE dbo.COMMUNE.COMMUNE_ID = @Commune_ID
+    SELECT C.COMMUNE_NAME FROM dbo.COMMUNE AS C WHERE C.COMMUNE_ID = @Commune_ID
 END
 GO
+
 -- Lấy tên trường đại học
-CREATE OR ALTER PROC USP_GetCollegeNameByCollegeID
-(
-	@College_ID INT
-)
+CREATE OR ALTER PROC USP_GetCollegeNameByCollegeID (@College_ID INT)
 AS
 BEGIN
-    SELECT dbo.COLLEGE.COLLEGE_NAME
-	FROM dbo.COLLEGE WHERE dbo.COLLEGE.COLLEGE_ID = @College_ID
+    SELECT C.COLLEGE_NAME FROM dbo.COLLEGE AS C WHERE C.COLLEGE_ID = @College_ID
 END
 GO
+
 -- Xóa sinh viên
-CREATE OR ALTER PROC USP_DropLoginDropUserStudent
-(
-	@Email VARCHAR(50)
-)
+CREATE OR ALTER PROC USP_DropLoginDropUserStudent (@Email VARCHAR(50))
 AS
 BEGIN
     DECLARE @QueryDropLogin VARCHAR(100),
 			@QueryDropUser VARCHAR(100)
+
 	SET @QueryDropLogin = 'DROP LOGIN ' + @Email
 	SET @QueryDropUser = 'DROP USER ' + @Email
+
 	EXEC(@QueryDropLogin)
 	EXEC(@QueryDropUser)
 END

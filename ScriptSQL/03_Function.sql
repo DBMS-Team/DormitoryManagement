@@ -1,12 +1,12 @@
 ﻿USE [DormitoryManagement]
 GO
 
--- Generate mật khẩu:
-CREATE OR ALTER FUNCTION UFN_GenerateMD5 (@OldPass VARCHAR(32))
+-- Hash MD5
+CREATE OR ALTER FUNCTION UFN_GenerateMD5 (@PlantText VARCHAR(32))
 	RETURNS VARCHAR(32)
 AS
 BEGIN
-	RETURN CONVERT(VARCHAR(32), HashBytes('MD5', @OldPass), 2)
+	RETURN CONVERT(VARCHAR(32), HashBytes('MD5', @PlantText), 2)
 END
 GO
 
@@ -16,24 +16,35 @@ CREATE OR ALTER FUNCTION UFN_GetProvinceIdByProvinceName (@PROVINCE_NAME NVARCHA
 AS
 BEGIN
 	DECLARE @PROVINCE_ID VARCHAR(2)
-	SELECT @PROVINCE_ID = PROVINCE_ID FROM dbo.PROVINCE WHERE PROVINCE_NAME = @PROVINCE_NAME
+	SELECT @PROVINCE_ID = PROVINCE_ID FROM dbo.PROVINCE 
+	WHERE PROVINCE_NAME = @PROVINCE_NAME
 	RETURN @PROVINCE_ID
 END
 GO
 
--- Hàm lấy mã huyện bằng tên huyện:
-CREATE OR ALTER FUNCTION UFN_GetDistrictIdByDictrictName(@DISTRICT_NAME NVARCHAR(40),@PROVINCE_ID VARCHAR(2))
-RETURNS VARCHAR(3)
+-- Hàm lấy mã huyện bằng tên huyện và mã tỉnh
+CREATE OR ALTER FUNCTION UFN_GetDistrictIdByDictrictName
+(
+	@DISTRICT_NAME NVARCHAR(40), 
+	@PROVINCE_ID VARCHAR(2)
+)
+	RETURNS VARCHAR(3)
 AS
 BEGIN
 	DECLARE @DISTRICT_ID VARCHAR(3)
-	SELECT @DISTRICT_ID = DISTRICT_ID FROM dbo.DISTRICT WHERE DISTRICT_NAME = @DISTRICT_NAME AND PROVINCE_ID = @PROVINCE_ID
+	SELECT @DISTRICT_ID = DISTRICT_ID FROM dbo.DISTRICT 
+	WHERE DISTRICT_NAME = @DISTRICT_NAME AND PROVINCE_ID = @PROVINCE_ID
 	RETURN @DISTRICT_ID
 END
 GO
 
 -- Hàm tạo mật khẩu mặt định
-CREATE OR ALTER FUNCTION UFN_NewPassword(@lastPassword VARCHAR(32), @preFix VARCHAR(4), @size INT)
+CREATE OR ALTER FUNCTION UFN_NewPassword 
+(
+	@lastPassword VARCHAR(32), 
+	@preFix VARCHAR(4), 
+	@size INT
+)
 RETURNS VARCHAR(10)
 AS
 	BEGIN
@@ -48,7 +59,7 @@ AS
 GO
 
 
--- Lấy Commune_ID từ Commune_Name----------
+-- Lấy Commune_ID từ Commune_Name
 CREATE OR ALTER FUNCTION UFN_GetCommuneidByCommuneName
 (
 	@Commune_Name NVARCHAR(40),
@@ -77,6 +88,7 @@ AS
 BEGIN
 	DECLARE @Sector_ID VARCHAR(10), 
 			@Bill_ID INT
+
 	SELECT @Sector_ID = dbo.SECTOR.SECTOR_ID FROM dbo.SECTOR WHERE dbo.SECTOR.SECTOR_NAME = @Sector_Name
 	SELECT @Bill_ID = dbo.BILL.BILL_ID FROM dbo.BILL WHERE dbo.BILL.Sector_ID = @Sector_ID
 														AND dbo.BILL.ROOM_ID = @Room_ID
@@ -118,7 +130,7 @@ BEGIN
 END
 GO
 
---Trả về số lượng sinh viên đã đăng lý vào phòng nào đó
+--Trả về số lượng sinh viên đã đăng ký vào phòng nào đó
 CREATE OR ALTER FUNCTION UFN_CountNumberOfStudentInRoom
 (
 	@Sector_ID VARCHAR(10),
@@ -137,7 +149,7 @@ END
 GO
 
 -- Tạo hàm tìm tên gần đúng
-CREATE OR ALTER FUNCTION [dbo].[SearchLike] ( @strInput NVARCHAR(4000) ) 
+CREATE OR ALTER FUNCTION [dbo].[SearchLike] (@strInput NVARCHAR(4000)) 
 RETURNS NVARCHAR(4000) 
 AS 
 BEGIN 
@@ -177,7 +189,7 @@ GO
 -- status = 0 : outgoing, 
 -- status = 1 : alive, 
 -- status = 2 : all status 
-
+-- Trả về table
 CREATE OR ALTER FUNCTION UFN_GetListStudent (@STATUS INT)
 RETURNS @Result TABLE (
 	[Id] BIGINT NOT NULL,
@@ -215,6 +227,7 @@ BEGIN
 	RETURN
 END
 GO
+
 -- Trả về giao diện Bill
 CREATE OR ALTER FUNCTION UFN_ReturnForViewBillDetail
 (
@@ -258,8 +271,7 @@ END
 GO
 
 -- GetSectorIDBySectorName
-CREATE OR ALTER FUNCTION UFN_Get_SectorID_By_SectorName
-	(@SECTOR_NAME NVARCHAR(50))
+CREATE OR ALTER FUNCTION UFN_Get_SectorID_By_SectorName (@SECTOR_NAME NVARCHAR(50))
 RETURNS VARCHAR(10)
 AS
 BEGIN
