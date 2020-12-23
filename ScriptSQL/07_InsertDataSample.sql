@@ -83,6 +83,28 @@ VALUES
     '',        -- USER_TYPE - varchar(10)
     NULL       -- STATUS - bit
     )
+GO
+
+EXEC dbo.USP_AddEmployee @LAST_NAME = N'Lâm',           -- nvarchar(40)
+	                     @FIRST_NAME = N'Khánh',          -- nvarchar(20)
+	                     @DOB = '2000-09-02',        -- date
+	                     @GENDER = N'Nam',              -- nvarchar(5)
+	                     @SSN = '072200004503',                  -- varchar(12)
+	                     @PHONE_NUMBER_1 = '0949494029',       -- varchar(15)
+	                     @PHONE_NUMBER_2 = '0969696029',       -- varchar(15)
+	                     @EMAIL = 'quockhanhdev@gmail.com',                -- varchar(40)
+	                     @IMAGE_PATH = '',           -- varchar(300)
+	                     @USER_TYPE = 'EMPLOYEE',            -- varchar(10)
+	                     @PROVINCE_NAME = N'Tây Ninh',       -- nvarchar(20)
+	                     @DISTRICT_NAME = N'Gò Dầu',       -- nvarchar(40)
+	                     @COMMUNE_NAME = N'Bàu Đồn',        -- nvarchar(40)
+	                     @STREET = N'Đường tỉnh 782',              -- nvarchar(50)
+	                     @STATR_DATE = '2020-12-23', -- date
+	                     @SALARY = NULL              -- decimal(19, 4)
+GO
+EXEC dbo.USP_CREATE_LOGIN_USER @Role_Name = 'EMPLOYEE',     -- varchar(50)
+                               @Login_Name = '072200004503',    -- varchar(50)
+                               @Password_Login = 'dbms000000' -- varchar(50)
 
 
 --Add Test
