@@ -23,9 +23,9 @@ namespace DormitoryManagement.Controller
             }
             return districtDTOs;
         }
-        public static DataTable GetDistrictNameByDistricID(int District_ID)
+        public static DataTable GetDistrictNameByDistricID(string District_ID)
         {
-            string query = string.Format("EXEC dbo.USP_GetDistrictNameByDistrictID @District_ID = {0}", District_ID);
+            string query = string.Format("EXEC dbo.USP_GetDistrictNameByDistrictID @District_ID = '{0}'", District_ID);
             DataTable dataTable = DataProvider.ExcuteQuery(query);
             return dataTable;
         }

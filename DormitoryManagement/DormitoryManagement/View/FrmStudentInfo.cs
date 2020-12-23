@@ -195,11 +195,11 @@ namespace DormitoryManagement.View
             txtEmail.Text = dt.Rows[0][13].ToString();
             txtFaculty.Text = dt.Rows[0][15].ToString();
             txtMajor.Text = dt.Rows[0][16].ToString();
-            DataTable province = ProvinceDAO.GetProvinceNameByProvinceID(Convert.ToInt32(dt.Rows[0][8]));
+            DataTable province = ProvinceDAO.GetProvinceNameByProvinceID(dt.Rows[0][8].ToString());
             cbbProvince.Text = province.Rows[0][0].ToString();
-            DataTable District = DistrictDAO.GetDistrictNameByDistricID(Convert.ToInt32(dt.Rows[0][9]));
+            DataTable District = DistrictDAO.GetDistrictNameByDistricID(dt.Rows[0][9].ToString());
             cbbDistrict.Text = District.Rows[0][0].ToString();
-            DataTable Commune = CommuneDAO.GetCommuneNameByCommuneID(Convert.ToInt32(dt.Rows[0][10]));
+            DataTable Commune = CommuneDAO.GetCommuneNameByCommuneID(dt.Rows[0][10].ToString());
             cbbCommune.Text = Commune.Rows[0][0].ToString();
             DataTable College = CollegeDAO.GetCollegeNameByCollegeID(Convert.ToInt32(dt.Rows[0][14]));
             cbbUniversity.Text = College.Rows[0][0].ToString();
