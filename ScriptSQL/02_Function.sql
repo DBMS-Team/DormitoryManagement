@@ -159,28 +159,39 @@ BEGIN
 	DECLARE @SIGN_CHARS NCHAR(136) 
 	DECLARE @UNSIGN_CHARS NCHAR (136) 
 	SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý 
-	ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' + NCHAR(272)+ NCHAR(208) 
+	ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' + NCHAR(272)+ NCHAR(208) -- hai chữ Đ
 	SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy 
 	AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' 
 	DECLARE @COUNTER int 
 	DECLARE @COUNTER1 INT 
 	SET @COUNTER = 1 
+
 	WHILE (@COUNTER <=LEN(@strInput)) 
 	BEGIN 
 		SET @COUNTER1 = 1 
 		WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) 
-		BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) 
+		BEGIN 
+			IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) 
 			BEGIN 
-				IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) 
+				IF @COUNTER=1 
+				SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1, 1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) 
 				ELSE 
-				SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +
-				SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) 
+				SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) + SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) 
 				BREAK 
 			END 
 		SET @COUNTER1 = @COUNTER1 +1 
+		END 
+		SET @COUNTER = @COUNTER +1 
 	END 
-	SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') 
-	RETURN @strInput 
+
+	--- xóa dấu cách thừa
+	WHILE CHARINDEX('  ',@strInput) > 0
+	BEGIN
+		SET @strInput = replace(@strInput,'  ',' ') 
+	END
+	SET @strInput = TRIM(@strInput)
+	
+	RETURN @strInput
 END
 GO
 
