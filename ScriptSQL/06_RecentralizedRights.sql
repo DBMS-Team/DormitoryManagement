@@ -1,8 +1,10 @@
 USE DormitoryManagement
 GO
-CREATE ROLE EMPLOYEE
-CREATE ROLE ADMIN
-CREATE ROLE STUDENT
+
+CREATE ROLE [EMPLOYEE]
+CREATE ROLE [ADMIN]
+CREATE ROLE [STUDENT]
+
 -------------
 --Grant to EMPLOYEE
 --Login -- change password
@@ -78,10 +80,7 @@ GRANT EXECUTE ON USP_GetCommuneNameByCommuneID TO EMPLOYEE
 GRANT EXECUTE ON USP_GetCollegeNameByCollegeID TO EMPLOYEE
 --- Lock User Student
 GRANT EXECUTE ON USP_LockUserStudent TO EMPLOYEE
-CREATE LOGIN khanh@gmail WITH PASSWORD = '000000'
-CREATE USER khanh@gmail FOR LOGIN khanh@gmail
-EXEC sys.sp_addrolemember @rolename = EMPLOYEE,  -- sysname
-                          @membername = khanh@gmail -- sysname
+
 -----------------------------------
 -----------------------------------
 ---Grant STUDENT
@@ -104,11 +103,7 @@ GRANT EXECUTE ON dbo.USP_GetListRoomView TO STUDENT
 GRANT EXECUTE ON dbo.USP_GetServicesInfo TO STUDENT
 --
 GRANT EXECUTE ON dbo.USP_GetStudentById TO STUDENT
---Add Test
-CREATE LOGIN p@gmail WITH PASSWORD = '000000'
-CREATE USER p@gmail FOR LOGIN p@gmail
-EXEC sys.sp_addrolemember @rolename = STUDENT,  -- sysname
-                          @membername = p@gmail -- sysname
+
 --Grant Admin
 --Login -- change password
 GRANT EXECUTE ON dbo.USP_Login TO ADMIN
@@ -191,9 +186,3 @@ GRANT EXECUTE ON dbo.USP_GetListEmployeeView TO ADMIN
 GRANT EXECUTE ON dbo.USP_UpdateSalary TO ADMIN
 --Get admin by ID
 GRANT EXECUTE ON dbo.USP_GetAdminById TO ADMIN
---
---Add Test ADMIN
-CREATE LOGIN ntp@gmail WITH PASSWORD = '000000'
-CREATE USER ntp@gmail FOR LOGIN ntp@gmail
-EXEC sys.sp_addrolemember @rolename = ADMIN,  -- sysname
-                          @membername = ntp@gmail -- sysname

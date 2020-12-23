@@ -1,10 +1,30 @@
 ﻿USE [DormitoryManagement]
 GO
 
+CREATE LOGIN 0123456789 WITH PASSWORD = '000000'
+CREATE USER 0123456789 FOR LOGIN 0123456789
+EXEC sys.sp_addrolemember @rolename = EMPLOYEE,  -- sysname
+                          @membername = khanh@gmail -- sysname
+
+--Add Test
+CREATE LOGIN p@gmail WITH PASSWORD = '000000'
+CREATE USER p@gmail FOR LOGIN p@gmail
+EXEC sys.sp_addrolemember @rolename = STUDENT,  -- sysname
+                          @membername = p@gmail -- sysnam
+
+
+--
+--Add Test ADMIN
+CREATE LOGIN ntp@gmail WITH PASSWORD = '000000'
+CREATE USER ntp@gmail FOR LOGIN ntp@gmail
+EXEC sys.sp_addrolemember @rolename = ADMIN,  -- sysname
+                          @membername = ntp@gmail -- sysname
+
+
 INSERT INTO dbo.ADDRESS (STREET, COMMNUNE_ID, DISTRICT_ID, PROVINCE_ID)
 VALUES 
-	(N'aa', '00001', '001', '01' ),	--id 1
-	(N'aa', '00001', '001', '01' )	--id 2
+	(N'1 Dường ABC', '00001', '001', '01' ),
+	(N'2 Đường XYZ', '00001', '001', '01' )
 GO
 
 INSERT INTO dbo.[USER] ( LAST_NAME, FIRST_NAME, DOB, GENDER, SSN, ADDRESS_ID, USERNAME, PASSWORD, USER_TYPE)

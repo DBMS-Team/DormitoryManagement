@@ -113,11 +113,13 @@ BEGIN
 		)
 		SELECT dbo.[USER].SSN, dbo.STUDENT.INSURANCE_ID, dbo.[USER].PHONE_NUMBER_1, dbo.[USER].PHONE_NUMBER_2, dbo.[USER].EMAIL
 		FROM dbo.[USER] INNER JOIN dbo.STUDENT ON STUDENT.USER_ID = [USER].USER_ID
+
 		EXEC dbo.USP_INSERT_INSURANCE @Insurence_ID = @Insurence_ID 
 		EXEC dbo.USP_INSERT_ADDRESS @Street = @Street, 
 		                            @Commune_Name = @Commune_Name, 
 		                            @District_Name = @District_Name, 
 		                            @Province_Name = @Province_Name
+
 		EXEC dbo.USP_INSERT_USER_STUDENT @LAST_NAME = @LAST_NAME,     -- nvarchar(40)
 		                                 @FIRST_NAME = @FIRST_NAME,    -- nvarchar(20)
 		                                 @DOB = @DOB,  -- date

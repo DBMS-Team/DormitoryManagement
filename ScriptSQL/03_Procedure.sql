@@ -1,4 +1,4 @@
-﻿﻿USE [DormitoryManagement]
+﻿USE [DormitoryManagement]
 GO
 
 -- Dùng để đăng nhập
@@ -151,12 +151,17 @@ GO
 -- Dùng để thay đổi mật khẩu
 CREATE OR ALTER PROC USP_ChangePassword
 	@USER_ID BIGINT,
+	@OLDPASS VARCHAR(32),
 	@NEWPASS VARCHAR(32)
 AS
 BEGIN
-	DECLARE @newPassword VARCHAR(32)
+	DECLARE @newPassword VARCHAR(32), @username VARCHAR(16), @execQuery VARCHAR(100)
 	SET @newPassword = dbo.UFN_GenerateMD5(@NEWPASS)
 	UPDATE dbo.[USER] SET PASSWORD = @newPassword WHERE USER_ID = @USER_ID
+	SELECT @username = CONCAT('_', USERNAME) FROM dbo.[USER] WHERE [USER_ID] = @USER_ID
+
+	SET @execQuery = CONCAT('ALTER LOGIN ', @username, ' WITH PASSWORD = ''', @NEWPASS,''' OLD_PASSWORD = ''',@OLDPASS, '''')
+	EXEC(@execQuery)
 END
 GO
 
@@ -504,20 +509,20 @@ BEGIN
 	    STATUS
 	)
 	VALUES
-	(   @LAST_NAME,       -- LAST_NAME - nvarchar(40)
-	    @FIRST_NAME,       -- FIRST_NAME - nvarchar(20)
-	    @DOB, -- DOB - date
-	    @GENDER,       -- GENDER - nvarchar(5)
-	    @SSN,        -- SSN - varchar(12)
-	    @ADDRESS_ID,         -- ADDRESS_ID - bigint
-	    @PHONE_NUMBER_1,        -- PHONE_NUMBER_1 - varchar(15)
-	    @PHONE_NUMBER_2,        -- PHONE_NUMBER_2 - varchar(15)
-	    @EMAIL,        -- EMAIL - varchar(40)
+	(   @LAST_NAME,			-- LAST_NAME - nvarchar(40)
+	    @FIRST_NAME,		-- FIRST_NAME - nvarchar(20)
+	    @DOB,				-- DOB - date
+	    @GENDER,			-- GENDER - nvarchar(5)
+	    @SSN,				-- SSN - varchar(12)
+	    @ADDRESS_ID,        -- ADDRESS_ID - bigint
+	    @PHONE_NUMBER_1,    -- PHONE_NUMBER_1 - varchar(15)
+	    @PHONE_NUMBER_2,    -- PHONE_NUMBER_2 - varchar(15)
+	    @EMAIL,				-- EMAIL - varchar(40)
 	    @IMAGE_PATH,        -- IMAGE_PATH - varchar(300)
-	    @EMAIL,        -- USERNAME - varchar(16)
-	    'student',        -- PASSWORD - varchar(32)
-	    @USER_TYPE,        -- USER_TYPE - varchar(10)
-	    @STATUS       -- STATUS - bit
+	    @SSN,				-- USERNAME - varchar(16)
+	    'student',			-- PASSWORD - varchar(32)
+	    @USER_TYPE,			-- USER_TYPE - varchar(10)
+	    @STATUS				-- STATUS - bit
 	    )
 END
 GO
@@ -851,28 +856,6 @@ BEGIN
 END
 GO
 
---Tạo login SQL
-CREATE OR ALTER PROC USP_CREATE_LOGIN_USER
-(
-	@Role_Name VARCHAR(50),
-	@Login_Name VARCHAR(50), 
-	@Password_Login VARCHAR(50)
-)
-AS
-BEGIN
-    DECLARE @Login_UserName VARCHAR(50),
-			@QueryLogin VARCHAR(100),
-			@QueryUser VARCHAR(100)
-
-	SET @Login_UserName = @Role_Name + @Login_Name
-	SET @QueryLogin ='CREATE LOGIN ' + @Login_UserName + ' WITH PASSWORD = ' + QUOTENAME(@Password_Login, '''')
-	SET @QueryUser = CONCAT('CREATE USER ', @Login_UserName, ' FOR LOGIN ', @Login_UserName);
-
-	EXEC (@QueryLogin)
-	EXEC (@QueryUser)
-END
-GO
-
 --Tạo Proc LoadRoomRegistrationByStudentID
 CREATE OR ALTER PROC USP_LoadRoomRegistrationByStudentID (@Student_ID VARCHAR(15))
 AS
@@ -898,7 +881,7 @@ BEGIN
 			@QueryLogin VARCHAR(100),
 			@QueryUser VARCHAR(100)
 
-	SET @Login_UserName = @Login_Name
+	SET @Login_UserName = CONCAT('_', @Login_Name)
 	SET @QueryLogin ='CREATE LOGIN ' + @Login_UserName + ' WITH PASSWORD = ' + QUOTENAME(@Password_Login, '''')
 	SET @QueryUser = CONCAT('CREATE USER ', @Login_UserName, ' FOR LOGIN ', @Login_UserName);
 
@@ -906,9 +889,10 @@ BEGIN
 	EXEC (@QueryUser)
 
 	EXEC sys.sp_addrolemember @rolename = @Role_Name, 
-	                          @membername = @Login_Name 
+	                          @membername = @Login_UserName 
 END
 GO
+
 
 --GetStudentInfo
 CREATE OR ALTER PROC USP_GetStudentInfo (@SSN VARCHAR(15))

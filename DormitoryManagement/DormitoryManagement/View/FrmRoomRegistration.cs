@@ -122,6 +122,7 @@ namespace DormitoryManagement.View
             {
                 long Employee_ID = User.UserId;
                 string Ssn = Convert.ToString(txtSSN.Text);
+            MessageBox.Show(Ssn);
                 string Sector_Name = Convert.ToString(cmbBuilding.Text);
                 string Room_ID = Convert.ToString(cmbRoom.Text);
                 DateTime Start_Day = dtpStartDate.Value;

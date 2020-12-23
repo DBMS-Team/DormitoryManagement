@@ -14,7 +14,7 @@ namespace DormitoryManagement.Controller
         {
             string START_DAY = Convert.ToDateTime(Start_Day).ToString("yyyyMMdd");
             string query = string.Format("EXEC dbo.USP_INSERT_ROOMREGISTRATION @EMPLOYEE_ID = {0}," +
-                                                                              "@SSN = {1}," +
+                                                                              "@SSN = '{1}'," +
                                                                               "@SECTOR_NAME = N'{2}', " +
                                                                               "@ROOM_ID = N'{3}'," +
                                                                               "@START_DAY = '{4}'," +

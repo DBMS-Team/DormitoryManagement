@@ -48,7 +48,7 @@ namespace DormitoryManagement.View
                 {
                     if (newPass.Trim().Equals(confirmPass.Trim()))
                     {
-                        if (ChangePass((int)User.UserId, newPass))
+                        if (ChangePass(User.UserId, oldPass, newPass))
                         {
                             txtOldPassword.Text = "";
                             txtNewPassword.Text = "";
@@ -118,9 +118,9 @@ namespace DormitoryManagement.View
         {
             return UserDAO.Login(username, password);
         }
-        bool ChangePass(int userId, string newpass)
+        bool ChangePass(long userId, string oldpass, string newpass)
         {
-            return UserDAO.ChangePassword(userId,newpass);
+            return UserDAO.ChangePassword(userId, oldpass, newpass);
         }
         #endregion
 
