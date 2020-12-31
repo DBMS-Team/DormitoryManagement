@@ -399,7 +399,7 @@ namespace DormitoryManagement.View
             {
                StudentDAO.LockUserStudent(txtID.Text);
                DatabaseConnection.ChangeConnection(false);
-               UserDAO.DropLoginDropUserStudent(txtEmail.Text);
+               UserDAO.DropLoginDropUserStudent(SSN);
                DatabaseConnection.ChangeConnection(true);
                MessageBox.Show("Deleted successfully");
                this.Dispose();

@@ -64,9 +64,9 @@ namespace DormitoryManagement.Controller
          int result = DataProvider.ExcuteNonQuery(query, new object[] { role, username, password });
          return result > 0;
       }
-      public static bool DropLoginDropUserStudent(string Email)
+      public static bool DropLoginDropUserStudent(string Ssn)
       {
-         string query = string.Format("EXEC dbo.USP_DropLoginDropUserStudent @Email = '{0}'", Email);
+         string query = string.Format("EXEC dbo.USP_DropLoginDropUserStudent @SSN = '{0}'", Ssn);
          int result = DataProvider.ExcuteNonQuery(query);
          return result > 0;
       }

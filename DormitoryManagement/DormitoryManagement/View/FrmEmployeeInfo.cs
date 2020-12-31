@@ -462,7 +462,7 @@ namespace DormitoryManagement.View
                }
                if (flag == 0)
                {
-                  DatabaseConnection.ChangeConnection(true);
+                  DatabaseConnection.ChangeConnection(false);
                   if (AddEmployee(lastName, firstName, dob, gender, ssn, phoneNumber1, phoneNumber2, email, imagePath, userType, provinceName, districtName, communeName,
               street, startDate, salary))
                   {
@@ -481,7 +481,7 @@ namespace DormitoryManagement.View
                   {
                      MessageBox.Show("One of the problems is faulty!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                   }
-                  DatabaseConnection.ChangeConnection(false);
+                  DatabaseConnection.ChangeConnection(true);
                }
             }
             catch
